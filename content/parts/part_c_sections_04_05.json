@@ -1,0 +1,1820 @@
+[
+  {
+    "id": "C001",
+    "section": 4,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["隐函数求导", "乘积法则", "单项选择"],
+      "en": ["implicit differentiation", "product rule", "single choice"]
+    },
+    "minutes": 5,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "识别隐函数的一阶导数",
+      "prompt": "曲线 x²+xy+y²=7 在 y 可看作 x 的可导函数处，其导数 y′ 等于下列哪一项？",
+      "choices": [
+        "A. −(2x+y)/(x+2y)",
+        "B. −(2x+y)/(2x+y)",
+        "C. (2x+y)/(x+2y)",
+        "D. −(x+2y)/(2x+y)"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["对等式两边关于 x 求导", "xy 的乘积法则", "含 y′ 项的收集"],
+        "analysis": "把 y 视为 y(x)。求导时 xy 与 y² 都会产生 y′，最后把所有 y′ 项移到同一侧。",
+        "steps": [
+          "对 x² 求导得到 2x。",
+          "对 xy 使用乘积法则，得到 y+xy′；对 y² 使用链式法则，得到 2yy′。",
+          "常数 7 的导数为 0，所以 2x+y+xy′+2yy′=0。",
+          "收集 y′ 得 (x+2y)y′=−(2x+y)。",
+          "当 x+2y≠0 时，y′=−(2x+y)/(x+2y)，故选择 A。"
+        ],
+        "pitfalls": ["把 d(xy)/dx 只写成 xy′", "把 d(y²)/dx 写成 2y 而漏掉 y′", "移项时丢失负号"],
+        "verification": "把 A 代回 (x+2y)y′=−(2x+y)，等式恒成立；其余选项一般不能满足该线性方程。",
+        "takeaway": "隐函数一阶求导的核心是把每个 y 都当作 y(x)，再统一收集 y′。",
+        "extension": "若 x+2y=0，应回到曲线局部几何检查是否出现竖直切线，而不能直接使用该分式。"
+      }
+    },
+    "en": {
+      "title": "Recognizing a First Implicit Derivative",
+      "prompt": "On the curve x²+xy+y²=7, wherever y is a differentiable function of x, which expression equals y′?",
+      "choices": [
+        "A. −(2x+y)/(x+2y)",
+        "B. −(2x+y)/(2x+y)",
+        "C. (2x+y)/(x+2y)",
+        "D. −(x+2y)/(2x+y)"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["Differentiating both sides with respect to x", "Product rule for xy", "Collecting terms containing y′"],
+        "analysis": "Treat y as y(x). Differentiating xy and y² both produces y′ terms, which must then be collected.",
+        "steps": [
+          "Differentiate x² to obtain 2x.",
+          "The product rule gives d(xy)/dx=y+xy′, and the chain rule gives d(y²)/dx=2yy′.",
+          "The derivative of 7 is 0, so 2x+y+xy′+2yy′=0.",
+          "Collecting y′ gives (x+2y)y′=−(2x+y).",
+          "When x+2y≠0, y′=−(2x+y)/(x+2y), so A is correct."
+        ],
+        "pitfalls": ["Writing d(xy)/dx as only xy′", "Omitting y′ from d(y²)/dx", "Losing the minus sign while rearranging"],
+        "verification": "Substituting A into (x+2y)y′=−(2x+y) satisfies the equation identically; the other options generally do not.",
+        "takeaway": "In implicit differentiation, regard every y as y(x) and collect all y′ terms at the end.",
+        "extension": "If x+2y=0, return to the local geometry to check for a vertical tangent rather than using the fraction."
+      }
+    }
+  },
+  {
+    "id": "C002",
+    "section": 4,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "calculation",
+    "tags": {
+      "zh": ["隐函数求导", "圆", "切线方程"],
+      "en": ["implicit differentiation", "circle", "tangent line"]
+    },
+    "minutes": 7,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "圆上一点的切线",
+      "prompt": "曲线 x²+y²=25 上的点 (3,4) 处，求 dy/dx，并写出切线方程。",
+      "answer": "dy/dx=−3/4；切线为 y−4=−(3/4)(x−3)，等价地 3x+4y=25。",
+      "solution": {
+        "knowledge": ["圆的隐函数求导", "点斜式切线", "斜率代入"],
+        "analysis": "先对圆方程隐式求导得到一般斜率，再把点坐标代入，并用点斜式写切线。",
+        "steps": [
+          "对 x²+y²=25 关于 x 求导，得 2x+2yy′=0。",
+          "当 y≠0 时，解得 y′=−x/y。",
+          "在 (3,4) 处，y′=−3/4。",
+          "用点斜式得到 y−4=−(3/4)(x−3)。",
+          "两边乘 4 并整理，得到等价标准式 3x+4y=25。"
+        ],
+        "pitfalls": ["把圆上点的斜率写成 3/4", "求导 y² 时漏掉 y′", "切线方程忘记经过给定点"],
+        "verification": "切线 3x+4y=25 代入 (3,4) 得 9+16=25；其斜率为 −3/4，与导数一致。",
+        "takeaway": "隐式求得的导数就是曲线局部切线斜率，随后使用点斜式即可。",
+        "extension": "同一点的法线斜率为 4/3，法线方程为 y−4=(4/3)(x−3)。"
+      }
+    },
+    "en": {
+      "title": "The Tangent to a Circle",
+      "prompt": "At the point (3,4) on x²+y²=25, find dy/dx and the equation of the tangent line.",
+      "answer": "dy/dx=−3/4; the tangent is y−4=−(3/4)(x−3), equivalently 3x+4y=25.",
+      "solution": {
+        "knowledge": ["Implicit differentiation of a circle", "Point-slope equation", "Substitution into the slope"],
+        "analysis": "First differentiate the circle implicitly to obtain the general slope, then substitute the point and use point-slope form.",
+        "steps": [
+          "Differentiate x²+y²=25 with respect to x to get 2x+2yy′=0.",
+          "When y≠0, solve for y′=−x/y.",
+          "At (3,4), y′=−3/4.",
+          "Point-slope form gives y−4=−(3/4)(x−3).",
+          "Multiplying by 4 and rearranging gives the equivalent form 3x+4y=25."
+        ],
+        "pitfalls": ["Using the positive slope 3/4", "Omitting y′ when differentiating y²", "Writing a tangent that does not pass through the point"],
+        "verification": "The line 3x+4y=25 contains (3,4) because 9+16=25, and its slope is −3/4.",
+        "takeaway": "The implicit derivative is the local tangent slope; then apply point-slope form.",
+        "extension": "The normal slope is 4/3, so the normal is y−4=(4/3)(x−3)."
+      }
+    }
+  },
+  {
+    "id": "C003",
+    "section": 4,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["隐函数求导", "点处导数", "填空"],
+      "en": ["implicit differentiation", "derivative at a point", "fill in the blank"]
+    },
+    "minutes": 6,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "在给定点计算隐函数导数",
+      "prompt": "曲线 x²+xy=6 在点 (2,1) 处的 dy/dx=____。",
+      "answer": "−5/2",
+      "solution": {
+        "knowledge": ["乘积法则", "隐函数一阶导数", "点值代入"],
+        "analysis": "xy 同时含 x 与 y(x)，必须用乘积法则。求出含 y′ 的方程后再代入点坐标。",
+        "steps": [
+          "对 x² 求导得到 2x。",
+          "对 xy 求导得到 y+xy′。",
+          "常数 6 的导数为 0，因此 2x+y+xy′=0。",
+          "在 (2,1) 处代入，得到 4+1+2y′=0。",
+          "所以 2y′=−5，y′=−5/2。"
+        ],
+        "pitfalls": ["把 xy 的导数写成 y′", "先把点值代入原方程再求导", "解线性方程时漏除以 2"],
+        "verification": "一般公式 y′=−(2x+y)/x；代入 x=2,y=1 得 −5/2，与逐步计算一致。",
+        "takeaway": "隐函数点处导数应先求一般导数关系，再代入坐标。",
+        "extension": "若改在 x=0 的点附近研究，该公式分母为 0，需要重新判断能否把 y 写成 x 的函数。"
+      }
+    },
+    "en": {
+      "title": "Evaluating an Implicit Derivative at a Point",
+      "prompt": "For x²+xy=6, dy/dx at (2,1) is ____.",
+      "answer": "−5/2",
+      "solution": {
+        "knowledge": ["Product rule", "First implicit derivative", "Point substitution"],
+        "analysis": "Because xy contains both x and y(x), the product rule is required. Solve the derivative relation before substituting the point.",
+        "steps": [
+          "Differentiate x² to get 2x.",
+          "Differentiate xy to get y+xy′.",
+          "The derivative of 6 is 0, so 2x+y+xy′=0.",
+          "At (2,1), this becomes 4+1+2y′=0.",
+          "Thus 2y′=−5 and y′=−5/2."
+        ],
+        "pitfalls": ["Writing the derivative of xy as y′", "Substituting the point before differentiating", "Forgetting to divide by 2"],
+        "verification": "The general formula is y′=−(2x+y)/x; at x=2,y=1 it gives −5/2.",
+        "takeaway": "Derive the general implicit relation first, then substitute the point.",
+        "extension": "Near a point with x=0, the displayed formula has zero denominator and one must recheck whether y is locally a function of x."
+      }
+    }
+  },
+  {
+    "id": "C004",
+    "section": 4,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "true_false",
+    "tags": {
+      "zh": ["隐函数", "竖直切线", "判断辨析"],
+      "en": ["implicit function", "vertical tangent", "true or false"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "导数分式的适用条件",
+      "prompt": "判断并说明理由：由 x²+y²=1 可得 y′=−x/y，因此该公式在圆上的每一点都给出有限切线斜率。",
+      "answer": "错误。在 (±1,0) 处分母 y=0，曲线具有竖直切线，y 不能在该点附近作为 x 的单值可导函数给出有限导数。",
+      "solution": {
+        "knowledge": ["隐函数导数的分母条件", "竖直切线", "局部函数表示"],
+        "analysis": "求导关系 2x+2yy′=0 没有问题，但解成 y′=−x/y 时新增了 y≠0 的条件。",
+        "steps": [
+          "对圆方程求导得到 2x+2yy′=0。",
+          "只有在 y≠0 时才能除以 2y，得到 y′=−x/y。",
+          "圆上的点 (1,0) 与 (−1,0) 都满足 y=0，因此该分式在这些点无定义。",
+          "在 (1,0) 附近，圆的切线为 x=1；在 (−1,0) 附近，切线为 x=−1，二者均为竖直线。",
+          "竖直线没有有限斜率，所以原命题错误。"
+        ],
+        "pitfalls": ["解方程时忽略除数可能为 0", "把导数不存在与曲线没有切线混同", "认为一个隐式方程处处都能把 y 写成 x 的单值函数"],
+        "verification": "圆的半径在 (1,0) 处水平，切线必与半径垂直，因而是竖直线 x=1，与分母为 0 的现象一致。",
+        "takeaway": "隐函数导数公式必须连同分母非零条件使用；分母为 0 常对应竖直切线。",
+        "extension": "若改为把 x 看作 y 的函数，则在 (±1,0) 处可求 dx/dy=−y/x=0。"
+      }
+    },
+    "en": {
+      "title": "The Domain of an Implicit-Derivative Formula",
+      "prompt": "True or false, with justification: From x²+y²=1 we obtain y′=−x/y, so this formula gives a finite tangent slope at every point of the circle.",
+      "answer": "False. At (±1,0), y=0, the curve has a vertical tangent, and y is not locally a single-valued differentiable function of x with a finite derivative.",
+      "solution": {
+        "knowledge": ["Denominator condition in implicit differentiation", "Vertical tangents", "Local functional representation"],
+        "analysis": "The relation 2x+2yy′=0 is valid, but solving it as y′=−x/y introduces the condition y≠0.",
+        "steps": [
+          "Differentiate the circle to obtain 2x+2yy′=0.",
+          "Division by 2y is allowed only when y≠0, yielding y′=−x/y.",
+          "The points (1,0) and (−1,0) lie on the circle and have y=0, so the fraction is undefined there.",
+          "The tangent near (1,0) is x=1, and near (−1,0) it is x=−1; both are vertical lines.",
+          "A vertical line has no finite slope, so the statement is false."
+        ],
+        "pitfalls": ["Ignoring a possible zero divisor", "Confusing a nonexistent finite derivative with no tangent", "Assuming every implicit curve globally gives y as a single-valued function of x"],
+        "verification": "At (1,0) the radius is horizontal, so the tangent is vertical, agreeing with the zero denominator.",
+        "takeaway": "An implicit-derivative formula must be used with its nonzero-denominator condition; a zero denominator often signals a vertical tangent.",
+        "extension": "If x is viewed as a function of y, then at (±1,0) one has dx/dy=−y/x=0."
+      }
+    }
+  },
+  {
+    "id": "C005",
+    "section": 4,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["隐函数求导", "指数复合函数", "点处斜率"],
+      "en": ["implicit differentiation", "exponential composite", "slope at a point"]
+    },
+    "minutes": 11,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "指数型隐函数的一阶导数",
+      "prompt": "曲线 e^{xy}+x+y=1 通过点 (0,0)。求一般的 y′，并求该点的切线斜率。",
+      "answer": "y′=−[y e^{xy}+1]/[x e^{xy}+1]；在 (0,0) 处 y′=−1。",
+      "solution": {
+        "knowledge": ["e^{xy} 的链式法则", "xy 的乘积法则", "隐函数斜率"],
+        "analysis": "最内层 xy 的导数为 y+xy′；外层指数函数保持 e^{xy} 因子。随后收集 y′。",
+        "steps": [
+          "对 e^{xy} 求导，得到 e^{xy}(y+xy′)。",
+          "对 x+y 求导，得到 1+y′；右侧常数 1 的导数为 0。",
+          "因此 e^{xy}(y+xy′)+1+y′=0。",
+          "收集 y′ 得 (x e^{xy}+1)y′=−(y e^{xy}+1)。",
+          "所以 y′=−[y e^{xy}+1]/[x e^{xy}+1]；在 (0,0) 处为 −(0+1)/(0+1)=−1。"
+        ],
+        "pitfalls": ["把 d(e^{xy})/dx 写成 e^{xy}xy′", "漏掉 xy 中 x 的导数贡献 y", "代入 e^0 时写成 0"],
+        "verification": "点 (0,0) 满足 e^0+0+0=1；把 y′=−1 代入导数关系得到 1·(0+0)+1−1=0。",
+        "takeaway": "隐式复合函数要由外向内使用链式法则，内层若为乘积还需继续求导。",
+        "extension": "切线方程为 y=−x；若求法线，其斜率为 1。"
+      }
+    },
+    "en": {
+      "title": "First Derivative of an Exponential Implicit Curve",
+      "prompt": "The curve e^{xy}+x+y=1 passes through (0,0). Find the general expression for y′ and the tangent slope at that point.",
+      "answer": "y′=−[y e^{xy}+1]/[x e^{xy}+1]; at (0,0), y′=−1.",
+      "solution": {
+        "knowledge": ["Chain rule for e^{xy}", "Product rule for xy", "Implicit tangent slope"],
+        "analysis": "The derivative of the inner product xy is y+xy′, and the outer exponential contributes e^{xy}. Then collect y′.",
+        "steps": [
+          "Differentiate e^{xy} to obtain e^{xy}(y+xy′).",
+          "Differentiate x+y to obtain 1+y′; the derivative of the constant 1 is 0.",
+          "Thus e^{xy}(y+xy′)+1+y′=0.",
+          "Collecting y′ gives (x e^{xy}+1)y′=−(y e^{xy}+1).",
+          "Therefore y′=−[y e^{xy}+1]/[x e^{xy}+1], and at (0,0) it equals −1."
+        ],
+        "pitfalls": ["Writing d(e^{xy})/dx as e^{xy}xy′", "Omitting the y term from d(xy)/dx", "Treating e^0 as 0"],
+        "verification": "(0,0) satisfies e^0+0+0=1. Substituting y′=−1 into the differentiated relation gives 0+1−1=0.",
+        "takeaway": "For an implicit composite, apply the chain rule from outside inward and differentiate any inner product completely.",
+        "extension": "The tangent is y=−x, while the normal slope is 1."
+      }
+    }
+  },
+  {
+    "id": "C006",
+    "section": 4,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["隐函数求导", "三角复合", "切线"],
+      "en": ["implicit differentiation", "trigonometric composite", "tangent"]
+    },
+    "minutes": 11,
+    "space": "L",
+    "classic_method": false,
+    "zh": {
+      "title": "三角型隐函数求导",
+      "prompt": "曲线 sin(x+y)=xy 通过 (0,0)。求一般的 y′，并写出该点的切线方程。",
+      "answer": "y′=[y−cos(x+y)]/[cos(x+y)−x]；在 (0,0) 处 y′=−1，切线为 y=−x。",
+      "solution": {
+        "knowledge": ["sin(x+y) 的链式法则", "xy 的乘积法则", "隐函数切线"],
+        "analysis": "等式两侧都含 y(x)。左侧先求外层正弦，右侧对 xy 用乘积法则。",
+        "steps": [
+          "对左侧求导，得到 cos(x+y)(1+y′)。",
+          "对右侧 xy 求导，得到 y+xy′。",
+          "展开并整理：cos(x+y)+cos(x+y)y′=y+xy′。",
+          "收集 y′ 得 [cos(x+y)−x]y′=y−cos(x+y)。",
+          "所以 y′=[y−cos(x+y)]/[cos(x+y)−x]；代入 (0,0) 得 y′=−1，切线为 y=−x。"
+        ],
+        "pitfalls": ["把 d[sin(x+y)]/dx 写成 cos(x+y)", "把 d(xy)/dx 写成 xy′", "整理分母时把 cos(x+y)−x 写反"],
+        "verification": "(0,0) 满足 sin0=0；导数关系在该点变为 1·(1+y′)=0，直接给出 y′=−1。",
+        "takeaway": "隐式等式两侧都要完整求导，不能把任何含 y 的部分当常数。",
+        "extension": "若 cos(x+y)−x=0，显式分式失效，应检查竖直切线或局部表示。"
+      }
+    },
+    "en": {
+      "title": "Differentiating a Trigonometric Implicit Curve",
+      "prompt": "The curve sin(x+y)=xy passes through (0,0). Find the general expression for y′ and the tangent line at that point.",
+      "answer": "y′=[y−cos(x+y)]/[cos(x+y)−x]; at (0,0), y′=−1 and the tangent is y=−x.",
+      "solution": {
+        "knowledge": ["Chain rule for sin(x+y)", "Product rule for xy", "Implicit tangent line"],
+        "analysis": "Both sides contain y(x). Differentiate the outer sine on the left and use the product rule on xy.",
+        "steps": [
+          "Differentiate the left side to obtain cos(x+y)(1+y′).",
+          "Differentiate xy to obtain y+xy′.",
+          "Expand: cos(x+y)+cos(x+y)y′=y+xy′.",
+          "Collect y′ to get [cos(x+y)−x]y′=y−cos(x+y).",
+          "Hence y′=[y−cos(x+y)]/[cos(x+y)−x]; at (0,0), y′=−1 and the tangent is y=−x."
+        ],
+        "pitfalls": ["Omitting the factor 1+y′", "Writing d(xy)/dx as xy′", "Reversing the sign of cos(x+y)−x"],
+        "verification": "(0,0) satisfies sin0=0, and the differentiated equation there is 1·(1+y′)=0, so y′=−1.",
+        "takeaway": "Differentiate every y-containing expression on both sides; none of it is constant with respect to x.",
+        "extension": "If cos(x+y)−x=0, the explicit fraction fails and local vertical behavior must be checked."
+      }
+    }
+  },
+  {
+    "id": "C007",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["隐函数二阶导数", "二次曲线", "逐次求导"],
+      "en": ["second implicit derivative", "quadratic curve", "successive differentiation"]
+    },
+    "minutes": 18,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "二次隐式曲线的二阶导数",
+      "prompt": "曲线 x²+xy+y²=7 通过点 (1,2)。求该点的 y′ 与 y″。",
+      "answer": "y′=−4/5，y″=−42/125。",
+      "solution": {
+        "knowledge": ["隐函数一阶导数", "对导数关系再次求导", "乘积法则", "点值代入"],
+        "analysis": "先保留一阶导数关系，再对整条关系求导。第二次求导时 xy′ 与 2yy′ 都需要乘积法则。",
+        "steps": [
+          "一次求导得 2x+y+xy′+2yy′=0，即 y′=−(2x+y)/(x+2y)。",
+          "在 (1,2) 处，y′=−(2+2)/(1+4)=−4/5。",
+          "对 2x+y+xy′+2yy′=0 再求导，得到 2+y′+y′+xy″+2(y′)²+2yy″=0。",
+          "合并为 2+2y′+2(y′)²+(x+2y)y″=0。",
+          "代入 x=1,y=2,y′=−4/5，得 2−8/5+32/25+5y″=0。",
+          "前三项为 42/25，所以 5y″=−42/25，最终 y″=−42/125。"
+        ],
+        "pitfalls": ["第二次求导漏掉 (y′)²", "把 d(xy′)/dx 写成 xy″", "求 y″ 前重新代入原方程而遗漏一阶关系"],
+        "verification": "点 (1,2) 满足 1+2+4=7；把 y′、y″ 代入二阶关系，42/25+5(−42/125)=0。",
+        "takeaway": "隐函数二阶导数应从未过早化简的一阶关系继续求导，并保留所有乘积项。",
+        "extension": "可先得到一般式 y″=−[2+2y′+2(y′)²]/(x+2y)，再在任意允许点代值。"
+      }
+    },
+    "en": {
+      "title": "Second Derivative of a Quadratic Implicit Curve",
+      "prompt": "The curve x²+xy+y²=7 passes through (1,2). Find y′ and y″ at that point.",
+      "answer": "y′=−4/5 and y″=−42/125.",
+      "solution": {
+        "knowledge": ["First implicit derivative", "Differentiating the derivative relation again", "Product rule", "Point substitution"],
+        "analysis": "Keep the first derivative relation and differentiate the entire relation again. Both xy′ and 2yy′ require the product rule.",
+        "steps": [
+          "The first derivative relation is 2x+y+xy′+2yy′=0, so y′=−(2x+y)/(x+2y).",
+          "At (1,2), y′=−(2+2)/(1+4)=−4/5.",
+          "Differentiate the relation again to get 2+y′+y′+xy″+2(y′)²+2yy″=0.",
+          "Combine terms: 2+2y′+2(y′)²+(x+2y)y″=0.",
+          "Substitute x=1,y=2,y′=−4/5 to obtain 2−8/5+32/25+5y″=0.",
+          "The first three terms equal 42/25, so y″=−42/125."
+        ],
+        "pitfalls": ["Omitting (y′)² in the second differentiation", "Writing d(xy′)/dx as only xy″", "Discarding the first derivative relation too early"],
+        "verification": "(1,2) satisfies the curve, and 42/25+5(−42/125)=0 in the second derivative relation.",
+        "takeaway": "For a second implicit derivative, differentiate the uncompressed first derivative relation and retain every product-rule term.",
+        "extension": "The general form is y″=−[2+2y′+2(y′)²]/(x+2y) wherever the denominator is nonzero."
+      }
+    }
+  },
+  {
+    "id": "C008",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["隐函数二阶导数", "三次曲线", "高难计算"],
+      "en": ["second implicit derivative", "cubic curve", "hard calculation"]
+    },
+    "minutes": 24,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "三次隐式曲线的二阶导数",
+      "prompt": "曲线 x³+y³=6xy 通过点 (3,3)。求该点的 y′ 与 y″。",
+      "answer": "y′=−1，y″=−16/3。",
+      "solution": {
+        "knowledge": ["三次隐函数求导", "二阶隐式求导", "乘积与链式法则"],
+        "analysis": "先求一阶关系并在点处得到 y′；第二次求导时 y²y′、xy′ 都是乘积，必须逐项展开。",
+        "steps": [
+          "一次求导得 3x²+3y²y′=6y+6xy′。",
+          "在 (3,3) 处，27+27y′=18+18y′，所以 9y′=−9，y′=−1。",
+          "对一阶关系再求导：6x+6y(y′)²+3y²y″=6y′+6(y′+xy″)。",
+          "右侧合并为 12y′+6xy″。",
+          "代入 x=3,y=3,y′=−1，得到 18+18+27y″=−12+18y″。",
+          "整理得 9y″=−48，因此 y″=−16/3。"
+        ],
+        "pitfalls": ["把 d(3y²y′)/dx 漏成 3y²y″", "右侧 6xy′ 求导漏掉 6y′", "一阶导数符号错误传递到二阶"],
+        "verification": "(3,3) 满足 27+27=54=6·3·3；代入二阶方程，左侧为 36−144=−108，右侧为 −12−96=−108。",
+        "takeaway": "复杂隐式二阶求导要把每个含 y′ 的乘积逐项列出，避免心算漏项。",
+        "extension": "可在其他非奇异点重复同一流程；若一阶关系中 y′ 的系数为 0，应先检查局部切线方向。"
+      }
+    },
+    "en": {
+      "title": "Second Derivative of a Cubic Implicit Curve",
+      "prompt": "The curve x³+y³=6xy passes through (3,3). Find y′ and y″ at that point.",
+      "answer": "y′=−1 and y″=−16/3.",
+      "solution": {
+        "knowledge": ["Differentiating a cubic implicit curve", "Second implicit derivative", "Product and chain rules"],
+        "analysis": "First obtain the derivative relation and y′ at the point. In the second differentiation, both y²y′ and xy′ are products.",
+        "steps": [
+          "Differentiate once: 3x²+3y²y′=6y+6xy′.",
+          "At (3,3), 27+27y′=18+18y′, so y′=−1.",
+          "Differentiate again: 6x+6y(y′)²+3y²y″=6y′+6(y′+xy″).",
+          "The right side simplifies to 12y′+6xy″.",
+          "Substitute x=3,y=3,y′=−1 to get 18+18+27y″=−12+18y″.",
+          "Thus 9y″=−48 and y″=−16/3."
+        ],
+        "pitfalls": ["Omitting 6y(y′)² from d(3y²y′)/dx", "Dropping a 6y′ term from d(6xy′)/dx", "Carrying an incorrect sign for y′"],
+        "verification": "(3,3) satisfies 27+27=54. In the second derivative equation, both sides become −108 after substitution.",
+        "takeaway": "For a complicated second implicit derivative, list every product-rule contribution explicitly.",
+        "extension": "The same procedure works at other nonsingular points; if the coefficient of y′ vanishes, first inspect the local tangent direction."
+      }
+    }
+  },
+  {
+    "id": "C009",
+    "section": 4,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["参数方程求导", "切线方程", "参数点"],
+      "en": ["parametric differentiation", "tangent line", "parameter value"]
+    },
+    "minutes": 9,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "参数曲线的一阶导数与切线",
+      "prompt": "参数曲线 x=t²+1，y=t³−t。在 t=1 时求 dy/dx，并写出切线方程。",
+      "answer": "dy/dx=1；点为 (2,0)，切线为 y=x−2。",
+      "solution": {
+        "knowledge": ["参数方程一阶导数", "参数点坐标", "点斜式"],
+        "analysis": "先分别求 dx/dt 与 dy/dt，再在 dx/dt≠0 时相除。切线还需要先算出 t=1 对应的坐标。",
+        "steps": [
+          "dx/dt=2t，dy/dt=3t²−1。",
+          "当 t=1 时，dx/dt=2≠0，dy/dt=2。",
+          "因此 dy/dx=(dy/dt)/(dx/dt)=2/2=1。",
+          "参数点为 x=1²+1=2，y=1³−1=0。",
+          "点斜式给出 y−0=1(x−2)，即 y=x−2。"
+        ],
+        "pitfalls": ["把 dy/dx 写成 dx/dt 除以 dy/dt", "只求斜率而漏算参数点", "未检查 dx/dt 是否为 0"],
+        "verification": "在 t=1 附近取小增量，dx≈2dt、dy≈2dt，因此 Δy/Δx≈1，与导数一致。",
+        "takeaway": "参数曲线的斜率是两个参数变化率之比，前提是 dx/dt≠0。",
+        "extension": "在 t=0 时 dx/dt=0、dy/dt=−1，曲线具有竖直切线。"
+      }
+    },
+    "en": {
+      "title": "First Derivative and Tangent of a Parametric Curve",
+      "prompt": "For x=t²+1 and y=t³−t, find dy/dx at t=1 and write the tangent line.",
+      "answer": "dy/dx=1; the point is (2,0), and the tangent is y=x−2.",
+      "solution": {
+        "knowledge": ["First derivative of a parametric curve", "Coordinates from a parameter", "Point-slope form"],
+        "analysis": "Differentiate x and y with respect to t, then divide when dx/dt≠0. The tangent line also requires the point corresponding to t=1.",
+        "steps": [
+          "dx/dt=2t and dy/dt=3t²−1.",
+          "At t=1, dx/dt=2≠0 and dy/dt=2.",
+          "Thus dy/dx=(dy/dt)/(dx/dt)=2/2=1.",
+          "The parameter point is x=1²+1=2 and y=1³−1=0.",
+          "Point-slope form gives y−0=1(x−2), or y=x−2."
+        ],
+        "pitfalls": ["Reversing the ratio for dy/dx", "Finding the slope but not the parameter point", "Failing to check dx/dt≠0"],
+        "verification": "Near t=1, dx≈2dt and dy≈2dt, so Δy/Δx≈1.",
+        "takeaway": "A parametric slope is the ratio of the two rates with respect to the parameter, provided dx/dt is nonzero.",
+        "extension": "At t=0, dx/dt=0 and dy/dt=−1, so the curve has a vertical tangent."
+      }
+    }
+  },
+  {
+    "id": "C010",
+    "section": 4,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["参数方程", "导数公式", "填空"],
+      "en": ["parametric equations", "derivative formula", "fill in the blank"]
+    },
+    "minutes": 6,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "参数导数公式与数值",
+      "prompt": "若 x=t²，y=t⁴+t，则在 dx/dt≠0 时 dy/dx=____；在 t=1 时其值为____。",
+      "answer": "(dy/dt)/(dx/dt)；5/2。",
+      "solution": {
+        "knowledge": ["参数导数公式", "幂函数求导", "点值计算"],
+        "analysis": "先填写通式，再分别求两个参数导数。t=1 时 dx/dt 非零，可合法相除。",
+        "steps": [
+          "参数曲线的一阶导数公式为 dy/dx=(dy/dt)/(dx/dt)。",
+          "这里 dx/dt=2t。",
+          "dy/dt=4t³+1。",
+          "在 t=1 时，dx/dt=2，dy/dt=5。",
+          "所以 dy/dx=5/2，两空依次为 (dy/dt)/(dx/dt) 与 5/2。"
+        ],
+        "pitfalls": ["把公式写成两导数相乘", "把 d(t⁴)/dt 写成 4t", "忽略 t=0 时分母为 0"],
+        "verification": "在 t=1 处，x 的瞬时变化率为 2，y 的瞬时变化率为 5，故每单位 x 变化对应 5/2 单位 y 变化。",
+        "takeaway": "参数导数是相对于同一参数的两个变化率之比。",
+        "extension": "在 t=0 时该比值公式分母为 0，需另行判断切线方向。"
+      }
+    },
+    "en": {
+      "title": "The Parametric Derivative Formula and Its Value",
+      "prompt": "If x=t² and y=t⁴+t, then when dx/dt≠0, dy/dx=____; at t=1 its value is ____.",
+      "answer": "(dy/dt)/(dx/dt); 5/2.",
+      "solution": {
+        "knowledge": ["Parametric derivative formula", "Power rule", "Evaluation at a parameter value"],
+        "analysis": "State the general formula first, then differentiate x and y separately. At t=1, dx/dt is nonzero, so division is valid.",
+        "steps": [
+          "The first parametric derivative is dy/dx=(dy/dt)/(dx/dt).",
+          "Here dx/dt=2t.",
+          "Also dy/dt=4t³+1.",
+          "At t=1, dx/dt=2 and dy/dt=5.",
+          "Thus dy/dx=5/2, so the blanks are (dy/dt)/(dx/dt) and 5/2."
+        ],
+        "pitfalls": ["Multiplying the two derivatives", "Differentiating t⁴ as 4t", "Ignoring the zero denominator at t=0"],
+        "verification": "At t=1, x changes at rate 2 and y at rate 5, so the y-change per unit x-change is 5/2.",
+        "takeaway": "A parametric derivative is the ratio of two rates measured with respect to the same parameter.",
+        "extension": "At t=0 the denominator vanishes, so the tangent direction must be analyzed separately."
+      }
+    }
+  },
+  {
+    "id": "C011",
+    "section": 4,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["参数曲线", "竖直切线", "条件辨析"],
+      "en": ["parametric curve", "vertical tangent", "condition recognition"]
+    },
+    "minutes": 6,
+    "space": "S",
+    "classic_method": false,
+    "zh": {
+      "title": "参数曲线的竖直切线条件",
+      "prompt": "设参数曲线在 t=t₀ 处的导数存在。下列哪组条件最直接表明该点具有竖直切线？",
+      "choices": [
+        "A. dx/dt=0 且 dy/dt≠0",
+        "B. dx/dt≠0 且 dy/dt=0",
+        "C. dx/dt=dy/dt=1",
+        "D. dx/dt=0 且 dy/dt=0，且无需进一步分析"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["参数曲线切线方向", "竖直切线", "零速度分量"],
+        "analysis": "参数速度向量为 (dx/dt,dy/dt)。其水平分量为 0 而竖直分量非零时，切线方向竖直。",
+        "steps": [
+          "参数曲线的瞬时方向由向量 (dx/dt,dy/dt) 给出。",
+          "若 dx/dt=0、dy/dt≠0，该向量平行于 y 轴，因此切线竖直。",
+          "B 对应水平切线，因为方向向量平行于 x 轴。",
+          "C 给出有限斜率 (dy/dt)/(dx/dt)=1。",
+          "D 中速度向量为零向量，不能仅凭一阶导数判断切线，故答案为 A。"
+        ],
+        "pitfalls": ["把水平与竖直切线条件颠倒", "认为 0/0 自动表示竖直切线", "忽略 dy/dt≠0 的条件"],
+        "verification": "对 x=t²、y=t，在 t=0 时 dx/dt=0、dy/dt=1，消去参数得 x=y²，原点处切线确为 x=0。",
+        "takeaway": "参数曲线的切线方向先看速度向量，不应机械把 0 当作普通分母。",
+        "extension": "若 dx/dt=dy/dt=0，通常需研究更低阶非零变化项，本题不给出自动结论。"
+      }
+    },
+    "en": {
+      "title": "Condition for a Vertical Tangent of a Parametric Curve",
+      "prompt": "Suppose the parameter derivatives exist at t=t₀. Which condition most directly indicates a vertical tangent?",
+      "choices": [
+        "A. dx/dt=0 and dy/dt≠0",
+        "B. dx/dt≠0 and dy/dt=0",
+        "C. dx/dt=dy/dt=1",
+        "D. dx/dt=0 and dy/dt=0, with no further analysis needed"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["Tangent direction of a parametric curve", "Vertical tangent", "Zero velocity component"],
+        "analysis": "The velocity vector is (dx/dt,dy/dt). A zero horizontal component and nonzero vertical component give a vertical direction.",
+        "steps": [
+          "The instantaneous direction of a parametric curve is determined by (dx/dt,dy/dt).",
+          "If dx/dt=0 and dy/dt≠0, this vector is parallel to the y-axis, so the tangent is vertical.",
+          "Condition B gives a horizontal tangent.",
+          "Condition C gives the finite slope (dy/dt)/(dx/dt)=1.",
+          "In D the velocity vector is zero, so first derivatives alone are inconclusive; therefore A is correct."
+        ],
+        "pitfalls": ["Reversing horizontal and vertical conditions", "Assuming 0/0 automatically means vertical", "Omitting the condition dy/dt≠0"],
+        "verification": "For x=t²,y=t at t=0, dx/dt=0 and dy/dt=1. Eliminating t gives x=y², whose tangent at the origin is x=0.",
+        "takeaway": "Read a parametric tangent from the velocity vector rather than treating zero as an ordinary denominator.",
+        "extension": "If both parameter derivatives vanish, lower-order nonzero changes must be studied; no automatic conclusion is available."
+      }
+    }
+  },
+  {
+    "id": "C012",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["参数方程二阶导数", "链式求导", "点值"],
+      "en": ["second parametric derivative", "chain-rule differentiation", "point value"]
+    },
+    "minutes": 14,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "参数曲线的二阶导数",
+      "prompt": "参数曲线 x=t²+1，y=t³。在 t=1 时求 dy/dx 与 d²y/dx²。",
+      "answer": "dy/dx=3/2，d²y/dx²=3/4。",
+      "solution": {
+        "knowledge": ["参数一阶导数", "参数二阶导数公式", "对 t 求导后再除以 dx/dt"],
+        "analysis": "二阶导数不是 (d²y/dt²)/(d²x/dt²)。应先把 dy/dx 作为 t 的函数求导，再除以 dx/dt。",
+        "steps": [
+          "dx/dt=2t，dy/dt=3t²。",
+          "当 t≠0 时，dy/dx=(3t²)/(2t)=3t/2。",
+          "对 t 求导，d/dt(dy/dx)=3/2。",
+          "使用 d²y/dx²=[d/dt(dy/dx)]/(dx/dt)，得到 d²y/dx²=(3/2)/(2t)=3/(4t)。",
+          "在 t=1 时，dy/dx=3/2，d²y/dx²=3/4。"
+        ],
+        "pitfalls": ["把二阶导数写成 (d²y/dt²)/(d²x/dt²)", "化简 dy/dx 时错误约去 t=0 的情形", "第二次忘记除以 dx/dt"],
+        "verification": "消去参数有 y=(x−1)^{3/2}，在 x=2 对该表达式按已学求导规则可得一阶 3/2、二阶 3/4。",
+        "takeaway": "参数二阶导数的顺序是先求 dy/dx，再对 t 求导，最后除以 dx/dt。",
+        "extension": "一般公式为 d²y/dx²=[x′(t)y″(t)−y′(t)x″(t)]/[x′(t)]³，前提 x′(t)≠0。"
+      }
+    },
+    "en": {
+      "title": "Second Derivative of a Parametric Curve",
+      "prompt": "For x=t²+1 and y=t³, find dy/dx and d²y/dx² at t=1.",
+      "answer": "dy/dx=3/2 and d²y/dx²=3/4.",
+      "solution": {
+        "knowledge": ["First parametric derivative", "Second parametric derivative formula", "Differentiate with respect to t and divide by dx/dt"],
+        "analysis": "The second derivative is not (d²y/dt²)/(d²x/dt²). First differentiate dy/dx as a function of t, then divide by dx/dt.",
+        "steps": [
+          "dx/dt=2t and dy/dt=3t².",
+          "For t≠0, dy/dx=(3t²)/(2t)=3t/2.",
+          "Differentiate with respect to t: d/dt(dy/dx)=3/2.",
+          "Use d²y/dx²=[d/dt(dy/dx)]/(dx/dt)=(3/2)/(2t)=3/(4t).",
+          "At t=1, dy/dx=3/2 and d²y/dx²=3/4."
+        ],
+        "pitfalls": ["Using (d²y/dt²)/(d²x/dt²)", "Canceling t without noting t≠0", "Forgetting the second division by dx/dt"],
+        "verification": "Eliminating t gives y=(x−1)^{3/2}; at x=2, ordinary differentiation gives 3/2 and 3/4.",
+        "takeaway": "For a second parametric derivative: find dy/dx, differentiate it with respect to t, then divide by dx/dt.",
+        "extension": "Equivalently, d²y/dx²=[x′(t)y″(t)−y′(t)x″(t)]/[x′(t)]³ when x′(t)≠0."
+      }
+    }
+  },
+  {
+    "id": "C013",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "multiple_choice",
+    "tags": {
+      "zh": ["相关变化率", "单位", "符号", "多项选择"],
+      "en": ["related rates", "units", "sign", "multiple choice"]
+    },
+    "minutes": 9,
+    "space": "M",
+    "classic_method": false,
+    "zh": {
+      "title": "相关变化率的建模原则",
+      "prompt": "关于相关变化率问题，下列说法哪些正确？多选。",
+      "choices": [
+        "A. 应先写出随时间成立的几何或物理关系，再对时间 t 求导",
+        "B. 若某长度正在减小，则在选定正方向下其变化率应取负值",
+        "C. 体积变化率 dV/dt 的单位应是长度³/时间",
+        "D. 可在求导前把当前数值代入并视为常数，因为只关心这一瞬间"
+      ],
+      "answer": "A、B、C",
+      "solution": {
+        "knowledge": ["相关变化率建模顺序", "有向变化率", "量纲检查", "变量与瞬时值"],
+        "analysis": "所有几何量都是时间函数。当前数值只能在对关系求导之后代入，否则会错误地把正在变化的量当常数。",
+        "steps": [
+          "A 正确：先建立对一段时间都成立的关系，才能通过链式法则连接各变化率。",
+          "B 正确：变化率带方向，减小量在所选正方向下应为负。",
+          "C 正确：体积的量纲为长度³，除以时间后得到长度³/时间。",
+          "D 错误：若先把变量替成当前常数，求导会把其变化率错误消掉。",
+          "因此正确选项为 A、B、C。"
+        ],
+        "pitfalls": ["只写变化率绝对值而忽略方向", "在求导前过早代入瞬时数值", "把面积率或体积率单位仍写成长度/时间"],
+        "verification": "以 V=(4/3)πr³ 为例，若先代入 r=5 就得到常数体积并错误给出导数 0；正确做法先得 dV/dt=4πr²dr/dt。",
+        "takeaway": "相关变化率的固定流程是关系、对时间求导、代入瞬时数据、检查符号与单位。",
+        "extension": "选定相反正方向会同时改变某些速率的符号，但只要前后一致，物理结论不变。"
+      }
+    },
+    "en": {
+      "title": "Modeling Principles for Related Rates",
+      "prompt": "Which statements about related-rate problems are correct? Select all that apply.",
+      "choices": [
+        "A. First write a geometric or physical relation valid over time, then differentiate with respect to t",
+        "B. If a length is decreasing, its rate is negative under the chosen positive direction",
+        "C. The unit of dV/dt is length³/time",
+        "D. Current numerical values may be substituted before differentiation and treated as constants because only one instant matters"
+      ],
+      "answer": "A, B, and C",
+      "solution": {
+        "knowledge": ["Order of related-rate modeling", "Signed rates", "Dimensional checking", "Variables versus instantaneous values"],
+        "analysis": "Every geometric quantity is a function of time. Instantaneous values should be inserted only after differentiating, or a changing quantity may be frozen incorrectly.",
+        "steps": [
+          "A is correct: a relation valid over time allows the chain rule to connect the rates.",
+          "B is correct: a decreasing quantity has a negative signed rate under the chosen positive direction.",
+          "C is correct because volume has dimension length³, so its rate has dimension length³/time.",
+          "D is false: substituting first can turn a changing variable into a constant and erase its rate.",
+          "Therefore A, B, and C are correct."
+        ],
+        "pitfalls": ["Ignoring the sign of a directed rate", "Substituting instantaneous values too early", "Giving an area or volume rate the unit length/time"],
+        "verification": "For V=(4/3)πr³, substituting r=5 first makes V look constant and falsely gives derivative 0; differentiating first gives dV/dt=4πr²dr/dt.",
+        "takeaway": "Use the fixed sequence: relation, differentiate in time, substitute instantaneous data, then check sign and units.",
+        "extension": "Choosing the opposite positive direction changes some signs, but consistent use leaves the physical conclusion unchanged."
+      }
+    }
+  },
+  {
+    "id": "C014",
+    "section": 4,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["相关变化率", "球体体积", "单位"],
+      "en": ["related rates", "sphere volume", "units"]
+    },
+    "minutes": 9,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "膨胀球体的体积变化率",
+      "prompt": "一个球形气球的半径以 2 cm/s 的速率增加。当半径为 5 cm 时，球体积增加多快？",
+      "answer": "dV/dt=200π cm³/s。",
+      "solution": {
+        "knowledge": ["球体积公式", "链式法则", "相关变化率单位"],
+        "analysis": "半径 r=r(t)，体积 V=(4/3)πr³。先对 t 求导，再代入 r 与 dr/dt。",
+        "steps": [
+          "设 r 的单位为 cm、t 的单位为 s，已知 dr/dt=2 cm/s。",
+          "球体积满足 V=(4/3)πr³。",
+          "对 t 求导，dV/dt=4πr²·dr/dt。",
+          "代入 r=5 与 dr/dt=2，得到 dV/dt=4π·25·2。",
+          "所以 dV/dt=200π cm³/s，正号表示体积增加。"
+        ],
+        "pitfalls": ["把 dV/dt 写成 4πr² 而漏掉 dr/dt", "把半径 5 当作直径", "体积率单位写成 cm/s"],
+        "verification": "量纲为 cm²·cm/s=cm³/s；所有因子为正，结果与气球膨胀相符。",
+        "takeaway": "几何公式对时间求导时，每个随时间变化的长度都要带上相应时间导数。",
+        "extension": "若半径以同样速率减小，则 dr/dt=−2 cm/s，体积率为 −200π cm³/s。"
+      }
+    },
+    "en": {
+      "title": "Volume Rate of an Expanding Sphere",
+      "prompt": "The radius of a spherical balloon increases at 2 cm/s. How fast is its volume increasing when the radius is 5 cm?",
+      "answer": "dV/dt=200π cm³/s.",
+      "solution": {
+        "knowledge": ["Volume of a sphere", "Chain rule", "Units in related rates"],
+        "analysis": "Let r=r(t) and V=(4/3)πr³. Differentiate with respect to t before inserting r and dr/dt.",
+        "steps": [
+          "Use cm for r and s for t; the given rate is dr/dt=2 cm/s.",
+          "The sphere volume is V=(4/3)πr³.",
+          "Differentiate in time: dV/dt=4πr²·dr/dt.",
+          "Substitute r=5 and dr/dt=2 to obtain dV/dt=4π·25·2.",
+          "Thus dV/dt=200π cm³/s; the positive sign indicates increasing volume."
+        ],
+        "pitfalls": ["Omitting dr/dt", "Treating 5 as the diameter", "Using cm/s for a volume rate"],
+        "verification": "The dimension is cm²·cm/s=cm³/s, and the positive sign agrees with expansion.",
+        "takeaway": "When differentiating a geometric formula in time, attach the appropriate time derivative to every changing length.",
+        "extension": "If the radius decreases at the same speed, dr/dt=−2 cm/s and dV/dt=−200π cm³/s."
+      }
+    }
+  },
+  {
+    "id": "C015",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "comprehensive",
+    "tags": {
+      "zh": ["相关变化率", "相似圆锥", "体积", "单位"],
+      "en": ["related rates", "similar cones", "volume", "units"]
+    },
+    "minutes": 18,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "圆锥水面的半径与体积变化",
+      "prompt": "倒置圆锥形容器中水面形成相似圆锥，始终满足 h=3r，其中 h、r 单位为 cm。水深以 dh/dt=6 cm/min 增加。当 h=6 cm 时，求 dr/dt 与 dV/dt。",
+      "answer": "dr/dt=2 cm/min；dV/dt=24π cm³/min。",
+      "solution": {
+        "knowledge": ["相似关系", "圆锥体积", "多变量相关变化率", "单位检查"],
+        "analysis": "相似关系先把 r 与 h 联系起来。可将体积化为 h 的单变量函数，避免同时处理两个未知速率。",
+        "steps": [
+          "由 h=3r，得 r=h/3；对时间求导得 dr/dt=(1/3)dh/dt=2 cm/min。",
+          "当 h=6 cm 时，r=6/3=2 cm。",
+          "水体积 V=(1/3)πr²h；代入 r=h/3，得到 V=πh³/27。",
+          "对时间求导：dV/dt=(πh²/9)·dh/dt。",
+          "代入 h=6 与 dh/dt=6，得到 dV/dt=(π·36/9)·6=24π cm³/min。",
+          "两个结果均为正，符合水深和水量都增加的情境。"
+        ],
+        "pitfalls": ["把容器口半径当作水面半径常数", "漏用相似关系 h=3r", "圆锥体积漏掉 1/3", "体积率单位写成 cm/min"],
+        "verification": "直接对 V=(1/3)πr²h 求导并代入 r=2,h=6,dr/dt=2,dh/dt=6，也得到 (1/3)π[2rh r′+r²h′]=24π。",
+        "takeaway": "相似容器相关变化率先用几何比例减少变量，再对时间求导最稳妥。",
+        "extension": "若相似关系改为 h=kr，则 V=πh³/(3k²)，可由同一方法求体积率。"
+      }
+    },
+    "en": {
+      "title": "Radius and Volume Rates in a Conical Water Surface",
+      "prompt": "Water in an inverted conical tank forms similar cones satisfying h=3r, with h and r in cm. The depth increases at dh/dt=6 cm/min. When h=6 cm, find dr/dt and dV/dt.",
+      "answer": "dr/dt=2 cm/min; dV/dt=24π cm³/min.",
+      "solution": {
+        "knowledge": ["Similarity relation", "Cone volume", "Related rates with several variables", "Unit checking"],
+        "analysis": "Use similarity to connect r and h. Expressing volume as a function of h alone avoids two unknown rates.",
+        "steps": [
+          "From h=3r, r=h/3. Differentiate to get dr/dt=(1/3)dh/dt=2 cm/min.",
+          "When h=6 cm, r=6/3=2 cm.",
+          "The water volume is V=(1/3)πr²h. Substituting r=h/3 gives V=πh³/27.",
+          "Differentiate in time: dV/dt=(πh²/9)·dh/dt.",
+          "With h=6 and dh/dt=6, dV/dt=(π·36/9)·6=24π cm³/min.",
+          "Both rates are positive, consistent with increasing depth and volume."
+        ],
+        "pitfalls": ["Treating the tank's rim radius as the current water radius", "Omitting h=3r", "Dropping the factor 1/3 in cone volume", "Using cm/min for a volume rate"],
+        "verification": "Differentiating V=(1/3)πr²h directly and substituting r=2,h=6,r′=2,h′=6 also gives 24π.",
+        "takeaway": "For similar-container related rates, reduce the variables with geometry before differentiating in time.",
+        "extension": "If h=kr, then V=πh³/(3k²), and the same method gives its rate."
+      }
+    }
+  },
+  {
+    "id": "C016",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "comprehensive",
+    "tags": {
+      "zh": ["相关变化率", "梯子模型", "角速度", "单位"],
+      "en": ["related rates", "ladder model", "angular velocity", "units"]
+    },
+    "minutes": 20,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "滑动梯子的线速度与角速度",
+      "prompt": "一架 10 m 长的梯子靠墙，底端以 dx/dt=0.6 m/s 沿地面远离墙移动。设底端离墙为 x、顶端高度为 y、梯子与地面夹角为 θ。当 x=6 m 时，求 dy/dt 与 dθ/dt。",
+      "answer": "dy/dt=−0.45 m/s；dθ/dt=−0.075 rad/s。",
+      "solution": {
+        "knowledge": ["勾股关系", "相关变化率符号", "角速度", "三角关系"],
+        "analysis": "长度固定给出 x²+y²=100；角速度可由 x=10cosθ 求得。负号应与顶端下滑、夹角变小一致。",
+        "steps": [
+          "当 x=6 时，由 x²+y²=100 得 y=√(100−36)=8 m。",
+          "对 x²+y²=100 关于 t 求导，得到 2x dx/dt+2y dy/dt=0。",
+          "代入 x=6、y=8、dx/dt=0.6，得 dy/dt=−(6/8)(0.6)=−0.45 m/s。",
+          "由 x=10cosθ，对 t 求导得 dx/dt=−10sinθ·dθ/dt。",
+          "此时 sinθ=y/10=0.8，所以 dθ/dt=0.6/[−10(0.8)]=−0.075 rad/s。",
+          "两个负号分别表示梯顶下降与夹角减小。"
+        ],
+        "pitfalls": ["把梯长 10 当成随时间变化", "求 y 时取负根", "角速度单位漏写 rad/s", "忽略负号的物理含义"],
+        "verification": "也可用 y=10sinθ 求导：dy/dt=10cosθ·θ′=10(0.6)(−0.075)=−0.45 m/s，与前式一致。",
+        "takeaway": "相关变化率结果要同时通过第二条关系、符号和单位三重核对。",
+        "extension": "若底端改为向墙移动，则 dx/dt<0，顶端速度和角速度的符号同时反转。"
+      }
+    },
+    "en": {
+      "title": "Linear and Angular Rates of a Sliding Ladder",
+      "prompt": "A 10 m ladder leans against a wall. Its foot moves away from the wall at dx/dt=0.6 m/s. Let x be the foot's distance from the wall, y the top height, and θ the angle with the ground. When x=6 m, find dy/dt and dθ/dt.",
+      "answer": "dy/dt=−0.45 m/s; dθ/dt=−0.075 rad/s.",
+      "solution": {
+        "knowledge": ["Pythagorean relation", "Signs in related rates", "Angular velocity", "Trigonometric relation"],
+        "analysis": "The fixed length gives x²+y²=100. The angular rate follows from x=10cosθ. Negative signs should match a falling top and decreasing angle.",
+        "steps": [
+          "When x=6, x²+y²=100 gives y=√(100−36)=8 m.",
+          "Differentiate x²+y²=100 in time: 2x dx/dt+2y dy/dt=0.",
+          "Substitute x=6,y=8,dx/dt=0.6 to get dy/dt=−(6/8)(0.6)=−0.45 m/s.",
+          "From x=10cosθ, differentiation gives dx/dt=−10sinθ·dθ/dt.",
+          "Here sinθ=y/10=0.8, so dθ/dt=0.6/[−10(0.8)]=−0.075 rad/s.",
+          "The two negative signs indicate that the top falls and the angle decreases."
+        ],
+        "pitfalls": ["Treating the 10 m length as variable", "Taking a negative height", "Omitting rad/s for angular velocity", "Ignoring the physical meaning of signs"],
+        "verification": "Using y=10sinθ gives dy/dt=10cosθ·θ′=10(0.6)(−0.075)=−0.45 m/s, confirming the result.",
+        "takeaway": "Check a related-rate answer with a second relation, its sign, and its units.",
+        "extension": "If the foot moves toward the wall, dx/dt<0 and both the top rate and angular rate reverse sign."
+      }
+    }
+  },
+  {
+    "id": "C017",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "proof",
+    "tags": {
+      "zh": ["隐函数一般公式", "链式法则", "证明"],
+      "en": ["general implicit formula", "chain rule", "proof"]
+    },
+    "minutes": 17,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "可分隐式方程的一般导数公式",
+      "prompt": "设 φ、ψ 可导，y=y(x) 满足 φ(x)+ψ(y)=C，并且 ψ′(y)≠0。证明 y′=−φ′(x)/ψ′(y)，并说明条件 ψ′(y)≠0 的作用。",
+      "answer": "对等式求导得 φ′(x)+ψ′(y)y′=0；因 ψ′(y)≠0 可相除，故 y′=−φ′(x)/ψ′(y)。",
+      "solution": {
+        "knowledge": ["隐式复合求导", "链式法则", "非零条件", "一般公式证明"],
+        "analysis": "ψ(y) 是 ψ 与 y(x) 的复合。证明的唯一除法步骤需要 ψ′(y) 非零。",
+        "steps": [
+          "从恒等关系 φ(x)+ψ(y(x))=C 出发。",
+          "对 x 求导，φ(x) 给出 φ′(x)。",
+          "由链式法则，ψ(y(x)) 的导数为 ψ′(y)y′；常数 C 的导数为 0。",
+          "因此 φ′(x)+ψ′(y)y′=0。",
+          "因 ψ′(y)≠0，可除以该量，得到 y′=−φ′(x)/ψ′(y)。",
+          "若 ψ′(y)=0，上述除法失效，有限的 y′ 未必存在，可能出现竖直切线或需更细分析。"
+        ],
+        "pitfalls": ["把 d[ψ(y)]/dx 写成 ψ′(y) 而漏掉 y′", "未使用或未解释非零条件", "把 C 当作 x 的函数"],
+        "verification": "取 φ(x)=x²、ψ(y)=y²、C=25，公式给 y′=−2x/(2y)=−x/y，与圆的隐式求导一致。",
+        "takeaway": "一般隐函数公式来自一次链式求导；分母非零既保证代数可解，也对应局部有限斜率。",
+        "extension": "若改求 x 对 y 的导数，并且 φ′(x)≠0，可对称得到 dx/dy=−ψ′(y)/φ′(x)。"
+      }
+    },
+    "en": {
+      "title": "A General Derivative Formula for a Separable Implicit Equation",
+      "prompt": "Let φ and ψ be differentiable, and suppose y=y(x) satisfies φ(x)+ψ(y)=C with ψ′(y)≠0. Prove y′=−φ′(x)/ψ′(y), and explain the role of ψ′(y)≠0.",
+      "answer": "Differentiation gives φ′(x)+ψ′(y)y′=0. Since ψ′(y)≠0, division yields y′=−φ′(x)/ψ′(y).",
+      "solution": {
+        "knowledge": ["Implicit composite differentiation", "Chain rule", "Nonzero condition", "Proof of a general formula"],
+        "analysis": "The term ψ(y) is a composition of ψ with y(x). The only division in the proof requires ψ′(y) to be nonzero.",
+        "steps": [
+          "Start with the identity φ(x)+ψ(y(x))=C.",
+          "Differentiate φ(x) to obtain φ′(x).",
+          "By the chain rule, d[ψ(y(x))]/dx=ψ′(y)y′, while dC/dx=0.",
+          "Therefore φ′(x)+ψ′(y)y′=0.",
+          "Since ψ′(y)≠0, divide to get y′=−φ′(x)/ψ′(y).",
+          "If ψ′(y)=0, this division fails; a finite y′ may not exist, and vertical behavior may require separate analysis."
+        ],
+        "pitfalls": ["Omitting y′ from d[ψ(y)]/dx", "Failing to use or explain the nonzero condition", "Treating C as a variable function"],
+        "verification": "For φ(x)=x², ψ(y)=y², and C=25, the formula gives y′=−2x/(2y)=−x/y, matching the circle calculation.",
+        "takeaway": "The general implicit formula comes from one chain-rule differentiation; the nonzero denominator permits a finite local slope.",
+        "extension": "If x is differentiated with respect to y and φ′(x)≠0, symmetry gives dx/dy=−ψ′(y)/φ′(x)."
+      }
+    }
+  },
+  {
+    "id": "C018",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "proof",
+    "tags": {
+      "zh": ["参数二阶导数公式", "商法则", "证明"],
+      "en": ["second parametric derivative formula", "quotient rule", "proof"]
+    },
+    "minutes": 23,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "推导参数二阶导数公式",
+      "prompt": "设 x=x(t)、y=y(t) 二阶可导且 x′(t)≠0。证明 d²y/dx²=[x′(t)y″(t)−y′(t)x″(t)]/[x′(t)]³。",
+      "answer": "由 dy/dx=y′(t)/x′(t)，再用 d/dx=[1/x′(t)]d/dt 与商法则即可得到公式。",
+      "solution": {
+        "knowledge": ["参数一阶导数", "d/dx 与 d/dt 的关系", "商法则", "二阶导数"],
+        "analysis": "先把 dy/dx 看成 t 的函数。对 x 求导等于先对 t 求导，再除以 dx/dt。",
+        "steps": [
+          "因 x′(t)≠0，一阶参数导数为 dy/dx=y′(t)/x′(t)。",
+          "对任何可导的 t 函数 H(t)，有 dH/dx=(dH/dt)/(dx/dt)=H′(t)/x′(t)。",
+          "令 H(t)=y′(t)/x′(t)，则 d²y/dx²=(1/x′)·d/dt[y′/x′]。",
+          "由商法则，d/dt[y′/x′]=[y″x′−y′x″]/(x′)²。",
+          "再乘 1/x′，得到 d²y/dx²=[x′y″−y′x″]/(x′)³。",
+          "所有除法均依赖 x′(t)≠0，公式得证。"
+        ],
+        "pitfalls": ["把二阶导数误写成 y″(t)/x″(t)", "商法则分子次序颠倒", "最后漏乘 1/x′", "未说明 x′≠0"],
+        "verification": "代入 x=t²+1、y=t³：分子 (2t)(6t)−(3t²)(2)=6t²，分母 8t³，得到 3/(4t)，与直接计算一致。",
+        "takeaway": "参数二阶导数包含两次变量转换，因此分母最终出现 [x′(t)]³。",
+        "extension": "该公式只描述 x′≠0 的普通点；x′=0 时不能直接套用。"
+      }
+    },
+    "en": {
+      "title": "Deriving the Second Parametric Derivative Formula",
+      "prompt": "Let x=x(t) and y=y(t) be twice differentiable with x′(t)≠0. Prove d²y/dx²=[x′(t)y″(t)−y′(t)x″(t)]/[x′(t)]³.",
+      "answer": "Start from dy/dx=y′(t)/x′(t), then use d/dx=[1/x′(t)]d/dt and the quotient rule.",
+      "solution": {
+        "knowledge": ["First parametric derivative", "Relation between d/dx and d/dt", "Quotient rule", "Second derivative"],
+        "analysis": "Treat dy/dx as a function of t. Differentiating with respect to x means differentiating in t and then dividing by dx/dt.",
+        "steps": [
+          "Since x′(t)≠0, dy/dx=y′(t)/x′(t).",
+          "For any differentiable H(t), dH/dx=(dH/dt)/(dx/dt)=H′(t)/x′(t).",
+          "With H(t)=y′(t)/x′(t), d²y/dx²=(1/x′)·d/dt[y′/x′].",
+          "The quotient rule gives d/dt[y′/x′]=[y″x′−y′x″]/(x′)².",
+          "Multiplying by 1/x′ yields d²y/dx²=[x′y″−y′x″]/(x′)³.",
+          "Every division uses x′(t)≠0, completing the proof."
+        ],
+        "pitfalls": ["Using y″(t)/x″(t)", "Reversing the quotient-rule numerator", "Forgetting the final factor 1/x′", "Omitting x′≠0"],
+        "verification": "For x=t²+1,y=t³, the formula gives [(2t)(6t)−(3t²)(2)]/(2t)³=3/(4t), matching the direct result.",
+        "takeaway": "A second parametric derivative converts variables twice, which creates the cube [x′(t)]³ in the denominator.",
+        "extension": "The formula applies only where x′≠0; points with x′=0 require separate analysis."
+      }
+    }
+  },
+  {
+    "id": "C019",
+    "section": 4,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "error_diagnosis",
+    "tags": {
+      "zh": ["相关变化率错解", "圆锥相似", "单位诊断"],
+      "en": ["related-rate error", "similar cones", "unit diagnosis"]
+    },
+    "minutes": 22,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "诊断圆锥水面半径被冻结的错误",
+      "prompt": "倒置圆锥容器高 9 m、口半径 3 m。水深 h 以 0.2 m/min 上升；当 h=3 m 时求水体积变化率。某同学把水体半径直接取为容器口半径 3 m，写 V=(1/3)π·3²h，得到 dV/dt=0.6π m³/min。指出错误并给出正确结果。",
+      "answer": "水面半径随 h 变化，不能固定为 3 m。由 r/h=1/3，V=πh³/27，故在 h=3 m 时 dV/dt=0.2π m³/min。",
+      "solution": {
+        "knowledge": ["瞬时水面半径", "相似三角形", "相关变化率错解诊断", "圆锥体积"],
+        "analysis": "3 m 是容器满口半径，不是任意水深下的水面半径。错误本质是把随时间变化的 r 冻结成常数。",
+        "steps": [
+          "容器高与口半径之比为 9:3=3:1；水体与容器相似，所以 r/h=1/3。",
+          "因此当前水面半径 r=h/3，而不是始终等于 3 m。",
+          "代入圆锥体积 V=(1/3)πr²h，得 V=(1/3)π(h²/9)h=πh³/27。",
+          "对时间求导：dV/dt=(πh²/9)dh/dt。",
+          "代入 h=3 m 与 dh/dt=0.2 m/min，得 dV/dt=(π·9/9)(0.2)=0.2π m³/min。",
+          "原解 0.6π 高估了体积率，因为它使用了只有水满到 h=9 m 时才达到的半径 3 m。"
+        ],
+        "pitfalls": ["混淆容器固定尺寸与水体瞬时尺寸", "先代入数值后把变量错误视为常数", "漏掉相似关系", "未检查 m³/min 量纲"],
+        "verification": "当 h=3 m 时正确水面半径为 1 m；直接用多变量公式 dV/dt=(π/3)[2rhr′+r²h′]，其中 r′=h′/3，也得到 0.2π。",
+        "takeaway": "相关变化率错解常源于冻结一个仍在变化的几何量；先标明每个量是否随时间变化。",
+        "extension": "若容器是圆柱，横截面半径才是固定的，此时可以直接使用 V=πR²h。"
+      }
+    },
+    "en": {
+      "title": "Diagnosing a Frozen Water-Surface Radius",
+      "prompt": "An inverted conical tank is 9 m high with rim radius 3 m. The water depth rises at 0.2 m/min. Find the volume rate when h=3 m. A student fixes the water radius at 3 m, writes V=(1/3)π·3²h, and obtains dV/dt=0.6π m³/min. Diagnose the error and give the correct result.",
+      "answer": "The water-surface radius changes with h and cannot be fixed at 3 m. Since r/h=1/3, V=πh³/27, so at h=3 m, dV/dt=0.2π m³/min.",
+      "solution": {
+        "knowledge": ["Instantaneous water-surface radius", "Similar triangles", "Related-rate error diagnosis", "Cone volume"],
+        "analysis": "The 3 m radius belongs to the full rim, not to every water depth. The error freezes the time-dependent radius r as a constant.",
+        "steps": [
+          "The tank height-to-radius ratio is 9:3=3:1. Similarity gives r/h=1/3.",
+          "Thus the current water radius is r=h/3, not always 3 m.",
+          "Substitute into V=(1/3)πr²h to get V=(1/3)π(h²/9)h=πh³/27.",
+          "Differentiate: dV/dt=(πh²/9)dh/dt.",
+          "At h=3 m and dh/dt=0.2 m/min, dV/dt=(π·9/9)(0.2)=0.2π m³/min.",
+          "The student's 0.6π is too large because radius 3 m occurs only when the water reaches h=9 m."
+        ],
+        "pitfalls": ["Confusing fixed tank dimensions with instantaneous water dimensions", "Freezing a variable by early substitution", "Omitting similarity", "Failing to check m³/min"],
+        "verification": "At h=3 m, r=1 m. Direct differentiation of V=(π/3)r²h with r′=h′/3 also gives 0.2π.",
+        "takeaway": "A common related-rate error is freezing a geometric quantity that still varies with time; identify every time-dependent variable first.",
+        "extension": "For a cylinder, the cross-sectional radius is fixed, so V=πR²h may be used directly."
+      }
+    }
+  },
+  {
+    "id": "C020",
+    "section": 4,
+    "tier": "challenge",
+    "difficulty": "challenge",
+    "type": "proof",
+    "tags": {
+      "zh": ["隐函数二阶导数一般式", "高阶链式法则", "挑战证明"],
+      "en": ["general second implicit derivative", "higher chain rule", "challenge proof"]
+    },
+    "minutes": 32,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "可分隐式方程的二阶导数通式",
+      "prompt": "设 φ、ψ 二阶可导，y=y(x) 满足 φ(x)+ψ(y)=C，且 ψ′(y)≠0。证明 y″=−{φ″(x)[ψ′(y)]²+[φ′(x)]²ψ″(y)}/[ψ′(y)]³。全程只用第二章求导法则。",
+      "answer": "先由 y′=−φ′/ψ′，再对 φ′+ψ′y′=0 求导并代回 y′，即可得到所给通式。",
+      "solution": {
+        "knowledge": ["隐函数二阶求导", "乘积与链式法则", "一般公式", "代数消元"],
+        "analysis": "直接对一阶关系 φ′(x)+ψ′(y)y′=0 再求导，比对分式 y′=−φ′/ψ′ 使用商法则更清晰。",
+        "steps": [
+          "第一次求导得到 φ′(x)+ψ′(y)y′=0，因此 y′=−φ′(x)/ψ′(y)。",
+          "对一阶关系再次求导，φ′(x) 给出 φ″(x)。",
+          "对 ψ′(y)y′ 使用乘积法则与链式法则，得到 ψ″(y)(y′)²+ψ′(y)y″。",
+          "所以 φ″(x)+ψ″(y)(y′)²+ψ′(y)y″=0。",
+          "解出 y″=−[φ″(x)+ψ″(y)(y′)²]/ψ′(y)。",
+          "代入 (y′)²=[φ′(x)]²/[ψ′(y)]²，并通分，得到 y″=−{φ″(x)[ψ′(y)]²+[φ′(x)]²ψ″(y)}/[ψ′(y)]³。",
+          "所有分式均由 ψ′(y)≠0 保证有定义，公式得证。"
+        ],
+        "pitfalls": ["把 d[ψ′(y)]/dx 写成 ψ″(y) 而漏掉 y′", "对 ψ′(y)y′ 不用乘积法则", "代入 y′ 后漏掉平方", "通分时把分母幂次写成 2"],
+        "verification": "取 φ=x²、ψ=y²，通式给 y″=−[2(2y)²+(2x)²·2]/(2y)³=−(x²+y²)/y³；由圆方程直接二次求导也得到同式。",
+        "takeaway": "一般二阶隐式公式来自对一阶关系再求导；最关键的新项是 ψ″(y)(y′)²。",
+        "extension": "对具体题目通常不必背通式，保留一阶导数关系逐次求导更不易出错。"
+      }
+    },
+    "en": {
+      "title": "A General Second-Derivative Formula for a Separable Implicit Equation",
+      "prompt": "Let φ and ψ be twice differentiable, with y=y(x) satisfying φ(x)+ψ(y)=C and ψ′(y)≠0. Prove y″=−{φ″(x)[ψ′(y)]²+[φ′(x)]²ψ″(y)}/[ψ′(y)]³ using only the differentiation rules of this chapter.",
+      "answer": "First obtain y′=−φ′/ψ′, then differentiate φ′+ψ′y′=0 again and substitute y′.",
+      "solution": {
+        "knowledge": ["Second implicit differentiation", "Product and chain rules", "General formula", "Algebraic elimination"],
+        "analysis": "Differentiating the first relation φ′(x)+ψ′(y)y′=0 again is clearer than applying the quotient rule directly to y′=−φ′/ψ′.",
+        "steps": [
+          "The first derivative gives φ′(x)+ψ′(y)y′=0, hence y′=−φ′(x)/ψ′(y).",
+          "Differentiate the first relation again; φ′(x) becomes φ″(x).",
+          "The product and chain rules give d[ψ′(y)y′]/dx=ψ″(y)(y′)²+ψ′(y)y″.",
+          "Thus φ″(x)+ψ″(y)(y′)²+ψ′(y)y″=0.",
+          "Solve for y″=−[φ″(x)+ψ″(y)(y′)²]/ψ′(y).",
+          "Substitute (y′)²=[φ′(x)]²/[ψ′(y)]² and combine denominators to obtain the stated formula.",
+          "The condition ψ′(y)≠0 makes every division valid."
+        ],
+        "pitfalls": ["Omitting y′ from d[ψ′(y)]/dx", "Failing to use the product rule on ψ′(y)y′", "Forgetting the square on y′", "Using denominator power 2 instead of 3"],
+        "verification": "For φ=x² and ψ=y², the formula gives y″=−(x²+y²)/y³, exactly as direct second differentiation of a circle does.",
+        "takeaway": "The general second implicit formula comes from differentiating the first relation again; the new key term is ψ″(y)(y′)².",
+        "extension": "For specific problems, repeatedly differentiating the relation is usually safer than memorizing the general formula."
+      }
+    }
+  },
+  {
+    "id": "C021",
+    "section": 5,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["微分定义", "线性主部", "单项选择"],
+      "en": ["definition of differential", "linear principal part", "single choice"]
+    },
+    "minutes": 5,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "识别函数微分",
+      "prompt": "若 y=f(x) 在 x 处可导，并令 dx=Δx，则 y 的微分 dy 是下列哪一项？",
+      "choices": [
+        "A. dy=f′(x)dx",
+        "B. dy=Δy 对任意有限 Δx 恒成立",
+        "C. dy=f(x)dx",
+        "D. dy 与 dx 无关"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["一元函数微分定义", "自变量微分 dx", "函数增量与微分的区别"],
+        "analysis": "可导函数的增量可写成线性主部与高阶小量之和；线性主部 f′(x)Δx 定义为 dy。",
+        "steps": [
+          "令自变量增量为 Δx，并规定 dx=Δx。",
+          "可导性给出 Δy=f′(x)Δx+o(Δx)。",
+          "其中关于 Δx 的线性部分 f′(x)Δx 定义为函数微分。",
+          "因此 dy=f′(x)dx，A 正确。",
+          "dy 通常只近似 Δy，不对任意有限增量与 Δy 恒等。"
+        ],
+        "pitfalls": ["把 dy 与 Δy 永远视为相同", "把函数值 f(x) 当作导数", "认为 dy 不依赖 dx"],
+        "verification": "对 f(x)=x²，有 Δy=2xΔx+(Δx)²，而 dy=2x dx；二者之差为 (Δx)²。",
+        "takeaway": "微分是函数增量关于自变量增量的线性主部。",
+        "extension": "在线性函数 y=ax+b 中，高阶余项为 0，因此 dy=Δy 对所有增量都精确成立。"
+      }
+    },
+    "en": {
+      "title": "Recognizing the Differential of a Function",
+      "prompt": "If y=f(x) is differentiable at x and dx=Δx, which expression is the differential dy?",
+      "choices": [
+        "A. dy=f′(x)dx",
+        "B. dy=Δy for every finite Δx",
+        "C. dy=f(x)dx",
+        "D. dy is independent of dx"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["Definition of a one-variable differential", "Independent-variable differential dx", "Difference between increment and differential"],
+        "analysis": "For a differentiable function, the increment is a linear principal part plus a higher-order small term. The linear part f′(x)Δx is defined as dy.",
+        "steps": [
+          "Let the independent-variable increment be Δx and set dx=Δx.",
+          "Differentiability gives Δy=f′(x)Δx+o(Δx).",
+          "The part f′(x)Δx that is linear in Δx is defined as the differential.",
+          "Therefore dy=f′(x)dx, so A is correct.",
+          "In general dy only approximates Δy; it is not exactly equal for every finite increment."
+        ],
+        "pitfalls": ["Treating dy and Δy as always identical", "Using f(x) instead of f′(x)", "Assuming dy is independent of dx"],
+        "verification": "For f(x)=x², Δy=2xΔx+(Δx)² while dy=2x dx; their difference is (Δx)².",
+        "takeaway": "The differential is the part of the function increment that is linear in the independent-variable increment.",
+        "extension": "For a linear function y=ax+b, the higher-order remainder is zero, so dy=Δy exactly for every increment."
+      }
+    }
+  },
+  {
+    "id": "C022",
+    "section": 5,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["微分计算", "幂函数", "填空"],
+      "en": ["differential calculation", "power function", "fill in the blank"]
+    },
+    "minutes": 5,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "幂函数的微分数值",
+      "prompt": "若 y=x³，在 x=2 且 dx=0.01 时，dy=____。",
+      "answer": "0.12",
+      "solution": {
+        "knowledge": ["dy=f′(x)dx", "幂函数导数", "数值代入"],
+        "analysis": "先求一般微分 dy=3x²dx，再代入基点 x=2 与自变量微分 dx=0.01。",
+        "steps": [
+          "对 y=x³ 求导，得到 y′=3x²。",
+          "函数微分为 dy=y′dx=3x²dx。",
+          "在 x=2 时，3x²=3·4=12。",
+          "再代入 dx=0.01，得到 dy=12·0.01。",
+          "所以 dy=0.12。"
+        ],
+        "pitfalls": ["把 x+dx=2.01 代入导数作为基点", "把 d(x³) 写成 x²dx", "漏乘 dx"],
+        "verification": "精确增量为 2.01³−2³=0.120601，微分 0.12 是其线性主部，数值接近但不完全相等。",
+        "takeaway": "微分系数在基点计算，再乘自变量的微小改变量。",
+        "extension": "若 dx=−0.01，则 dy=−0.12，符号反映局部变化方向。"
+      }
+    },
+    "en": {
+      "title": "Numerical Differential of a Power Function",
+      "prompt": "If y=x³, then at x=2 with dx=0.01, dy=____.",
+      "answer": "0.12",
+      "solution": {
+        "knowledge": ["dy=f′(x)dx", "Power-function derivative", "Numerical substitution"],
+        "analysis": "First obtain dy=3x²dx, then substitute the base point x=2 and dx=0.01.",
+        "steps": [
+          "Differentiate y=x³ to get y′=3x².",
+          "The differential is dy=y′dx=3x²dx.",
+          "At x=2, 3x²=3·4=12.",
+          "With dx=0.01, substitute into dy=12dx to obtain dy=12·0.01.",
+          "Therefore dy=0.12; this is the linear estimate of the corresponding output increment."
+        ],
+        "pitfalls": ["Evaluating the derivative at x+dx=2.01", "Writing d(x³)=x²dx", "Forgetting to multiply by dx"],
+        "verification": "The exact increment is 2.01³−2³=0.120601. The differential 0.12 is close but not identical.",
+        "takeaway": "Evaluate the differential coefficient at the base point, then multiply by the small input change.",
+        "extension": "If dx=−0.01, then dy=−0.12, reflecting the local direction of change."
+      }
+    }
+  },
+  {
+    "id": "C023",
+    "section": 5,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "true_false",
+    "tags": {
+      "zh": ["可微与可导", "定义等价", "判断辨析"],
+      "en": ["differentiability and derivative", "equivalent definitions", "true or false"]
+    },
+    "minutes": 9,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "一元函数可微与可导",
+      "prompt": "判断并说明理由：对一元函数 y=f(x)，在一点可微与在该点可导是等价的，而且微分系数就是 f′(x)。",
+      "answer": "正确。一元函数可微意味着 Δy=AΔx+o(Δx)，除以 Δx 后导数存在且等于 A；反之可导立即给出同一分解。",
+      "solution": {
+        "knowledge": ["可微定义", "导数定义", "一元情形的等价性", "微分系数"],
+        "analysis": "等价性的桥梁是增量分解 Δy=AΔx+o(Δx)。除以 Δx 可得到差商极限。",
+        "steps": [
+          "若 f 在点 x 可微，则存在常数 A，使 Δy=AΔx+o(Δx)。",
+          "当 Δx≠0 时除以 Δx，得到 Δy/Δx=A+o(Δx)/Δx。",
+          "令 Δx→0，第二项趋于 0，所以导数存在且 f′(x)=A。",
+          "反之，若 f′(x) 存在，则 Δy/Δx−f′(x)→0。",
+          "令余项 α(Δx)=Δy−f′(x)Δx，可得 α(Δx)/Δx→0，因此 Δy=f′(x)Δx+o(Δx)，即 f 可微。",
+          "所以命题正确，微分为 dy=f′(x)dx。"
+        ],
+        "pitfalls": ["把多元函数的情形无条件套到一元函数", "只说教材结论而不给增量分解", "把可微误解为函数值很小"],
+        "verification": "两方向都由同一差商极限严格推出，且常数 A 被唯一确定为 f′(x)。",
+        "takeaway": "对一元函数，可导与可微等价；微分系数没有新数值，就是该点导数。",
+        "extension": "虽然可微与可导等价，但函数连续只是不足以推出可导，例如 |x| 在 0 连续却不可导。"
+      }
+    },
+    "en": {
+      "title": "Differentiability and Existence of a Derivative in One Variable",
+      "prompt": "True or false, with justification: For a one-variable function y=f(x), differentiability at a point is equivalent to existence of the derivative there, and the differential coefficient is f′(x).",
+      "answer": "True. Differentiability means Δy=AΔx+o(Δx); division by Δx yields a derivative equal to A, and conversely a derivative gives the same decomposition.",
+      "solution": {
+        "knowledge": ["Definition of differentiability", "Definition of derivative", "Equivalence in one variable", "Differential coefficient"],
+        "analysis": "The bridge is the increment decomposition Δy=AΔx+o(Δx). Dividing by Δx produces the difference-quotient limit.",
+        "steps": [
+          "If f is differentiable at x, there is a constant A with Δy=AΔx+o(Δx).",
+          "For Δx≠0, divide by Δx: Δy/Δx=A+o(Δx)/Δx.",
+          "As Δx→0, the second term tends to 0, so f′(x) exists and equals A.",
+          "Conversely, if f′(x) exists, then Δy/Δx−f′(x)→0.",
+          "Let α(Δx)=Δy−f′(x)Δx. Then α(Δx)/Δx→0, so Δy=f′(x)Δx+o(Δx).",
+          "Thus the statement is true and dy=f′(x)dx."
+        ],
+        "pitfalls": ["Transferring multivariable subtleties to the one-variable case", "Citing the result without the increment decomposition", "Interpreting differentiable as numerically small"],
+        "verification": "Both directions follow from the same difference-quotient limit, and A is uniquely determined as f′(x).",
+        "takeaway": "For one variable, existence of a derivative and differentiability are equivalent; the differential coefficient is the derivative.",
+        "extension": "Continuity alone is insufficient: |x| is continuous at 0 but not differentiable there."
+      }
+    }
+  },
+  {
+    "id": "C024",
+    "section": 5,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["微分运算法则", "对数复合函数", "数值微分"],
+      "en": ["differential rules", "logarithmic composite", "numerical differential"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "对数复合函数的微分",
+      "prompt": "设 y=ln(1+x²)。求 dy，并计算 x=1、dx=0.02 时的 dy。",
+      "answer": "dy=[2x/(1+x²)]dx；在 x=1、dx=0.02 时 dy=0.02。",
+      "solution": {
+        "knowledge": ["复合函数微分", "对数函数导数", "微分代入"],
+        "analysis": "先用链式法则求导，再乘 dx。基点 x=1 时微分系数恰为 1。",
+        "steps": [
+          "令 u=1+x²，则 y=ln u。",
+          "dy=(1/u)du，且 du=2x dx。",
+          "所以 dy=[2x/(1+x²)]dx。",
+          "在 x=1 时，系数 2x/(1+x²)=2/2=1。",
+          "代入 dx=0.02，得到 dy=1·0.02=0.02。"
+        ],
+        "pitfalls": ["把 d ln u 写成 ln u·du", "链式法则漏掉 2x", "用 x+dx 代替基点 x 计算系数"],
+        "verification": "精确增量 ln(1+1.02²)−ln2≈0.019998，接近微分 0.02。",
+        "takeaway": "复合函数的微分可按形式不变性逐层计算：dy=(1/u)du。",
+        "extension": "若 dx=−0.02，则 dy=−0.02，表示局部对数值减小。"
+      }
+    },
+    "en": {
+      "title": "Differential of a Logarithmic Composite",
+      "prompt": "Let y=ln(1+x²). Find dy, and evaluate it at x=1 with dx=0.02.",
+      "answer": "dy=[2x/(1+x²)]dx; at x=1 and dx=0.02, dy=0.02.",
+      "solution": {
+        "knowledge": ["Differential of a composite", "Derivative of logarithm", "Numerical differential"],
+        "analysis": "Apply the chain rule and then multiply by dx. At x=1, the differential coefficient equals 1.",
+        "steps": [
+          "Let u=1+x², so y=ln u.",
+          "Then dy=(1/u)du and du=2x dx.",
+          "Therefore dy=[2x/(1+x²)]dx.",
+          "At x=1, the coefficient is 2/(1+1)=1.",
+          "With dx=0.02, dy=1·0.02=0.02."
+        ],
+        "pitfalls": ["Writing d ln u as ln u·du", "Omitting the factor 2x", "Evaluating the coefficient at x+dx instead of the base point"],
+        "verification": "The exact increment ln(1+1.02²)−ln2≈0.019998, close to dy=0.02.",
+        "takeaway": "The form-invariance of differentials lets us work layer by layer: dy=(1/u)du.",
+        "extension": "If dx=−0.02, then dy=−0.02, indicating a local decrease."
+      }
+    }
+  },
+  {
+    "id": "C025",
+    "section": 5,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["线性近似", "平方根", "近似计算"],
+      "en": ["linear approximation", "square root", "approximation"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "用微分近似平方根",
+      "prompt": "只用微分线性化，在 x₀=4 附近近似计算 √4.04。",
+      "answer": "√4.04≈2.01。",
+      "solution": {
+        "knowledge": ["线性化公式", "平方根导数", "基点选择", "近似符号"],
+        "analysis": "选择容易计算的基点 4，令 Δx=0.04。用 f(x₀+Δx)≈f(x₀)+f′(x₀)Δx。",
+        "steps": [
+          "取 f(x)=√x，基点 x₀=4，增量 Δx=4.04−4=0.04。",
+          "f(4)=2，且 f′(x)=1/(2√x)。",
+          "在基点 f′(4)=1/4。",
+          "微分 dy=f′(4)Δx=(1/4)(0.04)=0.01。",
+          "因此 √4.04=f(4.04)≈f(4)+dy=2+0.01=2.01。"
+        ],
+        "pitfalls": ["把基点选成 4.04 导致失去简化意义", "把 f′(4) 写成 1/2", "用等号声称近似值精确"],
+        "verification": "2.01²=4.0401，与 4.04 只差 0.0001，说明近似合理，但这不是由本题方法给出的严格误差界。",
+        "takeaway": "线性近似优先选择函数值与导数都易算、且接近目标的基点。",
+        "extension": "同法可用 x₀=9 近似 √9.06。"
+      }
+    },
+    "en": {
+      "title": "Approximating a Square Root with Differentials",
+      "prompt": "Using only differential linearization near x₀=4, approximate √4.04.",
+      "answer": "√4.04≈2.01.",
+      "solution": {
+        "knowledge": ["Linearization formula", "Derivative of square root", "Choice of base point", "Approximation symbol"],
+        "analysis": "Choose the convenient base point 4 and use Δx=0.04 in f(x₀+Δx)≈f(x₀)+f′(x₀)Δx.",
+        "steps": [
+          "Let f(x)=√x, choose x₀=4, and set Δx=4.04−4=0.04.",
+          "f(4)=2 and f′(x)=1/(2√x).",
+          "At the base point, f′(4)=1/4.",
+          "The differential is dy=f′(4)Δx=(1/4)(0.04)=0.01.",
+          "Hence √4.04≈f(4)+dy=2+0.01=2.01."
+        ],
+        "pitfalls": ["Choosing 4.04 as the base point", "Using f′(4)=1/2", "Using an equality sign for an approximation"],
+        "verification": "2.01²=4.0401, only 0.0001 from 4.04. This supports the approximation but is not a rigorous error bound from linearization alone.",
+        "takeaway": "Choose a nearby base point where both the function and derivative are easy to evaluate.",
+        "extension": "The same method can approximate √9.06 from x₀=9."
+      }
+    }
+  },
+  {
+    "id": "C026",
+    "section": 5,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "multiple_choice",
+    "tags": {
+      "zh": ["增量与微分", "相对微分", "多项选择"],
+      "en": ["increment and differential", "relative differential", "multiple choice"]
+    },
+    "minutes": 9,
+    "space": "M",
+    "classic_method": false,
+    "zh": {
+      "title": "微分估计的正确陈述",
+      "prompt": "设 y=f(x) 在 x 处可微且 y≠0。下列说法哪些正确？多选。",
+      "choices": [
+        "A. 当 Δx→0 时，Δy=dy+o(Δx)",
+        "B. dy 关于 dx 是线性的",
+        "C. 对任意有限 dx 都有 Δy=dy",
+        "D. dy/y 可作为相对增量 Δy/y 的一阶估计"
+      ],
+      "answer": "A、B、D",
+      "solution": {
+        "knowledge": ["可微增量公式", "微分线性性", "相对微分", "近似边界"],
+        "analysis": "可微只保证在小增量下，非线性余项相对于 Δx 可忽略；它不把所有有限增量都变成精确线性。",
+        "steps": [
+          "A 正确，这是可微定义 Δy=f′(x)Δx+o(Δx) 与 dy=f′(x)dx 的直接结果。",
+          "B 正确：在基点固定时，dy=f′(x)dx 对 dx 是线性函数。",
+          "C 错误：非线性函数通常有非零余项，例如 x² 的增量多出 (Δx)²。",
+          "D 正确：当 y≠0 时，Δy/y≈dy/y，后者是相对变化的一阶估计。",
+          "因此选择 A、B、D。"
+        ],
+        "pitfalls": ["把一阶近似当作恒等式", "忽略相对微分要求 y≠0", "把 o(Δx) 误认为固定常数"],
+        "verification": "对 y=x²，Δy=2xΔx+(Δx)²、dy=2xΔx；这同时验证 A、B 并反驳 C。",
+        "takeaway": "微分保留一阶线性信息；相对微分则把这一信息按当前函数值归一化。",
+        "extension": "若 f 本身是线性函数，则 C 也成立，因为余项恒为 0。"
+      }
+    },
+    "en": {
+      "title": "Correct Statements about Differential Estimates",
+      "prompt": "Let y=f(x) be differentiable at x with y≠0. Which statements are correct? Select all that apply.",
+      "choices": [
+        "A. As Δx→0, Δy=dy+o(Δx)",
+        "B. dy is linear in dx",
+        "C. Δy=dy for every finite dx",
+        "D. dy/y is a first-order estimate of the relative increment Δy/y"
+      ],
+      "answer": "A, B, and D",
+      "solution": {
+        "knowledge": ["Differentiable increment formula", "Linearity of the differential", "Relative differential", "Limits of approximation"],
+        "analysis": "Differentiability says that the nonlinear remainder is negligible relative to a small Δx; it does not make every finite increment exactly linear.",
+        "steps": [
+          "A is true from Δy=f′(x)Δx+o(Δx) and dy=f′(x)dx.",
+          "B is true because, at a fixed base point, dy=f′(x)dx is linear in dx.",
+          "C is false for nonlinear functions; for x² an extra term (Δx)² remains.",
+          "D is true because, when y≠0, Δy/y≈dy/y gives a first-order relative-change estimate.",
+          "Therefore A, B, and D are correct."
+        ],
+        "pitfalls": ["Treating a first-order approximation as an identity", "Ignoring y≠0 for a relative differential", "Treating o(Δx) as a fixed constant"],
+        "verification": "For y=x², Δy=2xΔx+(Δx)² and dy=2xΔx; this confirms A and B while disproving C.",
+        "takeaway": "The differential retains first-order linear information; the relative differential normalizes it by the current function value.",
+        "extension": "If f is linear, then C also holds because the remainder is identically zero."
+      }
+    }
+  },
+  {
+    "id": "C027",
+    "section": 5,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["绝对微分", "相对微分", "测量误差", "单位"],
+      "en": ["absolute differential", "relative differential", "measurement error", "units"]
+    },
+    "minutes": 13,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "圆面积的绝对与相对误差估计",
+      "prompt": "圆的半径测得 r=10 cm，可能的绝对测量误差满足 |dr|≤0.02 cm。用微分估计面积 A=πr² 的最大绝对误差与最大相对误差。",
+      "answer": "|dA|≈0.4π cm²；|dA|/A≈0.004=0.4%。",
+      "solution": {
+        "knowledge": ["绝对微分估计", "相对微分", "误差单位", "百分比"],
+        "analysis": "面积微分 dA=2πrdr。取绝对值并使用给定的最大 |dr|，再除以 A 得相对误差。",
+        "steps": [
+          "面积函数为 A=πr²，因此 dA=2πrdr。",
+          "在 r=10 cm 且 |dr|≤0.02 cm 时，|dA|≈2π·10·0.02=0.4π cm²。",
+          "相对微分为 dA/A=(2πrdr)/(πr²)=2dr/r。",
+          "因此最大相对误差估计为 2|dr|/r=2·0.02/10=0.004。",
+          "把 0.004 化为百分比得到 0.4%。"
+        ],
+        "pitfalls": ["绝对误差忘记取绝对值", "把面积误差单位写成 cm", "把 0.004 写成 4%", "使用直径代替半径"],
+        "verification": "量纲 2πrdr 为 cm²；相对误差无单位。半径相对误差为 0.2%，面积约为其 2 倍，即 0.4%。",
+        "takeaway": "幂函数 y=x^n 的相对微分满足 dy/y=n·dx/x，可快速估计相对误差放大倍数。",
+        "extension": "球体积 V=(4/3)πr³ 的相对误差估计为 |dV|/V≈3|dr|/r。"
+      }
+    },
+    "en": {
+      "title": "Absolute and Relative Error Estimates for a Circle's Area",
+      "prompt": "A circle's radius is measured as r=10 cm with possible absolute measurement error |dr|≤0.02 cm. Use differentials to estimate the maximum absolute and relative errors in A=πr².",
+      "answer": "|dA|≈0.4π cm²; |dA|/A≈0.004=0.4%.",
+      "solution": {
+        "knowledge": ["Absolute differential estimate", "Relative differential", "Error units", "Percentage"],
+        "analysis": "Use dA=2πrdr. Take absolute values with the maximum |dr|, then divide by A for the relative error.",
+        "steps": [
+          "For A=πr², the differential is dA=2πrdr.",
+          "At r=10 cm with |dr|≤0.02 cm, |dA|≈2π·10·0.02=0.4π cm².",
+          "The relative differential is dA/A=(2πrdr)/(πr²)=2dr/r.",
+          "Thus the maximum relative estimate is 2|dr|/r=2·0.02/10=0.004.",
+          "As a percentage, 0.004=0.4%."
+        ],
+        "pitfalls": ["Forgetting absolute values for maximum error", "Using cm instead of cm²", "Writing 0.004 as 4%", "Using diameter in place of radius"],
+        "verification": "The dimension of 2πrdr is cm², while relative error is dimensionless. A 0.2% radius error produces approximately a 0.4% area error.",
+        "takeaway": "For y=x^n, dy/y=n·dx/x, which quickly shows the relative-error amplification factor.",
+        "extension": "For V=(4/3)πr³, the relative error estimate is |dV|/V≈3|dr|/r."
+      }
+    }
+  },
+  {
+    "id": "C028",
+    "section": 5,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["线性近似", "负幂函数", "近似边界"],
+      "en": ["linear approximation", "negative power", "approximation limits"]
+    },
+    "minutes": 11,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "近似倒数平方根",
+      "prompt": "用 x₀=1 处的微分线性化近似计算 1/√0.98，并明确说明该方法是否给出严格误差界。",
+      "answer": "1/√0.98≈1.01；本章的微分线性化只给出一阶近似，不自动提供严格误差界。",
+      "solution": {
+        "knowledge": ["负幂函数微分", "线性近似", "近似符号", "方法边界"],
+        "analysis": "令 f(x)=x^{−1/2}，目标点 0.98 与基点 1 的增量为 −0.02。",
+        "steps": [
+          "取 f(x)=x^{−1/2}，基点 x₀=1，Δx=0.98−1=−0.02。",
+          "f(1)=1，且 f′(x)=−(1/2)x^{−3/2}。",
+          "所以 f′(1)=−1/2，微分 dy=f′(1)Δx=(−1/2)(−0.02)=0.01。",
+          "线性近似给出 f(0.98)≈f(1)+dy=1+0.01=1.01。",
+          "因此 1/√0.98≈1.01；这里只使用一阶线性化，没有得到严格的误差上界。"
+        ],
+        "pitfalls": ["忽略 Δx 为负", "负幂求导指数错误", "把近似号写成等号", "虚构本章未证明的余项界"],
+        "verification": "计算 1.01²·0.98≈0.999698，接近 1，支持近似值合理；该核对不是严格误差证明。",
+        "takeaway": "微分近似给出局部线性预测，合理性可数值核对，但严格误差控制需要额外理论。",
+        "extension": "用同一线性化可得 1/√1.03≈0.985。"
+      }
+    },
+    "en": {
+      "title": "Approximating a Reciprocal Square Root",
+      "prompt": "Use differential linearization at x₀=1 to approximate 1/√0.98, and state whether this method provides a rigorous error bound.",
+      "answer": "1/√0.98≈1.01; differential linearization in this chapter gives a first-order approximation but no automatic rigorous error bound.",
+      "solution": {
+        "knowledge": ["Differential of a negative power", "Linear approximation", "Approximation notation", "Method boundary"],
+        "analysis": "Let f(x)=x^{−1/2}. The target 0.98 differs from the base point 1 by −0.02.",
+        "steps": [
+          "Take f(x)=x^{−1/2}, x₀=1, and Δx=0.98−1=−0.02.",
+          "f(1)=1 and f′(x)=−(1/2)x^{−3/2}.",
+          "Thus f′(1)=−1/2 and dy=f′(1)Δx=(−1/2)(−0.02)=0.01.",
+          "Linearization gives f(0.98)≈f(1)+dy=1.01.",
+          "Therefore 1/√0.98≈1.01. First-order linearization alone does not supply a rigorous error bound."
+        ],
+        "pitfalls": ["Missing the negative sign of Δx", "Differentiating the negative power incorrectly", "Using equality instead of approximation", "Inventing an unproved remainder bound"],
+        "verification": "1.01²·0.98≈0.999698, close to 1, supporting the approximation; this numerical check is not a rigorous error proof.",
+        "takeaway": "Differentials give a local linear prediction; numerical checks assess plausibility, while rigorous error control requires additional theory.",
+        "extension": "The same linearization gives 1/√1.03≈0.985."
+      }
+    }
+  },
+  {
+    "id": "C029",
+    "section": 5,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "comprehensive",
+    "tags": {
+      "zh": ["线性近似", "相对微分", "近似比较", "综合"],
+      "en": ["linear approximation", "relative differential", "approximation comparison", "synthesis"]
+    },
+    "minutes": 18,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "五次幂的线性预测与实际偏差",
+      "prompt": "设 y=x⁵。用 x₀=1、dx=0.02 的微分近似 (1.02)⁵，并给出预测的相对增量。再用直接乘法得到精确值 1.1040808032，计算近似值与精确值之差，并解释为什么这不构成本章中的误差上界。",
+      "answer": "(1.02)⁵≈1.10；相对增量约 0.10=10%；精确值减近似值为 0.0040808032。",
+      "solution": {
+        "knowledge": ["幂函数线性化", "相对微分", "近似偏差", "误差界边界"],
+        "analysis": "基点函数值为 1，故绝对微分与相对微分数值相同。精确差值可事后比较，但单个样本差值不是对邻域内所有点的误差上界。",
+        "steps": [
+          "对 y=x⁵，有 dy=5x⁴dx；在 x₀=1、dx=0.02 时，dy=5·1⁴·0.02=0.10。",
+          "线性近似为 (1.02)⁵≈1⁵+0.10=1.10。",
+          "相对微分 dy/y=5dx/x；在 x=1 时为 5·0.02=0.10，即约 10%。",
+          "题给精确值为 1.1040808032，因此精确值减近似值为 1.1040808032−1.10=0.0040808032。",
+          "这个差值只描述本次输入的实际偏差，不能自动推出其他增量下都小于该数。",
+          "本章微分线性化未提供统一余项估计，因此应把 1.10 写成近似值而非带严格误差界的结论。"
+        ],
+        "pitfalls": ["把 10% 写成 0.10%", "将近似值 1.10 写成精确等式", "把事后差值当作普遍误差上界", "忘记基点 y=1"],
+        "verification": "直接乘法：(1.02)²=1.0404，(1.02)⁴=1.08243216，再乘 1.02 得 1.1040808032，与题给精确值一致。",
+        "takeaway": "微分给一阶预测；实际差值可以评价这一次近似，却不能代替一般的误差理论。",
+        "extension": "把 dx 改为 0.01 时，线性预测为 1.05，可再直接乘法观察增量减半后偏差如何变化。"
+      }
+    },
+    "en": {
+      "title": "Linear Prediction and Actual Discrepancy for a Fifth Power",
+      "prompt": "Let y=x⁵. Using x₀=1 and dx=0.02, approximate (1.02)⁵ by differentials and give the predicted relative increment. Then use the exact value 1.1040808032 from direct multiplication to find exact minus approximate, and explain why this is not an error bound supplied by this chapter.",
+      "answer": "(1.02)⁵≈1.10; the relative increment is about 0.10=10%; exact minus approximate is 0.0040808032.",
+      "solution": {
+        "knowledge": ["Linearization of a power", "Relative differential", "Approximation discrepancy", "Boundary of error claims"],
+        "analysis": "The base value is 1, so the numerical absolute and relative differentials coincide. A post hoc discrepancy at one input is not a uniform bound over a neighborhood.",
+        "steps": [
+          "For y=x⁵, dy=5x⁴dx. At x₀=1 with dx=0.02, dy=5·1⁴·0.02=0.10.",
+          "The linear approximation is (1.02)⁵≈1⁵+0.10=1.10.",
+          "The relative differential is dy/y=5dx/x=5·0.02=0.10, or about 10%.",
+          "Using the given exact value, exact minus approximate is 1.1040808032−1.10=0.0040808032.",
+          "This difference describes only this input and does not show that all nearby errors are below the same number.",
+          "Linearization in this chapter supplies no uniform remainder estimate here, so 1.10 remains an approximation without a rigorous bound."
+        ],
+        "pitfalls": ["Writing 10% as 0.10%", "Using equality for 1.10", "Treating a post hoc discrepancy as a general bound", "Forgetting that the base value is 1"],
+        "verification": "Direct multiplication gives (1.02)²=1.0404, (1.02)⁴=1.08243216, and then 1.1040808032.",
+        "takeaway": "A differential gives a first-order prediction; the observed discrepancy evaluates one case but does not replace an error theory.",
+        "extension": "With dx=0.01, the linear prediction is 1.05; direct multiplication can be used to observe how the discrepancy changes."
+      }
+    }
+  },
+  {
+    "id": "C030",
+    "section": 5,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "proof",
+    "tags": {
+      "zh": ["可微定义", "导数定义", "充要条件", "小量证明"],
+      "en": ["definition of differentiability", "definition of derivative", "if and only if", "small-o proof"]
+    },
+    "minutes": 24,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "增量线性分解与导数的充要关系",
+      "prompt": "证明：一元函数 f 在 x₀ 可导，当且仅当存在常数 A，使 Δy=AΔx+o(Δx)；并证明此时 A=f′(x₀)，因而 dy=A dx。",
+      "answer": "可导时令余项 r=Δy−f′(x₀)Δx，有 r/Δx→0；反向除以 Δx 即得差商极限 A。",
+      "solution": {
+        "knowledge": ["导数定义", "可微增量表示", "小 o 记号", "充要条件"],
+        "analysis": "证明分为两个方向。可导方向构造余项；可微方向将线性分解除以 Δx。",
+        "steps": [
+          "先设 f 在 x₀ 可导，则 lim_{Δx→0}Δy/Δx=f′(x₀)。",
+          "定义 r(Δx)=Δy−f′(x₀)Δx。对 Δx≠0，有 r(Δx)/Δx=Δy/Δx−f′(x₀)→0。",
+          "因此 r(Δx)=o(Δx)，从而 Δy=f′(x₀)Δx+o(Δx)，取 A=f′(x₀)。",
+          "反过来，设 Δy=AΔx+o(Δx)。当 Δx≠0 时，Δy/Δx=A+o(Δx)/Δx。",
+          "令 Δx→0，右侧第二项趋于 0，所以导数存在且 f′(x₀)=A。",
+          "常数 A 因而唯一，并且定义微分 dy=A dx=f′(x₀)dx。"
+        ],
+        "pitfalls": ["只证明一个方向", "使用 o(Δx) 却不说明其商趋于 0", "在 Δx=0 时直接除法", "未证明 A 等于导数"],
+        "verification": "两方向的核心等式互为逆过程；差商极限若存在则唯一，因此 A 也唯一。",
+        "takeaway": "可导性既可用差商描述，也可用增量具有线性主部描述；微分正是该线性主部。",
+        "extension": "该证明同时给出可导必连续，因为 Δy=AΔx+o(Δx) 在 Δx→0 时趋于 0。"
+      }
+    },
+    "en": {
+      "title": "Equivalence between a Linear Increment Decomposition and a Derivative",
+      "prompt": "Prove that a one-variable function f is differentiable at x₀ if and only if there is a constant A such that Δy=AΔx+o(Δx). Prove that A=f′(x₀), so dy=A dx.",
+      "answer": "If the derivative exists, set r=Δy−f′(x₀)Δx and observe r/Δx→0. Conversely, divide the decomposition by Δx to obtain derivative A.",
+      "solution": {
+        "knowledge": ["Definition of derivative", "Differentiable increment representation", "Little-o notation", "Biconditional proof"],
+        "analysis": "Prove both directions. Construct a remainder from the derivative in one direction; divide the linear decomposition by Δx in the other.",
+        "steps": [
+          "Assume first that f′(x₀) exists, so lim_{Δx→0}Δy/Δx=f′(x₀).",
+          "Define r(Δx)=Δy−f′(x₀)Δx. For Δx≠0, r/Δx=Δy/Δx−f′(x₀)→0.",
+          "Thus r=o(Δx), and Δy=f′(x₀)Δx+o(Δx), with A=f′(x₀).",
+          "Conversely, suppose Δy=AΔx+o(Δx). For Δx≠0, Δy/Δx=A+o(Δx)/Δx.",
+          "As Δx→0, the second term tends to 0, so the derivative exists and f′(x₀)=A.",
+          "Therefore A is unique, and dy=A dx=f′(x₀)dx."
+        ],
+        "pitfalls": ["Proving only one implication", "Using o(Δx) without its ratio definition", "Dividing at Δx=0", "Failing to identify A with the derivative"],
+        "verification": "The two arguments are reverse algebraic processes. Since a limit is unique, the coefficient A is unique.",
+        "takeaway": "A derivative can be described by a difference quotient or by a linear principal part in the increment; the differential is that principal part.",
+        "extension": "The same decomposition immediately proves that differentiability implies continuity because Δy→0 as Δx→0."
+      }
+    }
+  },
+  {
+    "id": "C031",
+    "section": 5,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "error_diagnosis",
+    "tags": {
+      "zh": ["线性近似错解", "基点导数", "近似边界"],
+      "en": ["linearization error", "base-point derivative", "approximation boundary"]
+    },
+    "minutes": 20,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "诊断错误基点与精确等号",
+      "prompt": "为近似 √25.5，某同学取 f(x)=√x、x₀=25、Δx=0.5，却写 dy=f′(25.5)Δx=0.5/[2√25.5]≈0.04951，并断言 √25.5=5.04951。指出全部关键错误，给出正确的微分近似，并说明能否据此声称严格误差界。",
+      "answer": "微分系数应在基点 25 计算，dy=f′(25)·0.5=(1/10)·0.5=0.05，所以 √25.5≈5.05；必须用近似号，且本方法不自动给出严格误差界。",
+      "solution": {
+        "knowledge": ["线性化基点", "微分近似", "等号与近似号", "误差界限制"],
+        "analysis": "线性化是基点处切线的预测，因此斜率必须取 f′(x₀)，不是未知目标点处的斜率；预测值也不能写成精确等式。",
+        "steps": [
+          "线性近似公式是 f(x₀+Δx)≈f(x₀)+f′(x₀)Δx，导数必须在基点 x₀ 计算。",
+          "这里 f(25)=5，f′(x)=1/(2√x)，所以 f′(25)=1/10。",
+          "微分 dy=f′(25)Δx=(1/10)(0.5)=0.05。",
+          "故正确近似为 √25.5≈5+0.05=5.05。",
+          "原同学使用 f′(25.5) 相当于使用目标点未知斜率，不是所设基点的线性化；同时把近似号写成等号。",
+          "仅凭本章微分线性化不能声称一个严格误差上界；可数值核对，但不能虚构余项控制。"
+        ],
+        "pitfalls": ["在目标点而非基点求线性化斜率", "把 dy 当作精确 Δy", "误把数值核对当成严格证明", "未明确基点与增量"],
+        "verification": "5.05²=25.5025，与 25.5 相差 0.0025，说明近似合理；真实 √25.5≈5.04975，也接近 5.05。",
+        "takeaway": "线性化由基点函数值和基点导数决定；结果只是一阶近似，必须使用近似号。",
+        "extension": "若改用更接近且易算的基点，可提高近似质量，但仍不能在没有额外理论时声称严格误差界。"
+      }
+    },
+    "en": {
+      "title": "Diagnosing a Wrong Base Point and an Exact Equality",
+      "prompt": "To approximate √25.5, a student takes f(x)=√x, x₀=25, and Δx=0.5, but writes dy=f′(25.5)Δx=0.5/[2√25.5]≈0.04951 and claims √25.5=5.04951. Identify all key errors, give the correct differential approximation, and state whether a rigorous error bound follows.",
+      "answer": "The derivative must be evaluated at the base point 25: dy=f′(25)·0.5=(1/10)·0.5=0.05, so √25.5≈5.05. An approximation sign is required, and this method gives no automatic rigorous error bound.",
+      "solution": {
+        "knowledge": ["Base point of a linearization", "Differential approximation", "Equality versus approximation", "Limits of error claims"],
+        "analysis": "A linearization is the tangent prediction at the base point, so its slope is f′(x₀), not the slope at the unknown target. The prediction is not an exact equality.",
+        "steps": [
+          "The formula is f(x₀+Δx)≈f(x₀)+f′(x₀)Δx, so the derivative is evaluated at x₀.",
+          "Here f(25)=5 and f′(x)=1/(2√x), so f′(25)=1/10.",
+          "The differential is dy=f′(25)Δx=(1/10)(0.5)=0.05.",
+          "Therefore √25.5≈5+0.05=5.05.",
+          "Using f′(25.5) is not the stated base-point linearization, and the student also replaces approximation by equality.",
+          "Differential linearization in this chapter alone does not provide a rigorous error bound; a numerical check is not a remainder proof."
+        ],
+        "pitfalls": ["Evaluating the slope at the target instead of the base point", "Treating dy as exact Δy", "Calling a numerical check a rigorous proof", "Failing to distinguish base point and increment"],
+        "verification": "5.05²=25.5025, only 0.0025 from 25.5. The actual √25.5≈5.04975 is close to 5.05.",
+        "takeaway": "A linearization uses the function value and derivative at the base point; its output is a first-order approximation.",
+        "extension": "A closer convenient base point may improve the approximation, but still does not create a rigorous error bound without additional theory."
+      }
+    }
+  },
+  {
+    "id": "C032",
+    "section": 5,
+    "tier": "challenge",
+    "difficulty": "challenge",
+    "type": "proof",
+    "tags": {
+      "zh": ["微分乘积法则", "增量展开", "定义证明", "挑战题"],
+      "en": ["product rule for differentials", "increment expansion", "definition proof", "challenge"]
+    },
+    "minutes": 30,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "从可微定义证明微分乘积法则",
+      "prompt": "设 u=u(x)、v=v(x) 在 x₀ 可微。仅用增量分解证明乘积 uv 在 x₀ 可微，且 d(uv)=v du+u dv。不得引用中值定理或更后章节工具。",
+      "answer": "由 Δu=u′Δx+o(Δx)、Δv=v′Δx+o(Δx)，展开 Δ(uv)=vΔu+uΔv+ΔuΔv；最后一项为 o(Δx)，线性主部为 (vu′+uv′)Δx。",
+      "solution": {
+        "knowledge": ["可微增量定义", "乘积增量恒等式", "高阶小量运算", "微分乘积法则"],
+        "analysis": "不能先引用导数乘积法则。应从乘积的新旧值之差出发，证明其增量具有线性主部。",
+        "steps": [
+          "在基点 x₀ 记 u=u(x₀)、v=v(x₀)。可微性给出 Δu=u′(x₀)Δx+o(Δx)，Δv=v′(x₀)Δx+o(Δx)。",
+          "乘积增量为 Δ(uv)=(u+Δu)(v+Δv)−uv=vΔu+uΔv+ΔuΔv。",
+          "代入前两项，vΔu+uΔv=[vu′(x₀)+uv′(x₀)]Δx+o(Δx)。",
+          "对余下乘积，有 (ΔuΔv)/Δx=(Δu/Δx)Δv；其中 Δu/Δx→u′(x₀)，而 Δv→0，所以该比值趋于 0，即 ΔuΔv=o(Δx)。",
+          "因此 Δ(uv)=[vu′(x₀)+uv′(x₀)]Δx+o(Δx)，这证明 uv 在 x₀ 可微。",
+          "其线性主部定义为 d(uv)=[vu′+uv′]dx=v(u′dx)+u(v′dx)=v du+u dv。",
+          "整个证明只用了可微定义、代数展开与高阶小量运算。"
+        ],
+        "pitfalls": ["循环引用导数乘积法则", "展开乘积增量时漏掉 ΔuΔv", "未证明 ΔuΔv=o(Δx)", "把基点值 u、v 与增量混淆"],
+        "verification": "取 u=x、v=x²，则公式给 d(x³)=x²dx+x·2x dx=3x²dx，与幂函数微分一致。",
+        "takeaway": "微分运算法则可从增量的线性主部推出；二阶乘积 ΔuΔv 被归入高阶余项。",
+        "extension": "用同样思路可从增量恒等式推导和、差的微分法则；商法则还需分母基点值非零。"
+      }
+    },
+    "en": {
+      "title": "Proving the Product Rule for Differentials from the Definition",
+      "prompt": "Let u=u(x) and v=v(x) be differentiable at x₀. Using only increment decompositions, prove that uv is differentiable at x₀ and d(uv)=v du+u dv. Do not cite the mean value theorem or later-chapter tools.",
+      "answer": "Use Δu=u′Δx+o(Δx), Δv=v′Δx+o(Δx), and Δ(uv)=vΔu+uΔv+ΔuΔv. The last term is o(Δx), leaving linear part (vu′+uv′)Δx.",
+      "solution": {
+        "knowledge": ["Increment definition of differentiability", "Product-increment identity", "Small-order arithmetic", "Product rule for differentials"],
+        "analysis": "Do not invoke the derivative product rule. Start from the difference between the new and old product and prove that its increment has a linear principal part.",
+        "steps": [
+          "At x₀ write u=u(x₀), v=v(x₀). Differentiability gives Δu=u′(x₀)Δx+o(Δx) and Δv=v′(x₀)Δx+o(Δx).",
+          "The product increment is Δ(uv)=(u+Δu)(v+Δv)−uv=vΔu+uΔv+ΔuΔv.",
+          "Substitution in the first two terms gives vΔu+uΔv=[vu′(x₀)+uv′(x₀)]Δx+o(Δx).",
+          "For the remaining product, (ΔuΔv)/Δx=(Δu/Δx)Δv. Here Δu/Δx→u′(x₀) and Δv→0, so the ratio tends to 0 and ΔuΔv=o(Δx).",
+          "Thus Δ(uv)=[vu′(x₀)+uv′(x₀)]Δx+o(Δx), proving uv differentiable at x₀.",
+          "Its linear principal part is d(uv)=[vu′+uv′]dx=v(u′dx)+u(v′dx)=v du+u dv.",
+          "The argument uses only the differentiability definition, algebraic expansion, and small-order arithmetic."
+        ],
+        "pitfalls": ["Circularly citing the derivative product rule", "Dropping ΔuΔv", "Failing to show ΔuΔv=o(Δx)", "Confusing base values with increments"],
+        "verification": "For u=x and v=x², the rule gives d(x³)=x²dx+x·2x dx=3x²dx, matching the power-function differential.",
+        "takeaway": "Differential rules follow from linear principal parts; the product ΔuΔv is absorbed into the higher-order remainder.",
+        "extension": "The same method proves sum and difference rules; a quotient rule additionally requires a nonzero denominator value at the base point."
+      }
+    }
+  }
+]

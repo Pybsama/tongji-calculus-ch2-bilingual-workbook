@@ -1,0 +1,1866 @@
+[
+  {
+    "id": "A001",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["导数定义", "增量", "极限"],
+      "en": ["derivative definition", "increments", "limit"]
+    },
+    "minutes": 4,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "辨认导数定义",
+      "prompt": "设函数 f 在 x₀ 的某邻域内有定义。下列极限中，若存在，哪一个等于 f′(x₀)？",
+      "choices": [
+        "A. lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/Δx",
+        "B. lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/x₀",
+        "C. lim_{x→x₀}[f(x)-f(x₀)]/x",
+        "D. lim_{Δx→0}[f(x₀+Δx)+f(x₀)]/Δx"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["导数是函数增量与自变量增量之比的极限", "Δx 必须趋于 0", "分子必须是 f(x₀+Δx)-f(x₀)"],
+        "analysis": "把每个选项与导数的增量定义逐项比较。正确的差商必须同时具有基点 x₀、函数值之差和同一个自变量增量 Δx。",
+        "steps": [
+          "令自变量从 x₀ 变到 x₀+Δx，则自变量增量是 Δx。",
+          "相应的函数增量是 Δy=f(x₀+Δx)-f(x₀)，所以差商为 Δy/Δx。",
+          "当 Δx→0 时，若差商具有有限极限，该极限按定义就是 f′(x₀)。",
+          "A 与上述定义完全一致；B、C 的分母不是相应增量，D 的分子也不是函数增量。"
+        ],
+        "pitfalls": ["把 x₀ 或 x 当作差商的分母", "忘记函数增量是新函数值减去旧函数值"],
+        "verification": "取 f(x)=x²、x₀=1，A 给出 lim_{Δx→0}(2Δx+Δx²)/Δx=2，与已知斜率一致；其余形式不能稳定给出 2。",
+        "takeaway": "认准“同一增量”：分子比较 x₀+Δx 与 x₀，分母就是 Δx。",
+        "extension": "把 Δx 换成 x-x₀，可将定义等价写成 lim_{x→x₀}[f(x)-f(x₀)]/(x-x₀)。"
+      }
+    },
+    "en": {
+      "title": "Recognizing the Definition of a Derivative",
+      "prompt": "Suppose f is defined in a neighborhood of x₀. Which limit, if it exists, equals f′(x₀)?",
+      "choices": [
+        "A. lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/Δx",
+        "B. lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/x₀",
+        "C. lim_{x→x₀}[f(x)-f(x₀)]/x",
+        "D. lim_{Δx→0}[f(x₀+Δx)+f(x₀)]/Δx"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["a derivative is the limit of a function increment divided by the corresponding input increment", "Δx must tend to 0", "the numerator must be f(x₀+Δx)-f(x₀)"],
+        "analysis": "Compare every option with the increment definition. A valid difference quotient must use the base point x₀, the difference of the two function values, and the same input increment Δx.",
+        "steps": [
+          "When the input changes from x₀ to x₀+Δx, its increment is Δx.",
+          "The corresponding function increment is Δy=f(x₀+Δx)-f(x₀), so the difference quotient is Δy/Δx.",
+          "If this quotient has a finite limit as Δx→0, that limit is f′(x₀) by definition.",
+          "Option A matches the definition exactly; B and C use the wrong denominator, while D does not use a function increment."
+        ],
+        "pitfalls": ["using x₀ or x instead of the corresponding input increment", "forgetting that the function increment is new value minus old value"],
+        "verification": "For f(x)=x² and x₀=1, A gives lim_{Δx→0}(2Δx+Δx²)/Δx=2, the expected slope; the other forms do not reliably produce 2.",
+        "takeaway": "Track one consistent increment: compare x₀+Δx with x₀ in the numerator and divide by Δx.",
+        "extension": "Writing Δx=x-x₀ gives the equivalent form lim_{x→x₀}[f(x)-f(x₀)]/(x-x₀)."
+      }
+    }
+  },
+  {
+    "id": "A002",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["瞬时速度", "平均速度", "导数定义"],
+      "en": ["instantaneous velocity", "average velocity", "derivative definition"]
+    },
+    "minutes": 4,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "用极限表示瞬时速度",
+      "prompt": "质点沿直线运动，位置为 s=s(t)。它在 t=3 时的瞬时速度可写为 v(3)=______。",
+      "answer": "lim_{Δt→0}[s(3+Δt)-s(3)]/Δt",
+      "solution": {
+        "knowledge": ["平均速度是位置增量除以时间增量", "瞬时速度是平均速度的极限", "位置函数对时间的导数"],
+        "analysis": "先写从时刻 3 到 3+Δt 的平均速度，再令时间间隔缩短到 0；不能把位置本身或路程与瞬时速度混淆。",
+        "steps": [
+          "在时间区间 [3,3+Δt] 上，时间增量为 Δt。",
+          "这段时间内的位置增量为 s(3+Δt)-s(3)。",
+          "相应平均速度为 [s(3+Δt)-s(3)]/Δt，其中 Δt≠0。",
+          "令 Δt→0，若极限存在，就得到 v(3)=lim_{Δt→0}[s(3+Δt)-s(3)]/Δt。"
+        ],
+        "pitfalls": ["把 s(3)/3 当作瞬时速度", "分子误写成 s(Δt)-s(3)", "遗漏 Δt→0 的极限过程"],
+        "verification": "若 s(t)=2t+1，则差商恒为 2，极限也为 2，符合匀速运动的速度。",
+        "takeaway": "瞬时变化率来自“先求有限区间平均变化率，再让区间长度趋于 0”。",
+        "extension": "将 3 换成任意 t₀，即得到 v(t₀)=s′(t₀) 的定义。"
+      }
+    },
+    "en": {
+      "title": "Expressing Instantaneous Velocity as a Limit",
+      "prompt": "A particle moves along a line with position s=s(t). Its instantaneous velocity at t=3 can be written as v(3)=______.",
+      "answer": "lim_{Δt→0}[s(3+Δt)-s(3)]/Δt",
+      "solution": {
+        "knowledge": ["average velocity is position increment divided by time increment", "instantaneous velocity is a limit of average velocities", "the derivative of position with respect to time"],
+        "analysis": "First write the average velocity from time 3 to 3+Δt, then shrink the time interval to 0. Position itself must not be confused with velocity.",
+        "steps": [
+          "On the time interval [3,3+Δt], the time increment is Δt.",
+          "The corresponding position increment is s(3+Δt)-s(3).",
+          "Thus the average velocity is [s(3+Δt)-s(3)]/Δt for Δt≠0.",
+          "Letting Δt→0 gives v(3)=lim_{Δt→0}[s(3+Δt)-s(3)]/Δt whenever the limit exists."
+        ],
+        "pitfalls": ["using s(3)/3 as the instantaneous velocity", "writing s(Δt)-s(3) in the numerator", "omitting the limiting process Δt→0"],
+        "verification": "If s(t)=2t+1, the quotient is identically 2, so its limit is 2, as expected for constant velocity.",
+        "takeaway": "An instantaneous rate is obtained by first forming an average rate over a finite interval and then shrinking the interval to zero.",
+        "extension": "Replacing 3 by an arbitrary t₀ gives the definition v(t₀)=s′(t₀)."
+      }
+    }
+  },
+  {
+    "id": "A003",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "calculation",
+    "tags": {
+      "zh": ["定义求导", "非零基点", "多项式"],
+      "en": ["first-principles differentiation", "nonzero base point", "polynomial"]
+    },
+    "minutes": 7,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "在非零点由定义求导",
+      "prompt": "仅用导数定义求 f(x)=x² 在 x=2 处的导数。",
+      "answer": "f′(2)=4",
+      "solution": {
+        "knowledge": ["导数的增量定义", "平方差展开", "极限前约去非零增量"],
+        "analysis": "把 x₀=2 直接代入差商。先展开并提取 Δx，再在 Δx≠0 时约分，最后才能令 Δx→0。",
+        "steps": [
+          "按定义，f′(2)=lim_{Δx→0}[(2+Δx)²-2²]/Δx。",
+          "展开分子：(2+Δx)²-4=4Δx+(Δx)²。",
+          "在取极限的穿孔邻域内 Δx≠0，所以差商化为 [4Δx+(Δx)²]/Δx=4+Δx。",
+          "令 Δx→0，得到 f′(2)=lim_{Δx→0}(4+Δx)=4。"
+        ],
+        "pitfalls": ["一开始就令 Δx=0，造成 0/0", "漏掉展开式中的 4Δx", "把 f′(2) 错写成 f(2)"],
+        "verification": "函数图像 y=x² 在 x=2 附近上升；对称差商 [f(2+h)-f(2-h)]/(2h)=4，也给出相同结果。",
+        "takeaway": "定义求导的标准流程是：列差商、代数化简、约去增量、再取极限。",
+        "extension": "把 2 换成任意 a，同样计算可得 f′(a)=2a。"
+      }
+    },
+    "en": {
+      "title": "Differentiate at a Nonzero Point from First Principles",
+      "prompt": "Using only the definition of the derivative, find the derivative of f(x)=x² at x=2.",
+      "answer": "f′(2)=4",
+      "solution": {
+        "knowledge": ["increment definition of a derivative", "expansion of a square", "canceling a nonzero increment before taking a limit"],
+        "analysis": "Insert x₀=2 into the difference quotient. Expand and factor out Δx, cancel it while Δx≠0, and only then let Δx approach 0.",
+        "steps": [
+          "By definition, f′(2)=lim_{Δx→0}[(2+Δx)²-2²]/Δx.",
+          "Expand the numerator: (2+Δx)²-4=4Δx+(Δx)².",
+          "In the punctured neighborhood used by the limit, Δx≠0, so the quotient becomes [4Δx+(Δx)²]/Δx=4+Δx.",
+          "Letting Δx→0 yields f′(2)=lim_{Δx→0}(4+Δx)=4."
+        ],
+        "pitfalls": ["substituting Δx=0 at the beginning and obtaining 0/0", "omitting the term 4Δx", "confusing f′(2) with f(2)"],
+        "verification": "The graph y=x² rises near x=2. Moreover, the symmetric quotient [f(2+h)-f(2-h)]/(2h)=4 confirms the same value.",
+        "takeaway": "The first-principles pattern is: form the quotient, simplify algebraically, cancel the increment, and then take the limit.",
+        "extension": "Replacing 2 by an arbitrary a gives f′(a)=2a by the same calculation."
+      }
+    }
+  },
+  {
+    "id": "A004",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "true_false",
+    "tags": {
+      "zh": ["可导与连续", "必要条件", "逻辑判断"],
+      "en": ["differentiability and continuity", "necessary condition", "logical reasoning"]
+    },
+    "minutes": 5,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "可导是否保证连续",
+      "prompt": "判断正误并说明理由：若 f 在 x₀ 处可导，则 f 在 x₀ 处连续。",
+      "answer": "正确。",
+      "solution": {
+        "knowledge": ["可导蕴含连续", "函数增量分解", "有限极限与无穷小的乘积"],
+        "analysis": "要证明连续，只需证明 f(x₀+Δx)-f(x₀)→0。把函数增量写成差商与 Δx 的乘积即可直接使用导数存在。",
+        "steps": [
+          "f 在 x₀ 处可导意味着 lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/Δx=f′(x₀)，且该极限有限。",
+          "对 Δx≠0，有 f(x₀+Δx)-f(x₀)={[f(x₀+Δx)-f(x₀)]/Δx}·Δx。",
+          "当 Δx→0 时，第一个因子趋于有限数 f′(x₀)，第二个因子趋于 0。",
+          "因此函数增量趋于 0，即 lim_{Δx→0}f(x₀+Δx)=f(x₀)，所以 f 在 x₀ 连续。"
+        ],
+        "pitfalls": ["把结论错误地反向使用为连续必可导", "没有说明导数极限必须是有限值"],
+        "verification": "证明直接得到连续性的增量判据 Δy→0，没有额外假设，因此原命题正确。",
+        "takeaway": "可导比连续更强；导数存在时，函数增量必然能够写成“有限量乘无穷小”。",
+        "extension": "连续的逆命题不成立；例如 f(x)=|x| 在 0 连续但不可导。"
+      }
+    },
+    "en": {
+      "title": "Does Differentiability Guarantee Continuity?",
+      "prompt": "Decide whether the statement is true and justify: if f is differentiable at x₀, then f is continuous at x₀.",
+      "answer": "True.",
+      "solution": {
+        "knowledge": ["differentiability implies continuity", "factorization of a function increment", "a finite limit times an infinitesimal"],
+        "analysis": "To prove continuity, it is enough to show f(x₀+Δx)-f(x₀)→0. Factor this increment into the difference quotient and Δx, then use the existence of the derivative.",
+        "steps": [
+          "Differentiability at x₀ means lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/Δx=f′(x₀), and this limit is finite.",
+          "For Δx≠0, write f(x₀+Δx)-f(x₀)={[f(x₀+Δx)-f(x₀)]/Δx}·Δx.",
+          "As Δx→0, the first factor tends to the finite number f′(x₀), while the second tends to 0.",
+          "Hence the function increment tends to 0, so lim_{Δx→0}f(x₀+Δx)=f(x₀); therefore f is continuous at x₀."
+        ],
+        "pitfalls": ["reversing the implication and claiming that continuity guarantees differentiability", "failing to note that a derivative is a finite limit"],
+        "verification": "The argument establishes the increment criterion Δy→0 for continuity without any extra assumption, so the statement is true.",
+        "takeaway": "Differentiability is stronger than continuity: the function increment becomes a finite quantity times an infinitesimal.",
+        "extension": "The converse is false; for example, f(x)=|x| is continuous but not differentiable at 0."
+      }
+    }
+  },
+  {
+    "id": "A005",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["几何意义", "切线斜率", "点斜式"],
+      "en": ["geometric meaning", "tangent slope", "point-slope form"]
+    },
+    "minutes": 4,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "由导数写切线方程",
+      "prompt": "已知 f(2)=5，f′(2)=-3。曲线 y=f(x) 在点 (2,5) 处的切线方程是（ ）。",
+      "choices": [
+        "A. y-5=-3(x-2)",
+        "B. y-2=-3(x-5)",
+        "C. y-5=(1/3)(x-2)",
+        "D. y+5=-3(x+2)"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["导数等于切线斜率", "直线点斜式", "切点坐标"],
+        "analysis": "切线必须经过给定切点 (2,5)，斜率是 f′(2)=-3。将这两个信息直接代入点斜式。",
+        "steps": [
+          "曲线上对应 x=2 的点为 (2,f(2))=(2,5)。",
+          "导数的几何意义给出该点切线斜率 k=f′(2)=-3。",
+          "直线经过 (x₀,y₀) 且斜率为 k 时，点斜式为 y-y₀=k(x-x₀)。",
+          "代入得到 y-5=-3(x-2)，故选择 A。"
+        ],
+        "pitfalls": ["交换切点的横、纵坐标", "把法线斜率 -1/k 当成切线斜率", "点斜式中符号写反"],
+        "verification": "令 x=2，A 给出 y=5，确实经过切点；其斜率也恰为 -3。",
+        "takeaway": "切线方程只需要两个量：切点 (x₀,f(x₀)) 与斜率 f′(x₀)。",
+        "extension": "该点法线斜率为 1/3，法线方程为 y-5=(1/3)(x-2)。"
+      }
+    },
+    "en": {
+      "title": "Writing a Tangent Line from a Derivative",
+      "prompt": "Suppose f(2)=5 and f′(2)=-3. Which equation is the tangent line to y=f(x) at (2,5)?",
+      "choices": [
+        "A. y-5=-3(x-2)",
+        "B. y-2=-3(x-5)",
+        "C. y-5=(1/3)(x-2)",
+        "D. y+5=-3(x+2)"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["a derivative is the tangent slope", "point-slope form", "coordinates of the point of tangency"],
+        "analysis": "The tangent must pass through (2,5), and its slope is f′(2)=-3. Insert these data into point-slope form.",
+        "steps": [
+          "The point on the curve corresponding to x=2 is (2,f(2))=(2,5).",
+          "By the geometric meaning of a derivative, the tangent slope is k=f′(2)=-3.",
+          "A line through (x₀,y₀) with slope k has point-slope form y-y₀=k(x-x₀).",
+          "Substitution gives y-5=-3(x-2), so A is correct."
+        ],
+        "pitfalls": ["interchanging the coordinates of the point", "using the normal slope -1/k for the tangent", "reversing signs in point-slope form"],
+        "verification": "Setting x=2 in A gives y=5, so it passes through the required point, and its slope is exactly -3.",
+        "takeaway": "A tangent line needs two pieces of information: (x₀,f(x₀)) and the slope f′(x₀).",
+        "extension": "The normal slope is 1/3, so the normal line is y-5=(1/3)(x-2)."
+      }
+    }
+  },
+  {
+    "id": "A006",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["左右导数", "绝对值函数", "可导判定"],
+      "en": ["one-sided derivatives", "absolute-value function", "differentiability test"]
+    },
+    "minutes": 6,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "绝对值函数的左右导数",
+      "prompt": "设 f(x)=|x|。则 f′₋(0)=______，f′₊(0)=______，所以 f 在 0 处______（填“可导”或“不可导”）。",
+      "answer": "f′₋(0)=-1，f′₊(0)=1，不可导",
+      "solution": {
+        "knowledge": ["左导数与右导数", "绝对值的分段表示", "两侧导数相等才可导"],
+        "analysis": "在 0 左右两侧分别确定 |h| 的表达式。两个单侧差商虽然都有极限，但极限不相等。",
+        "steps": [
+          "由 f(0)=0，差商为 [f(h)-f(0)]/h=|h|/h。",
+          "当 h→0⁻ 时，h<0 且 |h|=-h，所以 |h|/h=-1，故 f′₋(0)=-1。",
+          "当 h→0⁺ 时，h>0 且 |h|=h，所以 |h|/h=1，故 f′₊(0)=1。",
+          "由于 -1≠1，双侧导数不存在，因此 f 在 0 处不可导。"
+        ],
+        "pitfalls": ["把 |h| 一律替换为 h", "只算一个方向的导数就断言可导", "误认为两个单侧导数只要有限即可"],
+        "verification": "图像 y=|x| 在原点形成尖角；左侧斜率 -1、右侧斜率 1，与计算吻合。",
+        "takeaway": "分段点的可导性必须逐侧检查，并要求左右导数作为数值完全相同。",
+        "extension": "对 f(x)=|x-a|，同样有 f′₋(a)=-1、f′₊(a)=1。"
+      }
+    },
+    "en": {
+      "title": "One-Sided Derivatives of an Absolute-Value Function",
+      "prompt": "Let f(x)=|x|. Then f′₋(0)=______, f′₊(0)=______, so f is ______ at 0 (write “differentiable” or “not differentiable”).",
+      "answer": "f′₋(0)=-1, f′₊(0)=1, not differentiable",
+      "solution": {
+        "knowledge": ["left and right derivatives", "piecewise form of absolute value", "equality of one-sided derivatives as the differentiability criterion"],
+        "analysis": "Determine the expression for |h| separately on the two sides of 0. Both one-sided quotients have limits, but those limits are unequal.",
+        "steps": [
+          "Since f(0)=0, the difference quotient is [f(h)-f(0)]/h=|h|/h.",
+          "As h→0⁻, h<0 and |h|=-h, so |h|/h=-1; hence f′₋(0)=-1.",
+          "As h→0⁺, h>0 and |h|=h, so |h|/h=1; hence f′₊(0)=1.",
+          "Because -1≠1, the two-sided derivative does not exist, and f is not differentiable at 0."
+        ],
+        "pitfalls": ["replacing |h| by h on both sides", "checking only one one-sided derivative", "assuming that two finite one-sided derivatives are sufficient even when they differ"],
+        "verification": "The graph y=|x| has a corner at the origin; its left slope is -1 and its right slope is 1, matching the calculation.",
+        "takeaway": "At a junction, check both sides and require the two one-sided derivatives to be exactly equal.",
+        "extension": "For f(x)=|x-a|, the same argument gives f′₋(a)=-1 and f′₊(a)=1."
+      }
+    }
+  },
+  {
+    "id": "A007",
+    "section": 1,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "calculation",
+    "tags": {
+      "zh": ["定义求导", "切线", "法线"],
+      "en": ["first-principles differentiation", "tangent line", "normal line"]
+    },
+    "minutes": 8,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "由定义求切线与法线",
+      "prompt": "曲线 y=x² 上取点 P(1,1)。用导数定义求 P 点的切线与法线方程。",
+      "answer": "切线 y=2x-1；法线 y=-(1/2)x+3/2",
+      "solution": {
+        "knowledge": ["导数定义", "切线斜率", "互相垂直直线的斜率关系"],
+        "analysis": "先用差商求 x=1 处的导数。切线斜率等于导数；由于切线斜率非零，法线斜率是其负倒数。",
+        "steps": [
+          "按定义，f′(1)=lim_{h→0}[(1+h)²-1²]/h。",
+          "展开并约分：[(1+h)²-1]/h=(2h+h²)/h=2+h，因此 f′(1)=2。",
+          "切线经过 (1,1) 且斜率为 2，所以 y-1=2(x-1)，即 y=2x-1。",
+          "法线斜率为 -1/2，所以 y-1=-(1/2)(x-1)，即 y=-(1/2)x+3/2。"
+        ],
+        "pitfalls": ["把法线斜率写成 1/2 而漏掉负号", "切线和法线没有使用同一个切点", "未按要求使用定义求导"],
+        "verification": "两条直线都经过 (1,1)，且斜率乘积 2·(-1/2)=-1，说明它们互相垂直。",
+        "takeaway": "几何题的主线是“定义求斜率—点斜式写切线—负倒数写法线”。",
+        "extension": "在点 (a,a²) 处，切线斜率为 2a；当 a=0 时法线是竖直直线 x=0。"
+      }
+    },
+    "en": {
+      "title": "Tangent and Normal Lines from First Principles",
+      "prompt": "Let P(1,1) lie on the curve y=x². Use the definition of the derivative to find the tangent and normal lines at P.",
+      "answer": "Tangent: y=2x-1; normal: y=-(1/2)x+3/2",
+      "solution": {
+        "knowledge": ["definition of a derivative", "tangent slope", "slope relation for perpendicular lines"],
+        "analysis": "First find the derivative at x=1 from the difference quotient. The tangent slope equals the derivative, and because it is nonzero, the normal slope is its negative reciprocal.",
+        "steps": [
+          "By definition, f′(1)=lim_{h→0}[(1+h)²-1²]/h.",
+          "Expand and cancel: [(1+h)²-1]/h=(2h+h²)/h=2+h, so f′(1)=2.",
+          "The tangent passes through (1,1) with slope 2, hence y-1=2(x-1), or y=2x-1.",
+          "The normal slope is -1/2, hence y-1=-(1/2)(x-1), or y=-(1/2)x+3/2."
+        ],
+        "pitfalls": ["using 1/2 instead of -1/2 for the normal slope", "using different points for the tangent and normal", "not using first principles as requested"],
+        "verification": "Both lines pass through (1,1), and their slopes satisfy 2·(-1/2)=-1, confirming perpendicularity.",
+        "takeaway": "The geometric workflow is: obtain the slope from first principles, write the tangent in point-slope form, then take the negative reciprocal for the normal.",
+        "extension": "At (a,a²), the tangent slope is 2a; when a=0, the normal is the vertical line x=0."
+      }
+    }
+  },
+  {
+    "id": "A008",
+    "section": 2,
+    "tier": "foundation",
+    "difficulty": "basic",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["基本求导公式", "对数函数", "定义域"],
+      "en": ["basic derivative formulas", "logarithmic function", "domain"]
+    },
+    "minutes": 4,
+    "space": "S",
+    "classic_method": true,
+    "zh": {
+      "title": "选择对数函数的导数",
+      "prompt": "在 x>0 上，函数 y=ln x 的导数为（ ）。",
+      "choices": [
+        "A. y′=1/x",
+        "B. y′=ln x",
+        "C. y′=x",
+        "D. y′=eˣ"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["自然对数的基本求导公式", "公式的适用定义域", "函数值与导数的区别"],
+        "analysis": "直接调用基本公式 (ln x)′=1/x，并保留原题给出的定义域 x>0。",
+        "steps": [
+          "自然对数 ln x 的实数定义域是 x>0。",
+          "基本求导公式给出 d(ln x)/dx=1/x。",
+          "因此 y′=1/x，且该表达式在 x>0 上有意义。",
+          "A 正确；B 把原函数当成导数，C、D 分别属于其他函数的形式。"
+        ],
+        "pitfalls": ["把 (ln x)′ 误写成 ln x", "忽略 x>0 的定义域", "与 (eˣ)′=eˣ 混淆"],
+        "verification": "当 x=1 时，公式给出 y′=1；ln x 在 1 附近的差商极限也等于 1。",
+        "takeaway": "记忆基本公式时要把函数、导数和适用定义域作为一个整体。",
+        "extension": "由链式法则可进一步得到 (ln u(x))′=u′(x)/u(x)，前提是 u(x)>0。"
+      }
+    },
+    "en": {
+      "title": "Choose the Derivative of a Logarithm",
+      "prompt": "For x>0, what is the derivative of y=ln x?",
+      "choices": [
+        "A. y′=1/x",
+        "B. y′=ln x",
+        "C. y′=x",
+        "D. y′=eˣ"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["basic derivative formula for the natural logarithm", "domain of applicability", "distinguishing a function from its derivative"],
+        "analysis": "Apply the basic formula (ln x)′=1/x and retain the stated domain x>0.",
+        "steps": [
+          "The real-valued natural logarithm ln x has domain x>0.",
+          "The basic derivative formula is d(ln x)/dx=1/x.",
+          "Therefore y′=1/x, which is defined throughout x>0.",
+          "Thus A is correct; B repeats the original function, while C and D belong to different formulas."
+        ],
+        "pitfalls": ["writing (ln x)′=ln x", "ignoring the domain x>0", "confusing the formula with (eˣ)′=eˣ"],
+        "verification": "At x=1 the formula gives y′=1, which agrees with the difference-quotient limit of ln x at 1.",
+        "takeaway": "Learn each basic formula together with the function, its derivative, and its domain.",
+        "extension": "The chain rule gives (ln u(x))′=u′(x)/u(x), provided u(x)>0."
+      }
+    }
+  },
+  {
+    "id": "A009",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["定义求导", "非零基点", "分式函数"],
+      "en": ["first-principles differentiation", "nonzero base point", "rational function"]
+    },
+    "minutes": 8,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "倒数函数在任意非零点的导数",
+      "prompt": "设 f(x)=1/x。对任意 a≠0，仅用导数定义求 f′(a)。",
+      "answer": "f′(a)=-1/a²",
+      "solution": {
+        "knowledge": ["非零点处的导数定义", "分式差商化简", "极限中的定义域控制"],
+        "analysis": "在 a 处写出差商后先通分。由于 a≠0，并且 h 足够小时 a+h≠0，差商可合法化简。",
+        "steps": [
+          "按定义，f′(a)=lim_{h→0}[1/(a+h)-1/a]/h。",
+          "分子通分得到 1/(a+h)-1/a=[a-(a+h)]/[a(a+h)]=-h/[a(a+h)]。",
+          "对 h≠0，差商化为 {-h/[a(a+h)]}/h=-1/[a(a+h)]。",
+          "令 h→0，由 a≠0 得 f′(a)=-1/(a·a)=-1/a²。"
+        ],
+        "pitfalls": ["通分时把分子符号写反", "约去 h 后忘记负号", "漏写 a≠0 以及 a+h≠0 的条件"],
+        "verification": "取 a=1，结果为 -1；当 x 从 1 略微增大时 1/x 减小，导数为负与变化方向一致。",
+        "takeaway": "分式函数的定义求导常靠通分制造可约去的增量因子。",
+        "extension": "用同一方法可证明 (c/x)′=-c/x²，其中 c 为常数。"
+      }
+    },
+    "en": {
+      "title": "Derivative of the Reciprocal Function at Any Nonzero Point",
+      "prompt": "Let f(x)=1/x. For any a≠0, use only the definition of the derivative to find f′(a).",
+      "answer": "f′(a)=-1/a²",
+      "solution": {
+        "knowledge": ["derivative definition at a nonzero point", "simplifying a rational difference quotient", "domain control in a limit"],
+        "analysis": "Write the difference quotient at a and combine the fractions. Since a≠0 and a+h≠0 for all sufficiently small h, the algebraic simplification is legitimate.",
+        "steps": [
+          "By definition, f′(a)=lim_{h→0}[1/(a+h)-1/a]/h.",
+          "Combine the numerator: 1/(a+h)-1/a=[a-(a+h)]/[a(a+h)]=-h/[a(a+h)].",
+          "For h≠0, the quotient simplifies to {-h/[a(a+h)]}/h=-1/[a(a+h)].",
+          "Let h→0. Since a≠0, f′(a)=-1/(a·a)=-1/a²."
+        ],
+        "pitfalls": ["reversing the sign when combining the fractions", "losing the minus sign after canceling h", "omitting the conditions a≠0 and a+h≠0"],
+        "verification": "At a=1 the result is -1. As x increases slightly from 1, 1/x decreases, which agrees with the negative derivative.",
+        "takeaway": "For rational functions, combining fractions often exposes the input increment that can be canceled.",
+        "extension": "The same method proves (c/x)′=-c/x² for any constant c."
+      }
+    }
+  },
+  {
+    "id": "A010",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "multiple_choice",
+    "tags": {
+      "zh": ["左右导数", "连续性", "充分必要条件"],
+      "en": ["one-sided derivatives", "continuity", "necessary and sufficient conditions"]
+    },
+    "minutes": 7,
+    "space": "M",
+    "classic_method": false,
+    "zh": {
+      "title": "辨析可导性的逻辑关系",
+      "prompt": "设 x₀ 是 f 定义域的内点。下列命题中正确的是哪些？",
+      "choices": [
+        "A. 若 f′(x₀) 存在，则 f′₋(x₀) 与 f′₊(x₀) 都存在且相等",
+        "B. 若 f 在 x₀ 连续，则 f′(x₀) 一定存在",
+        "C. 若 f′(x₀) 存在，则 f 在 x₀ 连续",
+        "D. 若 f′₋(x₀) 与 f′₊(x₀) 都是有限数，则 f′(x₀) 一定存在"
+      ],
+      "answer": "A、C",
+      "solution": {
+        "knowledge": ["双侧导数与单侧导数的关系", "可导蕴含连续", "反例判定"],
+        "analysis": "A、D 需要比较左右导数是否相等；B、C 需要辨认“可导推出连续”的正确方向。用 |x-x₀| 可以同时否定两个常见误判。",
+        "steps": [
+          "若双侧差商极限 f′(x₀) 存在，则其左、右极限必存在并等于同一个值，所以 A 正确。",
+          "可导蕴含连续，因此 C 正确。",
+          "函数 f(x)=|x-x₀| 在 x₀ 连续，但左、右导数分别为 -1 与 1，所以 B 错误。",
+          "同一反例中两个单侧导数都是有限数却不相等，双侧导数不存在，所以 D 错误。"
+        ],
+        "pitfalls": ["把必要条件和充分条件互换", "只要求左右导数有限而忘记要求相等", "把连续与可导当成等价概念"],
+        "verification": "|x-x₀| 的函数值在 x₀ 连续，而差商从左、右分别恒趋于 -1、1，精确验证了反例。",
+        "takeaway": "内点可导等价于左右导数都存在且相等；连续只是可导的必要条件。",
+        "extension": "若 x₀ 是定义域端点，通常只讨论沿定义域方向的单侧导数，而不是双侧导数。"
+      }
+    },
+    "en": {
+      "title": "Logical Relations Involving Differentiability",
+      "prompt": "Let x₀ be an interior point of the domain of f. Which statements are correct?",
+      "choices": [
+        "A. If f′(x₀) exists, then f′₋(x₀) and f′₊(x₀) both exist and are equal",
+        "B. If f is continuous at x₀, then f′(x₀) must exist",
+        "C. If f′(x₀) exists, then f is continuous at x₀",
+        "D. If f′₋(x₀) and f′₊(x₀) are both finite, then f′(x₀) must exist"
+      ],
+      "answer": "A, C",
+      "solution": {
+        "knowledge": ["relation between two-sided and one-sided derivatives", "differentiability implies continuity", "testing claims by counterexample"],
+        "analysis": "For A and D, equality of the one-sided derivatives is decisive. For B and C, identify the correct direction of the implication from differentiability to continuity. The function |x-x₀| rejects both common false claims.",
+        "steps": [
+          "If the two-sided difference-quotient limit f′(x₀) exists, its left and right limits exist and equal that same value; thus A is true.",
+          "Differentiability implies continuity, so C is true.",
+          "The function f(x)=|x-x₀| is continuous at x₀, but its left and right derivatives are -1 and 1; hence B is false.",
+          "In the same example both one-sided derivatives are finite but unequal, so the two-sided derivative does not exist; hence D is false."
+        ],
+        "pitfalls": ["interchanging a necessary condition and a sufficient condition", "requiring the one-sided derivatives to be finite but not equal", "treating continuity and differentiability as equivalent"],
+        "verification": "For |x-x₀|, continuity at x₀ is immediate, while the left and right quotients tend exactly to -1 and 1, validating the counterexample.",
+        "takeaway": "At an interior point, differentiability is equivalent to existence and equality of both one-sided derivatives; continuity is only necessary.",
+        "extension": "At an endpoint of the domain, one normally studies the one-sided derivative from within the domain rather than a two-sided derivative."
+      }
+    }
+  },
+  {
+    "id": "A011",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "proof",
+    "tags": {
+      "zh": ["可导必连续", "增量表示", "严格证明"],
+      "en": ["differentiability implies continuity", "increment representation", "rigorous proof"]
+    },
+    "minutes": 10,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "用无穷小余项证明可导必连续",
+      "prompt": "已知 f 在 x₀ 处可导。证明存在 α(Δx)→0，使 f(x₀+Δx)-f(x₀)=f′(x₀)Δx+α(Δx)Δx，并由此证明 f 在 x₀ 处连续。",
+      "answer": "令 α(Δx)=[f(x₀+Δx)-f(x₀)]/Δx-f′(x₀)（Δx≠0），并令 α(0)=0，即得所需表示和连续性。",
+      "solution": {
+        "knowledge": ["可导的增量形式", "无穷小余项", "连续性的增量判据"],
+        "analysis": "从差商趋于 f′(x₀) 出发，把二者之差命名为 α(Δx)。这个误差趋于 0，乘回 Δx 后得到函数增量的线性主部。",
+        "steps": [
+          "因 f 在 x₀ 可导，lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/Δx=f′(x₀)。",
+          "当 Δx≠0 时定义 α(Δx)=[f(x₀+Δx)-f(x₀)]/Δx-f′(x₀)，并补充定义 α(0)=0。",
+          "由导数极限立刻得到 α(Δx)→0；移项并乘以 Δx，得到 f(x₀+Δx)-f(x₀)=f′(x₀)Δx+α(Δx)Δx。",
+          "当 Δx→0 时，f′(x₀)Δx→0，且 α(Δx)Δx→0，所以函数增量趋于 0，f 在 x₀ 连续。"
+        ],
+        "pitfalls": ["只写增量公式却不构造 α", "没有证明 α(Δx)→0", "把 α(Δx)Δx 错写成与 Δx 无关的常数"],
+        "verification": "将所得表达式除以 Δx（Δx≠0），又回到差商=f′(x₀)+α(Δx)，其极限确为 f′(x₀)。",
+        "takeaway": "可导的核心不仅是连续，还意味着函数增量具有线性主部 f′(x₀)Δx 和更小的余项。",
+        "extension": "这一增量表示也是后续定义微分 Δy=AΔx+o(Δx) 的直接基础。"
+      }
+    },
+    "en": {
+      "title": "Prove Differentiability Implies Continuity via an Infinitesimal Remainder",
+      "prompt": "Suppose f is differentiable at x₀. Prove that some α(Δx)→0 satisfies f(x₀+Δx)-f(x₀)=f′(x₀)Δx+α(Δx)Δx, and use it to prove continuity at x₀.",
+      "answer": "For Δx≠0, set α(Δx)=[f(x₀+Δx)-f(x₀)]/Δx-f′(x₀), and set α(0)=0. This gives the representation and continuity.",
+      "solution": {
+        "knowledge": ["increment form of differentiability", "infinitesimal remainder", "increment criterion for continuity"],
+        "analysis": "Start from the difference quotient tending to f′(x₀), and name its error α(Δx). This error tends to 0; multiplying back by Δx gives the linear principal part of the function increment.",
+        "steps": [
+          "Because f is differentiable at x₀, lim_{Δx→0}[f(x₀+Δx)-f(x₀)]/Δx=f′(x₀).",
+          "For Δx≠0 define α(Δx)=[f(x₀+Δx)-f(x₀)]/Δx-f′(x₀), and complete the definition by setting α(0)=0.",
+          "The derivative limit immediately gives α(Δx)→0. Rearranging and multiplying by Δx yields f(x₀+Δx)-f(x₀)=f′(x₀)Δx+α(Δx)Δx.",
+          "As Δx→0, both f′(x₀)Δx and α(Δx)Δx tend to 0, so the function increment tends to 0 and f is continuous at x₀."
+        ],
+        "pitfalls": ["stating the increment formula without constructing α", "failing to prove α(Δx)→0", "treating α(Δx)Δx as a constant independent of Δx"],
+        "verification": "Dividing the representation by Δx for Δx≠0 recovers the quotient f′(x₀)+α(Δx), whose limit is indeed f′(x₀).",
+        "takeaway": "Differentiability provides more than continuity: the function increment has a linear principal part f′(x₀)Δx and a smaller remainder.",
+        "extension": "This representation directly motivates the later definition of a differential through Δy=AΔx+o(Δx)."
+      }
+    }
+  },
+  {
+    "id": "A012",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["分段函数", "参数确定", "可导条件"],
+      "en": ["piecewise function", "parameter determination", "differentiability conditions"]
+    },
+    "minutes": 10,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "连接点的参数匹配",
+      "prompt": "设 f(x)={x², x≤1; ax+b, x>1}。求 a,b，使 f 在 x=1 处可导，并求 f′(1)。",
+      "answer": "a=2，b=-1，f′(1)=2",
+      "solution": {
+        "knowledge": ["分段点连续性", "左右导数相等", "参数方程组"],
+        "analysis": "可导必须先连续，再要求左右导数相等。连续条件决定 a+b，斜率匹配条件决定 a。",
+        "steps": [
+          "由左段及函数定义，f(1)=1；右极限为 lim_{x→1⁺}(ax+b)=a+b。",
+          "连续性要求 a+b=1，这是可导的必要条件。",
+          "左导数为 lim_{h→0⁻}[(1+h)²-1]/h=2；利用 a+b=1，右导数为 lim_{h→0⁺}[a(1+h)+b-1]/h=a。",
+          "令左右导数相等得 a=2，再由 a+b=1 得 b=-1；共同导数为 f′(1)=2。"
+        ],
+        "pitfalls": ["只匹配两段公式的函数值而不匹配斜率", "在求右导数前漏用 a+b=1，导致差商中出现常数项", "把 a+b=1 写成 a-b=1"],
+        "verification": "代入 a=2、b=-1，右段为 2x-1，在 x=1 取值 1、斜率 2，与左段 x² 的值和斜率都一致。",
+        "takeaway": "分段函数在连接点可导需要两层匹配：先匹配函数值，再匹配左右斜率。",
+        "extension": "若只要求连续，则所有满足 a+b=1 的参数都可以，不必要求 a=2。"
+      }
+    },
+    "en": {
+      "title": "Matching Parameters at a Junction",
+      "prompt": "Let f(x)={x², x≤1; ax+b, x>1}. Find a,b so that f is differentiable at x=1, and find f′(1).",
+      "answer": "a=2, b=-1, f′(1)=2",
+      "solution": {
+        "knowledge": ["continuity at a piecewise junction", "equality of one-sided derivatives", "parameter equations"],
+        "analysis": "Differentiability first requires continuity and then equality of the one-sided derivatives. Continuity determines a+b, while slope matching determines a.",
+        "steps": [
+          "From the left branch and the definition, f(1)=1; the right-hand limit is lim_{x→1⁺}(ax+b)=a+b.",
+          "Continuity requires a+b=1, which is necessary for differentiability.",
+          "The left derivative is lim_{h→0⁻}[(1+h)²-1]/h=2. Using a+b=1, the right derivative is lim_{h→0⁺}[a(1+h)+b-1]/h=a.",
+          "Equality of the one-sided derivatives gives a=2; then a+b=1 gives b=-1, and f′(1)=2."
+        ],
+        "pitfalls": ["matching function values but not slopes", "finding the right derivative without first using a+b=1, leaving a constant term in the quotient", "writing a-b=1 instead of a+b=1"],
+        "verification": "With a=2 and b=-1, the right branch is 2x-1, which has value 1 and slope 2 at x=1, matching the left branch x².",
+        "takeaway": "Differentiability at a piecewise junction requires two matches: function values first, then one-sided slopes.",
+        "extension": "If only continuity were required, every pair satisfying a+b=1 would work; a=2 would not be necessary."
+      }
+    }
+  },
+  {
+    "id": "A013",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["瞬时速度", "定义求导", "单位与方向"],
+      "en": ["instantaneous velocity", "first-principles differentiation", "units and direction"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "求指定时刻的瞬时速度",
+      "prompt": "质点的位置为 s(t)=t³-6t²+9t（m），t 以 s 为单位。用差商极限求 t=2 时的瞬时速度 v(2)=______。",
+      "answer": "-3 m/s",
+      "solution": {
+        "knowledge": ["位置函数的导数", "瞬时速度", "负号的方向意义"],
+        "analysis": "按定义计算 [s(2+h)-s(2)]/h。展开后常数项应完全抵消，留下可约去的 h。",
+        "steps": [
+          "先算 s(2)=8-24+18=2。",
+          "展开 s(2+h)=(2+h)³-6(2+h)²+9(2+h)=2-3h+h³。",
+          "平均速度差商为 [s(2+h)-s(2)]/h=(-3h+h³)/h=-3+h²。",
+          "令 h→0，得到 v(2)=lim_{h→0}(-3+h²)=-3 m/s；负号表示此刻沿选定正方向的反方向运动。"
+        ],
+        "pitfalls": ["把位置 s(2)=2 m 当成速度", "展开多项式时漏掉交叉项", "答案遗漏速度单位或误解负号"],
+        "verification": "也可先由基本规则得到 s′(t)=3t²-12t+9，代入 t=2 得 -3，与定义计算一致。",
+        "takeaway": "瞬时速度是位置关于时间的导数，数值的正负描述方向而不是速率的大小。",
+        "extension": "在 t=2 附近的平均速度为 -3+h²；当 h 很小时，它确实接近 -3 m/s。"
+      }
+    },
+    "en": {
+      "title": "Instantaneous Velocity at a Specified Time",
+      "prompt": "A particle has position s(t)=t³-6t²+9t meters, with t in seconds. Use a difference-quotient limit to find the instantaneous velocity at t=2, namely v(2)=______.",
+      "answer": "-3 m/s",
+      "solution": {
+        "knowledge": ["derivative of a position function", "instantaneous velocity", "directional meaning of a negative sign"],
+        "analysis": "Compute [s(2+h)-s(2)]/h from the definition. After expansion, all constant terms should cancel, leaving a factor h.",
+        "steps": [
+          "First, s(2)=8-24+18=2.",
+          "Expand s(2+h)=(2+h)³-6(2+h)²+9(2+h)=2-3h+h³.",
+          "The average-velocity quotient is [s(2+h)-s(2)]/h=(-3h+h³)/h=-3+h².",
+          "Letting h→0 gives v(2)=lim_{h→0}(-3+h²)=-3 m/s; the negative sign indicates motion opposite the chosen positive direction."
+        ],
+        "pitfalls": ["using the position s(2)=2 m as the velocity", "omitting cross terms in the expansion", "dropping the velocity unit or misreading the negative sign"],
+        "verification": "The basic rules also give s′(t)=3t²-12t+9, and substitution t=2 gives -3, matching the first-principles result.",
+        "takeaway": "Instantaneous velocity is the derivative of position with respect to time; its sign records direction, not merely speed.",
+        "extension": "The average velocity near t=2 is -3+h², which approaches -3 m/s for small h."
+      }
+    }
+  },
+  {
+    "id": "A014",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["根式函数", "定义求导", "切线与法线"],
+      "en": ["square-root function", "first-principles differentiation", "tangent and normal"]
+    },
+    "minutes": 10,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "根式曲线的切线与法线",
+      "prompt": "不用现成求导公式，由定义求曲线 y=√x 在点 (4,2) 处的导数，并写出切线与法线方程。",
+      "answer": "f′(4)=1/4；切线 y-2=(1/4)(x-4)；法线 y-2=-4(x-4)",
+      "solution": {
+        "knowledge": ["根式差商有理化", "导数的几何意义", "法线斜率为负倒数"],
+        "analysis": "差商含两个根式，乘以共轭式有理化即可约去 h。导数非零，所以法线斜率存在且为 -1/f′(4)。",
+        "steps": [
+          "按定义，f′(4)=lim_{h→0}[√(4+h)-2]/h。",
+          "乘以共轭式，差商等于 [(4+h)-4]/{h[√(4+h)+2]}=1/[√(4+h)+2]。",
+          "令 h→0 得 f′(4)=1/(2+2)=1/4，因此切线为 y-2=(1/4)(x-4)。",
+          "法线斜率为 -4，故法线为 y-2=-4(x-4)。"
+        ],
+        "pitfalls": ["有理化时只乘分子不乘分母", "把 √(4+h) 的极限误当成 4", "法线斜率漏写负号"],
+        "verification": "切线与法线均经过 (4,2)，斜率乘积 (1/4)(-4)=-1，且定义所得斜率为正，符合曲线在该点上升。",
+        "takeaway": "根式差商优先用共轭式；得到切线斜率后，几何方程按点斜式完成。",
+        "extension": "同样有理化可得 (√x)′=1/(2√x)，适用于 x>0。"
+      }
+    },
+    "en": {
+      "title": "Tangent and Normal to a Square-Root Curve",
+      "prompt": "Without using a ready-made derivative formula, find the derivative of y=√x at (4,2) from the definition, and write the tangent and normal lines.",
+      "answer": "f′(4)=1/4; tangent: y-2=(1/4)(x-4); normal: y-2=-4(x-4)",
+      "solution": {
+        "knowledge": ["rationalizing a radical difference quotient", "geometric meaning of a derivative", "normal slope as the negative reciprocal"],
+        "analysis": "The quotient contains two radicals, so multiply by the conjugate to cancel h. The derivative is nonzero, so the normal slope exists and equals -1/f′(4).",
+        "steps": [
+          "By definition, f′(4)=lim_{h→0}[√(4+h)-2]/h.",
+          "Rationalizing gives [(4+h)-4]/{h[√(4+h)+2]}=1/[√(4+h)+2].",
+          "Let h→0 to obtain f′(4)=1/(2+2)=1/4; hence the tangent is y-2=(1/4)(x-4).",
+          "The normal slope is -4, so the normal line is y-2=-4(x-4)."
+        ],
+        "pitfalls": ["multiplying only the numerator by the conjugate", "treating the limit of √(4+h) as 4", "omitting the minus sign in the normal slope"],
+        "verification": "Both lines pass through (4,2), their slopes multiply to (1/4)(-4)=-1, and the positive tangent slope agrees with the curve rising there.",
+        "takeaway": "Use the conjugate for a radical difference quotient, then convert the derivative into geometric line equations.",
+        "extension": "The same rationalization gives (√x)′=1/(2√x) for x>0."
+      }
+    }
+  },
+  {
+    "id": "A015",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "true_false",
+    "tags": {
+      "zh": ["连续不必可导", "反例", "逻辑逆命题"],
+      "en": ["continuity need not imply differentiability", "counterexample", "converse statement"]
+    },
+    "minutes": 6,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "检验可导必连续的逆命题",
+      "prompt": "判断正误并给出严格理由：若 f 在 x₀ 处连续，则 f 在 x₀ 处可导。",
+      "answer": "错误；例如 f(x)=|x-x₀| 在 x₀ 连续但不可导。",
+      "solution": {
+        "knowledge": ["必要条件与充分条件", "构造反例", "左右导数判定"],
+        "analysis": "一个全称命题只需一个反例即可否定。选择在 x₀ 有尖角的绝对值函数，同时验证其连续性和不可导性。",
+        "steps": [
+          "令 f(x)=|x-x₀|，则 f(x₀)=0。",
+          "当 x→x₀ 时，|x-x₀|→0=f(x₀)，所以 f 在 x₀ 连续。",
+          "从左侧取 h→0⁻，差商 |h|/h=-1，因此 f′₋(x₀)=-1。",
+          "从右侧取 h→0⁺，差商 |h|/h=1，因此 f′₊(x₀)=1；两者不等，f 在 x₀ 不可导，原命题错误。"
+        ],
+        "pitfalls": ["只画图而不计算左右导数", "把“可导蕴含连续”擅自改成双向等价", "反例没有验证连续性"],
+        "verification": "该反例对任意指定 x₀ 都成立，因此确实否定了原命题的普遍性。",
+        "takeaway": "连续排除了跳跃，却没有排除尖角；因此连续只是可导的必要条件，不是充分条件。",
+        "extension": "f(x)=|x-x₀|^{1/2} 也连续但在 x₀ 没有有限导数，呈现另一种失效方式。"
+      }
+    },
+    "en": {
+      "title": "Testing the Converse of Differentiability Implies Continuity",
+      "prompt": "Decide whether the statement is true and justify rigorously: if f is continuous at x₀, then f is differentiable at x₀.",
+      "answer": "False; for example, f(x)=|x-x₀| is continuous but not differentiable at x₀.",
+      "solution": {
+        "knowledge": ["necessary versus sufficient conditions", "constructing a counterexample", "one-sided derivative test"],
+        "analysis": "One counterexample disproves a universal statement. Choose an absolute-value function with a corner at x₀, and verify both continuity and failure of differentiability.",
+        "steps": [
+          "Let f(x)=|x-x₀|, so f(x₀)=0.",
+          "As x→x₀, |x-x₀|→0=f(x₀), so f is continuous at x₀.",
+          "For h→0⁻, the quotient |h|/h=-1, so f′₋(x₀)=-1.",
+          "For h→0⁺, the quotient |h|/h=1, so f′₊(x₀)=1. The values differ, so f is not differentiable at x₀ and the statement is false."
+        ],
+        "pitfalls": ["drawing a graph without calculating the one-sided derivatives", "turning the one-way implication into an equivalence", "giving a counterexample without checking continuity"],
+        "verification": "The construction works for every prescribed x₀, so it genuinely disproves the universal claim.",
+        "takeaway": "Continuity excludes jumps but not corners; it is necessary, not sufficient, for differentiability.",
+        "extension": "The function f(x)=|x-x₀|^{1/2} is also continuous but has no finite derivative at x₀, showing a different failure mode."
+      }
+    }
+  },
+  {
+    "id": "A016",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "proof",
+    "tags": {
+      "zh": ["平移绝对值", "左右导数", "尖点"],
+      "en": ["translated absolute value", "one-sided derivatives", "corner"]
+    },
+    "minutes": 8,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "证明平移绝对值在尖点不可导",
+      "prompt": "设 a 为任意实数。证明 f(x)=|x-a| 在 x=a 处连续，但左导数为 -1、右导数为 1，因而不可导。",
+      "answer": "f 在 a 连续，且 f′₋(a)=-1、f′₊(a)=1，所以 f′(a) 不存在。",
+      "solution": {
+        "knowledge": ["平移不改变绝对值尖角结构", "左右差商", "连续与可导的区别"],
+        "analysis": "以 h=x-a 表示对基点 a 的增量，问题就完全化为 |h| 在 0 附近的行为。",
+        "steps": [
+          "f(a)=|a-a|=0；当 x→a 时，|x-a|→0，因此 lim_{x→a}f(x)=f(a)，f 在 a 连续。",
+          "差商为 [f(a+h)-f(a)]/h=|h|/h。",
+          "若 h→0⁻，则 |h|=-h，差商为 -1，所以 f′₋(a)=-1。",
+          "若 h→0⁺，则 |h|=h，差商为 1，所以 f′₊(a)=1；两侧不等，故 f′(a) 不存在。"
+        ],
+        "pitfalls": ["把基点 a 误认为必须等于 0", "连续性验证中漏掉 f(a)", "认为平移后尖角会消失"],
+        "verification": "令 u=x-a，图像只是 y=|u| 水平平移到顶点 (a,0)，左右斜率仍分别为 -1、1。",
+        "takeaway": "处理平移后的局部性质时，用增量 h=x-a 可把基点移回 0。",
+        "extension": "对 c|x-a|+d，若 c≠0，则在 x=a 仍不可导，左右导数分别为 -c 与 c。"
+      }
+    },
+    "en": {
+      "title": "Prove a Translated Absolute Value Is Not Differentiable at Its Corner",
+      "prompt": "Let a be any real number. Prove that f(x)=|x-a| is continuous at x=a, but has left derivative -1 and right derivative 1 there, and hence is not differentiable.",
+      "answer": "f is continuous at a, with f′₋(a)=-1 and f′₊(a)=1, so f′(a) does not exist.",
+      "solution": {
+        "knowledge": ["translation preserves the corner of an absolute-value graph", "one-sided difference quotients", "continuity versus differentiability"],
+        "analysis": "Use h=x-a as the increment from the base point a. The local problem then becomes exactly the behavior of |h| near 0.",
+        "steps": [
+          "Since f(a)=|a-a|=0 and |x-a|→0 as x→a, lim_{x→a}f(x)=f(a), so f is continuous at a.",
+          "The difference quotient is [f(a+h)-f(a)]/h=|h|/h.",
+          "For h→0⁻, |h|=-h, so the quotient is -1 and f′₋(a)=-1.",
+          "For h→0⁺, |h|=h, so the quotient is 1 and f′₊(a)=1. The values differ, so f′(a) does not exist."
+        ],
+        "pitfalls": ["assuming the base point a must be 0", "omitting f(a) in the continuity check", "thinking that translation removes the corner"],
+        "verification": "With u=x-a, the graph is simply y=|u| shifted so its vertex is (a,0); the one-sided slopes remain -1 and 1.",
+        "takeaway": "For a translated local property, the increment h=x-a moves the base point back to 0.",
+        "extension": "For c|x-a|+d with c≠0, differentiability still fails at x=a; the one-sided derivatives are -c and c."
+      }
+    }
+  },
+  {
+    "id": "A017",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["乘积求导法则", "多项式", "代数化简"],
+      "en": ["product rule", "polynomial", "algebraic simplification"]
+    },
+    "minutes": 7,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "乘积法则与结果化简",
+      "prompt": "求函数 y=(x²+1)(x³-2x) 的导数，并将结果化为多项式。",
+      "answer": "y′=5x⁴-3x²-2",
+      "solution": {
+        "knowledge": ["乘积求导法则", "幂函数求导", "同类项合并"],
+        "analysis": "把两个因子分别记为 u、v，使用 (uv)′=u′v+uv′。最后展开核对，可以避免漏掉其中一项。",
+        "steps": [
+          "令 u=x²+1、v=x³-2x，则 u′=2x，v′=3x²-2。",
+          "由乘积法则，y′=2x(x³-2x)+(x²+1)(3x²-2)。",
+          "分别展开得到 2x⁴-4x² 与 3x⁴+x²-2。",
+          "合并同类项，y′=(2x⁴+3x⁴)+(-4x²+x²)-2=5x⁴-3x²-2。"
+        ],
+        "pitfalls": ["误写成 u′v′", "只对一个因子求导", "展开 (x²+1)(3x²-2) 时漏掉常数项 -2"],
+        "verification": "先展开原函数 y=x⁵-x³-2x，再逐项求导同样得到 5x⁴-3x²-2。",
+        "takeaway": "乘积求导保留“两项交叉结构”；能展开时可用另一条路径交叉检查。",
+        "extension": "若函数含三个因子，可逐次使用乘积法则，得到每次只对一个因子求导的三项和。"
+      }
+    },
+    "en": {
+      "title": "Product Rule and Simplification",
+      "prompt": "Differentiate y=(x²+1)(x³-2x), and simplify the result to a polynomial.",
+      "answer": "y′=5x⁴-3x²-2",
+      "solution": {
+        "knowledge": ["product rule", "power rule", "combining like terms"],
+        "analysis": "Name the two factors u and v and use (uv)′=u′v+uv′. Expanding afterward provides a useful check against a missing term.",
+        "steps": [
+          "Let u=x²+1 and v=x³-2x. Then u′=2x and v′=3x²-2.",
+          "By the product rule, y′=2x(x³-2x)+(x²+1)(3x²-2).",
+          "The two expanded expressions are 2x⁴-4x² and 3x⁴+x²-2.",
+          "Combining like terms gives y′=(2x⁴+3x⁴)+(-4x²+x²)-2=5x⁴-3x²-2."
+        ],
+        "pitfalls": ["writing u′v′", "differentiating only one factor", "losing the constant term -2 when expanding (x²+1)(3x²-2)"],
+        "verification": "Expanding first gives y=x⁵-x³-2x, whose termwise derivative is also 5x⁴-3x²-2.",
+        "takeaway": "A product derivative retains two cross terms; when expansion is possible, use it as an independent check.",
+        "extension": "For three factors, repeated use of the product rule gives a three-term sum in which one factor is differentiated at a time."
+      }
+    }
+  },
+  {
+    "id": "A018",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "fill_blank",
+    "tags": {
+      "zh": ["链式法则", "三角函数", "复合函数"],
+      "en": ["chain rule", "trigonometric function", "composite function"]
+    },
+    "minutes": 6,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "识别内外层并求导",
+      "prompt": "若 y=sin(3x²-1)，则 y′=______。",
+      "answer": "6x cos(3x²-1)",
+      "solution": {
+        "knowledge": ["链式法则", "(sin u)′=cos u·u′", "多项式求导"],
+        "analysis": "外层是 sin u，内层是 u=3x²-1。先求外层对 u 的导数，再乘内层对 x 的导数。",
+        "steps": [
+          "设 u=3x²-1，则 y=sin u。",
+          "外层导数为 dy/du=cos u。",
+          "内层导数为 du/dx=6x。",
+          "由链式法则，y′=(dy/du)(du/dx)=cos(3x²-1)·6x=6x cos(3x²-1)。"
+        ],
+        "pitfalls": ["只写 cos(3x²-1) 而漏乘 6x", "把 (sin u)′ 写成 -sin u", "将内层常数 -1 错求成 -1"],
+        "verification": "在 x=0 时内层的变化率为 0，公式给出 y′(0)=0，符合复合变化率应含内层因子。",
+        "takeaway": "链式法则可记作“外层导数保留内层，再乘内层导数”。",
+        "extension": "若 y=sin³(3x²-1)，还需再增加一层幂函数链式求导。"
+      }
+    },
+    "en": {
+      "title": "Identify the Inner and Outer Functions",
+      "prompt": "If y=sin(3x²-1), then y′=______.",
+      "answer": "6x cos(3x²-1)",
+      "solution": {
+        "knowledge": ["chain rule", "(sin u)′=cos u·u′", "polynomial differentiation"],
+        "analysis": "The outer function is sin u and the inner function is u=3x²-1. Differentiate the outer function with respect to u and multiply by the derivative of the inner function.",
+        "steps": [
+          "Set u=3x²-1, so y=sin u.",
+          "The outer derivative is dy/du=cos u.",
+          "The inner derivative is du/dx=6x.",
+          "By the chain rule, y′=(dy/du)(du/dx)=cos(3x²-1)·6x=6x cos(3x²-1)."
+        ],
+        "pitfalls": ["writing only cos(3x²-1) and omitting 6x", "using -sin u as the derivative of sin u", "differentiating the inner constant -1 as -1"],
+        "verification": "At x=0 the inner rate is 0, and the formula gives y′(0)=0, as a composite rate should include the inner factor.",
+        "takeaway": "For the chain rule, differentiate the outer layer while keeping the inner expression, then multiply by the inner derivative.",
+        "extension": "For y=sin³(3x²-1), an additional outer power layer would also need the chain rule."
+      }
+    }
+  },
+  {
+    "id": "A019",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "multiple_choice",
+    "tags": {
+      "zh": ["求导法则", "反函数", "链式法则"],
+      "en": ["differentiation rules", "inverse function", "chain rule"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": false,
+    "zh": {
+      "title": "辨析四类求导公式",
+      "prompt": "设各公式所需的可导、定义域、非零分母及反函数连续性条件均满足；对反函数公式，令 y₀=f(x₀) 且 f′(x₀)≠0。下列公式中正确的是哪些？",
+      "choices": [
+        "A. (fg)′=f′g+fg′",
+        "B. (f/g)′=(f′g-fg′)/g²（g≠0）",
+        "C. (f∘g)′(x)=f′(x)g′(x)",
+        "D. (f⁻¹)′(y₀)=1/f′(x₀)"
+      ],
+      "answer": "A、B、D",
+      "solution": {
+        "knowledge": ["乘积法则", "商法则", "链式法则", "反函数求导公式"],
+        "analysis": "A、B、D 是标准公式；C 的错误在于外层导数应在内层函数值 g(x) 处取值，而不是在 x 处取值。",
+        "steps": [
+          "乘积法则为 (fg)′=f′g+fg′，所以 A 正确。",
+          "在 g≠0 处，商法则为 (f/g)′=(f′g-fg′)/g²，所以 B 正确。",
+          "链式法则的正确形式是 (f∘g)′(x)=f′(g(x))g′(x)，故 C 一般错误。",
+          "在题设反函数条件下，(f⁻¹)′(y₀)=1/f′(x₀)，所以 D 正确。"
+        ],
+        "pitfalls": ["把乘积导数写成两个导数的乘积", "商法则分子次序颠倒", "链式法则中遗漏 f′ 的取值点 g(x)"],
+        "verification": "取 f(u)=u²、g(x)=x+1，则复合导数为 2(x+1)，而 C 给出 2x，二者不同，直接否定 C。",
+        "takeaway": "公式记忆应包含结构和取值点，尤其链式法则中的 f′(g(x)) 不能简写错位。",
+        "extension": "把商 f/g 写成 f·g⁻¹，再用乘积与链式法则，也可推出商法则。"
+      }
+    },
+    "en": {
+      "title": "Distinguish Four Differentiation Formulas",
+      "prompt": "Assume all differentiability, domain, nonzero-denominator, and inverse-continuity conditions required by the formulas hold. For the inverse formula, let y₀=f(x₀) and f′(x₀)≠0. Which formulas are correct?",
+      "choices": [
+        "A. (fg)′=f′g+fg′",
+        "B. (f/g)′=(f′g-fg′)/g² (g≠0)",
+        "C. (f∘g)′(x)=f′(x)g′(x)",
+        "D. (f⁻¹)′(y₀)=1/f′(x₀)"
+      ],
+      "answer": "A, B, D",
+      "solution": {
+        "knowledge": ["product rule", "quotient rule", "chain rule", "inverse-function derivative formula"],
+        "analysis": "A, B, and D are standard formulas. C is wrong because the derivative of the outer function must be evaluated at the inner value g(x), not at x.",
+        "steps": [
+          "The product rule is (fg)′=f′g+fg′, so A is correct.",
+          "Where g≠0, the quotient rule is (f/g)′=(f′g-fg′)/g², so B is correct.",
+          "The correct chain rule is (f∘g)′(x)=f′(g(x))g′(x), so C is generally false.",
+          "Under the stated inverse-function conditions, (f⁻¹)′(y₀)=1/f′(x₀), so D is correct."
+        ],
+        "pitfalls": ["writing the derivative of a product as the product of derivatives", "reversing the numerator in the quotient rule", "omitting the evaluation point g(x) in the chain rule"],
+        "verification": "Take f(u)=u² and g(x)=x+1. The composite derivative is 2(x+1), while C gives 2x, directly disproving C.",
+        "takeaway": "A formula includes both its algebraic structure and its evaluation points; f′(g(x)) in the chain rule is essential.",
+        "extension": "Writing f/g as f·g⁻¹ and applying the product and chain rules also derives the quotient rule."
+      }
+    }
+  },
+  {
+    "id": "A020",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "standard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["商法则", "定义域", "结果化简"],
+      "en": ["quotient rule", "domain", "simplification"]
+    },
+    "minutes": 7,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "有理函数的商法则",
+      "prompt": "求 y=(x²+1)/(x-1) 的导数，并注明导数公式的适用范围。",
+      "answer": "y′=(x²-2x-1)/(x-1)²，x≠1",
+      "solution": {
+        "knowledge": ["商法则", "分母非零条件", "分子化简"],
+        "analysis": "把分子、分母分别看作 u、v，按“上导乘下减上乘下导，除以下平方”计算，并保留 x≠1。",
+        "steps": [
+          "令 u=x²+1、v=x-1，则 u′=2x、v′=1。",
+          "由商法则，y′=[2x(x-1)-(x²+1)·1]/(x-1)²。",
+          "化简分子：2x²-2x-x²-1=x²-2x-1。",
+          "所以 y′=(x²-2x-1)/(x-1)²；原函数与该求导式都只在 x≠1 时讨论。"
+        ],
+        "pitfalls": ["把分母写成 x-1 而不是 (x-1)²", "分子两项顺序颠倒导致整体符号相反", "答案漏掉 x≠1"],
+        "verification": "将原函数作代数除法得 y=x+1+2/(x-1)，求导为 1-2/(x-1)²，通分后仍是 (x²-2x-1)/(x-1)²。",
+        "takeaway": "商法则不仅要算对分子次序，还要保留原分母不为零的定义域条件。",
+        "extension": "可比较先作代数除法再求导与直接使用商法则的工作量。"
+      }
+    },
+    "en": {
+      "title": "Quotient Rule for a Rational Function",
+      "prompt": "Differentiate y=(x²+1)/(x-1), and state where the derivative formula applies.",
+      "answer": "y′=(x²-2x-1)/(x-1)², x≠1",
+      "solution": {
+        "knowledge": ["quotient rule", "nonzero denominator condition", "numerator simplification"],
+        "analysis": "Treat the numerator and denominator as u and v. Use the quotient rule in its ordered form and retain the restriction x≠1.",
+        "steps": [
+          "Let u=x²+1 and v=x-1. Then u′=2x and v′=1.",
+          "By the quotient rule, y′=[2x(x-1)-(x²+1)·1]/(x-1)².",
+          "Simplify the numerator: 2x²-2x-x²-1=x²-2x-1.",
+          "Thus y′=(x²-2x-1)/(x-1)²; both the original function and this derivative are considered only for x≠1."
+        ],
+        "pitfalls": ["using x-1 instead of (x-1)² in the denominator", "reversing the numerator terms and changing the overall sign", "omitting x≠1"],
+        "verification": "Polynomial division gives y=x+1+2/(x-1), whose derivative is 1-2/(x-1)²; combining fractions reproduces (x²-2x-1)/(x-1)².",
+        "takeaway": "For a quotient, preserve both the numerator order and the original nonzero-denominator condition.",
+        "extension": "Compare the work required by algebraic division followed by differentiation with direct use of the quotient rule."
+      }
+    }
+  },
+  {
+    "id": "A021",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["振荡函数", "定义求导", "分段导函数"],
+      "en": ["oscillatory function", "first-principles differentiation", "piecewise derivative"]
+    },
+    "minutes": 12,
+    "space": "L",
+    "classic_method": false,
+    "zh": {
+      "title": "振荡函数在原点的可导性",
+      "prompt": "设 f(x)={x²sin(1/x), x≠0; 0, x=0}。判断 f 在 0 处是否可导，并求完整的导函数 f′(x)。",
+      "answer": "f 在 0 处可导，f′(0)=0；x≠0 时 f′(x)=2x sin(1/x)-cos(1/x)",
+      "solution": {
+        "knowledge": ["定义处理特殊点", "有界因子与无穷小", "乘积和链式法则"],
+        "analysis": "原点不能直接套用 x≠0 的公式，必须从定义出发；非零点再用乘积法则与链式法则。",
+        "steps": [
+          "原点差商为 [f(h)-f(0)]/h=h sin(1/h)，其中 h≠0。",
+          "因为 |h sin(1/h)|≤|h|→0，所以差商极限存在，f′(0)=0。",
+          "当 x≠0 时，对 x²sin(1/x) 使用乘积法则：第一项为 2x sin(1/x)。",
+          "链式求第二项：x²·cos(1/x)·(-1/x²)=-cos(1/x)，故 f′(x)=2x sin(1/x)-cos(1/x)。"
+        ],
+        "pitfalls": ["把 x≠0 的求导式直接代入 x=0", "认为 sin(1/h) 无极限就断言乘积无极限", "链式求导遗漏 -1/x²"],
+        "verification": "原点差商的绝对值被 |h| 控制，严格趋于 0；非零点公式中两项分别对应乘积法则的两部分。",
+        "takeaway": "特殊点先用定义；振荡因子即使无极限，乘上足够小的因子仍可能产生导数。",
+        "extension": "继续考察 x→0 时 f′(x) 是否趋于 f′(0)，可以区分“可导”与“导函数连续”。"
+      }
+    },
+    "en": {
+      "title": "Differentiability of an Oscillatory Function at the Origin",
+      "prompt": "Let f(x)={x²sin(1/x), x≠0; 0, x=0}. Decide whether f is differentiable at 0, and find the complete derivative f′(x).",
+      "answer": "f is differentiable at 0 with f′(0)=0; for x≠0, f′(x)=2x sin(1/x)-cos(1/x)",
+      "solution": {
+        "knowledge": ["using the definition at a special point", "bounded factor times an infinitesimal", "product and chain rules"],
+        "analysis": "The formula for x≠0 cannot simply be used at the origin; first principles are required there. At nonzero points, use the product and chain rules.",
+        "steps": [
+          "At the origin the difference quotient is [f(h)-f(0)]/h=h sin(1/h) for h≠0.",
+          "Since |h sin(1/h)|≤|h|→0, the quotient has a limit and f′(0)=0.",
+          "For x≠0, applying the product rule to x²sin(1/x) gives the first term 2x sin(1/x).",
+          "The chain-rule contribution is x²·cos(1/x)·(-1/x²)=-cos(1/x), so f′(x)=2x sin(1/x)-cos(1/x)."
+        ],
+        "pitfalls": ["substituting x=0 into the derivative formula for x≠0", "declaring no limit merely because sin(1/h) oscillates", "omitting -1/x² in the chain rule"],
+        "verification": "The absolute value of the origin quotient is bounded by |h|, which rigorously tends to 0; the two nonzero-point terms correspond exactly to the two product-rule contributions.",
+        "takeaway": "Use the definition at exceptional points; an oscillatory factor without a limit may still yield a derivative when multiplied by a sufficiently small factor.",
+        "extension": "Examining whether f′(x) tends to f′(0) as x→0 distinguishes differentiability from continuity of the derivative."
+      }
+    }
+  },
+  {
+    "id": "A022",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "proof",
+    "tags": {
+      "zh": ["偶函数", "原点导数", "对称差商"],
+      "en": ["even function", "derivative at the origin", "symmetric difference quotient"]
+    },
+    "minutes": 10,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "偶函数在原点可导时的斜率",
+      "prompt": "设 f 是偶函数，且 f 在 x=0 处可导。证明 f′(0)=0。",
+      "answer": "利用 f(-h)=f(h) 比较左右差商，可得 f′(0)=-f′(0)，故 f′(0)=0。",
+      "solution": {
+        "knowledge": ["偶函数对称性", "左右差商", "导数存在时左右极限相等"],
+        "analysis": "偶性使左侧函数增量与右侧函数增量相同，但分母符号相反，因此两个单侧导数互为相反数；可导又要求它们相等。",
+        "steps": [
+          "右导数为 f′₊(0)=lim_{h→0⁺}[f(h)-f(0)]/h。",
+          "左导数中令 h=-t、t→0⁺，则 f′₋(0)=lim_{t→0⁺}[f(-t)-f(0)]/(-t)。",
+          "由偶性 f(-t)=f(t)，所以 f′₋(0)=-lim_{t→0⁺}[f(t)-f(0)]/t=-f′₊(0)。",
+          "因 f 在 0 可导，f′₋(0)=f′₊(0)=f′(0)；于是 f′(0)=-f′(0)，故 f′(0)=0。"
+        ],
+        "pitfalls": ["只用偶性就断言导数一定存在", "变量替换 h=-t 后漏掉分母负号", "没有使用可导带来的左右相等"],
+        "verification": "例如 f(x)=x²、cos x 都是偶函数并在 0 可导，它们在 0 的导数确实为 0；而 |x| 提醒我们可导假设不可省略。",
+        "takeaway": "对称性控制单侧斜率的关系；偶函数的左右斜率互为相反数，可导时只能共同为 0。",
+        "extension": "若 f 是奇函数且在 0 可导，f′(0) 不必为 0，例如 f(x)=x。"
+      }
+    },
+    "en": {
+      "title": "Slope of an Even Function at the Origin",
+      "prompt": "Suppose f is even and differentiable at x=0. Prove that f′(0)=0.",
+      "answer": "Using f(-h)=f(h) to compare the one-sided quotients gives f′(0)=-f′(0), hence f′(0)=0.",
+      "solution": {
+        "knowledge": ["symmetry of an even function", "one-sided difference quotients", "equality of one-sided limits when the derivative exists"],
+        "analysis": "Evenness makes the left and right function increments equal, while their denominators have opposite signs. Thus the one-sided derivatives are opposites; differentiability also requires them to be equal.",
+        "steps": [
+          "The right derivative is f′₊(0)=lim_{h→0⁺}[f(h)-f(0)]/h.",
+          "In the left derivative set h=-t with t→0⁺: f′₋(0)=lim_{t→0⁺}[f(-t)-f(0)]/(-t).",
+          "Evenness gives f(-t)=f(t), so f′₋(0)=-lim_{t→0⁺}[f(t)-f(0)]/t=-f′₊(0).",
+          "Since f is differentiable at 0, f′₋(0)=f′₊(0)=f′(0). Therefore f′(0)=-f′(0), and f′(0)=0."
+        ],
+        "pitfalls": ["claiming existence of the derivative from evenness alone", "losing the minus sign after substituting h=-t", "not using equality of the one-sided derivatives"],
+        "verification": "The even functions f(x)=x² and cos x both have derivative 0 at the origin, while |x| shows why the differentiability assumption cannot be removed.",
+        "takeaway": "Symmetry controls one-sided slopes: an even function has opposite one-sided slopes at 0, so differentiability forces both to be 0.",
+        "extension": "For an odd function differentiable at 0, the derivative need not be 0; f(x)=x is an example."
+      }
+    }
+  },
+  {
+    "id": "A023",
+    "section": 1,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "comprehensive",
+    "tags": {
+      "zh": ["运动模型", "平均速度", "瞬时速度", "切线解释"],
+      "en": ["motion model", "average velocity", "instantaneous velocity", "tangent interpretation"]
+    },
+    "minutes": 14,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "从平均速度到瞬时方向",
+      "prompt": "质点的位置为 s(t)=t³-3t²+2t（m），t 以 s 为单位。(1) 求区间 [1,1+h]（h≠0）上的平均速度；(2) 由定义求 v(1)；(3) 写出位置—时间曲线在 (1,s(1)) 处的切线；(4) 解释 v(1) 的符号。",
+      "answer": "(1) -1+h² m/s；(2) v(1)=-1 m/s；(3) s=-(t-1)；(4) 此刻沿负方向运动",
+      "solution": {
+        "knowledge": ["平均速度差商", "瞬时速度极限", "位置—时间图像切线", "速度符号"],
+        "analysis": "四问共用同一个差商。先精确展开 s(1+h)-s(1)，再分别把差商解释为平均速度、极限和切线斜率。",
+        "steps": [
+          "计算 s(1)=1-3+2=0，并展开 s(1+h)=(1+h)³-3(1+h)²+2(1+h)=-h+h³。",
+          "区间 [1,1+h] 的平均速度为 [s(1+h)-s(1)]/h=(-h+h³)/h=-1+h² m/s。",
+          "令 h→0，得到瞬时速度 v(1)=lim_{h→0}(-1+h²)=-1 m/s。",
+          "位置—时间曲线的切点为 (1,0)，斜率为 -1，所以切线为 s-0=-1(t-1)，即 s=-(t-1)。",
+          "速度为负表示在 t=1 的瞬间，位置沿预先规定的正坐标方向的反方向变化；它不表示距离为负。"
+        ],
+        "pitfalls": ["把 h 只允许取正值而忽略双侧瞬时速度", "混淆坐标 s 与速率 |v|", "切线中把横轴变量误写成 x 而不说明"],
+        "verification": "平均速度 -1+h² 在 h→0⁺ 与 h→0⁻ 时都趋于 -1，说明双侧瞬时速度一致；切线斜率也等于 -1。",
+        "takeaway": "同一差商可同时连接代数极限、物理变化率和图像切线三种含义。",
+        "extension": "比较 h=0.1 与 h=-0.1 的平均速度，二者均为 -0.99 m/s，体现其对瞬时速度的逼近。"
+      }
+    },
+    "en": {
+      "title": "From Average Velocity to Instantaneous Direction",
+      "prompt": "A particle has position s(t)=t³-3t²+2t meters, with t in seconds. (1) Find the average velocity on [1,1+h] for h≠0. (2) Use the definition to find v(1). (3) Write the tangent to the position-time curve at (1,s(1)). (4) Interpret the sign of v(1).",
+      "answer": "(1) -1+h² m/s; (2) v(1)=-1 m/s; (3) s=-(t-1); (4) the particle is moving in the negative direction at that instant",
+      "solution": {
+        "knowledge": ["average-velocity quotient", "instantaneous-velocity limit", "tangent to a position-time graph", "sign of velocity"],
+        "analysis": "All four parts use the same quotient. First expand s(1+h)-s(1) exactly, then interpret the quotient as an average velocity, a limit, and a tangent slope.",
+        "steps": [
+          "Compute s(1)=1-3+2=0 and expand s(1+h)=(1+h)³-3(1+h)²+2(1+h)=-h+h³.",
+          "The average velocity on [1,1+h] is [s(1+h)-s(1)]/h=(-h+h³)/h=-1+h² m/s.",
+          "Let h→0 to obtain the instantaneous velocity v(1)=lim_{h→0}(-1+h²)=-1 m/s.",
+          "The point on the position-time graph is (1,0) and the slope is -1, so its tangent is s-0=-1(t-1), or s=-(t-1).",
+          "The negative velocity means that at t=1 the position is changing opposite the chosen positive coordinate direction; it does not mean that distance is negative."
+        ],
+        "pitfalls": ["allowing only positive h and missing the two-sided instantaneous velocity", "confusing position s with speed |v|", "using x for the horizontal variable without explaining it"],
+        "verification": "The average velocity -1+h² tends to -1 from both h→0⁺ and h→0⁻, so the two-sided instantaneous velocity agrees; the tangent slope is also -1.",
+        "takeaway": "One difference quotient connects an algebraic limit, a physical rate, and a graphical tangent slope.",
+        "extension": "For h=0.1 and h=-0.1, the average velocity is -0.99 m/s in both cases, illustrating approximation to the instantaneous value."
+      }
+    }
+  },
+  {
+    "id": "A024",
+    "section": 1,
+    "tier": "synthesis",
+    "difficulty": "advanced",
+    "type": "error_diagnosis",
+    "tags": {
+      "zh": ["端点导数", "无穷差商", "错误诊断"],
+      "en": ["endpoint derivative", "unbounded difference quotient", "error diagnosis"]
+    },
+    "minutes": 10,
+    "space": "L",
+    "classic_method": false,
+    "zh": {
+      "title": "“无穷大导数”的错误",
+      "prompt": "函数 f(x)=√x 的定义域为 [0,+∞)。某同学写道：“f′(0)=lim_{h→0}[√h-0]/h=lim_{h→0}1/√h=+∞，所以 f′(0)=+∞。”指出这段推理中的所有关键错误，并给出正确结论。",
+      "answer": "h 只能从右侧趋于 0；右差商无界而不是趋于有限实数，因此通常意义下 f′(0) 不存在，不能写成 f′(0)=+∞。",
+      "solution": {
+        "knowledge": ["定义域端点的单侧增量", "导数必须是有限实数", "竖直切线与有限导数的区别"],
+        "analysis": "错误有两层：允许的增量方向受定义域限制；即使右侧差商趋于 +∞，它也不是有限导数值。",
+        "steps": [
+          "因为 f 只在 x≥0 有定义，以 0 为基点时必须有 h≥0；差商只能考察 h→0⁺，不能写无方向的 h→0。",
+          "对 h>0，差商 [√h-0]/h=1/√h，且当 h→0⁺ 时它无界增大。",
+          "通常的导数定义要求差商收敛到一个有限实数；+∞ 描述无界行为，不是一个可接受的导数值。",
+          "因此正确结论是：f 在端点 0 没有有限右导数，通常意义下 f′(0) 不存在；图像可描述为在原点具有竖直切线趋势，但不能据此写 f′(0)=+∞。"
+        ],
+        "pitfalls": ["在端点使用不存在于定义域内的负增量", "把无穷符号当作普通实数", "把“竖直切线”与“存在有限导数”混为一谈"],
+        "verification": "取 h=10⁻²、10⁻⁴、10⁻⁶，差商依次为 10、100、1000，显示其无界而非趋于有限数。",
+        "takeaway": "导数判断先检查允许的趋近方向，再检查差商是否趋于有限实数。",
+        "extension": "对 f(x)=x^{1/3} 在 0 的双侧差商也无界为正，同样没有有限导数。"
+      }
+    },
+    "en": {
+      "title": "The Error in an “Infinite Derivative”",
+      "prompt": "The function f(x)=√x has domain [0,+∞). A student writes: “f′(0)=lim_{h→0}[√h-0]/h=lim_{h→0}1/√h=+∞, so f′(0)=+∞.” Identify every key error and give the correct conclusion.",
+      "answer": "Only h→0⁺ is allowed; the right-hand quotient is unbounded rather than convergent to a finite real number. Thus f′(0) does not exist in the usual sense, and one must not write f′(0)=+∞.",
+      "solution": {
+        "knowledge": ["one-sided increments at a domain endpoint", "a derivative must be a finite real number", "vertical tangent versus finite derivative"],
+        "analysis": "There are two errors: the domain restricts the direction of the increment, and even the right-hand quotient tends to +∞ rather than to a finite derivative value.",
+        "steps": [
+          "Because f is defined only for x≥0, an increment from the base point 0 must satisfy h≥0; only h→0⁺ is admissible, not an unrestricted h→0.",
+          "For h>0, the quotient is [√h-0]/h=1/√h, which grows without bound as h→0⁺.",
+          "The usual derivative definition requires convergence of the quotient to a finite real number; +∞ records unbounded behavior and is not an acceptable derivative value.",
+          "Therefore f has no finite right derivative at the endpoint 0, and f′(0) does not exist in the usual sense. The graph may be described as having a vertical-tangent tendency at the origin, but this does not justify f′(0)=+∞."
+        ],
+        "pitfalls": ["using negative increments that leave the domain", "treating the infinity symbol as an ordinary real number", "confusing a vertical tangent with existence of a finite derivative"],
+        "verification": "For h=10⁻²,10⁻⁴,10⁻⁶, the quotients are 10,100,1000, showing unbounded growth rather than convergence to a finite number.",
+        "takeaway": "When testing a derivative, first check the permitted direction of approach and then require a finite quotient limit.",
+        "extension": "For f(x)=x^{1/3}, the two-sided quotient at 0 is also unbounded and positive, so there is again no finite derivative."
+      }
+    }
+  },
+  {
+    "id": "A025",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "single_choice",
+    "tags": {
+      "zh": ["变形差商", "导数定义", "线性组合"],
+      "en": ["modified difference quotient", "derivative definition", "linear combination"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": false,
+    "zh": {
+      "title": "识别不对称割线的极限",
+      "prompt": "已知 f 在 x₀ 处可导。下列极限中，哪一个必等于 f′(x₀)？",
+      "choices": [
+        "A. lim_{h→0}[f(x₀+2h)-f(x₀-h)]/(3h)",
+        "B. lim_{h→0}[f(x₀+2h)-f(x₀-h)]/(2h)",
+        "C. lim_{h→0}[f(x₀+h)-f(x₀-h)]/h",
+        "D. lim_{h→0}[f(x₀+2h)-f(x₀)]/h"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["导数差商的等价变形", "增减同一基准值", "极限的线性运算"],
+        "analysis": "在不对称的两个函数值之间加减 f(x₀)，把一个差商拆成两个标准导数差商，并跟踪各自的系数。",
+        "steps": [
+          "对 A 的分子加减 f(x₀)：f(x₀+2h)-f(x₀-h)=[f(x₀+2h)-f(x₀)]+[f(x₀)-f(x₀-h)]。",
+          "除以 3h 后，第一项可写成 (2/3)·[f(x₀+2h)-f(x₀)]/(2h)，其极限为 (2/3)f′(x₀)。",
+          "第二项可写成 (1/3)·[f(x₀)-f(x₀-h)]/h=(1/3)·[f(x₀-h)-f(x₀)]/(-h)，其极限为 (1/3)f′(x₀)。",
+          "两项相加为 f′(x₀)，故 A 正确；同理 B、C、D 的极限系数分别为 3/2、2、2，一般不等于 f′(x₀)。"
+        ],
+        "pitfalls": ["看到 h→0 就忽略分母系数", "第二项改写时丢失两个负号", "把 x₀+2h 的增量误认为 h"],
+        "verification": "取 f(x)=x，四个极限依次为 1、3/2、2、2，而 f′(x₀)=1，只有 A 符合。",
+        "takeaway": "变形差商的关键是以 f(x₀) 为中介拆分，并让每个分母与其真实增量匹配。",
+        "extension": "若分子为 f(x₀+ah)-f(x₀-bh)，分母取 (a+b)h（a,b>0），极限同样为 f′(x₀)。"
+      }
+    },
+    "en": {
+      "title": "Recognizing the Limit of an Asymmetric Secant",
+      "prompt": "Suppose f is differentiable at x₀. Which limit must equal f′(x₀)?",
+      "choices": [
+        "A. lim_{h→0}[f(x₀+2h)-f(x₀-h)]/(3h)",
+        "B. lim_{h→0}[f(x₀+2h)-f(x₀-h)]/(2h)",
+        "C. lim_{h→0}[f(x₀+h)-f(x₀-h)]/h",
+        "D. lim_{h→0}[f(x₀+2h)-f(x₀)]/h"
+      ],
+      "answer": "A",
+      "solution": {
+        "knowledge": ["equivalent forms of derivative quotients", "adding and subtracting a common base value", "linearity of limits"],
+        "analysis": "Insert and subtract f(x₀) between the two asymmetric function values. This splits the expression into standard derivative quotients whose coefficients must be tracked.",
+        "steps": [
+          "For A, insert f(x₀): f(x₀+2h)-f(x₀-h)=[f(x₀+2h)-f(x₀)]+[f(x₀)-f(x₀-h)].",
+          "After division by 3h, the first term is (2/3)·[f(x₀+2h)-f(x₀)]/(2h), whose limit is (2/3)f′(x₀).",
+          "The second term is (1/3)·[f(x₀)-f(x₀-h)]/h=(1/3)·[f(x₀-h)-f(x₀)]/(-h), whose limit is (1/3)f′(x₀).",
+          "Their sum is f′(x₀), so A is correct. The corresponding coefficients for B, C, and D are 3/2, 2, and 2, respectively."
+        ],
+        "pitfalls": ["ignoring denominator coefficients merely because h→0", "losing the two minus signs in the second term", "treating 2h as though the increment were h"],
+        "verification": "For f(x)=x, the four limits are 1,3/2,2,2, while f′(x₀)=1; only A works.",
+        "takeaway": "For a modified quotient, split at f(x₀) and match every denominator to its actual input increment.",
+        "extension": "For a,b>0, [f(x₀+ah)-f(x₀-bh)]/[(a+b)h] also tends to f′(x₀)."
+      }
+    }
+  },
+  {
+    "id": "A026",
+    "section": 1,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["参数分类", "绝对值", "局部表达式"],
+      "en": ["parameter classification", "absolute value", "local expression"]
+    },
+    "minutes": 12,
+    "space": "L",
+    "classic_method": false,
+    "zh": {
+      "title": "移动尖点与参数分类",
+      "prompt": "设 f_{a,b}(x)=|x-a|+bx，其中 a,b∈R。确定所有使 f_{a,b} 在 x=0 处可导的参数对 (a,b)，并求相应的 f′_{a,b}(0)。",
+      "answer": "当且仅当 a≠0 时可导；此时 f′_{a,b}(0)=b-sgn(a)，其中 sgn(a)=1（a>0），sgn(a)=-1（a<0）",
+      "solution": {
+        "knowledge": ["绝对值尖点的位置", "局部去绝对值", "分参数讨论"],
+        "analysis": "关键不是 b，而是绝对值尖点 x=a 是否恰好落在考察点 0。a≠0 时，0 的小邻域只落在绝对值的一侧；a=0 时线性项无法消除左右斜率之差 2。",
+        "steps": [
+          "若 a>0，取 0 的充分小邻域使 x-a<0，则 |x-a|=a-x，故 f_{a,b}(x)=a+(b-1)x，f′_{a,b}(0)=b-1。",
+          "若 a<0，取 0 的充分小邻域使 x-a>0，则 |x-a|=x-a，故 f_{a,b}(x)=-a+(b+1)x，f′_{a,b}(0)=b+1。",
+          "上述两种情形都可写成 f′_{a,b}(0)=b-sgn(a)，且任意 b 均允许。",
+          "若 a=0，则差商为 [|h|+bh]/h；左极限为 b-1，右极限为 b+1，二者相差 2，不可能相等。",
+          "因此可导的充要条件是 a≠0，b 不受限制；导数如上。"
+        ],
+        "pitfalls": ["认为选择某个 b 可以抹平 |x| 的尖角", "a<0 时把 |x-a| 的局部形式写反", "只给充分条件而未排除 a=0"],
+        "verification": "取 a=2 时导数为 b-1；取 a=-2 时导数为 b+1；当 a=0 时无论 b 取何值，左右导数之差恒为 2。",
+        "takeaway": "绝对值函数是否影响某点可导，取决于尖点是否位于该点；普通线性项只会同时平移两侧斜率。",
+        "extension": "把考察点改为 x=c，则可导的充要条件变为 a≠c。"
+      }
+    },
+    "en": {
+      "title": "A Moving Corner and Parameter Classification",
+      "prompt": "Let f_{a,b}(x)=|x-a|+bx, where a,b∈R. Determine all pairs (a,b) for which f_{a,b} is differentiable at x=0, and find f′_{a,b}(0).",
+      "answer": "Differentiable exactly when a≠0; then f′_{a,b}(0)=b-sgn(a), where sgn(a)=1 for a>0 and sgn(a)=-1 for a<0",
+      "solution": {
+        "knowledge": ["location of an absolute-value corner", "local removal of absolute value", "case analysis in parameters"],
+        "analysis": "The decisive issue is not b but whether the corner x=a coincides with the test point 0. If a≠0, a small neighborhood of 0 stays on one side of the corner. If a=0, a linear term cannot remove the slope jump of 2.",
+        "steps": [
+          "If a>0, choose a sufficiently small neighborhood of 0 where x-a<0. Then |x-a|=a-x, so f_{a,b}(x)=a+(b-1)x and f′_{a,b}(0)=b-1.",
+          "If a<0, choose a sufficiently small neighborhood where x-a>0. Then |x-a|=x-a, so f_{a,b}(x)=-a+(b+1)x and f′_{a,b}(0)=b+1.",
+          "Both cases can be written as f′_{a,b}(0)=b-sgn(a), and every b is allowed.",
+          "If a=0, the quotient is [|h|+bh]/h. Its left limit is b-1 and its right limit is b+1, which always differ by 2.",
+          "Therefore a≠0 is necessary and sufficient, with b unrestricted and the derivative as stated."
+        ],
+        "pitfalls": ["thinking that a suitable b can smooth the corner of |x|", "using the wrong local expression for |x-a| when a<0", "giving only a sufficient condition without excluding a=0"],
+        "verification": "For a=2 the derivative is b-1; for a=-2 it is b+1. When a=0, the one-sided derivatives differ by 2 for every b.",
+        "takeaway": "An absolute value affects differentiability at a point only when its corner lies there; adding a linear term shifts both one-sided slopes equally.",
+        "extension": "If the test point is changed to x=c, differentiability holds exactly when a≠c."
+      }
+    }
+  },
+  {
+    "id": "A027",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["反函数求导", "对应点", "倒数关系"],
+      "en": ["inverse-function differentiation", "corresponding points", "reciprocal relation"]
+    },
+    "minutes": 8,
+    "space": "M",
+    "classic_method": true,
+    "zh": {
+      "title": "在对应点求反函数导数",
+      "prompt": "设 f(x)=x³+x，且 g=f⁻¹。已知 g 在 y=2 处可导，求 g′(2)。",
+      "answer": "g′(2)=1/4",
+      "solution": {
+        "knowledge": ["反函数对应点", "反函数导数公式", "多项式求导"],
+        "analysis": "先寻找满足 f(x₀)=2 的原函数点 x₀，再在该点求 f′，最后取倒数。",
+        "steps": [
+          "解对应关系 f(x₀)=2，即 x₀³+x₀=2；代入 x₀=1 得 1+1=2，所以 g(2)=1。",
+          "原函数导数为 f′(x)=3x²+1。",
+          "在对应点 x₀=1，f′(1)=3+1=4≠0。",
+          "由反函数求导公式，g′(2)=1/f′(g(2))=1/f′(1)=1/4。"
+        ],
+        "pitfalls": ["直接把 y=2 代入 f′(x)", "把反函数 f⁻¹ 误解为倒数 1/f", "忘记先确认对应的 x₀"],
+        "verification": "局部增量满足 Δy≈4Δx，因此反向看 Δx≈(1/4)Δy，与 g′(2)=1/4 一致。",
+        "takeaway": "反函数导数要在一对对应点上取倒数：先由 y₀ 找 x₀=g(y₀)，再计算 1/f′(x₀)。",
+        "extension": "若要求 g′(0)，对应点为 x₀=0，结果为 g′(0)=1。"
+      }
+    },
+    "en": {
+      "title": "Derivative of an Inverse at a Corresponding Point",
+      "prompt": "Let f(x)=x³+x and g=f⁻¹. Given that g is differentiable at y=2, find g′(2).",
+      "answer": "g′(2)=1/4",
+      "solution": {
+        "knowledge": ["corresponding points of inverse functions", "inverse-function derivative formula", "polynomial differentiation"],
+        "analysis": "First find x₀ satisfying f(x₀)=2, then evaluate f′ at that point and take the reciprocal.",
+        "steps": [
+          "Solve f(x₀)=2, or x₀³+x₀=2. Since 1+1=2, x₀=1 and g(2)=1.",
+          "The derivative of the original function is f′(x)=3x²+1.",
+          "At the corresponding point x₀=1, f′(1)=3+1=4≠0.",
+          "The inverse-function formula gives g′(2)=1/f′(g(2))=1/f′(1)=1/4."
+        ],
+        "pitfalls": ["substituting y=2 directly into f′(x)", "confusing the inverse function f⁻¹ with the reciprocal 1/f", "failing to find the corresponding x₀ first"],
+        "verification": "Locally Δy≈4Δx, so in the reverse direction Δx≈(1/4)Δy, consistent with g′(2)=1/4.",
+        "takeaway": "An inverse derivative is a reciprocal at corresponding points: find x₀=g(y₀), then compute 1/f′(x₀).",
+        "extension": "For g′(0), the corresponding point is x₀=0, giving g′(0)=1."
+      }
+    }
+  },
+  {
+    "id": "A028",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "proof",
+    "tags": {
+      "zh": ["乘积法则证明", "导数定义", "加减中间项"],
+      "en": ["proof of the product rule", "derivative definition", "adding and subtracting an intermediate term"]
+    },
+    "minutes": 14,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "从定义证明乘积法则",
+      "prompt": "设 u、v 都在 x₀ 处可导。仅从导数定义出发，证明 (uv)′(x₀)=u′(x₀)v(x₀)+u(x₀)v′(x₀)。",
+      "answer": "(uv)′(x₀)=u′(x₀)v(x₀)+u(x₀)v′(x₀)",
+      "solution": {
+        "knowledge": ["乘积增量分解", "可导蕴含连续", "极限的和与积"],
+        "analysis": "在乘积增量中加减 u(x₀+h)v(x₀)，使其分裂成一个 u 的差商和一个 v 的差商。可导还保证 u(x₀+h)→u(x₀)。",
+        "steps": [
+          "按定义，(uv)′(x₀)=lim_{h→0}[u(x₀+h)v(x₀+h)-u(x₀)v(x₀)]/h。",
+          "在分子中加减 u(x₀+h)v(x₀)，得到 u(x₀+h)[v(x₀+h)-v(x₀)]+v(x₀)[u(x₀+h)-u(x₀)]。",
+          "除以 h 后，差商成为 u(x₀+h)·[v(x₀+h)-v(x₀)]/h+v(x₀)·[u(x₀+h)-u(x₀)]/h。",
+          "u 在 x₀ 可导，所以在 x₀ 连续，故 u(x₀+h)→u(x₀)；两个差商分别趋于 v′(x₀)、u′(x₀)。",
+          "分别取极限并相加，得到 (uv)′(x₀)=u(x₀)v′(x₀)+v(x₀)u′(x₀)，与待证公式相同。"
+        ],
+        "pitfalls": ["直接把乘积差写成两个差的乘积", "加减中间项后因子配错", "使用 u(x₀+h)→u(x₀) 却不说明可导蕴含连续"],
+        "verification": "取 u(x)=x²、v(x)=x³，公式给出 2x·x³+x²·3x²=5x⁴，与 (x⁵)′=5x⁴ 一致。",
+        "takeaway": "证明运算法则的常用技巧是加入合适的中间项，把复杂增量拆成已知差商。",
+        "extension": "采用类似分解并处理分母变化，可从定义证明商法则。"
+      }
+    },
+    "en": {
+      "title": "Prove the Product Rule from First Principles",
+      "prompt": "Suppose u and v are differentiable at x₀. Using only the definition of the derivative, prove (uv)′(x₀)=u′(x₀)v(x₀)+u(x₀)v′(x₀).",
+      "answer": "(uv)′(x₀)=u′(x₀)v(x₀)+u(x₀)v′(x₀)",
+      "solution": {
+        "knowledge": ["decomposition of a product increment", "differentiability implies continuity", "sum and product laws for limits"],
+        "analysis": "Add and subtract u(x₀+h)v(x₀) in the product increment. This produces one difference quotient for u and one for v. Differentiability also gives u(x₀+h)→u(x₀).",
+        "steps": [
+          "By definition, (uv)′(x₀)=lim_{h→0}[u(x₀+h)v(x₀+h)-u(x₀)v(x₀)]/h.",
+          "Add and subtract u(x₀+h)v(x₀) in the numerator to obtain u(x₀+h)[v(x₀+h)-v(x₀)]+v(x₀)[u(x₀+h)-u(x₀)].",
+          "After division by h, the quotient is u(x₀+h)·[v(x₀+h)-v(x₀)]/h+v(x₀)·[u(x₀+h)-u(x₀)]/h.",
+          "Since u is differentiable at x₀, it is continuous there, so u(x₀+h)→u(x₀). The two difference quotients tend to v′(x₀) and u′(x₀).",
+          "Taking limits term by term gives (uv)′(x₀)=u(x₀)v′(x₀)+v(x₀)u′(x₀), which is the desired formula."
+        ],
+        "pitfalls": ["splitting a difference of products into a product of differences", "mismatching factors after adding the intermediate term", "using u(x₀+h)→u(x₀) without invoking differentiability-implies-continuity"],
+        "verification": "For u(x)=x² and v(x)=x³, the formula gives 2x·x³+x²·3x²=5x⁴, agreeing with (x⁵)′=5x⁴.",
+        "takeaway": "A standard way to prove an operation rule is to insert a suitable intermediate term and split a complicated increment into known difference quotients.",
+        "extension": "A related decomposition, together with control of the changing denominator, proves the quotient rule from first principles."
+      }
+    }
+  },
+  {
+    "id": "A029",
+    "section": 2,
+    "tier": "methods",
+    "difficulty": "advanced",
+    "type": "calculation",
+    "tags": {
+      "zh": ["多层链式法则", "商法则", "指数与三角函数"],
+      "en": ["multilayer chain rule", "quotient rule", "exponential and trigonometric functions"]
+    },
+    "minutes": 12,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "多层复合与商的综合求导",
+      "prompt": "求 y=e^{sin(x²)}/(1+x³) 的导数，并注明定义域。",
+      "answer": "y′=e^{sin(x²)}[2x cos(x²)(1+x³)-3x²]/(1+x³)²，x≠-1",
+      "solution": {
+        "knowledge": ["指数复合函数", "多层链式法则", "商法则"],
+        "analysis": "分子含 e^{sin(x²)} 的两层复合，分母是多项式。先分别求分子、分母的导数，再使用商法则。",
+        "steps": [
+          "令 u(x)=e^{sin(x²)}、v(x)=1+x³，则 y=u/v，且定义域要求 x≠-1。",
+          "对 u 逐层求导：u′=e^{sin(x²)}·[sin(x²)]′=e^{sin(x²)}·2x cos(x²)。",
+          "分母导数为 v′=3x²。",
+          "商法则给出 y′=[u′v-uv′]/v²。",
+          "代入并提取公因子，得到 y′=e^{sin(x²)}[2x cos(x²)(1+x³)-3x²]/(1+x³)²，x≠-1。"
+        ],
+        "pitfalls": ["求 e^{sin(x²)} 的导数时漏掉 cos(x²) 或 2x", "商法则分子次序写反", "忘记排除 x=-1"],
+        "verification": "在 x=0 时公式给出 y′(0)=0；直接观察分子内层 x² 在 0 的导数为 0、分母导数也为 0，与结果一致。",
+        "takeaway": "复杂表达式先画清层次：内部链式求导完成后，再进入外部的乘积或商法则。",
+        "extension": "也可把函数写成 e^{sin(x²)}(1+x³)⁻¹，用乘积与链式法则得到同一结果。"
+      }
+    },
+    "en": {
+      "title": "Combined Multilayer Chain and Quotient Rules",
+      "prompt": "Differentiate y=e^{sin(x²)}/(1+x³), and state its domain.",
+      "answer": "y′=e^{sin(x²)}[2x cos(x²)(1+x³)-3x²]/(1+x³)², x≠-1",
+      "solution": {
+        "knowledge": ["composite exponential function", "multilayer chain rule", "quotient rule"],
+        "analysis": "The numerator e^{sin(x²)} has two nested layers, and the denominator is a polynomial. Differentiate them separately, then apply the quotient rule.",
+        "steps": [
+          "Let u(x)=e^{sin(x²)} and v(x)=1+x³, so y=u/v and the domain requires x≠-1.",
+          "Differentiate u layer by layer: u′=e^{sin(x²)}·[sin(x²)]′=e^{sin(x²)}·2x cos(x²).",
+          "The denominator derivative is v′=3x².",
+          "The quotient rule gives y′=[u′v-uv′]/v².",
+          "Substitute and factor to obtain y′=e^{sin(x²)}[2x cos(x²)(1+x³)-3x²]/(1+x³)² for x≠-1."
+        ],
+        "pitfalls": ["omitting cos(x²) or 2x when differentiating e^{sin(x²)}", "reversing the quotient-rule numerator", "forgetting to exclude x=-1"],
+        "verification": "At x=0 the formula gives y′(0)=0. The inner function x² and the denominator both have derivative 0 there, which agrees with the result.",
+        "takeaway": "Map the layers first: finish all inner chain rules before applying an outer product or quotient rule.",
+        "extension": "Writing the function as e^{sin(x²)}(1+x³)⁻¹ and using the product and chain rules gives the same derivative."
+      }
+    }
+  },
+  {
+    "id": "A030",
+    "section": 1,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "true_false",
+    "tags": {
+      "zh": ["参数幂函数", "定义求导", "左右极限"],
+      "en": ["parameterized power function", "first-principles differentiation", "one-sided limits"]
+    },
+    "minutes": 12,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "参数幂尖点的完整判定",
+      "prompt": "判断正误并证明：对 α>0，函数 f_α(x)=|x|^α 在 x=0 处可导，当且仅当 α>1；可导时 f′_α(0)=0。",
+      "answer": "正确。",
+      "solution": {
+        "knowledge": ["参数分类", "导数定义", "幂函数极限", "左右差商"],
+        "analysis": "原点差商恰好是 |h|^α/h。按 α-1 的正、零、负三种情形讨论，就能同时证明充分性和必要性。",
+        "steps": [
+          "由 f_α(0)=0，原点差商为 |h|^α/h=sgn(h)|h|^{α-1}。",
+          "若 α>1，则 |sgn(h)|h|^{α-1}|=|h|^{α-1}→0，所以双侧极限存在且 f′_α(0)=0。",
+          "若 α=1，则 h→0⁺ 时差商为 1，h→0⁻ 时为 -1，左右极限不等。",
+          "若 0<α<1，则 h→0⁺ 时差商 h^{α-1} 无界增大，而 h→0⁻ 时为 -|h|^{α-1}，不存在有限双侧极限。",
+          "三种情形穷尽 α>0，因此可导当且仅当 α>1，且导数必为 0。"
+        ],
+        "pitfalls": ["只证明 α>1 时可导而未证明其他参数不行", "在 α=1 时把左右符号忽略", "把无界差商误当成有限导数"],
+        "verification": "α=2 给出 x²，在 0 导数为 0；α=1 给出 |x| 的尖角；α=1/2 给出更陡的根式尖点，均与分类一致。",
+        "takeaway": "参数型可导问题常由差商中的临界指数决定；这里临界值正是 α=1。",
+        "extension": "若改为 c|x|^α（c≠0），可导的参数范围不变，只是非零点导数按 c 缩放。"
+      }
+    },
+    "en": {
+      "title": "Complete Classification of a Parameterized Power Corner",
+      "prompt": "Decide whether the statement is true and prove it: for α>0, f_α(x)=|x|^α is differentiable at x=0 if and only if α>1; when differentiable, f′_α(0)=0.",
+      "answer": "True.",
+      "solution": {
+        "knowledge": ["parameter classification", "definition of a derivative", "power limits", "one-sided quotients"],
+        "analysis": "The origin quotient is exactly |h|^α/h. Splitting according to whether α-1 is positive, zero, or negative proves both sufficiency and necessity.",
+        "steps": [
+          "Since f_α(0)=0, the origin quotient is |h|^α/h=sgn(h)|h|^{α-1}.",
+          "If α>1, its absolute value is |h|^{α-1}→0, so the two-sided limit exists and f′_α(0)=0.",
+          "If α=1, the quotient is 1 for h→0⁺ and -1 for h→0⁻, so the one-sided limits differ.",
+          "If 0<α<1, the quotient h^{α-1} grows without bound for h→0⁺ and equals -|h|^{α-1} for h→0⁻, so no finite two-sided limit exists.",
+          "These cases exhaust α>0, proving differentiability exactly for α>1, with derivative 0."
+        ],
+        "pitfalls": ["proving only sufficiency for α>1", "ignoring the opposite signs when α=1", "treating an unbounded quotient as a finite derivative"],
+        "verification": "For α=2 the function is x² and has derivative 0 at 0; α=1 gives the corner |x|; α=1/2 gives an even steeper radical corner, matching the classification.",
+        "takeaway": "In a parameterized differentiability problem, a critical exponent in the difference quotient often controls the answer; here it is α=1.",
+        "extension": "For c|x|^α with c≠0, the differentiability range is unchanged; derivatives away from the corner are simply scaled by c."
+      }
+    }
+  },
+  {
+    "id": "A031",
+    "section": 1,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "comprehensive",
+    "tags": {
+      "zh": ["振荡函数", "切线存在", "导函数不连续", "数列检验"],
+      "en": ["oscillatory function", "existence of a tangent", "discontinuous derivative", "sequence test"]
+    },
+    "minutes": 18,
+    "space": "XL",
+    "classic_method": false,
+    "zh": {
+      "title": "割线趋稳而邻近切线失控",
+      "prompt": "设 f(x)={x²sin(1/x²), x≠0; 0, x=0}。(1) 证明 f 在 0 连续；(2) 证明 f 在 0 可导并写出原点切线；(3) 求 x≠0 时的 f′(x)；(4) 构造 x_n→0⁺，说明 f′(x) 在 0 不连续。",
+      "answer": "f 在 0 连续且 f′(0)=0，原点切线 y=0；x≠0 时 f′(x)=2x sin(1/x²)-(2/x)cos(1/x²)；可取 x_n=(1/(2πn))^{1/2}",
+      "solution": {
+        "knowledge": ["有界振荡因子", "定义求导", "链式法则", "数列否定极限"],
+        "analysis": "函数值与原点差商分别由 x²、|x| 控制，因此连续且可导；但非零点导数含 1/x 放大项，可沿特定数列显示其无界。",
+        "steps": [
+          "由 |f(x)|=|x²sin(1/x²)|≤x²→0=f(0)，故 f 在 0 连续。",
+          "原点差商为 f(h)/h=h sin(1/h²)，绝对值不超过 |h|，所以 f′(0)=0；切点为 (0,0)，切线为 y=0。",
+          "当 x≠0 时，乘积与链式法则给出 f′(x)=2x sin(1/x²)+x²cos(1/x²)(-2/x³)=2x sin(1/x²)-(2/x)cos(1/x²)。",
+          "取 x_n=(1/(2πn))^{1/2}，则 x_n→0⁺、1/x_n²=2πn、sin(2πn)=0、cos(2πn)=1。",
+          "于是 f′(x_n)=-2/x_n→-∞，不可能趋于 f′(0)=0；所以导函数在 0 不连续，尽管原点切线确实存在。"
+        ],
+        "pitfalls": ["从 sin(1/x²) 振荡直接误判 f 不连续", "用 x≠0 的导数公式代入 0", "只说 f′ 振荡而不给能验证的数列"],
+        "verification": "割线斜率 f(x)/x=x sin(1/x²) 被 |x| 控制而趋于 0；所构造数列上的邻近切线斜率却趋于 -∞，两种结论并不矛盾。",
+        "takeaway": "某点可导只控制通向该点的割线斜率，不保证附近各点的导数趋于该点导数。",
+        "extension": "比较 x²sin(1/x) 与本题函数，观察振荡频率改变后非零点导数中放大因子的差异。"
+      }
+    },
+    "en": {
+      "title": "Stable Secants but Uncontrolled Nearby Tangents",
+      "prompt": "Let f(x)={x²sin(1/x²), x≠0; 0, x=0}. (1) Prove continuity at 0. (2) Prove differentiability at 0 and write the tangent there. (3) Find f′(x) for x≠0. (4) Construct x_n→0⁺ showing that f′ is not continuous at 0.",
+      "answer": "f is continuous at 0 with f′(0)=0 and tangent y=0; for x≠0, f′(x)=2x sin(1/x²)-(2/x)cos(1/x²); one may take x_n=(1/(2πn))^{1/2}",
+      "solution": {
+        "knowledge": ["bounded oscillatory factor", "first-principles differentiation", "chain rule", "disproving a limit by a sequence"],
+        "analysis": "The function value and the origin quotient are controlled by x² and |x|, so continuity and differentiability hold. However, the nonzero-point derivative contains a 1/x amplification, which becomes unbounded along a selected sequence.",
+        "steps": [
+          "Since |f(x)|=|x²sin(1/x²)|≤x²→0=f(0), f is continuous at 0.",
+          "The origin quotient is f(h)/h=h sin(1/h²), whose absolute value is at most |h|. Thus f′(0)=0, and the tangent through (0,0) is y=0.",
+          "For x≠0, the product and chain rules give f′(x)=2x sin(1/x²)+x²cos(1/x²)(-2/x³)=2x sin(1/x²)-(2/x)cos(1/x²).",
+          "Take x_n=(1/(2πn))^{1/2}. Then x_n→0⁺, 1/x_n²=2πn, sin(2πn)=0, and cos(2πn)=1.",
+          "Hence f′(x_n)=-2/x_n→-∞, so it cannot tend to f′(0)=0. Therefore f′ is not continuous at 0 even though the tangent there exists."
+        ],
+        "pitfalls": ["declaring f discontinuous merely because sin(1/x²) oscillates", "substituting 0 into the derivative formula valid only for x≠0", "claiming oscillation without supplying a verifiable sequence"],
+        "verification": "The secant slope f(x)/x=x sin(1/x²) is bounded by |x| and tends to 0, while the nearby tangent slopes along the constructed sequence tend to -∞; these facts are compatible.",
+        "takeaway": "Differentiability at one point controls secants ending at that point, not convergence of derivatives at nearby points.",
+        "extension": "Compare x²sin(1/x) with the present function and observe how changing the oscillation rate changes the amplification term in the nonzero-point derivative."
+      }
+    }
+  },
+  {
+    "id": "A032",
+    "section": 2,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "calculation",
+    "tags": {
+      "zh": ["反三角函数", "指数函数", "商法则", "链式法则"],
+      "en": ["inverse trigonometric function", "exponential function", "quotient rule", "chain rule"]
+    },
+    "minutes": 14,
+    "space": "L",
+    "classic_method": true,
+    "zh": {
+      "title": "多法则嵌套后的结构化简",
+      "prompt": "求 y=arctan[(eˣ-1)/(eˣ+1)] 的导数，并将结果化为不含复合分式的形式。",
+      "answer": "y′=eˣ/(e^{2x}+1)",
+      "solution": {
+        "knowledge": ["反正切求导", "指数函数求导", "商法则", "代数恒等化简"],
+        "analysis": "先令 u=(eˣ-1)/(eˣ+1)，使用 y′=u′/(1+u²)。u′ 与 1+u² 具有相同的分母，约去后结果会显著简化。",
+        "steps": [
+          "设 u=(eˣ-1)/(eˣ+1)，则 y=arctan u，且 y′=u′/(1+u²)。",
+          "由商法则，u′=[eˣ(eˣ+1)-(eˣ-1)eˣ]/(eˣ+1)²=2eˣ/(eˣ+1)²。",
+          "计算 1+u²=[(eˣ+1)²+(eˣ-1)²]/(eˣ+1)²=2(e^{2x}+1)/(eˣ+1)²。",
+          "两式相除，y′={2eˣ/(eˣ+1)²}/{2(e^{2x}+1)/(eˣ+1)²}=eˣ/(e^{2x}+1)。",
+          "由于 eˣ+1>0 且 e^{2x}+1>0，原函数与导数对所有 x∈R 都有定义。"
+        ],
+        "pitfalls": ["把 (arctan u)′ 写成 1/(1+u)", "商法则中漏掉两个 eˣ 项", "未先通分 1+u² 就进行错误约分"],
+        "verification": "在 x=0 时 u=0，u′=1/2，因此 y′(0)=1/2；简化公式也给出 1/(1+1)=1/2。",
+        "takeaway": "嵌套求导后不要急于展开；寻找 u′ 与 1+u² 的公共结构可大幅简化。",
+        "extension": "把 eˣ 换成任意正函数 w(x)，可按同一结构求 arctan[(w-1)/(w+1)] 的导数。"
+      }
+    },
+    "en": {
+      "title": "Structural Simplification after Nested Rules",
+      "prompt": "Differentiate y=arctan[(eˣ-1)/(eˣ+1)], and simplify the result so that it contains no compound fraction.",
+      "answer": "y′=eˣ/(e^{2x}+1)",
+      "solution": {
+        "knowledge": ["derivative of arctangent", "derivative of the exponential", "quotient rule", "algebraic identity simplification"],
+        "analysis": "Set u=(eˣ-1)/(eˣ+1) and use y′=u′/(1+u²). The expressions u′ and 1+u² share the same denominator, which cancels cleanly.",
+        "steps": [
+          "Let u=(eˣ-1)/(eˣ+1), so y=arctan u and y′=u′/(1+u²).",
+          "By the quotient rule, u′=[eˣ(eˣ+1)-(eˣ-1)eˣ]/(eˣ+1)²=2eˣ/(eˣ+1)².",
+          "Compute 1+u²=[(eˣ+1)²+(eˣ-1)²]/(eˣ+1)²=2(e^{2x}+1)/(eˣ+1)².",
+          "Dividing gives y′={2eˣ/(eˣ+1)²}/{2(e^{2x}+1)/(eˣ+1)²}=eˣ/(e^{2x}+1).",
+          "Because eˣ+1>0 and e^{2x}+1>0, both the function and its derivative are defined for every x∈R."
+        ],
+        "pitfalls": ["using 1/(1+u) as the derivative of arctan u", "losing exponential terms in the quotient rule", "canceling incorrectly before placing 1+u² over a common denominator"],
+        "verification": "At x=0, u=0 and u′=1/2, so y′(0)=1/2. The simplified formula also gives 1/(1+1)=1/2.",
+        "takeaway": "After nested differentiation, look for shared structure before expanding; here the denominators of u′ and 1+u² cancel completely.",
+        "extension": "Replace eˣ by any positive differentiable function w(x) and apply the same structure to arctan[(w-1)/(w+1)]."
+      }
+    }
+  },
+  {
+    "id": "A033",
+    "section": 2,
+    "tier": "synthesis",
+    "difficulty": "hard",
+    "type": "proof",
+    "tags": {
+      "zh": ["反函数求导定理", "差商倒数", "对应增量"],
+      "en": ["inverse-function derivative theorem", "reciprocal difference quotient", "corresponding increments"]
+    },
+    "minutes": 16,
+    "space": "XL",
+    "classic_method": true,
+    "zh": {
+      "title": "从定义证明反函数求导公式",
+      "prompt": "设 f 在 x₀ 的某邻域 U 上一一对应，其值域包含 y₀=f(x₀) 的一个邻域，并在该值域上有反函数 x=g(y)。已知 f 在 x₀ 可导、f′(x₀)≠0，并且 y→y₀ 时 g(y)→x₀。证明 g′(y₀)=1/f′(x₀)。",
+      "answer": "g′(y₀)=1/f′(x₀)",
+      "solution": {
+        "knowledge": ["反函数对应增量", "差商的倒数", "非零极限的倒数法则"],
+        "analysis": "反函数的 y 增量与原函数的 x 增量描述同一对点。把 g 的差商写成 f 的差商的倒数，并利用 f′(x₀)≠0。",
+        "steps": [
+          "令 Δy=y-y₀，且 Δx=g(y)-g(y₀)=g(y)-x₀；因 g 是反函数，有 Δy=f(x₀+Δx)-f(x₀)。",
+          "当 y→y₀ 时，由题设 Δx→0；并且在 y≠y₀ 时，反函数的单值性保证 Δx≠0。",
+          "反函数差商可写为 [g(y)-g(y₀)]/(y-y₀)=Δx/[f(x₀+Δx)-f(x₀)]。",
+          "将其写成倒数：Δx/[f(x₀+Δx)-f(x₀)]={ [f(x₀+Δx)-f(x₀)]/Δx }⁻¹。",
+          "括号内当 Δx→0 时趋于 f′(x₀)≠0，所以倒数极限存在并等于 1/f′(x₀)，即 g′(y₀)=1/f′(x₀)。"
+        ],
+        "pitfalls": ["把反函数与倒数函数混淆", "未说明 Δy→0 会使对应 Δx→0", "在 f′(x₀)=0 时仍擅自取倒数"],
+        "verification": "若 f(x)=3x+2，则 g(y)=(y-2)/3；公式给出 g′=1/3，与直接求导一致。",
+        "takeaway": "反函数求导公式本质上是同一局部变化率从“Δy/Δx”切换到“Δx/Δy”。",
+        "extension": "在具体题中应先定位对应点 x₀=g(y₀)，再使用该公式，而不是把 y₀ 直接代入 f′。"
+      }
+    },
+    "en": {
+      "title": "Prove the Inverse-Function Derivative Formula from First Principles",
+      "prompt": "Suppose f is one-to-one on a neighborhood U of x₀, its image contains a neighborhood of y₀=f(x₀), and it has inverse x=g(y) on that image. Assume f is differentiable at x₀, f′(x₀)≠0, and g(y)→x₀ as y→y₀. Prove g′(y₀)=1/f′(x₀).",
+      "answer": "g′(y₀)=1/f′(x₀)",
+      "solution": {
+        "knowledge": ["corresponding increments for inverse functions", "reciprocal difference quotients", "reciprocal law for a nonzero limit"],
+        "analysis": "The y-increment for the inverse and the x-increment for the original function describe the same pair of points. Rewrite the quotient for g as the reciprocal of the quotient for f and use f′(x₀)≠0.",
+        "steps": [
+          "Let Δy=y-y₀ and Δx=g(y)-g(y₀)=g(y)-x₀. Since g is the inverse, Δy=f(x₀+Δx)-f(x₀).",
+          "As y→y₀, the assumption gives Δx→0. For y≠y₀, the single-valued inverse relation also gives Δx≠0.",
+          "The inverse difference quotient is [g(y)-g(y₀)]/(y-y₀)=Δx/[f(x₀+Δx)-f(x₀)].",
+          "Rewrite it as a reciprocal: Δx/[f(x₀+Δx)-f(x₀)]={ [f(x₀+Δx)-f(x₀)]/Δx }⁻¹.",
+          "The expression in braces tends to f′(x₀)≠0 as Δx→0, so the reciprocal tends to 1/f′(x₀). Hence g′(y₀)=1/f′(x₀)."
+        ],
+        "pitfalls": ["confusing an inverse function with a reciprocal function", "not explaining why Δy→0 makes the corresponding Δx→0", "taking a reciprocal even when f′(x₀)=0"],
+        "verification": "For f(x)=3x+2, the inverse is g(y)=(y-2)/3. The formula gives g′=1/3, agreeing with direct differentiation.",
+        "takeaway": "The inverse derivative formula switches the same local rate from Δy/Δx to its reciprocal Δx/Δy.",
+        "extension": "In an application, first locate x₀=g(y₀); do not substitute y₀ directly into f′."
+      }
+    }
+  },
+  {
+    "id": "A034",
+    "section": 1,
+    "tier": "challenge",
+    "difficulty": "challenge",
+    "type": "proof",
+    "tags": {
+      "zh": ["双参数分类", "振荡函数", "可导性", "导函数连续性"],
+      "en": ["two-parameter classification", "oscillatory function", "differentiability", "continuity of the derivative"]
+    },
+    "minutes": 28,
+    "space": "XL",
+    "classic_method": false,
+    "zh": {
+      "title": "双参数振荡族的临界指数",
+      "prompt": "设 α,β>0，且 f_{α,β}(x)={|x|^α sin(1/|x|^β), x≠0; 0, x=0}。(1) 证明 f_{α,β} 在 0 连续；(2) 完整判定它在 0 可导的充要条件；(3) 在可导情形下，完整判定 f′_{α,β} 在 0 连续的充要条件。",
+      "answer": "(1) 对所有 α,β>0 均连续；(2) 在 0 可导当且仅当 α>1，且 f′(0)=0；(3) f′ 在 0 连续当且仅当 α>β+1",
+      "solution": {
+        "knowledge": ["参数临界指数", "有界振荡控制", "定义求导", "链式法则", "特殊数列证明必要性"],
+        "analysis": "连续性由 |x|^α 控制；可导性由差商中的指数 α-1 控制；导函数连续性还会受到相位求导产生的 |x|^{-β-1} 放大，因此临界指数提高到 β+1。",
+        "steps": [
+          "由 |f_{α,β}(x)|≤|x|^α 且 α>0，x→0 时右端趋于 0=f_{α,β}(0)，所以对所有 α,β>0，函数都在 0 连续。",
+          "原点差商为 sgn(h)|h|^{α-1}sin(1/|h|^β)。若 α>1，其绝对值不超过 |h|^{α-1}→0，故 f′(0)=0。",
+          "若 α=1，取正数列 h_n=(1/(π/2+2πn))^{1/β}，差商恒为 1；再取 k_n=(1/(3π/2+2πn))^{1/β}，差商恒为 -1，故导数不存在。",
+          "若 0<α<1，沿同一 h_n 有差商 h_n^{α-1}→+∞，没有有限导数。因此在 0 可导当且仅当 α>1。",
+          "对 x≠0 求导得 f′(x)=sgn(x)[α|x|^{α-1}sin(1/|x|^β)-β|x|^{α-β-1}cos(1/|x|^β)]。",
+          "若 α>β+1，则 α-1>0 且 α-β-1>0，两个括号项的绝对值分别被 α|x|^{α-1}、β|x|^{α-β-1} 控制并趋于 0，所以 f′(x)→0=f′(0)。",
+          "若 1<α≤β+1，取 x_n=(1/(2πn))^{1/β}>0，则正弦项为 0、余弦项为 1，故 f′(x_n)=-βx_n^{α-β-1}；指数为 0 时恒为 -β，指数为负时绝对值无界，都不趋于 0。",
+          "因此在可导范围内，f′ 在 0 连续当且仅当 α>β+1。"
+        ],
+        "pitfalls": ["只看函数中的 |x|^α 而忽略差商会降低一次幂", "求相位 1/|x|^β 的导数时漏掉 sgn(x) 或指数 β+1", "必要性只说“振荡”却不给数列", "把 α>1 与 α>β+1 混为一个条件"],
+        "verification": "取 (α,β)=(2,1)，函数在 0 可导但 α=β+1，导函数不连续；取 (3,1)，有 α>β+1，导函数连续，说明两个临界条件确实不同。",
+        "takeaway": "每进行一次差商或相位求导，都要重新计算控制振荡的净幂次；临界指数由最强放大项决定。",
+        "extension": "将 sin 换成 cos 并适当重新定义 f(0)，可设计相似的连续、可导与导函数连续分类问题。"
+      }
+    },
+    "en": {
+      "title": "Critical Exponents in a Two-Parameter Oscillatory Family",
+      "prompt": "Let α,β>0 and f_{α,β}(x)={|x|^α sin(1/|x|^β), x≠0; 0, x=0}. (1) Prove that f_{α,β} is continuous at 0. (2) Completely classify differentiability at 0. (3) When it is differentiable, completely classify continuity of f′_{α,β} at 0.",
+      "answer": "(1) Continuous for all α,β>0; (2) differentiable at 0 exactly when α>1, with f′(0)=0; (3) f′ is continuous at 0 exactly when α>β+1",
+      "solution": {
+        "knowledge": ["critical parameter exponents", "control of bounded oscillation", "first-principles differentiation", "chain rule", "special sequences for necessity"],
+        "analysis": "Continuity is controlled by |x|^α. Differentiability is controlled by α-1 in the quotient. Differentiating the phase introduces the amplification |x|^{-β-1}, raising the critical exponent for continuity of the derivative to β+1.",
+        "steps": [
+          "Since |f_{α,β}(x)|≤|x|^α and α>0, the right-hand side tends to 0=f_{α,β}(0) as x→0. Thus the function is continuous at 0 for all α,β>0.",
+          "The origin quotient is sgn(h)|h|^{α-1}sin(1/|h|^β). If α>1, its absolute value is at most |h|^{α-1}→0, so f′(0)=0.",
+          "If α=1, take positive h_n=(1/(π/2+2πn))^{1/β}, for which the quotient is 1, and k_n=(1/(3π/2+2πn))^{1/β}, for which it is -1. Thus no derivative exists.",
+          "If 0<α<1, along the same h_n the quotient is h_n^{α-1}→+∞, so there is no finite derivative. Hence differentiability at 0 holds exactly when α>1.",
+          "For x≠0, differentiation gives f′(x)=sgn(x)[α|x|^{α-1}sin(1/|x|^β)-β|x|^{α-β-1}cos(1/|x|^β)].",
+          "If α>β+1, then α-1>0 and α-β-1>0. The two terms are bounded in absolute value by α|x|^{α-1} and β|x|^{α-β-1}, so both tend to 0 and f′(x)→0=f′(0).",
+          "If 1<α≤β+1, take x_n=(1/(2πn))^{1/β}>0. Then the sine term is 0 and the cosine term is 1, so f′(x_n)=-βx_n^{α-β-1}. It equals -β when the exponent is 0 and is unbounded when the exponent is negative.",
+          "Therefore, within the differentiable range, f′ is continuous at 0 exactly when α>β+1."
+        ],
+        "pitfalls": ["looking only at |x|^α and forgetting that a difference quotient lowers the power by one", "omitting sgn(x) or β+1 when differentiating the phase", "claiming necessity from vague oscillation without sequences", "confusing the conditions α>1 and α>β+1"],
+        "verification": "For (α,β)=(2,1), the function is differentiable at 0 but α=β+1, so its derivative is not continuous. For (3,1), α>β+1 and the derivative is continuous, confirming that the thresholds differ.",
+        "takeaway": "After each difference quotient or phase differentiation, recompute the net power controlling the oscillation; the strongest amplification determines the critical exponent.",
+        "extension": "Replacing sine by cosine and redefining f(0) appropriately produces a related classification problem for continuity, differentiability, and continuity of the derivative."
+      }
+    }
+  }
+]
