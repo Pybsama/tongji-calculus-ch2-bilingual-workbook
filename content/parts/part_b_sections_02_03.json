@@ -6,53 +6,96 @@
     "difficulty": "basic",
     "type": "single_choice",
     "tags": {
-      "zh": ["乘积求导", "指数函数", "选择题"],
-      "en": ["product rule", "exponential function", "single choice"]
+      "zh": [
+        "乘积求导",
+        "指数函数",
+        "选择题"
+      ],
+      "en": [
+        "product rule",
+        "exponential function",
+        "single choice"
+      ]
     },
     "minutes": 4,
     "space": "S",
     "classic_method": true,
     "zh": {
       "title": "多项式与指数函数的乘积",
-      "prompt": "设 f(x)=x²eˣ，则 f′(x) 等于下列哪一项？",
-      "choices": ["A. 2xeˣ", "B. eˣ(x²+2x)", "C. x²eˣ", "D. eˣ(x+2)"],
-      "answer": "B. eˣ(x²+2x)。",
+      "prompt": "设 $f(x)=x^{2}e^{x}$，则 $f'(x)$ 等于下列哪一项？",
+      "choices": [
+        "A. $2xe^{x}$",
+        "B. $e^{x}(x^{2}+2x)$",
+        "C. $x^{2}e^{x}$",
+        "D. $e^{x}(x+2)$"
+      ],
+      "answer": "B. $e^{x}(x^{2}+2x)$。",
       "solution": {
-        "knowledge": ["乘积求导法则", "(eˣ)′=eˣ", "公因式整理"],
-        "analysis": "函数由 x² 与 eˣ 相乘而成，必须对两个因子分别求导并保留另一因子，再合并同类因式。",
+        "knowledge": [
+          "乘积求导法则",
+          "$(e^{x})'=e^{x}$",
+          "公因式整理"
+        ],
+        "analysis": "函数由 $x^{2}$ 与 $e^{x}$ 相乘而成，必须对两个因子分别求导并保留另一因子，再合并同类因式。",
         "steps": [
-          "令 u(x)=x²，v(x)=eˣ，则 f(x)=u(x)v(x)。",
-          "分别求导得到 u′(x)=2x，v′(x)=eˣ。",
-          "应用乘积法则 f′=u′v+uv′，得 f′(x)=2xeˣ+x²eˣ。",
-          "提取公因式 eˣ，得到 f′(x)=eˣ(x²+2x)。",
+          "令 $u(x)=x^{2}$，$v(x)=e^{x}$，则 $f(x)=u(x)v(x)$。",
+          "分别求导得到 $u'(x)=2x$，$v'(x)=e^{x}$。",
+          "应用乘积法则 $f'=u'v+uv'$，得 $f'(x)=2$xe$^{x}+x^{2}e^{x}$。",
+          "提取公因式 $e^{x}$，得到 $f'(x)=e^{x}(x^{2}+2x)$。",
           "因此正确选项为 B。"
         ],
-        "pitfalls": ["误写成 u′v′", "只对一个因子求导", "提取公因式时漏掉 x"],
-        "verification": "在 x=0 处，定义式给出的导数为 lim_{h→0}h²eʰ/h=0；所得公式在 x=0 处也给出 0。",
+        "pitfalls": [
+          "误写成 $u'v'$",
+          "只对一个因子求导",
+          "提取公因式时漏掉 x"
+        ],
+        "verification": "在 $x=0$ 处，定义式给出的导数为 $\\lim_{h\\to 0}\\frac{h^{2}e^{h}}{h}=0$；所得公式在 $x=0$ 处也给出 0。",
         "takeaway": "乘积求导是两项之和，而不是两个导数的乘积。",
-        "extension": "把 x² 改为 xᵐ，可先猜测并验证 (xᵐeˣ)′=eˣ(xᵐ+mxᵐ⁻¹)。"
+        "extension": "把 $x^{2}$ 改为 $x^{m}$，可先猜测并验证 $(x^{m}e^{x})'=e^{x}(x^{m}+mx^{m-1})$。"
       }
     },
     "en": {
       "title": "A Polynomial Times an Exponential",
-      "prompt": "Let f(x)=x²eˣ. Which expression equals f′(x)?",
-      "choices": ["A. 2xeˣ", "B. eˣ(x²+2x)", "C. x²eˣ", "D. eˣ(x+2)"],
-      "answer": "B. eˣ(x²+2x).",
+      "prompt": "Let $f(x)=x^{2}e^{x}$. Which expression equals $f'(x)$?",
+      "choices": [
+        "A. $2xe^{x}$",
+        "B. $e^{x}(x^{2}+2x)$",
+        "C. $x^{2}e^{x}$",
+        "D. $e^{x}(x+2)$"
+      ],
+      "answer": "B. $e^{x}(x^{2}+2x)$.",
       "solution": {
-        "knowledge": ["Product rule", "(eˣ)′=eˣ", "Factoring a common factor"],
-        "analysis": "The function is the product of x² and eˣ. Differentiate each factor in turn while retaining the other factor, then combine the terms.",
+        "knowledge": [
+          "Product rule",
+          "$(e^{x})'=e^{x}$",
+          "Factoring a common factor"
+        ],
+        "analysis": "The function is the product of $x^{2}$ and $e^{x}$. Differentiate each factor in turn while retaining the other factor, then combine the terms.",
         "steps": [
-          "Set u(x)=x² and v(x)=eˣ, so f(x)=u(x)v(x).",
-          "Differentiate the factors: u′(x)=2x and v′(x)=eˣ.",
-          "Apply f′=u′v+uv′ to obtain f′(x)=2xeˣ+x²eˣ.",
-          "Factor out eˣ to get f′(x)=eˣ(x²+2x).",
+          "Set $u(x)=x^{2}$ and $v(x)=e^{x}$, so $f(x)=u(x)v(x)$.",
+          "Differentiate the factors: $u'(x)=2x$ and $v'(x)=e^{x}$.",
+          "Apply $f'=u'v+uv'$ to obtain $f'(x)=2$xe$^{x}+x^{2}e^{x}$.",
+          "Factor out $e^{x}$ to get $f'(x)=e^{x}(x^{2}+2x)$.",
           "Therefore the correct choice is B."
         ],
-        "pitfalls": ["Writing u′v′ instead of the product rule", "Differentiating only one factor", "Losing a factor of x when factoring"],
-        "verification": "At x=0, the definition gives lim_{h→0}h²eʰ/h=0, and the derived formula also gives 0.",
+        "pitfalls": [
+          "Writing $u'v'$ instead of the product rule",
+          "Differentiating only one factor",
+          "Losing a factor of x when factoring"
+        ],
+        "verification": "At $x=0$, the definition gives $\\lim_{h\\to 0}\\frac{h^{2}e^{h}}{h}=0$, and the derived formula also gives 0.",
         "takeaway": "The derivative of a product is a sum of two terms, not the product of two derivatives.",
-        "extension": "Replace x² by xᵐ and verify the pattern (xᵐeˣ)′=eˣ(xᵐ+mxᵐ⁻¹)."
+        "extension": "Replace $x^{2}$ by $x^{m}$ and verify the pattern $(x^{m}e^{x})'=e^{x}(x^{m}+mx^{m-1})$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -62,51 +105,84 @@
     "difficulty": "basic",
     "type": "true_false",
     "tags": {
-      "zh": ["商法则", "公式辨析", "判断题"],
-      "en": ["quotient rule", "formula diagnosis", "true or false"]
+      "zh": [
+        "商法则",
+        "公式辨析",
+        "判断题"
+      ],
+      "en": [
+        "quotient rule",
+        "formula diagnosis",
+        "true or false"
+      ]
     },
     "minutes": 5,
     "space": "M",
     "classic_method": false,
     "zh": {
       "title": "商的导数能否逐项相除",
-      "prompt": "判断并说明理由：若 u、v 均可导且 v′(x)≠0，则 [u(x)/v(x)]′=u′(x)/v′(x)。",
-      "answer": "错误。只需 v(x)≠0，正确公式是 (u/v)′=(u′v−uv′)/v²。",
+      "prompt": "判断并说明理由：若 u、v 均可导且 $v'(x)\\ne 0$，则 $[\\frac{u(x)}{v(x)}]'=\\frac{u'(x)}{v'(x)}$。",
+      "answer": "错误。只需 $v(x)\\ne 0$，正确公式是 $(\\frac{u}{v})'=\\frac{u'v-uv'}{v^{2}}$。",
       "solution": {
-        "knowledge": ["商的求导法则", "公式适用条件", "反例检验"],
-        "analysis": "原命题既写错了公式，也把分母条件误放在 v′ 上。用一个简单反例即可否定，再给出正确法则。",
+        "knowledge": [
+          "商的求导法则",
+          "公式适用条件",
+          "反例检验"
+        ],
+        "analysis": "原命题既写错了公式，也把分母条件误放在 $v'$ 上。用一个简单反例即可否定，再给出正确法则。",
         "steps": [
-          "商 u/v 有意义并可使用商法则的局部条件是 v(x)≠0，而不是 v′(x)≠0。",
-          "正确求导公式为 (u/v)′=(u′v−uv′)/v²。",
-          "取 u(x)=x、v(x)=x+1，并在 x≠−1 的区间上考察。",
-          "原命题给出 u′/v′=1，但实际 (x/(x+1))′=[(x+1)−x]/(x+1)²=1/(x+1)²。",
+          "商 $\\frac{u}{v}$ 有意义并可使用商法则的局部条件是 $v(x)\\ne 0$，而不是 $v'(x)\\ne 0$。",
+          "正确求导公式为 $(\\frac{u}{v})'=\\frac{u'v-uv'}{v^{2}}$。",
+          "取 $u(x)=x$、$v(x)=x+1$，并在 $x\\ne -1$ 的区间上考察。",
+          "原命题给出 $\\frac{u'}{v'}=1$，但实际 $(\\frac{x}{x+1})'=\\frac{(x+1)-x}{(x+1)^{2}}=\\frac{1}{(x+1)^{2}}$。",
           "两者一般不相等，所以命题错误。"
         ],
-        "pitfalls": ["把商法则类比成导数之商", "把 v≠0 错写成 v′≠0", "忘记分子中的减号"],
-        "verification": "在 x=1 处，实际导数为 1/4，而错误公式给出 1，数值直接矛盾。",
+        "pitfalls": [
+          "把商法则类比成导数之商",
+          "把 $v\\ne 0$ 错写成 $v'\\ne 0$",
+          "忘记分子中的减号"
+        ],
+        "verification": "在 $x=1$ 处，实际导数为 $\\frac{1}{4}$，而错误公式给出 1，数值直接矛盾。",
         "takeaway": "商法则的结构是“下乘上导减上乘下导，再除以下的平方”。",
-        "extension": "若 v 是非零常数，则商法则才会退化为 (u/v)′=u′/v。"
+        "extension": "若 v 是非零常数，则商法则才会退化为 $(\\frac{u}{v})'=\\frac{u'}{v}$。"
       }
     },
     "en": {
       "title": "Can a Quotient Be Differentiated Termwise?",
-      "prompt": "True or false, with justification: If u and v are differentiable and v′(x)≠0, then [u(x)/v(x)]′=u′(x)/v′(x).",
-      "answer": "False. The needed condition is v(x)≠0, and the correct formula is (u/v)′=(u′v−uv′)/v².",
+      "prompt": "True or false, with justification: If u and v are differentiable and $v'(x)\\ne 0$, then $[\\frac{u(x)}{v(x)}]'=\\frac{u'(x)}{v'(x)}$.",
+      "answer": "False. The needed condition is $v(x)\\ne 0$, and the correct formula is $(\\frac{u}{v})'=\\frac{u'v-uv'}{v^{2}}$.",
       "solution": {
-        "knowledge": ["Quotient rule", "Conditions for a formula", "Counterexample testing"],
+        "knowledge": [
+          "Quotient rule",
+          "Conditions for a formula",
+          "Counterexample testing"
+        ],
         "analysis": "The statement has both an incorrect formula and the wrong nonzero condition. A simple counterexample disproves it, after which the correct rule can be stated.",
         "steps": [
-          "For u/v to be defined and the quotient rule to apply locally, the condition is v(x)≠0, not v′(x)≠0.",
-          "The correct formula is (u/v)′=(u′v−uv′)/v².",
-          "Choose u(x)=x and v(x)=x+1 on an interval excluding x=−1.",
-          "The proposed formula gives u′/v′=1, whereas (x/(x+1))′=[(x+1)−x]/(x+1)²=1/(x+1)².",
+          "For $\\frac{u}{v}$ to be defined and the quotient rule to apply locally, the condition is $v(x)\\ne 0$, not $v'(x)\\ne 0$.",
+          "The correct formula is $(\\frac{u}{v})'=\\frac{u'v-uv'}{v^{2}}$.",
+          "Choose $u(x)=x$ and $v(x)=x+1$ on an interval excluding $x=-1$.",
+          "The proposed formula gives $\\frac{u'}{v'}=1$, whereas $(\\frac{x}{x+1})'=\\frac{(x+1)-x}{(x+1)^{2}}=\\frac{1}{(x+1)^{2}}$.",
           "These are not generally equal, so the statement is false."
         ],
-        "pitfalls": ["Treating a quotient as the quotient of derivatives", "Replacing v≠0 by v′≠0", "Forgetting the minus sign in the numerator"],
-        "verification": "At x=1, the actual derivative is 1/4 while the incorrect formula gives 1.",
+        "pitfalls": [
+          "Treating a quotient as the quotient of derivatives",
+          "Replacing $v\\ne 0$ by $v'\\ne 0$",
+          "Forgetting the minus sign in the numerator"
+        ],
+        "verification": "At $x=1$, the actual derivative is $\\frac{1}{4}$ while the incorrect formula gives 1.",
         "takeaway": "The quotient rule is denominator times numerator derivative minus numerator times denominator derivative, divided by the denominator squared.",
-        "extension": "If v is a nonzero constant, the quotient rule does reduce to (u/v)′=u′/v."
+        "extension": "If v is a nonzero constant, the quotient rule does reduce to $(\\frac{u}{v})'=\\frac{u'}{v}$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "elementary_differentiation_rules",
+      "relation": "independently_synthesized_from_standard_methods",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.3"
+      ]
     }
   },
   {
@@ -116,51 +192,86 @@
     "difficulty": "basic",
     "type": "fill_blank",
     "tags": {
-      "zh": ["基本导数公式", "对数函数", "反三角函数"],
-      "en": ["basic derivative formulas", "logarithm", "inverse trigonometric function"]
+      "zh": [
+        "基本导数公式",
+        "对数函数",
+        "反三角函数"
+      ],
+      "en": [
+        "basic derivative formulas",
+        "logarithm",
+        "inverse trigonometric function"
+      ]
     },
     "minutes": 5,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "三类基本函数的线性组合",
-      "prompt": "在 x>0 上，若 y=3eˣ−2ln x+5arctan x，则 y′=________。",
-      "answer": "y′=3eˣ−2/x+5/(1+x²)。",
+      "prompt": "在 $x>0$ 上，若 $y=3e^{x}-2\\ln x+5\\arctan x$，则 $y'=\\underline{\\qquad}$。",
+      "answer": "$y'=3e^{x}-\\frac{2}{x}+\\frac{5}{1+x^{2}}$。",
       "solution": {
-        "knowledge": ["线性运算求导法则", "(ln x)′=1/x", "(arctan x)′=1/(1+x²)"],
-        "analysis": "这是指数、对数和反正切函数的线性组合，各项可分别求导；x>0 同时保证 ln x 有定义。",
-        "steps": [
-          "由常数倍法则，(3eˣ)′=3eˣ。",
-          "在 x>0 上，(−2ln x)′=−2/x。",
-          "由反正切导数公式，(5arctan x)′=5/(1+x²)。",
-          "使用和差法则把三项相加，得到 y′=3eˣ−2/x+5/(1+x²)。",
-          "所得表达式在原定义域 x>0 上处处有意义。"
+        "knowledge": [
+          "线性运算求导法则",
+          "$(\\ln x)'=\\frac{1}{x}$",
+          "$(\\arctan x)'=\\frac{1}{1+x^{2}}$"
         ],
-        "pitfalls": ["把 (ln x)′写成 ln x", "漏掉反正切导数的分母 1+x²", "忽略 ln x 的定义域"],
+        "analysis": "这是指数、对数和反正切函数的线性组合，各项可分别求导；$x>0$ 同时保证 $\\ln x$ 有定义。",
+        "steps": [
+          "由常数倍法则，$(3e^{x})'=3e^{x}$。",
+          "在 $x>0$ 上，$(-2\\ln x)'=-\\frac{2}{x}$。",
+          "由反正切导数公式，$(5\\arctan x)'=\\frac{5}{1+x^{2}}$。",
+          "使用和差法则把三项相加，得到 $y'=3e^{x}-\\frac{2}{x}+\\frac{5}{1+x^{2}}$。",
+          "所得表达式在原定义域 $x>0$ 上处处有意义。"
+        ],
+        "pitfalls": [
+          "把 $(\\ln x)'$写成 $\\ln x$",
+          "漏掉反正切导数的分母 $1+x^{2}$",
+          "忽略 $\\ln x$ 的定义域"
+        ],
         "verification": "逐项的导数单位完全独立；令三项系数中的任意两个为 0，公式都会退化为相应的基本导数公式。",
         "takeaway": "和、差与常数倍可以逐项求导，但每个基本函数的公式和定义域必须同时保留。",
-        "extension": "若把 ln x 改为 ln|x|，则同一导数公式在 x≠0 上成立。"
+        "extension": "若把 $\\ln x$ 改为 $\\ln|x|$，则同一导数公式在 $x\\ne 0$ 上成立。"
       }
     },
     "en": {
       "title": "A Linear Combination of Three Basic Functions",
-      "prompt": "For x>0, if y=3eˣ−2ln x+5arctan x, then y′=________.",
-      "answer": "y′=3eˣ−2/x+5/(1+x²).",
+      "prompt": "For $x>0$, if $y=3e^{x}-2\\ln x+5\\arctan x$, then $y'=\\underline{\\qquad}$.",
+      "answer": "$y'=3e^{x}-\\frac{2}{x}+\\frac{5}{1+x^{2}}$.",
       "solution": {
-        "knowledge": ["Linearity of differentiation", "(ln x)′=1/x", "(arctan x)′=1/(1+x²)"],
-        "analysis": "This is a linear combination of exponential, logarithmic, and inverse-tangent functions, so the terms can be differentiated separately. The condition x>0 also ensures that ln x is defined.",
-        "steps": [
-          "By the constant-multiple rule, (3eˣ)′=3eˣ.",
-          "For x>0, (−2ln x)′=−2/x.",
-          "By the inverse-tangent formula, (5arctan x)′=5/(1+x²).",
-          "Add the three derivatives to obtain y′=3eˣ−2/x+5/(1+x²).",
-          "The resulting expression is defined everywhere on the original domain x>0."
+        "knowledge": [
+          "Linearity of differentiation",
+          "$(\\ln x)'=\\frac{1}{x}$",
+          "$(\\arctan x)'=\\frac{1}{1+x^{2}}$"
         ],
-        "pitfalls": ["Writing (ln x)′ as ln x", "Omitting 1+x² in the inverse-tangent derivative", "Ignoring the domain of ln x"],
+        "analysis": "This is a linear combination of exponential, logarithmic, and inverse-tangent functions, so the terms can be differentiated separately. The condition $x>0$ also ensures that $\\ln x$ is defined.",
+        "steps": [
+          "By the constant-multiple rule, $(3e^{x})'=3e^{x}$.",
+          "For $x>0, (-2\\ln x)'=-\\frac{2}{x}$.",
+          "By the inverse-tangent formula, $(5\\arctan x)'=\\frac{5}{1+x^{2}}$.",
+          "Add the three derivatives to obtain $y'=3e^{x}-\\frac{2}{x}+\\frac{5}{1+x^{2}}$.",
+          "The resulting expression is defined everywhere on the original domain $x>0$."
+        ],
+        "pitfalls": [
+          "Writing $(\\ln x)'$ as $\\ln x$",
+          "Omitting $1+x^{2}$ in the inverse-tangent derivative",
+          "Ignoring the domain of $\\ln x$"
+        ],
         "verification": "Setting any two coefficients to zero reduces the result to the corresponding basic derivative formula.",
         "takeaway": "Sums, differences, and constant multiples differentiate termwise, but each basic formula and its domain must be respected.",
-        "extension": "If ln x is replaced by ln|x|, the same derivative formula holds for x≠0."
+        "extension": "If $\\ln x$ is replaced by $\\ln|x|$, the same derivative formula holds for $x\\ne 0$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.5",
+        "openstax-calculus-v1-3.7",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -170,51 +281,84 @@
     "difficulty": "basic",
     "type": "calculation",
     "tags": {
-      "zh": ["链式法则", "幂函数", "复合函数"],
-      "en": ["chain rule", "power function", "composite function"]
+      "zh": [
+        "链式法则",
+        "幂函数",
+        "复合函数"
+      ],
+      "en": [
+        "chain rule",
+        "power function",
+        "composite function"
+      ]
     },
     "minutes": 6,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "一次函数的五次幂",
-      "prompt": "求 y=(2x−1)⁵ 的导数，并明确指出外层函数与内层函数。",
-      "answer": "y′=10(2x−1)⁴。",
+      "prompt": "求 $y=(2x-1)^{5}$ 的导数，并明确指出外层函数与内层函数。",
+      "answer": "$y'=10(2x-1)^{4}$。",
       "solution": {
-        "knowledge": ["链式法则", "复合函数分层", "幂函数求导"],
-        "analysis": "把 2x−1 看作整体。外层是 u↦u⁵，内层是 x↦2x−1，导数应为外导数乘以内导数。",
-        "steps": [
-          "设内层变量 u=2x−1，则 y=u⁵。",
-          "外层对 u 求导：dy/du=5u⁴。",
-          "内层对 x 求导：du/dx=2。",
-          "由链式法则 y′=(dy/du)(du/dx)=5u⁴·2。",
-          "代回 u=2x−1，得到 y′=10(2x−1)⁴。"
+        "knowledge": [
+          "链式法则",
+          "复合函数分层",
+          "幂函数求导"
         ],
-        "pitfalls": ["只写 5(2x−1)⁴ 而漏乘 2", "把指数 5 同时作用到内层导数", "展开后计算造成不必要错误"],
-        "verification": "展开最高次项为 32x⁵，其导数最高次项应为 160x⁴；所得式最高次项 10·16x⁴=160x⁴，一致。",
+        "analysis": "把 $2x-1$ 看作整体。外层是 $u\\mapsto u^{5}$，内层是 $x\\mapsto2x-1$，导数应为外导数乘以内导数。",
+        "steps": [
+          "设内层变量 $u=2x-1$，则 $y=u^{5}$。",
+          "外层对 u 求导：$\\frac{dy}{du}=5u^{4}$。",
+          "内层对 x 求导：$\\frac{du}{dx}=2$。",
+          "由链式法则 $y'=(\\frac{dy}{du})(\\frac{du}{dx})=5u^{4}\\cdot 2$。",
+          "代回 $u=2x-1$，得到 $y'=10(2x-1)^{4}$。"
+        ],
+        "pitfalls": [
+          "只写 $5(2x-1)^{4}$ 而漏乘 2",
+          "把指数 5 同时作用到内层导数",
+          "展开后计算造成不必要错误"
+        ],
+        "verification": "展开最高次项为 $32x^{5}$，其导数最高次项应为 $160x^{4}$；所得式最高次项 $10\\cdot 16x^{4}=160x^{4}$，一致。",
         "takeaway": "复合函数每穿过一层，就要乘上该层内部的导数。",
-        "extension": "对 y=(ax+b)ⁿ，可直接得到 y′=an(ax+b)ⁿ⁻¹。"
+        "extension": "对 $y=(ax+b)^{n}$，可直接得到 $y'=an(ax+b)^{n-1}$。"
       }
     },
     "en": {
       "title": "The Fifth Power of a Linear Function",
-      "prompt": "Differentiate y=(2x−1)⁵ and explicitly identify the outer and inner functions.",
-      "answer": "y′=10(2x−1)⁴.",
+      "prompt": "Differentiate $y=(2x-1)^{5}$ and explicitly identify the outer and inner functions.",
+      "answer": "$y'=10(2x-1)^{4}$.",
       "solution": {
-        "knowledge": ["Chain rule", "Layering a composite function", "Power rule"],
-        "analysis": "Treat 2x−1 as one unit. The outer function is u↦u⁵ and the inner function is x↦2x−1, so the derivative is the outer derivative times the inner derivative.",
-        "steps": [
-          "Introduce the inner variable u=2x−1, so y=u⁵.",
-          "Differentiate the outer function: dy/du=5u⁴.",
-          "Differentiate the inner function: du/dx=2.",
-          "The chain rule gives y′=(dy/du)(du/dx)=5u⁴·2.",
-          "Substitute u=2x−1 to obtain y′=10(2x−1)⁴."
+        "knowledge": [
+          "Chain rule",
+          "Layering a composite function",
+          "Power rule"
         ],
-        "pitfalls": ["Writing only 5(2x−1)⁴ and missing the factor 2", "Applying the exponent to the inner derivative", "Expanding unnecessarily and creating algebra errors"],
-        "verification": "The leading term of the expansion is 32x⁵, whose derivative has leading term 160x⁴; the result has leading term 10·16x⁴=160x⁴.",
+        "analysis": "Treat $2x-1$ as one unit. The outer function is $u\\mapsto u^{5}$ and the inner function is $x\\mapsto2x-1$, so the derivative is the outer derivative times the inner derivative.",
+        "steps": [
+          "Introduce the inner variable $u=2x-1$, so $y=u^{5}$.",
+          "Differentiate the outer function: $\\frac{dy}{du}=5u^{4}$.",
+          "Differentiate the inner function: $\\frac{du}{dx}=2$.",
+          "The chain rule gives $y'=(\\frac{dy}{du})(\\frac{du}{dx})=5u^{4}\\cdot 2$.",
+          "Substitute $u=2x-1$ to obtain $y'=10(2x-1)^{4}$."
+        ],
+        "pitfalls": [
+          "Writing only $5(2x-1)^{4}$ and missing the factor 2",
+          "Applying the exponent to the inner derivative",
+          "Expanding unnecessarily and creating algebra errors"
+        ],
+        "verification": "The leading term of the expansion is $32x^{5}$, whose derivative has leading term $160x^{4}$; the result has leading term $10\\cdot 16x^{4}=160x^{4}$.",
         "takeaway": "Each layer passed through in a composite function contributes its own derivative factor.",
-        "extension": "For y=(ax+b)ⁿ, the same reasoning gives y′=an(ax+b)ⁿ⁻¹."
+        "extension": "For $y=(ax+b)^{n}$, the same reasoning gives $y'=an(ax+b)^{n-1}$."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "chain_rule_and_composites",
+      "relation": "adapted_from_open_text_topic_and_method",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.6"
+      ]
     }
   },
   {
@@ -224,51 +368,85 @@
     "difficulty": "basic",
     "type": "calculation",
     "tags": {
-      "zh": ["商法则", "指数函数", "三角函数"],
-      "en": ["quotient rule", "exponential function", "trigonometric function"]
+      "zh": [
+        "商法则",
+        "指数函数",
+        "三角函数"
+      ],
+      "en": [
+        "quotient rule",
+        "exponential function",
+        "trigonometric function"
+      ]
     },
     "minutes": 6,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "正弦与指数的商",
-      "prompt": "求 y=sin x/eˣ 的导数，并把结果写成最简乘积形式。",
-      "answer": "y′=e⁻ˣ(cos x−sin x)。",
+      "prompt": "求 $y=\\frac{\\sin x}{e^{x}}$ 的导数，并把结果写成最简乘积形式。",
+      "answer": "$y'=e^{-x}(\\cos x-\\sin x)$。",
       "solution": {
-        "knowledge": ["商法则", "负指数改写", "正弦与指数函数的导数"],
-        "analysis": "既可直接使用商法则，也可先写成 e⁻ˣsin x 再用乘积法则；后者更容易得到简洁形式。",
-        "steps": [
-          "将原函数改写为 y=e⁻ˣsin x。",
-          "由链式法则，(e⁻ˣ)′=−e⁻ˣ；同时 (sin x)′=cos x。",
-          "应用乘积法则，y′=(−e⁻ˣ)sin x+e⁻ˣcos x。",
-          "提取 e⁻ˣ，得到 y′=e⁻ˣ(cos x−sin x)。",
-          "由于 eˣ≠0，该结果在所有实数 x 上成立。"
+        "knowledge": [
+          "商法则",
+          "负指数改写",
+          "正弦与指数函数的导数"
         ],
-        "pitfalls": ["把 (e⁻ˣ)′写成 e⁻ˣ", "商法则中颠倒减法次序", "化简时丢失负号"],
-        "verification": "直接用商法则得 [eˣcos x−eˣsin x]/e²ˣ=(cos x−sin x)/eˣ，与结果相同。",
+        "analysis": "既可直接使用商法则，也可先写成 $e^{-x}\\sin x$ 再用乘积法则；后者更容易得到简洁形式。",
+        "steps": [
+          "将原函数改写为 $y=e^{-x}\\sin x$。",
+          "由链式法则，$(e^{-x})'=-e^{-x}$；同时 $(\\sin x)'=\\cos x$。",
+          "应用乘积法则，$y'=(-e^{-x})\\sin x+e^{-x}\\cos x$。",
+          "提取 $e^{-x}$，得到 $y'=e^{-x}(\\cos x-\\sin x)$。",
+          "由于 $e^{x}\\ne 0$，该结果在所有实数 x 上成立。"
+        ],
+        "pitfalls": [
+          "把 $(e^{-x})'$写成 $e^{-x}$",
+          "商法则中颠倒减法次序",
+          "化简时丢失负号"
+        ],
+        "verification": "直接用商法则得 $\\frac{e^{x}\\cos x-e^{x}\\sin x}{e^{2x}}=\\frac{\\cos x-\\sin x}{e^{x}}$，与结果相同。",
         "takeaway": "遇到指数函数作分母时，先改写成负指数常能简化求导。",
-        "extension": "把 sin x 换成一般可导函数 f(x)，则 [e⁻ˣf(x)]′=e⁻ˣ[f′(x)−f(x)]。"
+        "extension": "把 $\\sin x$ 换成一般可导函数 $f(x)$，则 $[e^{-x}f(x)]'=e^{-x}[f'(x)-f(x)]$。"
       }
     },
     "en": {
       "title": "A Sine Divided by an Exponential",
-      "prompt": "Differentiate y=sin x/eˣ and write the result in the simplest product form.",
-      "answer": "y′=e⁻ˣ(cos x−sin x).",
+      "prompt": "Differentiate $y=\\frac{\\sin x}{e^{x}}$ and write the result in the simplest product form.",
+      "answer": "$y'=e^{-x}(\\cos x-\\sin x)$.",
       "solution": {
-        "knowledge": ["Quotient rule", "Rewriting with a negative exponent", "Derivatives of sine and exponential functions"],
-        "analysis": "One may apply the quotient rule directly or rewrite the function as e⁻ˣsin x and use the product rule. The second route produces a compact form naturally.",
-        "steps": [
-          "Rewrite the function as y=e⁻ˣsin x.",
-          "By the chain rule, (e⁻ˣ)′=−e⁻ˣ, while (sin x)′=cos x.",
-          "Apply the product rule: y′=(−e⁻ˣ)sin x+e⁻ˣcos x.",
-          "Factor e⁻ˣ to obtain y′=e⁻ˣ(cos x−sin x).",
-          "Because eˣ is never zero, the formula holds for every real x."
+        "knowledge": [
+          "Quotient rule",
+          "Rewriting with a negative exponent",
+          "Derivatives of sine and exponential functions"
         ],
-        "pitfalls": ["Writing (e⁻ˣ)′ as e⁻ˣ", "Reversing the subtraction in the quotient rule", "Losing the minus sign while simplifying"],
-        "verification": "The quotient rule gives [eˣcos x−eˣsin x]/e²ˣ=(cos x−sin x)/eˣ, which is identical.",
+        "analysis": "One may apply the quotient rule directly or rewrite the function as $e^{-x}\\sin x$ and use the product rule. The second route produces a compact form naturally.",
+        "steps": [
+          "Rewrite the function as $y=e^{-x}\\sin x$.",
+          "By the chain rule, $(e^{-x})'=-e^{-x}$, while $(\\sin x)'=\\cos x$.",
+          "Apply the product rule: $y'=(-e^{-x})\\sin x+e^{-x}\\cos x$.",
+          "Factor $e^{-x}$ to obtain $y'=e^{-x}(\\cos x-\\sin x)$.",
+          "Because $e^{x}$ is never zero, the formula holds for every real x."
+        ],
+        "pitfalls": [
+          "Writing $(e^{-x})'$ as $e^{-x}$",
+          "Reversing the subtraction in the quotient rule",
+          "Losing the minus sign while simplifying"
+        ],
+        "verification": "The quotient rule gives $\\frac{e^{x}\\cos x-e^{x}\\sin x}{e^{2x}}=\\frac{\\cos x-\\sin x}{e^{x}}$, which is identical.",
         "takeaway": "When an exponential appears in the denominator, rewriting it with a negative exponent often simplifies differentiation.",
-        "extension": "Replacing sin x by a differentiable f(x) gives [e⁻ˣf(x)]′=e⁻ˣ[f′(x)−f(x)]."
+        "extension": "Replacing $\\sin x$ by a differentiable $f(x)$ gives $[e^{-x}f(x)]'=e^{-x}[f'(x)-f(x)]$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.5",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -278,53 +456,96 @@
     "difficulty": "basic",
     "type": "single_choice",
     "tags": {
-      "zh": ["反函数导数", "对应点", "选择题"],
-      "en": ["inverse-function derivative", "corresponding points", "single choice"]
+      "zh": [
+        "反函数导数",
+        "对应点",
+        "选择题"
+      ],
+      "en": [
+        "inverse-function derivative",
+        "corresponding points",
+        "single choice"
+      ]
     },
     "minutes": 5,
     "space": "S",
     "classic_method": true,
     "zh": {
       "title": "反函数在对应点的导数",
-      "prompt": "设 f 在 2 附近存在可导反函数 g=f⁻¹，且 f(2)=5、f′(2)=−3，则 g′(5) 等于多少？",
-      "choices": ["A. −3", "B. −1/3", "C. 1/3", "D. 3"],
-      "answer": "B. −1/3。",
+      "prompt": "设 f 在 2 附近存在可导反函数 $g=f^{-1}$，且 $f(2)=5$、$f'(2)=-3$，则 $g'(5)$ 等于多少？",
+      "choices": [
+        "A. $-3$",
+        "B. $-\\frac{1}{3}$",
+        "C. $\\frac{1}{3}$",
+        "D. 3"
+      ],
+      "answer": "B. $-\\frac{1}{3}$。",
       "solution": {
-        "knowledge": ["反函数求导公式", "原函数点与反函数点的对应", "非零导数条件"],
-        "analysis": "先由 f(2)=5 确定 g(5)=2，再在这对对应点上使用反函数导数互为倒数的公式。",
+        "knowledge": [
+          "反函数求导公式",
+          "原函数点与反函数点的对应",
+          "非零导数条件"
+        ],
+        "analysis": "先由 $f(2)=5$ 确定 $g(5)=2$，再在这对对应点上使用反函数导数互为倒数的公式。",
         "steps": [
-          "由 g=f⁻¹ 和 f(2)=5，得到 g(5)=2。",
-          "反函数导数公式为 g′(y)=1/f′(g(y))。",
-          "令 y=5，则 g′(5)=1/f′(g(5))。",
-          "代入 g(5)=2 与 f′(2)=−3，得 g′(5)=1/(−3)=−1/3。",
+          "由 $g=f^{-1}$ 和 $f(2)=5$，得到 $g(5)=2$。",
+          "反函数导数公式为 $g'(y)=\\frac{1}{f'(g(y))}$。",
+          "令 $y=5$，则 $g'(5)=\\frac{1}{f'(g(5))}$。",
+          "代入 $g(5)=2$ 与 $f'(2)=-3$，得 $g'(5)=\\frac{1}{-3}=-\\frac{1}{3}$。",
           "所以正确选项为 B。"
         ],
-        "pitfalls": ["直接把 f′(2) 当作 g′(5)", "把对应自变量仍写成 2", "漏掉倒数或负号"],
-        "verification": "对应切线斜率的乘积为 f′(2)g′(5)=(−3)(−1/3)=1，符合反函数图像关于 y=x 对称的斜率关系。",
+        "pitfalls": [
+          "直接把 $f'(2)$ 当作 $g'(5)$",
+          "把对应自变量仍写成 2",
+          "漏掉倒数或负号"
+        ],
+        "verification": "对应切线斜率的乘积为 $f'(2)g'(5)=(-3)(-\\frac{1}{3})=1$，符合反函数图像关于 $y=x$ 对称的斜率关系。",
         "takeaway": "反函数的导数要在对应点取原函数导数的倒数。",
-        "extension": "若 f′(2)=0，则不能用该公式断言 g 在 5 处有有限导数。"
+        "extension": "若 $f'(2)=0$，则不能用该公式断言 g 在 5 处有有限导数。"
       }
     },
     "en": {
       "title": "The Derivative of an Inverse at Corresponding Points",
-      "prompt": "Suppose f has a differentiable inverse g=f⁻¹ near 2, with f(2)=5 and f′(2)=−3. What is g′(5)?",
-      "choices": ["A. −3", "B. −1/3", "C. 1/3", "D. 3"],
-      "answer": "B. −1/3.",
+      "prompt": "Suppose f has a differentiable inverse $g=f^{-1}$ near 2, with $f(2)=5$ and $f'(2)=-3$. What is $g'(5)$?",
+      "choices": [
+        "A. $-3$",
+        "B. $-\\frac{1}{3}$",
+        "C. $\\frac{1}{3}$",
+        "D. 3"
+      ],
+      "answer": "B. $-\\frac{1}{3}$.",
       "solution": {
-        "knowledge": ["Inverse-function derivative formula", "Corresponding points of a function and its inverse", "Nonzero derivative condition"],
-        "analysis": "First use f(2)=5 to identify g(5)=2, then take the reciprocal of the original derivative at this corresponding point.",
+        "knowledge": [
+          "Inverse-function derivative formula",
+          "Corresponding points of a function and its inverse",
+          "Nonzero derivative condition"
+        ],
+        "analysis": "First use $f(2)=5$ to identify $g(5)=2$, then take the reciprocal of the original derivative at this corresponding point.",
         "steps": [
-          "Since g=f⁻¹ and f(2)=5, we have g(5)=2.",
-          "The inverse derivative formula is g′(y)=1/f′(g(y)).",
-          "At y=5, g′(5)=1/f′(g(5)).",
-          "Substitute g(5)=2 and f′(2)=−3 to obtain g′(5)=1/(−3)=−1/3.",
+          "Since $g=f^{-1}$ and $f(2)=5$, we have $g(5)=2$.",
+          "The inverse derivative formula is $g'(y)=\\frac{1}{f'(g(y))}$.",
+          "At $y=5, g'(5)=\\frac{1}{f'(g(5))}$.",
+          "Substitute $g(5)=2$ and $f'(2)=-3$ to obtain $g'(5)=\\frac{1}{-3}=-\\frac{1}{3}$.",
           "Therefore the correct choice is B."
         ],
-        "pitfalls": ["Using f′(2) itself as g′(5)", "Using 2 as the inverse function's input", "Dropping the reciprocal or the negative sign"],
-        "verification": "The product of the corresponding slopes is f′(2)g′(5)=(−3)(−1/3)=1, consistent with reflection of inverse graphs across y=x.",
+        "pitfalls": [
+          "Using $f'(2)$ itself as $g'(5)$",
+          "Using 2 as the inverse function's input",
+          "Dropping the reciprocal or the negative sign"
+        ],
+        "verification": "The product of the corresponding slopes is $f'(2)g'(5)=(-3)(-\\frac{1}{3})=1$, consistent with reflection of inverse graphs across $y=x$.",
         "takeaway": "At corresponding points, the derivative of an inverse is the reciprocal of the original derivative.",
-        "extension": "If f′(2)=0, the formula cannot be used to claim that g has a finite derivative at 5."
+        "extension": "If $f'(2)=0$, the formula cannot be used to claim that g has a finite derivative at 5."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.7"
+      ]
     }
   },
   {
@@ -334,51 +555,84 @@
     "difficulty": "basic",
     "type": "true_false",
     "tags": {
-      "zh": ["高阶导数", "多项式", "判断题"],
-      "en": ["higher derivatives", "polynomial", "true or false"]
+      "zh": [
+        "高阶导数",
+        "多项式",
+        "判断题"
+      ],
+      "en": [
+        "higher derivatives",
+        "polynomial",
+        "true or false"
+      ]
     },
     "minutes": 4,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "多项式的高阶导数",
-      "prompt": "判断并说明理由：若 y=x⁴−3x+2，则 y⁽⁵⁾(x)≡0。",
+      "prompt": "判断并说明理由：若 $y=x^{4}-3x+2$，则 $y^{(5)}(x)\\equiv 0$。",
       "answer": "正确。四次多项式的五阶及更高阶导数恒为 0。",
       "solution": {
-        "knowledge": ["高阶导数定义", "多项式次数递降", "恒等于零"],
+        "knowledge": [
+          "高阶导数定义",
+          "多项式次数递降",
+          "恒等于零"
+        ],
         "analysis": "每求一次导数，多项式的次数降低 1；线性项在二阶导数时已消失，四次项在五阶导数时消失。",
         "steps": [
-          "一阶导数为 y′=4x³−3。",
-          "二阶导数为 y″=12x²。",
-          "三阶与四阶导数依次为 y‴=24x、y⁽⁴⁾=24。",
-          "再求一次导数，常数 24 的导数为 0，因此 y⁽⁵⁾=0。",
+          "一阶导数为 $y'=4x^{3}-3$。",
+          "二阶导数为 $y''=12x^{2}$。",
+          "三阶与四阶导数依次为 $y'''=24x$、$y^{(4)}=24$。",
+          "再求一次导数，常数 24 的导数为 0，因此 $y^{(5)}=0$。",
           "零函数继续求导仍为零，所以结论恒成立。"
         ],
-        "pitfalls": ["把五阶导数误认为 5x⁻¹", "遗漏低次项会更早消失", "把某一点为 0 与恒等于 0 混淆"],
-        "verification": "直接使用公式 (x⁴)⁽ⁿ⁾=4!/(4−n)!·x⁴⁻ⁿ 仅适用于 n≤4；n=5 时导数已经为 0。",
-        "takeaway": "m 次多项式的 m+1 阶及更高阶导数恒为 0。",
-        "extension": "若多项式的最高次项系数非零，则它的 m 阶导数是非零常数 m!aₘ。"
+        "pitfalls": [
+          "把五阶导数误认为 $5x^{-1}$",
+          "遗漏低次项会更早消失",
+          "把某一点为 0 与恒等于 0 混淆"
+        ],
+        "verification": "直接使用公式 $(x^{4})^{(n)}=\\frac{4!}{(4-n)!}\\cdot x^{4-n}$ 仅适用于 $n\\le 4$；$n=5$ 时导数已经为 0。",
+        "takeaway": "m 次多项式的 $m+1$ 阶及更高阶导数恒为 0。",
+        "extension": "若多项式的最高次项系数非零，则它的 m 阶导数是非零常数 $m!a_{m}$。"
       }
     },
     "en": {
       "title": "Higher Derivatives of a Polynomial",
-      "prompt": "True or false, with justification: If y=x⁴−3x+2, then y⁽⁵⁾(x)≡0.",
+      "prompt": "True or false, with justification: If $y=x^{4}-3x+2$, then $y^{(5)}(x)\\equiv 0$.",
       "answer": "True. Every derivative of order five or higher of a fourth-degree polynomial is identically 0.",
       "solution": {
-        "knowledge": ["Definition of higher derivatives", "Degree reduction for polynomials", "Identically zero functions"],
+        "knowledge": [
+          "Definition of higher derivatives",
+          "Degree reduction for polynomials",
+          "Identically zero functions"
+        ],
         "analysis": "Each differentiation lowers the polynomial degree by one. The linear term disappears after two derivatives, and the fourth-degree term disappears after five.",
         "steps": [
-          "The first derivative is y′=4x³−3.",
-          "The second derivative is y″=12x².",
-          "The third and fourth derivatives are y‴=24x and y⁽⁴⁾=24.",
-          "Differentiating once more gives y⁽⁵⁾=0 because the derivative of 24 is zero.",
+          "The first derivative is $y'=4x^{3}-3$.",
+          "The second derivative is $y''=12x^{2}$.",
+          "The third and fourth derivatives are $y'''=24x$ and $y^{(4)}=24$.",
+          "Differentiating once more gives $y^{(5)}=0$ because the derivative of 24 is zero.",
           "Further derivatives of the zero function remain zero, so the assertion holds identically."
         ],
-        "pitfalls": ["Treating the fifth derivative as 5x⁻¹", "Forgetting that lower-degree terms disappear earlier", "Confusing a zero at one point with an identically zero function"],
-        "verification": "The formula (x⁴)⁽ⁿ⁾=4!/(4−n)!·x⁴⁻ⁿ applies only for n≤4; at n=5 the derivative is already zero.",
-        "takeaway": "Every derivative of order m+1 or higher of a degree-m polynomial is identically zero.",
-        "extension": "If the leading coefficient of a degree-m polynomial is nonzero, its mth derivative is the nonzero constant m!aₘ."
+        "pitfalls": [
+          "Treating the fifth derivative as $5x^{-1}$",
+          "Forgetting that lower-degree terms disappear earlier",
+          "Confusing a zero at one point with an identically zero function"
+        ],
+        "verification": "The formula $(x^{4})^{(n)}=\\frac{4!}{(4-n)!}\\cdot x^{4-n}$ applies only for $n\\le 4$; at $n=5$ the derivative is already zero.",
+        "takeaway": "Every derivative of order $m+1$ or higher of a degree-m polynomial is identically zero.",
+        "extension": "If the leading coefficient of a degree-m polynomial is nonzero, its mth derivative is the nonzero constant $m!a_{m}$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -388,51 +642,84 @@
     "difficulty": "basic",
     "type": "fill_blank",
     "tags": {
-      "zh": ["三角函数高阶导数", "四阶循环", "填空题"],
-      "en": ["higher trigonometric derivatives", "four-step cycle", "fill in the blank"]
+      "zh": [
+        "三角函数高阶导数",
+        "四阶循环",
+        "填空题"
+      ],
+      "en": [
+        "higher trigonometric derivatives",
+        "four-step cycle",
+        "fill in the blank"
+      ]
     },
     "minutes": 5,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "余弦函数的第 2026 阶导数",
-      "prompt": "若 y=cos x，则 y⁽²⁰²⁶⁾=________。",
-      "answer": "y⁽²⁰²⁶⁾=−cos x。",
+      "prompt": "若 $y=\\cos x$，则 $y^{(2026)}=\\underline{\\qquad}$。",
+      "answer": "$y^{(2026)}=-\\cos x$。",
       "solution": {
-        "knowledge": ["余弦函数高阶导数", "模 4 分类", "周期性规律"],
+        "knowledge": [
+          "余弦函数高阶导数",
+          "模 4 分类",
+          "周期性规律"
+        ],
         "analysis": "余弦的连续求导以 4 为周期，只需计算 2026 除以 4 的余数。",
         "steps": [
-          "前四阶依次为 y′=−sin x、y″=−cos x、y‴=sin x、y⁽⁴⁾=cos x。",
+          "前四阶依次为 $y'=-\\sin x$、$y''=-\\cos x$、$y'''=\\sin x$、$y^{(4)}=\\cos x$。",
           "第四阶回到原函数，所以导数序列每 4 阶重复一次。",
-          "计算 2026=4·506+2，因此第 2026 阶与第 2 阶处于同一位置。",
-          "由 y″=−cos x，得到 y⁽²⁰²⁶⁾=−cos x。",
+          "计算 $2026=4\\cdot 506+2$，因此第 2026 阶与第 2 阶处于同一位置。",
+          "由 $y''=-\\cos x$，得到 $y^{(2026)}=-\\cos x$。",
           "该结论对所有实数 x 成立。"
         ],
-        "pitfalls": ["把 2026 的余数算成 0", "漏掉二阶导数的负号", "误认为周期是 2"],
-        "verification": "2024 是 4 的倍数，故 y⁽²⁰²⁴⁾=cos x；再求两次导数确实得到 −cos x。",
+        "pitfalls": [
+          "把 2026 的余数算成 0",
+          "漏掉二阶导数的负号",
+          "误认为周期是 2"
+        ],
+        "verification": "2024 是 4 的倍数，故 $y^{(2024)}=\\cos x$；再求两次导数确实得到 $-\\cos x$。",
         "takeaway": "三角函数的超高阶导数通常先找循环，再做模运算。",
-        "extension": "可统一写成 (cos x)⁽ⁿ⁾=cos(x+nπ/2)。"
+        "extension": "可统一写成 $(\\cos x)^{(n)}=\\cos(x+\\frac{n\\pi}{2})$。"
       }
     },
     "en": {
       "title": "The 2026th Derivative of Cosine",
-      "prompt": "If y=cos x, then y⁽²⁰²⁶⁾=________.",
-      "answer": "y⁽²⁰²⁶⁾=−cos x.",
+      "prompt": "If $y=\\cos x$, then $y^{(2026)}=\\underline{\\qquad}$.",
+      "answer": "$y^{(2026)}=-\\cos x$.",
       "solution": {
-        "knowledge": ["Higher derivatives of cosine", "Classification modulo 4", "Cyclic patterns"],
+        "knowledge": [
+          "Higher derivatives of cosine",
+          "Classification modulo 4",
+          "Cyclic patterns"
+        ],
         "analysis": "Successive derivatives of cosine repeat every four steps, so only the remainder when 2026 is divided by 4 matters.",
         "steps": [
-          "The first four derivatives are y′=−sin x, y″=−cos x, y‴=sin x, and y⁽⁴⁾=cos x.",
+          "The first four derivatives are $y'=-\\sin x, y''=-\\cos x, y'''=\\sin x$, and $y^{(4)}=\\cos x$.",
           "The fourth derivative returns to the original function, so the sequence has period 4.",
-          "Since 2026=4·506+2, the 2026th derivative occupies the same position as the second derivative.",
-          "Because y″=−cos x, we obtain y⁽²⁰²⁶⁾=−cos x.",
+          "Since $2026=4\\cdot 506+2$, the 2026th derivative occupies the same position as the second derivative.",
+          "Because $y''=-\\cos x$, we obtain $y^{(2026)}=-\\cos x$.",
           "This identity holds for every real x."
         ],
-        "pitfalls": ["Computing the remainder of 2026 as 0", "Dropping the minus sign in the second derivative", "Assuming the period is 2"],
-        "verification": "Because 2024 is divisible by 4, y⁽²⁰²⁴⁾=cos x; differentiating twice more indeed gives −cos x.",
+        "pitfalls": [
+          "Computing the remainder of 2026 as 0",
+          "Dropping the minus sign in the second derivative",
+          "Assuming the period is 2"
+        ],
+        "verification": "Because 2024 is divisible by $4, y^{(2024)}=\\cos x$; differentiating twice more indeed gives $-\\cos x$.",
         "takeaway": "For very high trigonometric derivatives, find the cycle first and then use modular arithmetic.",
-        "extension": "A unified form is (cos x)⁽ⁿ⁾=cos(x+nπ/2)."
+        "extension": "A unified form is $(\\cos x)^{(n)}=\\cos(x+\\frac{n\\pi}{2})$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -442,51 +729,84 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["乘积法则", "商法则", "对数函数"],
-      "en": ["product rule", "quotient rule", "logarithm"]
+      "zh": [
+        "乘积法则",
+        "商法则",
+        "对数函数"
+      ],
+      "en": [
+        "product rule",
+        "quotient rule",
+        "logarithm"
+      ]
     },
     "minutes": 9,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "乘积嵌套在商中",
-      "prompt": "在 x>0 且 x≠1 上，求 y=(x²+1)ln x/(x−1) 的导数，并给出一个通分后的结果。",
-      "answer": "y′={[(x²−2x−1)ln x]+(x²+1)(x−1)/x}/(x−1)²。",
+      "prompt": "在 $x>0$ 且 $x\\ne 1$ 上，求 $y=\\frac{(x^{2}+1)\\ln x}{x-1}$ 的导数，并给出一个通分后的结果。",
+      "answer": "$y'=\\frac{{[(x^{2}-2x-1)\\ln x]+\\frac{(x^{2}+1)(x-1)}{x}}}{(x-1)^{2}}$。",
       "solution": {
-        "knowledge": ["乘积法则", "商法则", "通分与代数整理"],
-        "analysis": "先把分子视为一个整体 N=(x²+1)ln x 求导，再对 N/(x−1) 使用商法则，能减少漏项。",
-        "steps": [
-          "设 N(x)=(x²+1)ln x，则 y=N(x)/(x−1)。",
-          "由乘积法则，N′(x)=2xln x+(x²+1)/x。",
-          "由商法则，y′=[N′(x)(x−1)−N(x)]/(x−1)²。",
-          "代入 N 与 N′，得到 y′={[2xln x+(x²+1)/x](x−1)−(x²+1)ln x}/(x−1)²。",
-          "合并含 ln x 的项：2x(x−1)−(x²+1)=x²−2x−1，故得到所给答案。"
+        "knowledge": [
+          "乘积法则",
+          "商法则",
+          "通分与代数整理"
         ],
-        "pitfalls": ["分子求导时漏掉 (x²+1)/x", "商法则分子次序颠倒", "在 x=1 处使用不成立的公式"],
-        "verification": "保留未完全化简式并重新展开，可逐项恢复最终分子；两式的定义域同为 x>0、x≠1。",
+        "analysis": "先把分子视为一个整体 $N=(x^{2}+1)\\ln x$ 求导，再对 $\\frac{N}{x-1}$ 使用商法则，能减少漏项。",
+        "steps": [
+          "设 $N(x)=(x^{2}+1)\\ln x$，则 $y=\\frac{N(x)}{x-1}$。",
+          "由乘积法则，$N'(x)=2x\\ln x+\\frac{x^{2}+1}{x}$。",
+          "由商法则，$y'=\\frac{N'(x)(x-1)-N(x)}{(x-1)^{2}}$。",
+          "代入 N 与 $N'$，得到 $y'=\\frac{{[2x\\ln x+\\frac{x^{2}+1}{x}](x-1)-(x^{2}+1)\\ln x}}{(x-1)^{2}}$。",
+          "合并含 $\\ln x$ 的项：$2x(x-1)-(x^{2}+1)=x^{2}-2x-1$，故得到所给答案。"
+        ],
+        "pitfalls": [
+          "分子求导时漏掉 $\\frac{x^{2}+1}{x}$",
+          "商法则分子次序颠倒",
+          "在 $x=1$ 处使用不成立的公式"
+        ],
+        "verification": "保留未完全化简式并重新展开，可逐项恢复最终分子；两式的定义域同为 $x>0$、$x\\ne 1$。",
         "takeaway": "复杂商式先为分子命名，再分层使用乘积法则和商法则。",
-        "extension": "若分母改为 x−a，只需把商法则中的 x−1 相应替换为 x−a。"
+        "extension": "若分母改为 $x-a$，只需把商法则中的 $x-1$ 相应替换为 $x-a$。"
       }
     },
     "en": {
       "title": "A Product Nested Inside a Quotient",
-      "prompt": "For x>0 and x≠1, differentiate y=(x²+1)ln x/(x−1), and give a result over a common denominator.",
-      "answer": "y′={[(x²−2x−1)ln x]+(x²+1)(x−1)/x}/(x−1)².",
+      "prompt": "For $x>0$ and $x\\ne 1$, differentiate $y=\\frac{(x^{2}+1)\\ln x}{x-1}$, and give a result over a common denominator.",
+      "answer": "$y'=\\frac{{[(x^{2}-2x-1)\\ln x]+\\frac{(x^{2}+1)(x-1)}{x}}}{(x-1)^{2}}$.",
       "solution": {
-        "knowledge": ["Product rule", "Quotient rule", "Common-denominator algebra"],
-        "analysis": "First differentiate the numerator as a single function N=(x²+1)ln x, then apply the quotient rule to N/(x−1). This organization prevents missing terms.",
-        "steps": [
-          "Let N(x)=(x²+1)ln x, so y=N(x)/(x−1).",
-          "The product rule gives N′(x)=2xln x+(x²+1)/x.",
-          "The quotient rule gives y′=[N′(x)(x−1)−N(x)]/(x−1)².",
-          "Substitution yields y′={[2xln x+(x²+1)/x](x−1)−(x²+1)ln x}/(x−1)².",
-          "For the logarithmic terms, 2x(x−1)−(x²+1)=x²−2x−1, which gives the stated answer."
+        "knowledge": [
+          "Product rule",
+          "Quotient rule",
+          "Common-denominator algebra"
         ],
-        "pitfalls": ["Omitting (x²+1)/x from the numerator derivative", "Reversing the quotient-rule numerator", "Using the formula at x=1"],
-        "verification": "Expanding the partially simplified form reproduces the final numerator term by term, and both forms have domain x>0, x≠1.",
+        "analysis": "First differentiate the numerator as a single function $N=(x^{2}+1)\\ln x$, then apply the quotient rule to $\\frac{N}{x-1}$. This organization prevents missing terms.",
+        "steps": [
+          "Let $N(x)=(x^{2}+1)\\ln x$, so $y=\\frac{N(x)}{x-1}$.",
+          "The product rule gives $N'(x)=2x\\ln x+\\frac{x^{2}+1}{x}$.",
+          "The quotient rule gives $y'=\\frac{N'(x)(x-1)-N(x)}{(x-1)^{2}}$.",
+          "Substitution yields $y'=\\frac{{[2x\\ln x+\\frac{x^{2}+1}{x}](x-1)-(x^{2}+1)\\ln x}}{(x-1)^{2}}$.",
+          "For the logarithmic terms, $2x(x-1)-(x^{2}+1)=x^{2}-2x-1$, which gives the stated answer."
+        ],
+        "pitfalls": [
+          "Omitting $\\frac{x^{2}+1}{x}$ from the numerator derivative",
+          "Reversing the quotient-rule numerator",
+          "Using the formula at $x=1$"
+        ],
+        "verification": "Expanding the partially simplified form reproduces the final numerator term by term, and both forms have domain $x>0, x\\ne 1$.",
         "takeaway": "Name a complicated numerator first, then apply product and quotient rules layer by layer.",
-        "extension": "If the denominator is changed to x−a, replace each occurrence of x−1 in the quotient-rule setup by x−a."
+        "extension": "If the denominator is changed to $x-a$, replace each occurrence of $x-1$ in the quotient-rule setup by $x-a$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -496,53 +816,96 @@
     "difficulty": "standard",
     "type": "single_choice",
     "tags": {
-      "zh": ["反正弦", "根式复合", "选择题"],
-      "en": ["arcsine", "radical composite", "single choice"]
+      "zh": [
+        "反正弦",
+        "根式复合",
+        "选择题"
+      ],
+      "en": [
+        "arcsine",
+        "radical composite",
+        "single choice"
+      ]
     },
     "minutes": 6,
     "space": "S",
     "classic_method": true,
     "zh": {
       "title": "反正弦与平方根的复合",
-      "prompt": "在 0<x<1 上，y=arcsin√x 的导数是哪一项？",
-      "choices": ["A. 1/√(1−x)", "B. 1/[2√x√(1−x)]", "C. 1/[2√x(1−x)]", "D. −1/[2√x√(1−x)]"],
-      "answer": "B. 1/[2√x√(1−x)]。",
+      "prompt": "在 $0<x<1$ 上，$y=\\arcsin\\sqrt{x}$ 的导数是哪一项？",
+      "choices": [
+        "A. $\\frac{1}{\\sqrt{1-x}}$",
+        "B. $\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$",
+        "C. $\\frac{1}{2\\sqrt{x}(1-x)}$",
+        "D. $-\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$"
+      ],
+      "answer": "B. $\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$。",
       "solution": {
-        "knowledge": ["反正弦导数", "平方根导数", "链式法则"],
-        "analysis": "外层是 arcsin u，内层是 u=√x。分母中的 1−u² 可化为 1−x，但还要乘上 u′。",
-        "steps": [
-          "设 u=√x，则 y=arcsin u。",
-          "外层导数为 dy/du=1/√(1−u²)。",
-          "内层导数为 du/dx=1/(2√x)。",
-          "由链式法则，y′=1/[2√x√(1−u²)]。",
-          "代入 u²=x，得到 y′=1/[2√x√(1−x)]，故选 B。"
+        "knowledge": [
+          "反正弦导数",
+          "平方根导数",
+          "链式法则"
         ],
-        "pitfalls": ["漏乘 1/(2√x)", "把 1−u² 错化为 1−√x", "误加反正弦导数的负号"],
-        "verification": "在 0<x<1 上，两个根式均为正，函数随 x 增大时导数为正，与公式符号一致。",
+        "analysis": "外层是 $\\arcsin u$，内层是 $u=\\sqrt{x}$。分母中的 $1-u^{2}$ 可化为 $1-x$，但还要乘上 $u'$。",
+        "steps": [
+          "设 $u=\\sqrt{x}$，则 $y=\\arcsin u$。",
+          "外层导数为 $\\frac{dy}{du}=\\frac{1}{\\sqrt{1-u^{2}}}$。",
+          "内层导数为 $\\frac{du}{dx}=\\frac{1}{2\\sqrt{x}}$。",
+          "由链式法则，$y'=\\frac{1}{2\\sqrt{x}\\sqrt{1-u^{2}}}$。",
+          "代入 $u^{2}=x$，得到 $y'=\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$，故选 B。"
+        ],
+        "pitfalls": [
+          "漏乘 $\\frac{1}{2\\sqrt{x}}$",
+          "把 $1-u^{2}$ 错化为 $1-\\sqrt{x}$",
+          "误加反正弦导数的负号"
+        ],
+        "verification": "在 $0<x<1$ 上，两个根式均为正，函数随 x 增大时导数为正，与公式符号一致。",
         "takeaway": "反三角复合求导时，先保留中间变量，最后再化简根式。",
-        "extension": "对 y=arcsin√(ax+b)，还需再乘内层 ax+b 的导数 a。"
+        "extension": "对 $y=\\arcsin\\sqrt{ax+b}$，还需再乘内层 $ax+b$ 的导数 a。"
       }
     },
     "en": {
       "title": "A Composite of Arcsine and a Square Root",
-      "prompt": "For 0<x<1, which expression is the derivative of y=arcsin√x?",
-      "choices": ["A. 1/√(1−x)", "B. 1/[2√x√(1−x)]", "C. 1/[2√x(1−x)]", "D. −1/[2√x√(1−x)]"],
-      "answer": "B. 1/[2√x√(1−x)].",
+      "prompt": "For $0<x<1$, which expression is the derivative of $y=\\arcsin\\sqrt{x}$?",
+      "choices": [
+        "A. $\\frac{1}{\\sqrt{1-x}}$",
+        "B. $\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$",
+        "C. $\\frac{1}{2\\sqrt{x}(1-x)}$",
+        "D. $-\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$"
+      ],
+      "answer": "B. $\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$.",
       "solution": {
-        "knowledge": ["Derivative of arcsine", "Derivative of a square root", "Chain rule"],
-        "analysis": "The outer function is arcsin u and the inner function is u=√x. The quantity 1−u² becomes 1−x, but the factor u′ must still be included.",
-        "steps": [
-          "Set u=√x, so y=arcsin u.",
-          "The outer derivative is dy/du=1/√(1−u²).",
-          "The inner derivative is du/dx=1/(2√x).",
-          "By the chain rule, y′=1/[2√x√(1−u²)].",
-          "Since u²=x, y′=1/[2√x√(1−x)], so the answer is B."
+        "knowledge": [
+          "Derivative of arcsine",
+          "Derivative of a square root",
+          "Chain rule"
         ],
-        "pitfalls": ["Omitting the factor 1/(2√x)", "Replacing 1−u² by 1−√x", "Adding an incorrect negative sign to the arcsine derivative"],
-        "verification": "For 0<x<1 both radicals are positive, so the derivative is positive, consistent with the function increasing with x.",
+        "analysis": "The outer function is $\\arcsin u$ and the inner function is $u=\\sqrt{x}$. The quantity $1-u^{2}$ becomes $1-x$, but the factor $u'$ must still be included.",
+        "steps": [
+          "Set $u=\\sqrt{x}$, so $y=\\arcsin u$.",
+          "The outer derivative is $\\frac{dy}{du}=\\frac{1}{\\sqrt{1-u^{2}}}$.",
+          "The inner derivative is $\\frac{du}{dx}=\\frac{1}{2\\sqrt{x}}$.",
+          "By the chain rule, $y'=\\frac{1}{2\\sqrt{x}\\sqrt{1-u^{2}}}$.",
+          "Since $u^{2}=x, y'=\\frac{1}{2\\sqrt{x}\\sqrt{1-x}}$, so the answer is B."
+        ],
+        "pitfalls": [
+          "Omitting the factor $\\frac{1}{2\\sqrt{x}}$",
+          "Replacing $1-u^{2}$ by $1-\\sqrt{x}$",
+          "Adding an incorrect negative sign to the arcsine derivative"
+        ],
+        "verification": "For $0<x<1$ both radicals are positive, so the derivative is positive, consistent with the function increasing with x.",
         "takeaway": "For an inverse-trigonometric composite, keep the inner variable until all chain-rule factors are present.",
-        "extension": "For y=arcsin√(ax+b), one must also multiply by the derivative a of ax+b."
+        "extension": "For $y=\\arcsin\\sqrt{ax+b}$, one must also multiply by the derivative a of $ax+b$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "chain_rule_and_composites",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.6"
+      ]
     }
   },
   {
@@ -552,8 +915,16 @@
     "difficulty": "standard",
     "type": "multiple_choice",
     "tags": {
-      "zh": ["求导法则", "条件辨析", "多选题"],
-      "en": ["differentiation rules", "condition checking", "multiple choice"]
+      "zh": [
+        "求导法则",
+        "条件辨析",
+        "多选题"
+      ],
+      "en": [
+        "differentiation rules",
+        "condition checking",
+        "multiple choice"
+      ]
     },
     "minutes": 7,
     "space": "M",
@@ -562,53 +933,78 @@
       "title": "四条求导法则辨析",
       "prompt": "设所涉及函数在相应点可导，且各表达式有意义。下列说法中正确的是哪些？",
       "choices": [
-        "A. [u(v(x))]′=u′(v(x))v′(x)",
-        "B. [u(x)v(x)]′=u′(x)v′(x)",
-        "C. [u(x)/v(x)]′=[u′(x)v(x)−u(x)v′(x)]/v²(x)，其中 v(x)≠0",
-        "D. 若 f 存在可导反函数且 f′(f⁻¹(y))≠0，则 (f⁻¹)′(y)=1/f′(f⁻¹(y))"
+        "A. $[u(v(x))]'=u'(v(x))v'(x)$",
+        "B. $[u(x)v(x)]'=u'(x)v'(x)$",
+        "C. $[\\frac{u(x)}{v(x)}]'=\\frac{u'(x)v(x)-u(x)v'(x)}{v^{2}(x)}$，其中 $v(x)\\ne 0$",
+        "D. 若 f 存在可导反函数且 $f'(f^{-1}(y))\\ne 0$，则 $(f^{-1})'(y)=\\frac{1}{f'(f^{-1}(y))}$"
       ],
       "answer": "A、C、D。",
       "solution": {
-        "knowledge": ["链式法则", "乘积与商法则", "反函数求导公式"],
+        "knowledge": [
+          "链式法则",
+          "乘积与商法则",
+          "反函数求导公式"
+        ],
         "analysis": "逐项核对公式的结构和使用条件。B 把乘积法则错误地写成两个导数的乘积，其余三项均是标准公式。",
         "steps": [
-          "A 是链式法则：先求外层导数并在 v(x) 处取值，再乘内层导数，因此 A 正确。",
-          "B 错误；正确的乘积法则是 (uv)′=u′v+uv′。",
-          "C 的分子次序、分母平方及条件 v(x)≠0 均正确，因此 C 正确。",
+          "A 是链式法则：先求外层导数并在 $v(x)$ 处取值，再乘内层导数，因此 A 正确。",
+          "B 错误；正确的乘积法则是 $(uv)'=u'v+uv'$。",
+          "C 的分子次序、分母平方及条件 $v(x)\\ne 0$ 均正确，因此 C 正确。",
           "D 在对应点原函数导数非零时给出了正确的反函数导数公式，因此 D 正确。",
           "综上，正确选项为 A、C、D。"
         ],
-        "pitfalls": ["把乘积法则记成 u′v′", "商法则漏掉分母平方", "反函数公式中漏写对应点 f⁻¹(y)"],
-        "verification": "取 u=v=x 可立刻检验 B：左边 (x²)′=2x，而右边为 1。",
+        "pitfalls": [
+          "把乘积法则记成 $u'v'$",
+          "商法则漏掉分母平方",
+          "反函数公式中漏写对应点 $f^{-1}(y)$"
+        ],
+        "verification": "取 $u=v=x$ 可立刻检验 B：左边 $(x^{2})'=2x$，而右边为 1。",
         "takeaway": "记公式时同时记住其结构与条件，比只记符号更可靠。",
-        "extension": "尝试用乘积法则和 (1/v)′=−v′/v² 推导商法则。"
+        "extension": "尝试用乘积法则和 $(\\frac{1}{v})'=-\\frac{v'}{v^{2}}$ 推导商法则。"
       }
     },
     "en": {
       "title": "Distinguishing Four Differentiation Rules",
       "prompt": "Assume the functions involved are differentiable at the relevant points and all expressions are defined. Which statements are correct?",
       "choices": [
-        "A. [u(v(x))]′=u′(v(x))v′(x)",
-        "B. [u(x)v(x)]′=u′(x)v′(x)",
-        "C. [u(x)/v(x)]′=[u′(x)v(x)−u(x)v′(x)]/v²(x), where v(x)≠0",
-        "D. If f has a differentiable inverse and f′(f⁻¹(y))≠0, then (f⁻¹)′(y)=1/f′(f⁻¹(y))"
+        "A. $[u(v(x))]'=u'(v(x))v'(x)$",
+        "B. $[u(x)v(x)]'=u'(x)v'(x)$",
+        "C. $[\\frac{u(x)}{v(x)}]'=\\frac{u'(x)v(x)-u(x)v'(x)}{v^{2}(x)}$, where $v(x)\\ne 0$",
+        "D. If f has a differentiable inverse and $f'(f^{-1}(y))\\ne 0$, then $(f^{-1})'(y)=\\frac{1}{f'(f^{-1}(y))}$"
       ],
       "answer": "A, C, and D.",
       "solution": {
-        "knowledge": ["Chain rule", "Product and quotient rules", "Inverse-function derivative formula"],
+        "knowledge": [
+          "Chain rule",
+          "Product and quotient rules",
+          "Inverse-function derivative formula"
+        ],
         "analysis": "Check both the structure and the conditions of each formula. Statement B incorrectly replaces the product rule by a product of derivatives; the other three are standard formulas.",
         "steps": [
-          "A is the chain rule: differentiate the outer function at v(x), then multiply by the inner derivative, so A is correct.",
-          "B is false; the correct product rule is (uv)′=u′v+uv′.",
-          "C has the correct numerator order, squared denominator, and condition v(x)≠0, so C is correct.",
+          "A is the chain rule: differentiate the outer function at $v(x)$, then multiply by the inner derivative, so A is correct.",
+          "B is false; the correct product rule is $(uv)'=u'v+uv'$.",
+          "C has the correct numerator order, squared denominator, and condition $v(x)\\ne 0$, so C is correct.",
           "D is the correct inverse derivative formula when the original derivative at the corresponding point is nonzero.",
           "Therefore the correct selections are A, C, and D."
         ],
-        "pitfalls": ["Remembering the product rule as u′v′", "Omitting the squared denominator in the quotient rule", "Omitting the corresponding point f⁻¹(y) in the inverse formula"],
-        "verification": "Taking u=v=x immediately disproves B: the left side is (x²)′=2x, while the proposed right side is 1.",
+        "pitfalls": [
+          "Remembering the product rule as $u'v'$",
+          "Omitting the squared denominator in the quotient rule",
+          "Omitting the corresponding point $f^{-1}(y)$ in the inverse formula"
+        ],
+        "verification": "Taking $u=v=x$ immediately disproves $B:$ the left side is $(x^{2})'=2x$, while the proposed right side is 1.",
         "takeaway": "A differentiation formula is safest when its structure and its conditions are remembered together.",
-        "extension": "Derive the quotient rule from the product rule and (1/v)′=−v′/v²."
+        "extension": "Derive the quotient rule from the product rule and $(\\frac{1}{v})'=-\\frac{v'}{v^{2}}$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "elementary_differentiation_rules",
+      "relation": "independently_synthesized_from_standard_methods",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.3"
+      ]
     }
   },
   {
@@ -618,51 +1014,85 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["多层链式法则", "对数函数", "三角复合"],
-      "en": ["multilevel chain rule", "logarithm", "trigonometric composite"]
+      "zh": [
+        "多层链式法则",
+        "对数函数",
+        "三角复合"
+      ],
+      "en": [
+        "multilevel chain rule",
+        "logarithm",
+        "trigonometric composite"
+      ]
     },
     "minutes": 8,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "对数包裹的三角平方",
-      "prompt": "求 y=ln[1+sin²(3x)] 的导数，并按由外到内的顺序写出各层。",
-      "answer": "y′=6sin(3x)cos(3x)/[1+sin²(3x)]=3sin(6x)/[1+sin²(3x)]。",
+      "prompt": "求 $y=\\ln[1+\\sin^{2}(3x)]$ 的导数，并按由外到内的顺序写出各层。",
+      "answer": "$y'=\\frac{6\\sin(3x)\\cos(3x)}{1+\\sin^{2}(3x)}=\\frac{3\\sin(6x)}{1+\\sin^{2}(3x)}$。",
       "solution": {
-        "knowledge": ["多层链式法则", "对数复合函数", "三角恒等变形"],
-        "analysis": "共有 ln、1+平方、sin、3x 四层。求导时从最外层向内层依次乘入导数因子。",
-        "steps": [
-          "设 u=1+sin²(3x)，则 y=ln u，所以 y′=u′/u。",
-          "设 v=sin(3x)，则 u=1+v²，从而 u′=2vv′。",
-          "由链式法则 v′=cos(3x)·3。",
-          "合并得到 y′=6sin(3x)cos(3x)/[1+sin²(3x)]。",
-          "利用 2sin A cos A=sin 2A，还可写成 3sin(6x)/[1+sin²(3x)]。"
+        "knowledge": [
+          "多层链式法则",
+          "对数复合函数",
+          "三角恒等变形"
         ],
-        "pitfalls": ["漏掉最内层因子 3", "把 sin²(3x) 的导数写成 2sin(3x)", "对整个括号误用 ln 的导数"],
-        "verification": "在 x=0 处，原函数关于小增量的第一阶变化系数为 0；所得公式代入 x=0 也为 0。",
+        "analysis": "共有 $\\ln(\\,\\cdot\\,)$、$1+(\\,\\cdot\\,)^{2}$、$\\sin(\\,\\cdot\\,)$、$3x$ 四层。求导时从最外层向内层依次乘入导数因子。",
+        "steps": [
+          "设 $u=1+\\sin^{2}(3x)$，则 $y=\\ln u$，所以 $y'=\\frac{u'}{u}$。",
+          "设 $v=\\sin(3x)$，则 $u=1+v^{2}$，从而 $u'=2vv'$。",
+          "由链式法则 $v'=\\cos(3x)\\cdot 3$。",
+          "合并得到 $y'=\\frac{6\\sin(3x)\\cos(3x)}{1+\\sin^{2}(3x)}$。",
+          "利用 $2\\sin A \\cos A=\\sin 2A$，还可写成 $\\frac{3\\sin(6x)}{1+\\sin^{2}(3x)}$。"
+        ],
+        "pitfalls": [
+          "漏掉最内层因子 3",
+          "把 $\\sin^{2}(3x)$ 的导数写成 $2\\sin(3x)$",
+          "对整个括号误用 ln 的导数"
+        ],
+        "verification": "在 $x=0$ 处，原函数关于小增量的第一阶变化系数为 0；所得公式代入 $x=0$ 也为 0。",
         "takeaway": "多层复合函数可通过逐层命名稳定地列出全部链式因子。",
-        "extension": "若把 3x 改为一般可导函数 φ(x)，最后一个因子 3 应替换为 φ′(x)。"
+        "extension": "若把 3x 改为一般可导函数 $\\varphi (x)$，最后一个因子 3 应替换为 $\\varphi '(x)$。"
       }
     },
     "en": {
       "title": "A Trigonometric Square Inside a Logarithm",
-      "prompt": "Differentiate y=ln[1+sin²(3x)], listing the layers from outside to inside.",
-      "answer": "y′=6sin(3x)cos(3x)/[1+sin²(3x)]=3sin(6x)/[1+sin²(3x)].",
+      "prompt": "Differentiate $y=\\ln[1+\\sin^{2}(3x)]$, listing the layers from outside to inside.",
+      "answer": "$y'=\\frac{6\\sin(3x)\\cos(3x)}{1+\\sin^{2}(3x)}=\\frac{3\\sin(6x)}{1+\\sin^{2}(3x)}$.",
       "solution": {
-        "knowledge": ["Multilevel chain rule", "Logarithmic composite", "Trigonometric identity"],
-        "analysis": "There are four layers: ln, addition and squaring, sine, and 3x. Differentiate from the outside inward, multiplying the derivative contributed by every layer.",
-        "steps": [
-          "Set u=1+sin²(3x), so y=ln u and y′=u′/u.",
-          "Set v=sin(3x), so u=1+v² and u′=2vv′.",
-          "The chain rule gives v′=cos(3x)·3.",
-          "Combining the factors gives y′=6sin(3x)cos(3x)/[1+sin²(3x)].",
-          "Using 2sin A cos A=sin 2A, this may also be written as 3sin(6x)/[1+sin²(3x)]."
+        "knowledge": [
+          "Multilevel chain rule",
+          "Logarithmic composite",
+          "Trigonometric identity"
         ],
-        "pitfalls": ["Missing the innermost factor 3", "Writing the derivative of sin²(3x) as 2sin(3x)", "Misapplying the derivative of ln to the whole expression"],
-        "verification": "At x=0, the first-order change of the original function is zero, and the derived formula also evaluates to zero.",
+        "analysis": "There are four layers: $\\ln$, addition and squaring, sine, and 3x. Differentiate from the outside inward, multiplying the derivative contributed by every layer.",
+        "steps": [
+          "Set $u=1+\\sin^{2}(3x)$, so $y=\\ln u$ and $y'=\\frac{u'}{u}$.",
+          "Set $v=\\sin(3x)$, so $u=1+v^{2}$ and $u'=2vv'$.",
+          "The chain rule gives $v'=\\cos(3x)\\cdot 3$.",
+          "Combining the factors gives $y'=\\frac{6\\sin(3x)\\cos(3x)}{1+\\sin^{2}(3x)}$.",
+          "Using $2\\sin A \\cos A=\\sin 2A$, this may also be written as $\\frac{3\\sin(6x)}{1+\\sin^{2}(3x)}$."
+        ],
+        "pitfalls": [
+          "Missing the innermost factor 3",
+          "Writing the derivative of $\\sin^{2}(3x)$ as $2\\sin(3x)$",
+          "Misapplying the derivative of ln to the whole expression"
+        ],
+        "verification": "At $x=0$, the first-order change of the original function is zero, and the derived formula also evaluates to zero.",
         "takeaway": "Naming each layer of a composite function is a reliable way to retain every chain-rule factor.",
-        "extension": "If 3x is replaced by a differentiable φ(x), replace the last factor 3 by φ′(x)."
+        "extension": "If 3x is replaced by a differentiable $\\varphi (x)$, replace the last factor 3 by $\\varphi '(x)$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.5",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -672,51 +1102,84 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["对数求导", "幂指函数", "复合函数"],
-      "en": ["logarithmic differentiation", "variable power", "composite function"]
+      "zh": [
+        "对数求导",
+        "幂指函数",
+        "复合函数"
+      ],
+      "en": [
+        "logarithmic differentiation",
+        "variable power",
+        "composite function"
+      ]
     },
     "minutes": 9,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "底数与指数都含变量",
-      "prompt": "求 y=(x²+1)ˢⁱⁿˣ 的导数。要求使用对数求导，并说明其定义域。",
-      "answer": "y′=(x²+1)ˢⁱⁿˣ[cos x·ln(x²+1)+2xsin x/(x²+1)]，定义域为全体实数。",
+      "prompt": "求 $y=(x^{2}+1)^{\\sin x}$ 的导数。要求使用对数求导，并说明其定义域。",
+      "answer": "$y'=(x^{2}+1)^{\\sin x}[\\cos x\\cdot \\ln(x^{2}+1)+\\frac{2x\\sin x}{x^{2}+1}]$，定义域为全体实数。",
       "solution": {
-        "knowledge": ["对数求导法", "幂指函数", "链式法则"],
-        "analysis": "底数 x²+1 恒正，因此可对等式两边取自然对数，把变量指数转化为乘积，再求导。",
-        "steps": [
-          "因为 x²+1>0 对所有实数成立，所以 y>0 且原函数在 ℝ 上有定义。",
-          "两边取对数得 ln y=sin x·ln(x²+1)。",
-          "对 x 求导：y′/y=cos x·ln(x²+1)+sin x·2x/(x²+1)。",
-          "两边乘以 y，得到 y′=y[cos x·ln(x²+1)+2xsin x/(x²+1)]。",
-          "代回 y=(x²+1)ˢⁱⁿˣ，得到所给答案。"
+        "knowledge": [
+          "对数求导法",
+          "幂指函数",
+          "链式法则"
         ],
-        "pitfalls": ["直接套用普通幂函数公式", "取对数后把右边误写成 sin x+ln(x²+1)", "最后忘记乘回 y"],
-        "verification": "在 x=0 处，y=1，括号内两项均为 0，所以 y′(0)=0；原函数在 0 附近的底数为偶函数且指数在 0 处为 0，与此相容。",
+        "analysis": "底数 $x^{2}+1$ 恒正，因此可对等式两边取自然对数，把变量指数转化为乘积，再求导。",
+        "steps": [
+          "因为 $x^{2}+1>0$ 对所有实数成立，所以 $y>0$ 且原函数在 $\\mathbb{R}$ 上有定义。",
+          "两边取对数得 $\\ln y=\\sin x\\cdot \\ln(x^{2}+1)$。",
+          "对 x 求导：$\\frac{y'}{y}=\\cos x\\cdot \\ln(x^{2}+1)+\\frac{\\sin x\\cdot 2x}{x^{2}+1}$。",
+          "两边乘以 y，得到 $y'=y[\\cos x\\cdot \\ln(x^{2}+1)+\\frac{2x\\sin x}{x^{2}+1}]$。",
+          "代回 $y=(x^{2}+1)^{\\sin x}$，得到所给答案。"
+        ],
+        "pitfalls": [
+          "直接套用普通幂函数公式",
+          "取对数后把右边误写成 $\\sin x+\\ln(x^{2}+1)$",
+          "最后忘记乘回 y"
+        ],
+        "verification": "在 $x=0$ 处，$y=1$，括号内两项均为 0，所以 $y'(0)=0$；原函数在 0 附近的底数为偶函数且指数在 0 处为 0，与此相容。",
         "takeaway": "正底数的变量幂优先取对数，把“指数位置的变量”移到乘法位置。",
-        "extension": "对一般 y=u(x)ᵛ⁽ˣ⁾ 且 u>0，有 y′=y[v′ln u+vu′/u]。"
+        "extension": "对一般 $y=u(x)^{v(x)}$ 且 $u>0$，有 $y'=y[v'\\ln u+\\frac{vu'}{u}]$。"
       }
     },
     "en": {
       "title": "Both Base and Exponent Depend on x",
-      "prompt": "Differentiate y=(x²+1)ˢⁱⁿˣ using logarithmic differentiation, and state its domain.",
-      "answer": "y′=(x²+1)ˢⁱⁿˣ[cos x·ln(x²+1)+2xsin x/(x²+1)], with domain all real x.",
+      "prompt": "Differentiate $y=(x^{2}+1)^{\\sin x}$ using logarithmic differentiation, and state its domain.",
+      "answer": "$y'=(x^{2}+1)^{\\sin x}[\\cos x\\cdot \\ln(x^{2}+1)+\\frac{2x\\sin x}{x^{2}+1}]$, with domain all real x.",
       "solution": {
-        "knowledge": ["Logarithmic differentiation", "Variable powers", "Chain rule"],
-        "analysis": "The base x²+1 is always positive, so taking natural logarithms converts the variable exponent into a product that can be differentiated normally.",
-        "steps": [
-          "Since x²+1>0 for every real x, y>0 and the original function is defined on ℝ.",
-          "Take logarithms: ln y=sin x·ln(x²+1).",
-          "Differentiate: y′/y=cos x·ln(x²+1)+sin x·2x/(x²+1).",
-          "Multiply by y to obtain y′=y[cos x·ln(x²+1)+2xsin x/(x²+1)].",
-          "Substitute y=(x²+1)ˢⁱⁿˣ to obtain the stated answer."
+        "knowledge": [
+          "Logarithmic differentiation",
+          "Variable powers",
+          "Chain rule"
         ],
-        "pitfalls": ["Applying the ordinary power rule directly", "Changing the product into a sum after taking logarithms", "Forgetting to multiply back by y"],
-        "verification": "At x=0, y=1 and both terms in brackets vanish, so y′(0)=0, consistent with the local structure of the original function.",
+        "analysis": "The base $x^{2}+1$ is always positive, so taking natural logarithms converts the variable exponent into a product that can be differentiated normally.",
+        "steps": [
+          "Since $x^{2}+1>0$ for every real $x, y>0$ and the original function is defined on $\\mathbb{R}$.",
+          "Take logarithms: $\\ln y=\\sin x\\cdot \\ln(x^{2}+1)$.",
+          "Differentiate: $\\frac{y'}{y}=\\cos x\\cdot \\ln(x^{2}+1)+\\frac{\\sin x\\cdot 2x}{x^{2}+1}$.",
+          "Multiply by y to obtain $y'=y[\\cos x\\cdot \\ln(x^{2}+1)+\\frac{2x\\sin x}{x^{2}+1}]$.",
+          "Substitute $y=(x^{2}+1)^{\\sin x}$ to obtain the stated answer."
+        ],
+        "pitfalls": [
+          "Applying the ordinary power rule directly",
+          "Changing the product into a sum after taking logarithms",
+          "Forgetting to multiply back by y"
+        ],
+        "verification": "At $x=0, y=1$ and both terms in brackets vanish, so $y'(0)=0$, consistent with the local structure of the original function.",
         "takeaway": "For a variable power with positive base, logarithms move the variable exponent into an ordinary product.",
-        "extension": "For y=u(x)ᵛ⁽ˣ⁾ with u>0, y′=y[v′ln u+vu′/u]."
+        "extension": "For $y=u(x)^{v(x)}$ with $u>0, y'=y[v'\\ln u+\\frac{vu'}{u}]$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -726,53 +1189,86 @@
     "difficulty": "standard",
     "type": "proof",
     "tags": {
-      "zh": ["反函数求导", "导数定义", "证明题"],
-      "en": ["inverse derivative", "derivative definition", "proof"]
+      "zh": [
+        "反函数求导",
+        "导数定义",
+        "证明题"
+      ],
+      "en": [
+        "inverse derivative",
+        "derivative definition",
+        "proof"
+      ]
     },
     "minutes": 13,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "从定义证明反函数求导公式",
-      "prompt": "设 f 在 x₀ 处可导且 f′(x₀)≠0，f 在 x₀ 附近一一对应；其反函数 g 在 y₀=f(x₀) 处连续。用导数定义证明 g′(y₀)=1/f′(x₀)。",
-      "answer": "令 x=g(y)，利用 (g(y)−g(y₀))/(y−y₀)=(x−x₀)/(f(x)−f(x₀)) 并取极限，即得 g′(y₀)=1/f′(x₀)。",
+      "prompt": "设 f 在 $x_{0}$ 处可导且 $f'(x_{0})\\ne 0$，f 在 $x_{0}$ 附近一一对应；其反函数 g 在 $y_{0}=f(x_{0})$ 处连续。用导数定义证明 $g'(y_{0})=\\frac{1}{f'(x_{0})}$。",
+      "answer": "令 $x=g(y)$，利用 $\\frac{g(y)-g(y_{0})}{y-y_{0}}=\\frac{x-x_{0}}{f(x)-f(x_{0})}$ 并取极限，即得 $g'(y_{0})=\\frac{1}{f'(x_{0})}$。",
       "solution": {
-        "knowledge": ["反函数对应关系", "导数定义", "倒数极限"],
-        "analysis": "核心是把反函数的差商改写为原函数差商的倒数。g 在 y₀ 处连续保证 y→y₀ 时 x=g(y)→x₀。",
-        "steps": [
-          "由 y₀=f(x₀) 与 g=f⁻¹，知 g(y₀)=x₀。",
-          "令 y≠y₀ 且 x=g(y)。一一对应保证 x≠x₀，并且 y=f(x)。",
-          "反函数差商可改写为 [g(y)−g(y₀)]/(y−y₀)=(x−x₀)/[f(x)−f(x₀)]。",
-          "由于 g 在 y₀ 连续，当 y→y₀ 时 x=g(y)→x₀；上式右边是原函数差商的倒数。",
-          "原函数差商趋于 f′(x₀)≠0，因此其倒数趋于 1/f′(x₀)。",
-          "依导数定义，g′(y₀)=1/f′(x₀)，证毕。"
+        "knowledge": [
+          "反函数对应关系",
+          "导数定义",
+          "倒数极限"
         ],
-        "pitfalls": ["未说明 y→y₀ 会推出 x→x₀", "忽略 f′(x₀)≠0 才能取倒数", "把 y₀ 与 x₀ 混为同一自变量"],
-        "verification": "以 f(x)=2x+3 为例，f′=2，反函数 g(y)=(y−3)/2 的导数确为 1/2。",
+        "analysis": "核心是把反函数的差商改写为原函数差商的倒数。g 在 $y_{0}$ 处连续保证 $y\\to y_{0}$ 时 $x=g(y)\\to x_{0}$。",
+        "steps": [
+          "由 $y_{0}=f(x_{0})$ 与 $g=f^{-1}$，知 $g(y_{0})=x_{0}$。",
+          "令 $y\\ne y_{0}$ 且 $x=g(y)$。一一对应保证 $x\\ne x_{0}$，并且 $y=f(x)$。",
+          "反函数差商可改写为 $\\frac{g(y)-g(y_{0})}{y-y_{0}}=\\frac{x-x_{0}}{f(x)-f(x_{0})}$。",
+          "由于 g 在 $y_{0}$ 连续，当 $y\\to y_{0}$ 时 $x=g(y)\\to x_{0}$；上式右边是原函数差商的倒数。",
+          "原函数差商趋于 $f'(x_{0})\\ne 0$，因此其倒数趋于 $\\frac{1}{f'(x_{0})}$。",
+          "依导数定义，$g'(y_{0})=\\frac{1}{f'(x_{0})}$，证毕。"
+        ],
+        "pitfalls": [
+          "未说明 $y\\to y_{0}$ 会推出 $x\\to x_{0}$",
+          "忽略 $f'(x_{0})\\ne 0$ 才能取倒数",
+          "把 $y_{0}$ 与 $x_{0}$ 混为同一自变量"
+        ],
+        "verification": "以 $f(x)=2x+3$ 为例，$f'=2$，反函数 $g(y)=\\frac{y-3}{2}$ 的导数确为 $\\frac{1}{2}$。",
         "takeaway": "反函数求导公式本质上是对应增量比值互为倒数。",
-        "extension": "若 f′(x₀)=0，差商倒数可能无有限极限，需回到定义单独判断反函数。"
+        "extension": "若 $f'(x_{0})=0$，差商倒数可能无有限极限，需回到定义单独判断反函数。"
       }
     },
     "en": {
       "title": "Proving the Inverse Derivative Formula from the Definition",
-      "prompt": "Suppose f is differentiable at x₀ with f′(x₀)≠0 and is one-to-one near x₀. Its inverse g is continuous at y₀=f(x₀). Prove from the derivative definition that g′(y₀)=1/f′(x₀).",
-      "answer": "Set x=g(y), rewrite (g(y)−g(y₀))/(y−y₀) as (x−x₀)/(f(x)−f(x₀)), and take the limit to obtain g′(y₀)=1/f′(x₀).",
+      "prompt": "Suppose f is differentiable at $x_{0}$ with $f'(x_{0})\\ne 0$ and is one-to-one near $x_{0}$. Its inverse g is continuous at $y_{0}=f(x_{0})$. Prove from the derivative definition that $g'(y_{0})=\\frac{1}{f'(x_{0})}$.",
+      "answer": "Set $x=g(y)$, rewrite $\\frac{g(y)-g(y_{0})}{y-y_{0}}$ as $\\frac{x-x_{0}}{f(x)-f(x_{0})}$, and take the limit to obtain $g'(y_{0})=\\frac{1}{f'(x_{0})}$.",
       "solution": {
-        "knowledge": ["Inverse correspondence", "Derivative definition", "Reciprocal limits"],
-        "analysis": "The key is to rewrite the inverse difference quotient as the reciprocal of the original difference quotient. Continuity of g at y₀ ensures that x=g(y) approaches x₀ when y approaches y₀.",
-        "steps": [
-          "From y₀=f(x₀) and g=f⁻¹, we have g(y₀)=x₀.",
-          "For y≠y₀, set x=g(y). One-to-one correspondence gives x≠x₀ and y=f(x).",
-          "Rewrite the inverse difference quotient as [g(y)−g(y₀)]/(y−y₀)=(x−x₀)/[f(x)−f(x₀)].",
-          "Because g is continuous at y₀, y→y₀ implies x=g(y)→x₀; the right side is the reciprocal of the original difference quotient.",
-          "That original quotient tends to f′(x₀)≠0, so its reciprocal tends to 1/f′(x₀).",
-          "By the derivative definition, g′(y₀)=1/f′(x₀), as required."
+        "knowledge": [
+          "Inverse correspondence",
+          "Derivative definition",
+          "Reciprocal limits"
         ],
-        "pitfalls": ["Failing to justify that y→y₀ implies x→x₀", "Ignoring the nonzero condition before taking a reciprocal", "Confusing the inputs x₀ and y₀"],
-        "verification": "For f(x)=2x+3, f′=2 and the inverse g(y)=(y−3)/2 indeed has derivative 1/2.",
+        "analysis": "The key is to rewrite the inverse difference quotient as the reciprocal of the original difference quotient. Continuity of g at $y_{0}$ ensures that $x=g(y)$ approaches $x_{0}$ when y approaches $y_{0}$.",
+        "steps": [
+          "From $y_{0}=f(x_{0})$ and $g=f^{-1}$, we have $g(y_{0})=x_{0}$.",
+          "For $y\\ne y_{0}$, set $x=g(y)$. One-to-one correspondence gives $x\\ne x_{0}$ and $y=f(x)$.",
+          "Rewrite the inverse difference quotient as $\\frac{g(y)-g(y_{0})}{y-y_{0}}=\\frac{x-x_{0}}{f(x)-f(x_{0})}$.",
+          "Because g is continuous at $y_{0}, y\\to y_{0}$ implies $x=g(y)\\to x_{0}$; the right side is the reciprocal of the original difference quotient.",
+          "That original quotient tends to $f'(x_{0})\\ne 0$, so its reciprocal tends to $\\frac{1}{f'(x_{0})}$.",
+          "By the derivative definition, $g'(y_{0})=\\frac{1}{f'(x_{0})}$, as required."
+        ],
+        "pitfalls": [
+          "Failing to justify that $y\\to y_{0}$ implies $x\\to x_{0}$",
+          "Ignoring the nonzero condition before taking a reciprocal",
+          "Confusing the inputs $x_{0}$ and $y_{0}$"
+        ],
+        "verification": "For $f(x)=2x+3, f'=2$ and the inverse $g(y)=\\frac{y-3}{2}$ indeed has derivative $\\frac{1}{2}$.",
         "takeaway": "The inverse derivative formula comes directly from reciprocal ratios of corresponding increments.",
-        "extension": "If f′(x₀)=0, the reciprocal quotient may have no finite limit, so the inverse must be examined from its definition."
+        "extension": "If $f'(x_{0})=0$, the reciprocal quotient may have no finite limit, so the inverse must be examined from its definition."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.7"
+      ]
     }
   },
   {
@@ -782,51 +1278,84 @@
     "difficulty": "standard",
     "type": "fill_blank",
     "tags": {
-      "zh": ["分段函数", "参数可导", "填空题"],
-      "en": ["piecewise function", "parameter differentiability", "fill in the blank"]
+      "zh": [
+        "分段函数",
+        "参数可导",
+        "填空题"
+      ],
+      "en": [
+        "piecewise function",
+        "parameter differentiability",
+        "fill in the blank"
+      ]
     },
     "minutes": 8,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "确定分段函数中的两个参数",
-      "prompt": "设 f(x)={ax+b，x<1；x²+1，x≥1}。要使 f 在 x=1 处可导，应有 a=________，b=________。",
-      "answer": "a=2，b=0。",
+      "prompt": "设 $f(x)=\\begin{cases}ax+b,&x<1,\\\\x^{2}+1,&x\\ge 1.\\end{cases}$ 要使 $f$ 在 $x=1$ 处可导，应有 $a=\\underline{\\qquad}$，$b=\\underline{\\qquad}$。",
+      "answer": "$a=2$，$b=0$。",
       "solution": {
-        "knowledge": ["分段函数可导条件", "连续是可导的必要条件", "左右导数"],
+        "knowledge": [
+          "分段函数可导条件",
+          "连续是可导的必要条件",
+          "左右导数"
+        ],
         "analysis": "先用连续性连接两段函数值，再令左右导数相等；这两条独立条件恰好确定 a、b。",
         "steps": [
-          "右段给出 f(1)=1²+1=2。",
-          "左极限为 a+b；连续性要求 a+b=2。",
-          "左导数为 a，右段 x²+1 在 x=1 处的导数为 2。",
-          "可导要求左右导数相等，所以 a=2。",
-          "代入 a+b=2 得 b=0；两条件同时满足时 f 在 1 处可导。"
+          "右段给出 $f(1)=1^{2}+1=2$。",
+          "左极限为 $a+b$；连续性要求 $a+b=2$。",
+          "左导数为 a，右段 $x^{2}+1$ 在 $x=1$ 处的导数为 2。",
+          "可导要求左右导数相等，所以 $a=2$。",
+          "代入 $a+b=2$ 得 $b=0$；两条件同时满足时 f 在 1 处可导。"
         ],
-        "pitfalls": ["只令左右导数相等而不检查连续", "把右导数算成 1", "左极限漏掉 b"],
-        "verification": "代入后左段为 2x，右段为 x²+1；在 x=1 处函数值均为 2，左右导数均为 2。",
+        "pitfalls": [
+          "只令左右导数相等而不检查连续",
+          "把右导数算成 1",
+          "左极限漏掉 b"
+        ],
+        "verification": "代入后左段为 2x，右段为 $x^{2}+1$；在 $x=1$ 处函数值均为 2，左右导数均为 2。",
         "takeaway": "分段点可导必须同时满足函数值接上和斜率接上。",
-        "extension": "若只要求在 x=1 连续，则参数只需满足 a+b=2，并不唯一。"
+        "extension": "若只要求在 $x=1$ 连续，则参数只需满足 $a+b=2$，并不唯一。"
       }
     },
     "en": {
       "title": "Determining Two Parameters in a Piecewise Function",
-      "prompt": "Let f(x)={ax+b for x<1; x²+1 for x≥1}. For f to be differentiable at x=1, a=________ and b=________.",
-      "answer": "a=2 and b=0.",
+      "prompt": "Let $f(x)=\\begin{cases}ax+b,&x<1,\\\\x^{2}+1,&x\\ge 1.\\end{cases}$ For $f$ to be differentiable at $x=1$, $a=\\underline{\\qquad}$ and $b=\\underline{\\qquad}$.",
+      "answer": "$a=2$ and $b=0$.",
       "solution": {
-        "knowledge": ["Differentiability of piecewise functions", "Continuity as a necessary condition", "One-sided derivatives"],
+        "knowledge": [
+          "Differentiability of piecewise functions",
+          "Continuity as a necessary condition",
+          "One-sided derivatives"
+        ],
         "analysis": "First connect the two function values by continuity, then equate the left and right derivatives. These two independent conditions determine a and b.",
         "steps": [
-          "The right-hand piece gives f(1)=1²+1=2.",
-          "The left-hand limit is a+b, so continuity requires a+b=2.",
-          "The left derivative is a, while the derivative of x²+1 at x=1 is 2.",
-          "Differentiability requires equal one-sided derivatives, hence a=2.",
-          "Substituting into a+b=2 gives b=0; both conditions then hold."
+          "The right-hand piece gives $f(1)=1^{2}+1=2$.",
+          "The left-hand limit is $a+b$, so continuity requires $a+b=2$.",
+          "The left derivative is a, while the derivative of $x^{2}+1$ at $x=1$ is 2.",
+          "Differentiability requires equal one-sided derivatives, hence $a=2$.",
+          "Substituting into $a+b=2$ gives $b=0$; both conditions then hold."
         ],
-        "pitfalls": ["Equating derivatives without first checking continuity", "Computing the right derivative as 1", "Omitting b from the left limit"],
-        "verification": "After substitution, the pieces are 2x and x²+1; both have value 2 and derivative 2 at x=1.",
+        "pitfalls": [
+          "Equating derivatives without first checking continuity",
+          "Computing the right derivative as 1",
+          "Omitting b from the left limit"
+        ],
+        "verification": "After substitution, the pieces are 2x and $x^{2}+1$; both have value 2 and derivative 2 at $x=1$.",
         "takeaway": "At a joining point, differentiability requires both matching values and matching slopes.",
-        "extension": "If only continuity at x=1 is required, the single condition a+b=2 leaves infinitely many choices."
+        "extension": "If only continuity at $x=1$ is required, the single condition $a+b=2$ leaves infinitely many choices."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "elementary_differentiation_rules",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.3"
+      ]
     }
   },
   {
@@ -836,51 +1365,84 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["二阶导数", "三阶导数", "指数三角乘积"],
-      "en": ["second derivative", "third derivative", "exponential-trigonometric product"]
+      "zh": [
+        "二阶导数",
+        "三阶导数",
+        "指数三角乘积"
+      ],
+      "en": [
+        "second derivative",
+        "third derivative",
+        "exponential-trigonometric product"
+      ]
     },
     "minutes": 9,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "指数余弦乘积的二、三阶导数",
-      "prompt": "设 y=e²ˣcos x，求 y″ 与 y‴。",
-      "answer": "y″=e²ˣ(3cos x−4sin x)，y‴=e²ˣ(2cos x−11sin x)。",
+      "prompt": "设 $y=e^{2x}\\cos x$，求 $y''$ 与 $y'''$。",
+      "answer": "$y''=e^{2x}(3\\cos x-4\\sin x)$，$y'''=e^{2x}(2\\cos x-11\\sin x)$。",
       "solution": {
-        "knowledge": ["连续求导", "乘积法则", "指数与三角函数"],
-        "analysis": "每次求导后仍保持 e²ˣ 与正弦、余弦线性组合相乘的形式，宜先保留该结构再整理系数。",
-        "steps": [
-          "先求一阶导数：y′=e²ˣ(2cos x−sin x)。",
-          "对 y′ 再用乘积法则，y″=e²ˣ[2(2cos x−sin x)+(−2sin x−cos x)]。",
-          "整理得 y″=e²ˣ(3cos x−4sin x)。",
-          "再次求导，y‴=e²ˣ[2(3cos x−4sin x)+(−3sin x−4cos x)]。",
-          "合并余弦和正弦系数，得 y‴=e²ˣ(2cos x−11sin x)。"
+        "knowledge": [
+          "连续求导",
+          "乘积法则",
+          "指数与三角函数"
         ],
-        "pitfalls": ["每一阶都漏掉 (e²ˣ)′中的因子 2", "正弦求导符号写反", "尚未完成乘积求导就合并系数"],
-        "verification": "在 x=0 处，公式给 y″(0)=3、y‴(0)=2；由逐阶未化简式代入也得到同样数值。",
+        "analysis": "每次求导后仍保持 $e^{2x}$ 与正弦、余弦线性组合相乘的形式，宜先保留该结构再整理系数。",
+        "steps": [
+          "先求一阶导数：$y'=e^{2x}(2\\cos x-\\sin x)$。",
+          "对 $y'$ 再用乘积法则，$y''=e^{2x}[2(2\\cos x-\\sin x)+(-2\\sin x-\\cos x)]$。",
+          "整理得 $y''=e^{2x}(3\\cos x-4\\sin x)$。",
+          "再次求导，$y'''=e^{2x}[2(3\\cos x-4\\sin x)+(-3\\sin x-4\\cos x)]$。",
+          "合并余弦和正弦系数，得 $y'''=e^{2x}(2\\cos x-11\\sin x)$。"
+        ],
+        "pitfalls": [
+          "每一阶都漏掉 $(e^{2x})'$中的因子 2",
+          "正弦求导符号写反",
+          "尚未完成乘积求导就合并系数"
+        ],
+        "verification": "在 $x=0$ 处，公式给 $y''(0)=3$、$y'''(0)=2$；由逐阶未化简式代入也得到同样数值。",
         "takeaway": "指数与正弦、余弦的乘积连续求导后，函数族保持封闭，只需更新两个系数。",
-        "extension": "可用系数对 (A,B)↦(2A+B,−A+2B) 记录 e²ˣ(Acos x+Bsin x) 求导后的变化。"
+        "extension": "可用系数对 $(A,B)\\mapsto(2A+B,-A+2B)$ 记录 $e^{2x}(A\\cos x+B\\sin x)$ 求导后的变化。"
       }
     },
     "en": {
       "title": "Second and Third Derivatives of an Exponential-Cosine Product",
-      "prompt": "Let y=e²ˣcos x. Find y″ and y‴.",
-      "answer": "y″=e²ˣ(3cos x−4sin x), and y‴=e²ˣ(2cos x−11sin x).",
+      "prompt": "Let $y=e^{2x}\\cos x$. Find $y''$ and $y'''$.",
+      "answer": "$y''=e^{2x}(3\\cos x-4\\sin x)$, and $y'''=e^{2x}(2\\cos x-11\\sin x)$.",
       "solution": {
-        "knowledge": ["Successive differentiation", "Product rule", "Exponential and trigonometric functions"],
-        "analysis": "After every differentiation, the expression remains e²ˣ times a linear combination of sine and cosine. Preserve this structure and update the coefficients.",
-        "steps": [
-          "First differentiate: y′=e²ˣ(2cos x−sin x).",
-          "Apply the product rule again: y″=e²ˣ[2(2cos x−sin x)+(−2sin x−cos x)].",
-          "Simplification gives y″=e²ˣ(3cos x−4sin x).",
-          "Differentiate once more: y‴=e²ˣ[2(3cos x−4sin x)+(−3sin x−4cos x)].",
-          "Combining coefficients gives y‴=e²ˣ(2cos x−11sin x)."
+        "knowledge": [
+          "Successive differentiation",
+          "Product rule",
+          "Exponential and trigonometric functions"
         ],
-        "pitfalls": ["Missing the factor 2 from (e²ˣ)′ at each stage", "Using the wrong sign for the derivative of sine", "Combining coefficients before completing the product rule"],
-        "verification": "At x=0, the formulas give y″(0)=3 and y‴(0)=2; the unsimplified stage-by-stage expressions give the same values.",
+        "analysis": "After every differentiation, the expression remains $e^{2x}$ times a linear combination of sine and cosine. Preserve this structure and update the coefficients.",
+        "steps": [
+          "First differentiate: $y'=e^{2x}(2\\cos x-\\sin x)$.",
+          "Apply the product rule again: $y''=e^{2x}[2(2\\cos x-\\sin x)+(-2\\sin x-\\cos x)]$.",
+          "Simplification gives $y''=e^{2x}(3\\cos x-4\\sin x)$.",
+          "Differentiate once more: $y'''=e^{2x}[2(3\\cos x-4\\sin x)+(-3\\sin x-4\\cos x)]$.",
+          "Combining coefficients gives $y'''=e^{2x}(2\\cos x-11\\sin x)$."
+        ],
+        "pitfalls": [
+          "Missing the factor 2 from $(e^{2x})'$ at each stage",
+          "Using the wrong sign for the derivative of sine",
+          "Combining coefficients before completing the product rule"
+        ],
+        "verification": "At $x=0$, the formulas give $y''(0)=3$ and $y'''(0)=2$; the unsimplified stage-by-stage expressions give the same values.",
         "takeaway": "Products of an exponential with a sine-cosine combination stay in the same function family under differentiation.",
-        "extension": "The coefficient update for e²ˣ(Acos x+Bsin x) can be recorded as (A,B)↦(2A+B,−A+2B)."
+        "extension": "The coefficient update for $e^{2x}(A\\cos x+B\\sin x)$ can be recorded as $(A,B)\\mapsto(2A+B,-A+2B)$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -890,51 +1452,84 @@
     "difficulty": "standard",
     "type": "true_false",
     "tags": {
-      "zh": ["乘积高阶导数", "反例", "判断题"],
-      "en": ["higher derivative of a product", "counterexample", "true or false"]
+      "zh": [
+        "乘积高阶导数",
+        "反例",
+        "判断题"
+      ],
+      "en": [
+        "higher derivative of a product",
+        "counterexample",
+        "true or false"
+      ]
     },
     "minutes": 7,
     "space": "M",
     "classic_method": false,
     "zh": {
       "title": "乘积的 n 阶导数是否只有两项",
-      "prompt": "判断并说明理由：对任意 n≥2，若 u、v 有所需阶导数，则 (uv)⁽ⁿ⁾=u⁽ⁿ⁾v+uv⁽ⁿ⁾。",
+      "prompt": "判断并说明理由：对任意 $n\\ge 2$，若 u、v 有所需阶导数，则 $(uv)^{(n)}=u^{(n)}v+uv^{(n)}$。",
       "answer": "错误。还存在分配给两个因子的中间导数项。",
       "solution": {
-        "knowledge": ["乘积高阶导数", "二阶乘积法则", "反例"],
-        "analysis": "只需检查 n=2 即可。对乘积法则再求一次导数会出现两个相同的 u′v′ 项。",
-        "steps": [
-          "由一阶乘积法则，(uv)′=u′v+uv′。",
-          "再求导得 (uv)″=u″v+u′v′+u′v′+uv″。",
-          "因此 (uv)″=u″v+2u′v′+uv″，原公式漏掉中间项。",
-          "取 u=v=x²，则 (uv)″=(x⁴)″=12x²。",
-          "原命题右边为 2x²+2x²=4x²，不相等，所以命题错误。"
+        "knowledge": [
+          "乘积高阶导数",
+          "二阶乘积法则",
+          "反例"
         ],
-        "pitfalls": ["把一阶乘积法则机械推广成首尾两项", "二次求导时漏掉重复的 u′v′", "未用最小阶数 n=2 快速检验"],
+        "analysis": "只需检查 $n=2$ 即可。对乘积法则再求一次导数会出现两个相同的 $u'v'$ 项。",
+        "steps": [
+          "由一阶乘积法则，$(uv)'=u'v+uv'$。",
+          "再求导得 $(uv)''=u''v+u'v'+u'v'+uv''$。",
+          "因此 $(uv)''=u''v+2u'v'+uv''$，原公式漏掉中间项。",
+          "取 $u=v=x^{2}$，则 $(uv)''=(x^{4})''=12x^{2}$。",
+          "原命题右边为 $2x^{2}+2x^{2}=4x^{2}$，不相等，所以命题错误。"
+        ],
+        "pitfalls": [
+          "把一阶乘积法则机械推广成首尾两项",
+          "二次求导时漏掉重复的 $u'v'$",
+          "未用最小阶数 $n=2$ 快速检验"
+        ],
         "verification": "当 u 或 v 是常数时中间项会消失，但这只是特殊情形，不能证明一般公式。",
         "takeaway": "乘积的高阶导数要考虑 n 次求导在两个因子之间的所有分配方式。",
-        "extension": "n 阶完整公式中的系数是二项式系数 C(n,k)。"
+        "extension": "n 阶完整公式中的系数是二项式系数 $C(n,k)$。"
       }
     },
     "en": {
       "title": "Does the nth Derivative of a Product Have Only Two Terms?",
-      "prompt": "True or false, with justification: For every n≥2, if u and v have the needed derivatives, then (uv)⁽ⁿ⁾=u⁽ⁿ⁾v+uv⁽ⁿ⁾.",
+      "prompt": "True or false, with justification: For every $n\\ge 2$, if u and v have the needed derivatives, then $(uv)^{(n)}=u^{(n)}v+uv^{(n)}$.",
       "answer": "False. There are intermediate terms in which derivatives are distributed between both factors.",
       "solution": {
-        "knowledge": ["Higher derivatives of a product", "Second-order product rule", "Counterexamples"],
-        "analysis": "It is enough to inspect n=2. Differentiating the product rule once more produces two identical u′v′ terms.",
-        "steps": [
-          "The first-order product rule is (uv)′=u′v+uv′.",
-          "Differentiating again gives (uv)″=u″v+u′v′+u′v′+uv″.",
-          "Thus (uv)″=u″v+2u′v′+uv″, so the proposed formula misses a middle term.",
-          "Take u=v=x²; then (uv)″=(x⁴)″=12x².",
-          "The proposed right side is 2x²+2x²=4x², so the statement is false."
+        "knowledge": [
+          "Higher derivatives of a product",
+          "Second-order product rule",
+          "Counterexamples"
         ],
-        "pitfalls": ["Extending the first-order product rule to only two endpoint terms", "Missing the repeated u′v′ term", "Failing to test the smallest case n=2"],
+        "analysis": "It is enough to inspect $n=2$. Differentiating the product rule once more produces two identical $u'v'$ terms.",
+        "steps": [
+          "The first-order product rule is $(uv)'=u'v+uv'$.",
+          "Differentiating again gives $(uv)''=u''v+u'v'+u'v'+uv''$.",
+          "Thus $(uv)''=u''v+2u'v'+uv''$, so the proposed formula misses a middle term.",
+          "Take $u=v=x^{2}$; then $(uv)''=(x^{4})''=12x^{2}$.",
+          "The proposed right side is $2x^{2}+2x^{2}=4x^{2}$, so the statement is false."
+        ],
+        "pitfalls": [
+          "Extending the first-order product rule to only two endpoint terms",
+          "Missing the repeated $u'v'$ term",
+          "Failing to test the smallest case $n=2$"
+        ],
         "verification": "The middle terms vanish when one factor is constant, but that special case does not establish the general formula.",
         "takeaway": "A higher derivative of a product must account for every distribution of the n differentiations between the two factors.",
-        "extension": "In the complete nth-order formula, the coefficients are the binomial coefficients C(n,k)."
+        "extension": "In the complete nth-order formula, the coefficients are the binomial coefficients $C(n,k)$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "higher_derivatives",
+      "relation": "independently_synthesized_from_standard_methods",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -944,51 +1539,84 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["二阶导数", "三阶导数", "和函数"],
-      "en": ["second derivative", "third derivative", "sum of functions"]
+      "zh": [
+        "二阶导数",
+        "三阶导数",
+        "和函数"
+      ],
+      "en": [
+        "second derivative",
+        "third derivative",
+        "sum of functions"
+      ]
     },
     "minutes": 7,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "指数与正弦之和的高阶导数",
-      "prompt": "设 y=sin(2x)+e³ˣ，求 y″ 与 y‴。",
-      "answer": "y″=−4sin(2x)+9e³ˣ，y‴=−8cos(2x)+27e³ˣ。",
+      "prompt": "设 $y=\\sin(2x)+e^{3x}$，求 $y''$ 与 $y'''$。",
+      "answer": "$y''=-4\\sin(2x)+9e^{3x}$，$y'''=-8\\cos(2x)+27e^{3x}$。",
       "solution": {
-        "knowledge": ["连续求导", "三角复合函数", "指数复合函数"],
-        "analysis": "两项可以分别连续求导。每求一次 sin(2x) 都出现因子 2，而 e³ˣ 每次出现因子 3。",
-        "steps": [
-          "一阶导数为 y′=2cos(2x)+3e³ˣ。",
-          "再次求导，(2cos(2x))′=−4sin(2x)，(3e³ˣ)′=9e³ˣ。",
-          "因此 y″=−4sin(2x)+9e³ˣ。",
-          "对二阶导数再求导：[−4sin(2x)]′=−8cos(2x)，(9e³ˣ)′=27e³ˣ。",
-          "故 y‴=−8cos(2x)+27e³ˣ。"
+        "knowledge": [
+          "连续求导",
+          "三角复合函数",
+          "指数复合函数"
         ],
-        "pitfalls": ["每一阶只乘一次内层系数", "cos 求导的负号遗漏", "把 3e³ˣ 的导数仍写成 3e³ˣ"],
-        "verification": "在 x=0 处，y″(0)=9、y‴(0)=−8+27=19；代入逐阶未化简式得到相同结果。",
+        "analysis": "两项可以分别连续求导。每求一次 $\\sin(2x)$ 都出现因子 2，而 $e^{3x}$ 每次出现因子 3。",
+        "steps": [
+          "一阶导数为 $y'=2\\cos(2x)+3e^{3x}$。",
+          "再次求导，$(2\\cos(2x))'=-4\\sin(2x)$，$(3e^{3x})'=9e^{3x}$。",
+          "因此 $y''=-4\\sin(2x)+9e^{3x}$。",
+          "对二阶导数再求导：$[-4\\sin(2x)]'=-8\\cos(2x)$，$(9e^{3x})'=27e^{3x}$。",
+          "故 $y'''=-8\\cos(2x)+27e^{3x}$。"
+        ],
+        "pitfalls": [
+          "每一阶只乘一次内层系数",
+          "cos 求导的负号遗漏",
+          "把 $3e^{3x}$ 的导数仍写成 $3e^{3x}$"
+        ],
+        "verification": "在 $x=0$ 处，$y''(0)=9$、$y'''(0)=-8+27=19$；代入逐阶未化简式得到相同结果。",
         "takeaway": "线性组合可逐项求高阶导数，复合函数的内层系数会在每一阶重复出现。",
-        "extension": "一般地，[sin(ax)]⁽ⁿ⁾=aⁿsin(ax+nπ/2)，(eᵇˣ)⁽ⁿ⁾=bⁿeᵇˣ。"
+        "extension": "一般地，$[\\sin(ax)]^{(n)}=a^{n}\\sin(ax+\\frac{n\\pi}{2})$，$(e^{bx})^{(n)}=b^{n}e^{bx}$。"
       }
     },
     "en": {
       "title": "Higher Derivatives of an Exponential Plus a Sine",
-      "prompt": "Let y=sin(2x)+e³ˣ. Find y″ and y‴.",
-      "answer": "y″=−4sin(2x)+9e³ˣ, and y‴=−8cos(2x)+27e³ˣ.",
+      "prompt": "Let $y=\\sin(2x)+e^{3x}$. Find $y''$ and $y'''$.",
+      "answer": "$y''=-4\\sin(2x)+9e^{3x}$, and $y'''=-8\\cos(2x)+27e^{3x}$.",
       "solution": {
-        "knowledge": ["Successive differentiation", "Trigonometric composites", "Exponential composites"],
-        "analysis": "The two terms can be differentiated separately. Each differentiation of sin(2x) contributes a factor 2, while each differentiation of e³ˣ contributes a factor 3.",
-        "steps": [
-          "The first derivative is y′=2cos(2x)+3e³ˣ.",
-          "Differentiate again: (2cos(2x))′=−4sin(2x), and (3e³ˣ)′=9e³ˣ.",
-          "Hence y″=−4sin(2x)+9e³ˣ.",
-          "Differentiate the second derivative: [−4sin(2x)]′=−8cos(2x), and (9e³ˣ)′=27e³ˣ.",
-          "Therefore y‴=−8cos(2x)+27e³ˣ."
+        "knowledge": [
+          "Successive differentiation",
+          "Trigonometric composites",
+          "Exponential composites"
         ],
-        "pitfalls": ["Multiplying by the inner coefficient only once overall", "Dropping the negative sign from differentiating cosine", "Leaving the derivative of 3e³ˣ as 3e³ˣ"],
-        "verification": "At x=0, y″(0)=9 and y‴(0)=−8+27=19, matching the unsimplified stage-by-stage expressions.",
+        "analysis": "The two terms can be differentiated separately. Each differentiation of $\\sin(2x)$ contributes a factor 2, while each differentiation of $e^{3x}$ contributes a factor 3.",
+        "steps": [
+          "The first derivative is $y'=2\\cos(2x)+3e^{3x}$.",
+          "Differentiate again: $(2\\cos(2x))'=-4\\sin(2x)$, and $(3e^{3x})'=9e^{3x}$.",
+          "Hence $y''=-4\\sin(2x)+9e^{3x}$.",
+          "Differentiate the second derivative: $[-4\\sin(2x)]'=-8\\cos(2x)$, and $(9e^{3x})'=27e^{3x}$.",
+          "Therefore $y'''=-8\\cos(2x)+27e^{3x}$."
+        ],
+        "pitfalls": [
+          "Multiplying by the inner coefficient only once overall",
+          "Dropping the negative sign from differentiating cosine",
+          "Leaving the derivative of $3e^{3x}$ as $3e^{3x}$"
+        ],
+        "verification": "At $x=0, y''(0)=9$ and $y'''(0)=-8+27=19$, matching the unsimplified stage-by-stage expressions.",
         "takeaway": "Higher derivatives of a linear combination are taken termwise, and each order repeats the inner chain factor.",
-        "extension": "In general, [sin(ax)]⁽ⁿ⁾=aⁿsin(ax+nπ/2) and (eᵇˣ)⁽ⁿ⁾=bⁿeᵇˣ."
+        "extension": "In general, $[\\sin(ax)]^{(n)}=a^{n}\\sin(ax+\\frac{n\\pi}{2})$ and $(e^{bx})^{(n)}=b^{n}e^{bx}$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -998,53 +1626,86 @@
     "difficulty": "standard",
     "type": "proof",
     "tags": {
-      "zh": ["有理函数高阶导数", "数学归纳法", "证明题"],
-      "en": ["higher rational derivatives", "mathematical induction", "proof"]
+      "zh": [
+        "有理函数高阶导数",
+        "数学归纳法",
+        "证明题"
+      ],
+      "en": [
+        "higher rational derivatives",
+        "mathematical induction",
+        "proof"
+      ]
     },
     "minutes": 13,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "一次因式倒数的 n 阶导数",
-      "prompt": "对任意整数 n≥0，用数学归纳法证明：若 y=1/(x−a)，x≠a，则 y⁽ⁿ⁾=(−1)ⁿn!/(x−a)ⁿ⁺¹。",
-      "answer": "公式成立；由 n 阶公式再求一次导数即可得到 n+1 阶公式。",
+      "prompt": "对任意整数 $n\\ge 0$，用数学归纳法证明：若 $y=\\frac{1}{x-a}$，$x\\ne a$，则 $y^{(n)}=\\frac{(-1)^{n}n!}{(x-a)^{n+1}}$。",
+      "answer": "公式成立；由 n 阶公式再求一次导数即可得到 $n+1$ 阶公式。",
       "solution": {
-        "knowledge": ["n 阶导数", "数学归纳法", "负整数幂求导"],
-        "analysis": "先验证 n=0 的起点，再假设 n=k 成立。对假设等式求导，系数 k! 与幂指数 k+1 会合成 (k+1)!。",
-        "steps": [
-          "当 n=0 时，右边为 (−1)⁰0!/(x−a)=1/(x−a)=y，起点成立。",
-          "假设 n=k 时 y⁽ᵏ⁾=(−1)ᵏk!(x−a)⁻ᵏ⁻¹。",
-          "对该式求导，y⁽ᵏ⁺¹⁾=(−1)ᵏk!·[−(k+1)](x−a)⁻ᵏ⁻²。",
-          "整理符号与阶乘得 y⁽ᵏ⁺¹⁾=(−1)ᵏ⁺¹(k+1)!/(x−a)ᵏ⁺²。",
-          "这正是把 n 替换为 k+1 后的公式，因此归纳步骤成立。",
-          "由数学归纳法，公式对所有 n≥0 成立。"
+        "knowledge": [
+          "n 阶导数",
+          "数学归纳法",
+          "负整数幂求导"
         ],
-        "pitfalls": ["起点从 n=1 开始却忘记题目包含 n=0", "幂指数求导后没有减 1", "把 (k+1)k! 未整理为 (k+1)!"],
-        "verification": "取 n=1、2，公式分别给 −1/(x−a)² 与 2/(x−a)³，和直接求导一致。",
+        "analysis": "先验证 $n=0$ 的起点，再假设 $n=k$ 成立。对假设等式求导，系数 $k!$ 与幂指数 $k+1$ 会合成 $(k+1)!$。",
+        "steps": [
+          "当 $n=0$ 时，右边为 $\\frac{(-1)^{0}0!}{x-a}=\\frac{1}{x-a}=y$，起点成立。",
+          "假设 $n=k$ 时 $y^{(k)}=(-1)^{k}k!(x-a)^{-k-1}$。",
+          "对该式求导，$y^{(k+1)}=(-1)^{k}k!\\cdot [-(k+1)](x-a)^{-k-2}$。",
+          "整理符号与阶乘得 $y^{(k+1)}=\\frac{(-1)^{k+1}(k+1)!}{(x-a)^{k+2}}$。",
+          "这正是把 n 替换为 $k+1$ 后的公式，因此归纳步骤成立。",
+          "由数学归纳法，公式对所有 $n\\ge 0$ 成立。"
+        ],
+        "pitfalls": [
+          "起点从 $n=1$ 开始却忘记题目包含 $n=0$",
+          "幂指数求导后没有减 1",
+          "把 $(k+1)k!$ 未整理为 $(k+1)!$"
+        ],
+        "verification": "取 $n=1$、2，公式分别给 $-\\frac{1}{(x-a)^{2}}$ 与 $\\frac{2}{(x-a)^{3}}$，和直接求导一致。",
         "takeaway": "高阶导数公式的归纳步骤通常就是对第 n 阶结果再求一次导数。",
-        "extension": "将 x−a 换成 bx+c 时，每次求导还会多产生一个因子 b。"
+        "extension": "将 $x-a$ 换成 $bx+c$ 时，每次求导还会多产生一个因子 b。"
       }
     },
     "en": {
       "title": "The nth Derivative of the Reciprocal of a Linear Factor",
-      "prompt": "For every integer n≥0, prove by induction that if y=1/(x−a), x≠a, then y⁽ⁿ⁾=(−1)ⁿn!/(x−a)ⁿ⁺¹.",
-      "answer": "The formula holds; differentiating the nth-order formula once produces the formula of order n+1.",
+      "prompt": "For every integer $n\\ge 0$, prove by induction that if $y=\\frac{1}{x-a}, x\\ne a$, then $y^{(n)}=\\frac{(-1)^{n}n!}{(x-a)^{n+1}}$.",
+      "answer": "The formula holds; differentiating the nth-order formula once produces the formula of order $n+1$.",
       "solution": {
-        "knowledge": ["nth derivatives", "Mathematical induction", "Differentiating negative integer powers"],
-        "analysis": "Verify the base case n=0, then assume the result for n=k. Differentiating the assumed identity combines k! with the exponent k+1 to form (k+1)!.",
-        "steps": [
-          "For n=0, the right side is (−1)⁰0!/(x−a)=1/(x−a)=y, so the base case holds.",
-          "Assume that y⁽ᵏ⁾=(−1)ᵏk!(x−a)⁻ᵏ⁻¹.",
-          "Differentiate this identity: y⁽ᵏ⁺¹⁾=(−1)ᵏk!·[−(k+1)](x−a)⁻ᵏ⁻².",
-          "Combining signs and factorials gives y⁽ᵏ⁺¹⁾=(−1)ᵏ⁺¹(k+1)!/(x−a)ᵏ⁺².",
-          "This is exactly the claimed formula with n replaced by k+1, so the induction step holds.",
-          "Therefore the formula is valid for every n≥0."
+        "knowledge": [
+          "nth derivatives",
+          "Mathematical induction",
+          "Differentiating negative integer powers"
         ],
-        "pitfalls": ["Starting at n=1 even though n=0 is included", "Failing to decrease the power by one", "Not simplifying (k+1)k! to (k+1)!"],
-        "verification": "For n=1 and n=2, the formula gives −1/(x−a)² and 2/(x−a)³, matching direct differentiation.",
+        "analysis": "Verify the base case $n=0$, then assume the result for $n=k$. Differentiating the assumed identity combines $k!$ with the exponent $k+1$ to form $(k+1)!$.",
+        "steps": [
+          "For $n=0$, the right side is $\\frac{(-1)^{0}0!}{x-a}=\\frac{1}{x-a}=y$, so the base case holds.",
+          "Assume that $y^{(k)}=(-1)^{k}k!(x-a)^{-k-1}$.",
+          "Differentiate this identity: $y^{(k+1)}=(-1)^{k}k!\\cdot [-(k+1)](x-a)^{-k-2}$.",
+          "Combining signs and factorials gives $y^{(k+1)}=\\frac{(-1)^{k+1}(k+1)!}{(x-a)^{k+2}}$.",
+          "This is exactly the claimed formula with n replaced by $k+1$, so the induction step holds.",
+          "Therefore the formula is valid for every $n\\ge 0$."
+        ],
+        "pitfalls": [
+          "Starting at $n=1$ even though $n=0$ is included",
+          "Failing to decrease the power by one",
+          "Not simplifying $(k+1)k!$ to $(k+1)!$"
+        ],
+        "verification": "For $n=1$ and $n=2$, the formula gives $-\\frac{1}{(x-a)^{2}}$ and $\\frac{2}{(x-a)^{3}}$, matching direct differentiation.",
         "takeaway": "For a higher-derivative formula, the induction step is often just one more differentiation.",
-        "extension": "If x−a is replaced by bx+c, each differentiation contributes an additional factor b."
+        "extension": "If $x-a$ is replaced by $bx+c$, each differentiation contributes an additional factor b."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1054,8 +1715,16 @@
     "difficulty": "advanced",
     "type": "multiple_choice",
     "tags": {
-      "zh": ["基本公式", "定义域", "多选题"],
-      "en": ["basic formulas", "domains", "multiple choice"]
+      "zh": [
+        "基本公式",
+        "定义域",
+        "多选题"
+      ],
+      "en": [
+        "basic formulas",
+        "domains",
+        "multiple choice"
+      ]
     },
     "minutes": 8,
     "space": "M",
@@ -1064,53 +1733,78 @@
       "title": "公式与定义域同时判断",
       "prompt": "下列求导公式在所注明的定义域上正确的是哪些？",
       "choices": [
-        "A. (ln|x|)′=1/x，x≠0",
-        "B. (arccos x)′=1/√(1−x²)，−1<x<1",
-        "C. (aˣ)′=aˣln a，a>0 且 a≠1",
-        "D. [√(1−x²)]′=−x/√(1−x²)，−1<x<1"
+        "A. $(\\ln|x|)'=\\frac{1}{x}$，$x\\ne 0$",
+        "B. $(\\arccos x)'=\\frac{1}{\\sqrt{1-x^{2}}}$，$-1<x<1$",
+        "C. $(a^{x})'=a^{x}\\ln a$，$a>0$ 且 $a\\ne 1$",
+        "D. $[\\sqrt{1-x^{2}}]'=-\\frac{x}{\\sqrt{1-x^{2}}}$，$-1<x<1$"
       ],
       "answer": "A、C、D。",
       "solution": {
-        "knowledge": ["对数绝对值求导", "反余弦导数", "指数函数与根式定义域"],
+        "knowledge": [
+          "对数绝对值求导",
+          "反余弦导数",
+          "指数函数与根式定义域"
+        ],
         "analysis": "本题不仅核对公式，还核对端点与参数条件。B 唯一错误在于反余弦导数缺少负号。",
         "steps": [
-          "A 正确：在 x>0 与 x<0 两个区间分别求导都得到 1/x。",
-          "B 错误：正确公式是 (arccos x)′=−1/√(1−x²)，定义在 −1<x<1。",
-          "C 正确：正底数指数函数的导数为自身乘 ln a；给定条件保证通常的指数函数定义。",
-          "D 正确：链式法则给 (1/2)(1−x²)^(−1/2)(−2x)=−x/√(1−x²)。",
+          "A 正确：在 $x>0$ 与 $x<0$ 两个区间分别求导都得到 $\\frac{1}{x}$。",
+          "B 错误：正确公式是 $(\\arccos x)'=-\\frac{1}{\\sqrt{1-x^{2}}}$，定义在 $-1<x<1$。",
+          "C 正确：正底数指数函数的导数为自身乘 $\\ln a$；给定条件保证通常的指数函数定义。",
+          "D 正确：链式法则给 $(\\frac{1}{2})(1-x^{2})^{-\\frac{1}{2}}(-2x)=-\\frac{x}{\\sqrt{1-x^{2}}}$。",
           "因此正确选项是 A、C、D。"
         ],
-        "pitfalls": ["忽略 arccos 的负号", "把根式端点也算作导数公式的有限取值点", "忘记指数函数底数条件"],
-        "verification": "arccos x 随 x 增大而减小，所以其导数应为负，这可快速排除 B。",
+        "pitfalls": [
+          "忽略 arccos 的负号",
+          "把根式端点也算作导数公式的有限取值点",
+          "忘记指数函数底数条件"
+        ],
+        "verification": "$\\arccos x$ 随 x 增大而减小，所以其导数应为负，这可快速排除 B。",
         "takeaway": "基本导数公式必须与符号、参数条件和导数存在的区间一起记忆。",
-        "extension": "比较 arcsin x 与 arccos x 的导数，可验证两者之和的导数为 0。"
+        "extension": "比较 $\\arcsin x$ 与 $\\arccos x$ 的导数，可验证两者之和的导数为 0。"
       }
     },
     "en": {
       "title": "Checking Both Formula and Domain",
       "prompt": "Which differentiation formulas are correct on the indicated domains?",
       "choices": [
-        "A. (ln|x|)′=1/x, x≠0",
-        "B. (arccos x)′=1/√(1−x²), −1<x<1",
-        "C. (aˣ)′=aˣln a, a>0 and a≠1",
-        "D. [√(1−x²)]′=−x/√(1−x²), −1<x<1"
+        "A. $(\\ln|x|)'=\\frac{1}{x}, x\\ne 0$",
+        "B. $(\\arccos x)'=\\frac{1}{\\sqrt{1-x^{2}}}, -1<x<1$",
+        "C. $(a^{x})'=a^{x}\\ln a, a>0$ and $a\\ne 1$",
+        "D. $[\\sqrt{1-x^{2}}]'=-\\frac{x}{\\sqrt{1-x^{2}}}, -1<x<1$"
       ],
       "answer": "A, C, and D.",
       "solution": {
-        "knowledge": ["Derivative of ln|x|", "Derivative of arccosine", "Domains of exponentials and radicals"],
+        "knowledge": [
+          "Derivative of $\\ln|x|$",
+          "Derivative of arccosine",
+          "Domains of exponentials and radicals"
+        ],
         "analysis": "Both the formulas and their endpoint or parameter conditions must be checked. The only error is the missing negative sign in B.",
         "steps": [
-          "A is correct: differentiating separately on x>0 and x<0 gives 1/x on both intervals.",
-          "B is false: the correct formula is (arccos x)′=−1/√(1−x²) for −1<x<1.",
-          "C is correct: the derivative of a positive-base exponential is itself times ln a under the stated conditions.",
-          "D is correct because the chain rule gives (1/2)(1−x²)^(−1/2)(−2x)=−x/√(1−x²).",
+          "A is correct: differentiating separately on $x>0$ and $x<0$ gives $\\frac{1}{x}$ on both intervals.",
+          "B is false: the correct formula is $(\\arccos x)'=-\\frac{1}{\\sqrt{1-x^{2}}}$ for $-1<x<1$.",
+          "C is correct: the derivative of a positive-base exponential is itself times $\\ln a$ under the stated conditions.",
+          "D is correct because the chain rule gives $(\\frac{1}{2})(1-x^{2})^{-\\frac{1}{2}}(-2x)=-\\frac{x}{\\sqrt{1-x^{2}}}$.",
           "Thus the correct selections are A, C, and D."
         ],
-        "pitfalls": ["Missing the negative sign for arccosine", "Including radical endpoints where the displayed derivative is not finite", "Forgetting the base conditions for an exponential"],
-        "verification": "Because arccos x decreases as x increases, its derivative must be negative; this immediately rules out B.",
+        "pitfalls": [
+          "Missing the negative sign for arccosine",
+          "Including radical endpoints where the displayed derivative is not finite",
+          "Forgetting the base conditions for an exponential"
+        ],
+        "verification": "Because $\\arccos x$ decreases as x increases, its derivative must be negative; this immediately rules out B.",
         "takeaway": "A basic derivative formula should be remembered together with its sign, parameter restrictions, and derivative domain.",
-        "extension": "Compare the derivatives of arcsin x and arccos x to verify that the derivative of their sum is zero."
+        "extension": "Compare the derivatives of $\\arcsin x$ and $\\arccos x$ to verify that the derivative of their sum is zero."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "elementary_differentiation_rules",
+      "relation": "independently_synthesized_from_standard_methods",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.3"
+      ]
     }
   },
   {
@@ -1120,51 +1814,85 @@
     "difficulty": "advanced",
     "type": "calculation",
     "tags": {
-      "zh": ["多层复合函数", "反正切", "指数三角复合"],
-      "en": ["multilevel composite", "arctangent", "exponential-trigonometric composite"]
+      "zh": [
+        "多层复合函数",
+        "反正切",
+        "指数三角复合"
+      ],
+      "en": [
+        "multilevel composite",
+        "arctangent",
+        "exponential-trigonometric composite"
+      ]
     },
     "minutes": 11,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "四层复合函数的链式求导",
-      "prompt": "求 y=arctan[eˢⁱⁿ⁽ˣ²⁾] 的导数，并用分层变量说明每个因子的来源。",
-      "answer": "y′=2xeˢⁱⁿ⁽ˣ²⁾cos(x²)/[1+e²ˢⁱⁿ⁽ˣ²⁾]。",
+      "prompt": "求 $y=\\arctan\\!\\left(e^{\\sin(x^{2})}\\right)$ 的导数，并用分层变量说明每个因子的来源。",
+      "answer": "$y'=\\frac{2x e^{\\sin(x^{2})}\\cos(x^{2})}{1+e^{2\\sin(x^{2})}}$。",
       "solution": {
-        "knowledge": ["多层链式法则", "反正切导数", "指数与三角复合"],
-        "analysis": "从外到内依次是 arctan、e 的幂、sin、x²。为避免漏项，给每一层单独命名并把四个导数因子相乘。",
-        "steps": [
-          "设 u=eˢⁱⁿ⁽ˣ²⁾，则 y=arctan u，故 dy/du=1/(1+u²)。",
-          "设 v=sin(x²)，则 u=eᵛ，故 du/dv=eᵛ。",
-          "设 w=x²，则 v=sin w，故 dv/dw=cos w。",
-          "最内层有 dw/dx=2x。",
-          "链式相乘得 y′=[1/(1+u²)]eᵛcos w·2x，代回即得答案。"
+        "knowledge": [
+          "多层链式法则",
+          "反正切导数",
+          "指数与三角复合"
         ],
-        "pitfalls": ["把 arctan 的分母写成 1+u", "指数求导后漏保留 eᵛ", "漏掉 cos(x²) 或 2x"],
-        "verification": "当 x=0 时，公式含因子 2x，故 y′(0)=0；原函数只通过 x² 依赖 x，是偶函数，这与 0 处导数为 0 相符。",
+        "analysis": "从外到内依次是 arctan、e 的幂、sin、$x^{2}$。为避免漏项，给每一层单独命名并把四个导数因子相乘。",
+        "steps": [
+          "设 $u=e^{\\sin(x^{2})}$，则 $y=\\arctan u$，故 $\\frac{dy}{du}=\\frac{1}{1+u^{2}}$。",
+          "设 $v=\\sin(x^{2})$，则 $u=e^{v}$，故 $\\frac{du}{dv}=e^{v}$。",
+          "设 $w=x^{2}$，则 $v=\\sin w$，故 $\\frac{dv}{dw}=\\cos w$。",
+          "最内层有 $\\frac{dw}{dx}=2x$。",
+          "链式相乘得 $y'=[\\frac{1}{1+u^{2}}]e^{v}\\cos w\\cdot 2x$，代回即得答案。"
+        ],
+        "pitfalls": [
+          "把 arctan 的分母写成 $1+u$",
+          "指数求导后漏保留 $e^{v}$",
+          "漏掉 $\\cos(x^{2})$ 或 2x"
+        ],
+        "verification": "当 $x=0$ 时，公式含因子 2x，故 $y'(0)=0$；原函数只通过 $x^{2}$ 依赖 x，是偶函数，这与 0 处导数为 0 相符。",
         "takeaway": "深层复合函数的导数是沿唯一依赖链逐层相乘，分层变量能防止遗漏。",
-        "extension": "若最内层 x² 改为 φ(x)，只需把最后的 2x 替换为 φ′(x)。"
+        "extension": "若最内层 $x^{2}$ 改为 $\\varphi (x)$，只需把最后的 2x 替换为 $\\varphi '(x)$。"
       }
     },
     "en": {
       "title": "Chain Rule for a Four-Layer Composite",
-      "prompt": "Differentiate y=arctan[eˢⁱⁿ⁽ˣ²⁾], using layer variables to explain the source of every factor.",
-      "answer": "y′=2xeˢⁱⁿ⁽ˣ²⁾cos(x²)/[1+e²ˢⁱⁿ⁽ˣ²⁾].",
+      "prompt": "Differentiate $y=\\arctan\\!\\left(e^{\\sin(x^{2})}\\right)$, using layer variables to explain the source of every factor.",
+      "answer": "$y'=\\frac{2x e^{\\sin(x^{2})}\\cos(x^{2})}{1+e^{2\\sin(x^{2})}}$.",
       "solution": {
-        "knowledge": ["Multilevel chain rule", "Derivative of arctangent", "Exponential and trigonometric composites"],
-        "analysis": "From outside to inside, the layers are arctangent, exponential, sine, and x². Naming each layer makes the four derivative factors explicit.",
-        "steps": [
-          "Let u=eˢⁱⁿ⁽ˣ²⁾, so y=arctan u and dy/du=1/(1+u²).",
-          "Let v=sin(x²), so u=eᵛ and du/dv=eᵛ.",
-          "Let w=x², so v=sin w and dv/dw=cos w.",
-          "For the innermost layer, dw/dx=2x.",
-          "Multiplying along the chain gives y′=[1/(1+u²)]eᵛcos w·2x; substitution yields the answer."
+        "knowledge": [
+          "Multilevel chain rule",
+          "Derivative of arctangent",
+          "Exponential and trigonometric composites"
         ],
-        "pitfalls": ["Writing 1+u instead of 1+u² for arctangent", "Dropping eᵛ after differentiating the exponential", "Missing cos(x²) or 2x"],
-        "verification": "At x=0 the formula contains the factor 2x and gives y′(0)=0. The original function depends on x through x² and is even, consistent with this value.",
+        "analysis": "From outside to inside, the layers are arctangent, exponential, sine, and $x^{2}$. Naming each layer makes the four derivative factors explicit.",
+        "steps": [
+          "Let $u=e^{\\sin(x^{2})}$, so $y=\\arctan u$ and $\\frac{dy}{du}=\\frac{1}{1+u^{2}}$.",
+          "Let $v=\\sin(x^{2})$, so $u=e^{v}$ and $\\frac{du}{dv}=e^{v}$.",
+          "Let $w=x^{2}$, so $v=\\sin w$ and $\\frac{dv}{dw}=\\cos w$.",
+          "For the innermost layer, $\\frac{dw}{dx}=2x$.",
+          "Multiplying along the chain gives $y'=[\\frac{1}{1+u^{2}}]e^{v}\\cos w\\cdot 2x$; substitution yields the answer."
+        ],
+        "pitfalls": [
+          "Writing $1+u$ instead of $1+u^{2}$ for arctangent",
+          "Dropping $e^{v}$ after differentiating the exponential",
+          "Missing $\\cos(x^{2})$ or 2x"
+        ],
+        "verification": "At $x=0$ the formula contains the factor 2x and gives $y'(0)=0$. The original function depends on x through $x^{2}$ and is even, consistent with this value.",
         "takeaway": "For a deeply nested function, multiply one derivative from every layer along its dependency chain.",
-        "extension": "If x² is replaced by φ(x), replace only the final factor 2x by φ′(x)."
+        "extension": "If $x^{2}$ is replaced by $\\varphi (x)$, replace only the final factor 2x by $\\varphi '(x)$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.5",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -1174,51 +1902,84 @@
     "difficulty": "advanced",
     "type": "proof",
     "tags": {
-      "zh": ["实数幂求导", "对数求导", "证明题"],
-      "en": ["real-power derivative", "logarithmic differentiation", "proof"]
+      "zh": [
+        "实数幂求导",
+        "对数求导",
+        "证明题"
+      ],
+      "en": [
+        "real-power derivative",
+        "logarithmic differentiation",
+        "proof"
+      ]
     },
     "minutes": 12,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "证明实数幂的求导公式",
-      "prompt": "设 α 为任意实数。利用 x^α=e^{αln x}，证明在 x>0 上 (x^α)′=αx^{α−1}。",
-      "answer": "将 x^α 写成 e^{αln x} 后用链式法则，得 (x^α)′=e^{αln x}·α/x=αx^{α−1}。",
+      "prompt": "设 $\\alpha$ 为任意实数。利用 $x^\\alpha =e^{\\alpha \\ln x}$，证明在 $x>0$ 上 $(x^\\alpha)'=\\alpha x^{\\alpha -1}$。",
+      "answer": "将 $x^\\alpha$ 写成 $e^{\\alpha \\ln x}$ 后用链式法则，得 $(x^\\alpha)'=\\frac{e^{\\alpha \\ln x}\\cdot \\alpha}{x}=\\alpha x^{\\alpha -1}$。",
       "solution": {
-        "knowledge": ["实数幂的定义", "指数与对数复合", "链式法则"],
-        "analysis": "任意实数指数不能只依赖整数幂的重复乘法解释。在 x>0 上用指数和对数定义实数幂，再按复合函数求导。",
-        "steps": [
-          "对 x>0，实数幂可写成 x^α=e^{αln x}，右边各函数均有定义且可导。",
-          "令 u(x)=αln x，则 x^α=eᵘ。",
-          "由链式法则，(eᵘ)′=eᵘu′，而 u′=α/x。",
-          "因此 (x^α)′=e^{αln x}·α/x=x^α·α/x。",
-          "利用 x^α/x=x^{α−1}，得到 (x^α)′=αx^{α−1}，证毕。"
+        "knowledge": [
+          "实数幂的定义",
+          "指数与对数复合",
+          "链式法则"
         ],
-        "pitfalls": ["忘记证明限定在 x>0", "把 (αln x)′写成 αln x", "在最后一步错误处理指数"],
-        "verification": "取 α=1/2，公式给 (√x)′=1/(2√x)；取 α=−1，给 (1/x)′=−1/x²，均与基本公式一致。",
+        "analysis": "任意实数指数不能只依赖整数幂的重复乘法解释。在 $x>0$ 上用指数和对数定义实数幂，再按复合函数求导。",
+        "steps": [
+          "对 $x>0$，实数幂可写成 $x^\\alpha =e^{\\alpha \\ln x}$，右边各函数均有定义且可导。",
+          "令 $u(x)=\\alpha \\ln x$，则 $x^\\alpha =e^{u}$。",
+          "由链式法则，$(e^{u})'=e^{u}u'$，而 $u'=\\frac{\\alpha}{x}$。",
+          "因此 $(x^\\alpha)'=\\frac{e^{\\alpha \\ln x}\\cdot \\alpha}{x}=\\frac{x^\\alpha \\cdot \\alpha}{x}$。",
+          "利用 $\\frac{x^\\alpha}{x}=x^{\\alpha -1}$，得到 $(x^\\alpha)'=\\alpha x^{\\alpha -1}$，证毕。"
+        ],
+        "pitfalls": [
+          "忘记证明限定在 $x>0$",
+          "把 $(\\alpha \\ln x)'$写成 $\\alpha \\ln x$",
+          "在最后一步错误处理指数"
+        ],
+        "verification": "取 $\\alpha =\\frac{1}{2}$，公式给 $(\\sqrt{x})'=\\frac{1}{2\\sqrt{x}}$；取 $\\alpha =-1$，给 $(\\frac{1}{x})'=-\\frac{1}{x^{2}}$，均与基本公式一致。",
         "takeaway": "指数—对数表示把任意实数幂的求导统一归结为链式法则。",
-        "extension": "对正函数 u(x)，同样可得 [u(x)]^α 的导数为 αu^{α−1}u′。"
+        "extension": "对正函数 $u(x)$，同样可得 $[u(x)]^\\alpha$ 的导数为 $\\alpha u^{\\alpha -1}u'$。"
       }
     },
     "en": {
       "title": "Proving the Derivative Rule for Real Powers",
-      "prompt": "Let α be any real number. Using x^α=e^{αln x}, prove that (x^α)′=αx^{α−1} for x>0.",
-      "answer": "Write x^α as e^{αln x} and apply the chain rule: (x^α)′=e^{αln x}·α/x=αx^{α−1}.",
+      "prompt": "Let $\\alpha$ be any real number. Using $x^\\alpha =e^{\\alpha \\ln x}$, prove that $(x^\\alpha)'=\\alpha x^{\\alpha -1}$ for $x>0$.",
+      "answer": "Write $x^\\alpha$ as $e^{\\alpha \\ln x}$ and apply the chain rule: $(x^\\alpha)'=\\frac{e^{\\alpha \\ln x}\\cdot \\alpha}{x}=\\alpha x^{\\alpha -1}$.",
       "solution": {
-        "knowledge": ["Definition of a real power", "Exponential-logarithmic composite", "Chain rule"],
-        "analysis": "For an arbitrary real exponent, repeated multiplication is not an adequate definition. On x>0, use the exponential-logarithmic representation and differentiate it as a composite function.",
-        "steps": [
-          "For x>0, define x^α=e^{αln x}; all functions on the right are defined and differentiable.",
-          "Let u(x)=αln x, so x^α=eᵘ.",
-          "The chain rule gives (eᵘ)′=eᵘu′, and u′=α/x.",
-          "Hence (x^α)′=e^{αln x}·α/x=x^α·α/x.",
-          "Since x^α/x=x^{α−1}, we obtain (x^α)′=αx^{α−1}."
+        "knowledge": [
+          "Definition of a real power",
+          "Exponential-logarithmic composite",
+          "Chain rule"
         ],
-        "pitfalls": ["Forgetting that the proof is restricted to x>0", "Writing (αln x)′ as αln x", "Combining exponents incorrectly in the final step"],
-        "verification": "For α=1/2 the result is (√x)′=1/(2√x); for α=−1 it is (1/x)′=−1/x², matching the basic formulas.",
+        "analysis": "For an arbitrary real exponent, repeated multiplication is not an adequate definition. On $x>0$, use the exponential-logarithmic representation and differentiate it as a composite function.",
+        "steps": [
+          "For $x>0$, define $x^\\alpha =e^{\\alpha \\ln x}$; all functions on the right are defined and differentiable.",
+          "Let $u(x)=\\alpha \\ln x$, so $x^\\alpha =e^{u}$.",
+          "The chain rule gives $(e^{u})'=e^{u}u'$, and $u'=\\frac{\\alpha}{x}$.",
+          "Hence $(x^\\alpha)'=\\frac{e^{\\alpha \\ln x}\\cdot \\alpha}{x}=\\frac{x^\\alpha \\cdot \\alpha}{x}$.",
+          "Since $\\frac{x^\\alpha}{x}=x^{\\alpha -1}$, we obtain $(x^\\alpha)'=\\alpha x^{\\alpha -1}$."
+        ],
+        "pitfalls": [
+          "Forgetting that the proof is restricted to $x>0$",
+          "Writing $(\\alpha \\ln x)'$ as $\\alpha \\ln x$",
+          "Combining exponents incorrectly in the final step"
+        ],
+        "verification": "For $\\alpha =\\frac{1}{2}$ the result is $(\\sqrt{x})'=\\frac{1}{2\\sqrt{x}}$; for $\\alpha =-1$ it is $(\\frac{1}{x})'=-\\frac{1}{x^{2}}$, matching the basic formulas.",
         "takeaway": "The exponential-logarithmic representation reduces differentiation of every real power to the chain rule.",
-        "extension": "For a positive differentiable u(x), the same argument gives ([u(x)]^α)′=αu^{α−1}u′."
+        "extension": "For a positive differentiable $u(x)$, the same argument gives $([u(x)]^\\alpha)'=\\alpha u^{\\alpha -1}u'$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.9"
+      ]
     }
   },
   {
@@ -1228,53 +1989,86 @@
     "difficulty": "advanced",
     "type": "comprehensive",
     "tags": {
-      "zh": ["分段函数", "参数分类", "连续与可导"],
-      "en": ["piecewise function", "parameter classification", "continuity and differentiability"]
+      "zh": [
+        "分段函数",
+        "参数分类",
+        "连续与可导"
+      ],
+      "en": [
+        "piecewise function",
+        "parameter classification",
+        "continuity and differentiability"
+      ]
     },
     "minutes": 15,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "三参数分段函数的可导分类",
-      "prompt": "设 f(x)={x²+ax+b，x<1；c ln x+2，x≥1}。求所有使 f 在 x=1 处可导的实参数三元组 (a,b,c)，并写出此时 f′(1)。",
-      "answer": "(a,b,c)=(t,1−t,t+2)，其中 t∈ℝ；且 f′(1)=t+2。",
+      "prompt": "设 $f(x)=\\begin{cases}x^{2}+ax+b,&x<1,\\\\c\\ln x+2,&x\\ge 1.\\end{cases}$ 求所有使 $f$ 在 $x=1$ 处可导的实参数三元组 $(a,b,c)$，并写出此时 $f'(1)$。",
+      "answer": "$(a,b,c)=(t,1-t,t+2)$，其中 $t\\in \\mathbb{R}$；且 $f'(1)=t+2$。",
       "solution": {
-        "knowledge": ["分段点连续条件", "左右导数相等", "参数解集表示"],
+        "knowledge": [
+          "分段点连续条件",
+          "左右导数相等",
+          "参数解集表示"
+        ],
         "analysis": "三个参数只受连续与左右导数相等两条方程约束，因此答案应是一族三元组，而不是唯一数值。",
         "steps": [
-          "右段给出 f(1)=c ln1+2=2。",
-          "左极限为 1+a+b；连续性要求 1+a+b=2，即 a+b=1。",
-          "左导数为 2x+a，在 x=1 处为 2+a。",
-          "右导数为 c/x，在 x=1 处为 c；可导要求 c=2+a。",
-          "令 a=t，则 b=1−t、c=t+2，其中 t 为任意实数。",
-          "在这些参数下，公共左右导数为 t+2，所以 f′(1)=t+2。"
+          "右段给出 $f(1)=c \\ln1+2=2$。",
+          "左极限为 $1+a+b$；连续性要求 $1+a+b=2$，即 $a+b=1$。",
+          "左导数为 $2x+a$，在 $x=1$ 处为 $2+a$。",
+          "右导数为 $\\frac{c}{x}$，在 $x=1$ 处为 c；可导要求 $c=2+a$。",
+          "令 $a=t$，则 $b=1-t$、$c=t+2$，其中 t 为任意实数。",
+          "在这些参数下，公共左右导数为 $t+2$，所以 $f'(1)=t+2$。"
         ],
-        "pitfalls": ["把 ln1 误认为 1", "认为三个参数必须有唯一解", "只检查连续而不检查左右导数"],
-        "verification": "代入参数族后，左侧函数值 1+t+1−t=2，右侧函数值 2；左导数 2+t 与右导数 c=t+2 完全相同。",
+        "pitfalls": [
+          "把 $\\ln1$ 误认为 1",
+          "认为三个参数必须有唯一解",
+          "只检查连续而不检查左右导数"
+        ],
+        "verification": "代入参数族后，左侧函数值 $1+t+1-t=2$，右侧函数值 2；左导数 $2+t$ 与右导数 $c=t+2$ 完全相同。",
         "takeaway": "参数数量多于独立条件数量时，应明确写出自由参数及完整解集。",
-        "extension": "若再规定 f′(1)=0，则 t=−2，从而唯一得到 (a,b,c)=(−2,3,0)。"
+        "extension": "若再规定 $f'(1)=0$，则 $t=-2$，从而唯一得到 $(a,b,c)=(-2,3,0)$。"
       }
     },
     "en": {
       "title": "Differentiability Classification for a Three-Parameter Piecewise Function",
-      "prompt": "Let f(x)={x²+ax+b for x<1; c ln x+2 for x≥1}. Find all real triples (a,b,c) for which f is differentiable at x=1, and give f′(1).",
-      "answer": "(a,b,c)=(t,1−t,t+2), where t∈ℝ; and f′(1)=t+2.",
+      "prompt": "Let $f(x)=\\begin{cases}x^{2}+ax+b,&x<1,\\\\c\\ln x+2,&x\\ge 1.\\end{cases}$ Find all real triples $(a,b,c)$ for which $f$ is differentiable at $x=1$, and give $f'(1)$.",
+      "answer": "$(a,b,c)=(t,1-t,t+2)$, where $t\\in \\mathbb{R}$; and $f'(1)=t+2$.",
       "solution": {
-        "knowledge": ["Continuity at a joining point", "Equality of one-sided derivatives", "Parameterization of a solution set"],
+        "knowledge": [
+          "Continuity at a joining point",
+          "Equality of one-sided derivatives",
+          "Parameterization of a solution set"
+        ],
         "analysis": "The three parameters are constrained by only two independent equations—continuity and equal one-sided derivatives—so the answer is a family rather than one triple.",
         "steps": [
-          "The right-hand piece gives f(1)=c ln1+2=2.",
-          "The left-hand limit is 1+a+b, so continuity requires 1+a+b=2, or a+b=1.",
-          "The left derivative is 2x+a, which equals 2+a at x=1.",
-          "The right derivative is c/x, which equals c at x=1; differentiability requires c=2+a.",
-          "Set a=t. Then b=1−t and c=t+2, where t is any real number.",
-          "For these parameters, the common one-sided derivative is t+2, so f′(1)=t+2."
+          "The right-hand piece gives $f(1)=c \\ln1+2=2$.",
+          "The left-hand limit is $1+a+b$, so continuity requires $1+a+b=2$, or $a+b=1$.",
+          "The left derivative is $2x+a$, which equals $2+a$ at $x=1$.",
+          "The right derivative is $\\frac{c}{x}$, which equals c at $x=1$; differentiability requires $c=2+a$.",
+          "Set $a=t$. Then $b=1-t$ and $c=t+2$, where t is any real number.",
+          "For these parameters, the common one-sided derivative is $t+2$, so $f'(1)=t+2$."
         ],
-        "pitfalls": ["Treating ln1 as 1", "Assuming three parameters must have a unique solution", "Checking continuity without checking one-sided derivatives"],
-        "verification": "After substitution, the left value is 1+t+1−t=2 and the right value is 2; the left derivative 2+t equals the right derivative c=t+2.",
+        "pitfalls": [
+          "Treating $\\ln1$ as 1",
+          "Assuming three parameters must have a unique solution",
+          "Checking continuity without checking one-sided derivatives"
+        ],
+        "verification": "After substitution, the left value is $1+t+1-t=2$ and the right value is 2; the left derivative $2+t$ equals the right derivative $c=t+2$.",
         "takeaway": "When there are more parameters than independent conditions, state the free parameter and the complete solution family.",
-        "extension": "If f′(1)=0 is also required, then t=−2 and the unique triple is (a,b,c)=(−2,3,0)."
+        "extension": "If $f'(1)=0$ is also required, then $t=-2$ and the unique triple is $(a,b,c)=(-2,3,0)$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "elementary_differentiation_rules",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.3"
+      ]
     }
   },
   {
@@ -1284,51 +2078,84 @@
     "difficulty": "advanced",
     "type": "proof",
     "tags": {
-      "zh": ["反正切导数", "反函数", "证明题"],
-      "en": ["derivative of arctangent", "inverse function", "proof"]
+      "zh": [
+        "反正切导数",
+        "反函数",
+        "证明题"
+      ],
+      "en": [
+        "derivative of arctangent",
+        "inverse function",
+        "proof"
+      ]
     },
     "minutes": 12,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "由反函数公式推出反正切导数",
-      "prompt": "把 arctan x 看作 tan y 在 (−π/2,π/2) 上的反函数，证明 (arctan x)′=1/(1+x²)。",
-      "answer": "若 y=arctan x，则由反函数公式 y′=1/sec²y=cos²y=1/(1+tan²y)=1/(1+x²)。",
+      "prompt": "把 $\\arctan x$ 看作 $\\tan y$ 在 $(-\\frac{\\pi}{2},\\frac{\\pi}{2})$ 上的反函数，证明 $(\\arctan x)'=\\frac{1}{1+x^{2}}$。",
+      "answer": "若 $y=\\arctan x$，则由反函数公式 $y'=\\frac{1}{\\sec^{2}y}=\\cos^{2}y=\\frac{1}{1+\\tan^{2}y}=\\frac{1}{1+x^{2}}$。",
       "solution": {
-        "knowledge": ["反函数求导公式", "正切与反正切", "恒等式 1+tan²y=sec²y"],
-        "analysis": "正切在指定区间上一一对应且导数 sec²y 始终非零，可以直接应用反函数求导公式，再把结果全部化为 x。",
-        "steps": [
-          "令 F(y)=tan y，并把定义域限制为 (−π/2,π/2)，此时 F 的反函数为 g(x)=arctan x。",
-          "在该区间内 F′(y)=sec²y>0，因而反函数求导公式适用。",
-          "若 y=g(x)=arctan x，则 g′(x)=1/F′(y)=1/sec²y。",
-          "利用 1/sec²y=cos²y=1/(1+tan²y)。",
-          "又因 tan y=x，所以 g′(x)=1/(1+x²)，对所有实数 x 成立。"
+        "knowledge": [
+          "反函数求导公式",
+          "正切与反正切",
+          "恒等式 $1+\\tan^{2}y=\\sec^{2}y$"
         ],
-        "pitfalls": ["未限定 tan 的一一对应区间", "把反函数导数写成 sec²x", "最后没有把 y 替换为 x"],
-        "verification": "在 x=0 处，arctan 图像切线斜率为 1，公式给出 1/(1+0)=1。",
+        "analysis": "正切在指定区间上一一对应且导数 $\\sec^{2}y$ 始终非零，可以直接应用反函数求导公式，再把结果全部化为 x。",
+        "steps": [
+          "令 $F(y)=\\tan y$，并把定义域限制为 $(-\\frac{\\pi}{2},\\frac{\\pi}{2})$，此时 F 的反函数为 $g(x)=\\arctan x$。",
+          "在该区间内 $F'(y)=\\sec^{2}y>0$，因而反函数求导公式适用。",
+          "若 $y=g(x)=\\arctan x$，则 $g'(x)=\\frac{1}{F'(y)}=\\frac{1}{\\sec^{2}y}$。",
+          "利用 $\\frac{1}{\\sec^{2}y}=\\cos^{2}y=\\frac{1}{1+\\tan^{2}y}$。",
+          "又因 $\\tan y=x$，所以 $g'(x)=\\frac{1}{1+x^{2}}$，对所有实数 x 成立。"
+        ],
+        "pitfalls": [
+          "未限定 tan 的一一对应区间",
+          "把反函数导数写成 $\\sec^{2}x$",
+          "最后没有把 y 替换为 x"
+        ],
+        "verification": "在 $x=0$ 处，arctan 图像切线斜率为 1，公式给出 $\\frac{1}{1+0}=1$。",
         "takeaway": "反三角函数的导数可由原三角函数的导数取对应点倒数得到。",
-        "extension": "用同样方法从 sin 在 [−π/2,π/2] 上的反函数推出 arcsin 的导数公式。"
+        "extension": "用同样方法从 sin 在 $[-\\frac{\\pi}{2},\\frac{\\pi}{2}]$ 上的反函数推出 arcsin 的导数公式。"
       }
     },
     "en": {
       "title": "Deriving the Derivative of Arctangent from the Inverse Formula",
-      "prompt": "View arctan x as the inverse of tan y on (−π/2,π/2), and prove that (arctan x)′=1/(1+x²).",
-      "answer": "If y=arctan x, the inverse formula gives y′=1/sec²y=cos²y=1/(1+tan²y)=1/(1+x²).",
+      "prompt": "View $\\arctan x$ as the inverse of $\\tan y$ on $(-\\frac{\\pi}{2},\\frac{\\pi}{2})$, and prove that $(\\arctan x)'=\\frac{1}{1+x^{2}}$.",
+      "answer": "If $y=\\arctan x$, the inverse formula gives $y'=\\frac{1}{\\sec^{2}y}=\\cos^{2}y=\\frac{1}{1+\\tan^{2}y}=\\frac{1}{1+x^{2}}$.",
       "solution": {
-        "knowledge": ["Inverse-function derivative formula", "Tangent and arctangent", "Identity 1+tan²y=sec²y"],
-        "analysis": "Tangent is one-to-one on the specified interval and its derivative sec²y is never zero there. Apply the inverse derivative formula and then express the result entirely in x.",
-        "steps": [
-          "Let F(y)=tan y with domain restricted to (−π/2,π/2); its inverse is g(x)=arctan x.",
-          "On this interval, F′(y)=sec²y>0, so the inverse derivative formula applies.",
-          "If y=g(x)=arctan x, then g′(x)=1/F′(y)=1/sec²y.",
-          "Use 1/sec²y=cos²y=1/(1+tan²y).",
-          "Since tan y=x, we obtain g′(x)=1/(1+x²) for every real x."
+        "knowledge": [
+          "Inverse-function derivative formula",
+          "Tangent and arctangent",
+          "Identity $1+\\tan^{2}y=\\sec^{2}y$"
         ],
-        "pitfalls": ["Failing to restrict tangent to a one-to-one interval", "Writing the inverse derivative as sec²x", "Failing to replace y by an expression in x"],
-        "verification": "At x=0, the arctangent graph has slope 1, and the formula gives 1/(1+0)=1.",
+        "analysis": "Tangent is one-to-one on the specified interval and its derivative $\\sec^{2}y$ is never zero there. Apply the inverse derivative formula and then express the result entirely in x.",
+        "steps": [
+          "Let $F(y)=\\tan y$ with domain restricted to $(-\\frac{\\pi}{2},\\frac{\\pi}{2})$; its inverse is $g(x)=\\arctan x$.",
+          "On this interval, $F'(y)=\\sec^{2}y>0$, so the inverse derivative formula applies.",
+          "If $y=g(x)=\\arctan x$, then $g'(x)=\\frac{1}{F'(y)}=\\frac{1}{\\sec^{2}y}$.",
+          "Use $\\frac{1}{\\sec^{2}y}=\\cos^{2}y=\\frac{1}{1+\\tan^{2}y}$.",
+          "Since $\\tan y=x$, we obtain $g'(x)=\\frac{1}{1+x^{2}}$ for every real x."
+        ],
+        "pitfalls": [
+          "Failing to restrict tangent to a one-to-one interval",
+          "Writing the inverse derivative as $\\sec^{2}x$",
+          "Failing to replace y by an expression in x"
+        ],
+        "verification": "At $x=0$, the arctangent graph has slope 1, and the formula gives $\\frac{1}{1+0}=1$.",
         "takeaway": "An inverse-trigonometric derivative is obtained by taking the reciprocal of the original trigonometric derivative at the corresponding point.",
-        "extension": "Use the same method with sine on [−π/2,π/2] to derive the derivative of arcsine."
+        "extension": "Use the same method with sine on $[-\\frac{\\pi}{2},\\frac{\\pi}{2}]$ to derive the derivative of arcsine."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "inverse_exponential_logarithmic_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.7"
+      ]
     }
   },
   {
@@ -1338,51 +2165,84 @@
     "difficulty": "advanced",
     "type": "calculation",
     "tags": {
-      "zh": ["对数函数高阶导数", "规律归纳", "n阶导数"],
-      "en": ["higher logarithmic derivatives", "pattern recognition", "nth derivative"]
+      "zh": [
+        "对数函数高阶导数",
+        "规律归纳",
+        "n阶导数"
+      ],
+      "en": [
+        "higher logarithmic derivatives",
+        "pattern recognition",
+        "nth derivative"
+      ]
     },
     "minutes": 10,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "自然对数的 n 阶导数",
-      "prompt": "对 x>0，先求 ln x 的前四阶导数，再写出其 n 阶导数公式（n≥1）。",
-      "answer": "(ln x)⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!/xⁿ。",
+      "prompt": "对 $x>0$，先求 $\\ln x$ 的前四阶导数，再写出其 n 阶导数公式（$n\\ge 1$）。",
+      "answer": "$(\\ln x)^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{x^{n}}$。",
       "solution": {
-        "knowledge": ["对数函数连续求导", "阶乘规律", "符号交替"],
-        "analysis": "连续求导后，分母幂次每次增加 1，符号交替，系数依次形成 0!、1!、2!、3!。",
-        "steps": [
-          "一阶导数为 (ln x)′=1/x。",
-          "二阶与三阶导数分别为 −1/x²、2/x³。",
-          "四阶导数为 −6/x⁴。",
-          "观察到第 n 阶的符号为 (−1)ⁿ⁻¹，分母为 xⁿ，系数为 (n−1)!。",
-          "因此 (ln x)⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!/xⁿ，n≥1。"
+        "knowledge": [
+          "对数函数连续求导",
+          "阶乘规律",
+          "符号交替"
         ],
-        "pitfalls": ["把系数写成 n!", "把符号写成 (−1)ⁿ", "分母幂次与导数阶数错位"],
-        "verification": "代入 n=1 得 1/x，代入 n=4 得 −3!/x⁴=−6/x⁴，均与直接计算吻合。",
+        "analysis": "连续求导后，分母幂次每次增加 1，符号交替，系数依次形成 $0!$、$1!$、$2!$、$3!$。",
+        "steps": [
+          "一阶导数为 $(\\ln x)'=\\frac{1}{x}$。",
+          "二阶与三阶导数分别为 $-\\frac{1}{x^{2}}$、$\\frac{2}{x^{3}}$。",
+          "四阶导数为 $-\\frac{6}{x^{4}}$。",
+          "观察到第 n 阶的符号为 $(-1)^{n-1}$，分母为 $x^{n}$，系数为 $(n-1)!$。",
+          "因此 $(\\ln x)^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{x^{n}}$，$n\\ge 1$。"
+        ],
+        "pitfalls": [
+          "把系数写成 $n!$",
+          "把符号写成 $(-1)^{n}$",
+          "分母幂次与导数阶数错位"
+        ],
+        "verification": "代入 $n=1$ 得 $\\frac{1}{x}$，代入 $n=4$ 得 $-\\frac{3!}{x^{4}}=-\\frac{6}{x^{4}}$，均与直接计算吻合。",
         "takeaway": "先列出少量低阶导数，可同时识别符号、阶乘和幂次三条规律。",
-        "extension": "把 ln x 改为 ln(ax+b)，每阶还会出现 aⁿ，并把 x 替换为 ax+b。"
+        "extension": "把 $\\ln x$ 改为 $\\ln(ax+b)$，每阶还会出现 $a^{n}$，并把 x 替换为 $ax+b$。"
       }
     },
     "en": {
       "title": "The nth Derivative of the Natural Logarithm",
-      "prompt": "For x>0, compute the first four derivatives of ln x and then state its nth derivative for n≥1.",
-      "answer": "(ln x)⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!/xⁿ.",
+      "prompt": "For $x>0$, compute the first four derivatives of $\\ln x$ and then state its nth derivative for $n\\ge 1$.",
+      "answer": "$(\\ln x)^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{x^{n}}$.",
       "solution": {
-        "knowledge": ["Successive derivatives of logarithm", "Factorial pattern", "Alternating signs"],
-        "analysis": "With each differentiation, the denominator power increases by one, the sign alternates, and the coefficients form 0!, 1!, 2!, and 3!.",
-        "steps": [
-          "The first derivative is (ln x)′=1/x.",
-          "The second and third derivatives are −1/x² and 2/x³.",
-          "The fourth derivative is −6/x⁴.",
-          "The nth sign is (−1)ⁿ⁻¹, the denominator is xⁿ, and the coefficient is (n−1)!.",
-          "Thus (ln x)⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!/xⁿ for n≥1."
+        "knowledge": [
+          "Successive derivatives of logarithm",
+          "Factorial pattern",
+          "Alternating signs"
         ],
-        "pitfalls": ["Using n! instead of (n−1)!", "Using (−1)ⁿ for the sign", "Shifting the denominator power away from the derivative order"],
-        "verification": "At n=1 the formula gives 1/x, and at n=4 it gives −3!/x⁴=−6/x⁴, matching the direct calculations.",
+        "analysis": "With each differentiation, the denominator power increases by one, the sign alternates, and the coefficients form $0!, 1!, 2!$, and $3!$.",
+        "steps": [
+          "The first derivative is $(\\ln x)'=\\frac{1}{x}$.",
+          "The second and third derivatives are $-\\frac{1}{x^{2}}$ and $\\frac{2}{x^{3}}$.",
+          "The fourth derivative is $-\\frac{6}{x^{4}}$.",
+          "The nth sign is $(-1)^{n-1}$, the denominator is $x^{n}$, and the coefficient is $(n-1)!$.",
+          "Thus $(\\ln x)^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{x^{n}}$ for $n\\ge 1$."
+        ],
+        "pitfalls": [
+          "Using $n!$ instead of $(n-1)!$",
+          "Using $(-1)^{n}$ for the sign",
+          "Shifting the denominator power away from the derivative order"
+        ],
+        "verification": "At $n=1$ the formula gives $\\frac{1}{x}$, and at $n=4$ it gives $-\\frac{3!}{x^{4}}=-\\frac{6}{x^{4}}$, matching the direct calculations.",
         "takeaway": "A few low-order derivatives reveal the sign, factorial, and power patterns simultaneously.",
-        "extension": "For ln(ax+b), each order also contributes aⁿ and replaces x by ax+b."
+        "extension": "For $\\ln(ax+b)$, each order also contributes $a^{n}$ and replaces x by $ax+b$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1392,53 +2252,86 @@
     "difficulty": "advanced",
     "type": "proof",
     "tags": {
-      "zh": ["指数三角高阶导数", "相位表示", "数学归纳法"],
-      "en": ["higher exponential-trigonometric derivatives", "phase representation", "mathematical induction"]
+      "zh": [
+        "指数三角高阶导数",
+        "相位表示",
+        "数学归纳法"
+      ],
+      "en": [
+        "higher exponential-trigonometric derivatives",
+        "phase representation",
+        "mathematical induction"
+      ]
     },
     "minutes": 18,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "指数余弦乘积的统一 n 阶公式",
-      "prompt": "设 a²+b²>0，r=√(a²+b²)，并取 θ 使 cosθ=a/r、sinθ=b/r。用数学归纳法证明：y=eᵃˣcos(bx+φ) 满足 y⁽ⁿ⁾=rⁿeᵃˣcos(bx+φ+nθ)。",
-      "answer": "公式对所有整数 n≥0 成立；归纳步骤利用 a cosψ−b sinψ=r cos(ψ+θ)。",
+      "prompt": "设 $a^{2}+b^{2}>0$，$r=\\sqrt{a^{2}+b^{2}}$，并取 $\\theta$ 使 $\\cos\\theta =\\frac{a}{r}$、$\\sin\\theta =\\frac{b}{r}$。用数学归纳法证明：$y=e^{ax}\\cos(bx+\\varphi)$ 满足 $y^{(n)}=r^{n}e^{ax}\\cos(bx+\\varphi +n\\theta)$。",
+      "answer": "公式对所有整数 $n\\ge 0$ 成立；归纳步骤利用 $a \\cos\\psi -b \\sin\\psi =r \\cos(\\psi +\\theta)$。",
       "solution": {
-        "knowledge": ["指数三角乘积", "辅助角公式", "数学归纳法"],
-        "analysis": "一次求导会把相位增加固定角 θ，并把振幅乘以固定因子 r。证明这一更新规则后即可归纳到任意阶。",
-        "steps": [
-          "当 n=0 时，右边为 eᵃˣcos(bx+φ)=y，公式成立。",
-          "由 cosθ=a/r、sinθ=b/r，有 a cosψ−b sinψ=r cos(ψ+θ)。",
-          "假设 n=k 时 y⁽ᵏ⁾=rᵏeᵃˣcos(bx+φ+kθ)。",
-          "令 ψ=bx+φ+kθ，对归纳假设求导得 y⁽ᵏ⁺¹⁾=rᵏeᵃˣ[a cosψ−b sinψ]。",
-          "用辅助角恒等式化简为 y⁽ᵏ⁺¹⁾=rᵏ⁺¹eᵃˣcos(bx+φ+(k+1)θ)。",
-          "归纳步骤成立，因此公式对所有 n≥0 成立。"
+        "knowledge": [
+          "指数三角乘积",
+          "辅助角公式",
+          "数学归纳法"
         ],
-        "pitfalls": ["辅助角中 sinθ 的符号取错", "每次求导漏掉振幅因子 r", "未排除 a=b=0 导致 θ 无法按题设定义"],
-        "verification": "取 n=1，公式给 reᵃˣcos(bx+φ+θ)=eᵃˣ[a cos(bx+φ)−b sin(bx+φ)]，正是直接求导结果。",
+        "analysis": "一次求导会把相位增加固定角 $\\theta$，并把振幅乘以固定因子 r。证明这一更新规则后即可归纳到任意阶。",
+        "steps": [
+          "当 $n=0$ 时，右边为 $e^{ax}\\cos(bx+\\varphi)=y$，公式成立。",
+          "由 $\\cos\\theta =\\frac{a}{r}$、$\\sin\\theta =\\frac{b}{r}$，有 $a \\cos\\psi -b \\sin\\psi =r \\cos(\\psi +\\theta)$。",
+          "假设 $n=k$ 时 $y^{(k)}=r^{k}e^{ax}\\cos(bx+\\varphi +k\\theta)$。",
+          "令 $\\psi =bx+\\varphi +k\\theta$，对归纳假设求导得 $y^{(k+1)}=r^{k}e^{ax}[a \\cos\\psi -b \\sin\\psi]$。",
+          "用辅助角恒等式化简为 $y^{(k+1)}=r^{k+1}e^{ax}\\cos(bx+\\varphi +(k+1)\\theta)$。",
+          "归纳步骤成立，因此公式对所有 $n\\ge 0$ 成立。"
+        ],
+        "pitfalls": [
+          "辅助角中 $\\sin\\theta$ 的符号取错",
+          "每次求导漏掉振幅因子 r",
+          "未排除 $a=b=0$ 导致 $\\theta$ 无法按题设定义"
+        ],
+        "verification": "取 $n=1$，公式给 re$^{ax}\\cos(bx+\\varphi +\\theta)=e^{ax}[a \\cos(bx+\\varphi)-b \\sin(bx+\\varphi)]$，正是直接求导结果。",
         "takeaway": "某些函数族连续求导只会发生固定的振幅缩放和相位平移。",
-        "extension": "把 cos 换成 sin，可得到 y⁽ⁿ⁾=rⁿeᵃˣsin(bx+φ+nθ)。"
+        "extension": "把 cos 换成 sin，可得到 $y^{(n)}=r^{n}e^{ax}\\sin(bx+\\varphi +n\\theta)$。"
       }
     },
     "en": {
       "title": "A Unified nth-Derivative Formula for an Exponential-Cosine Product",
-      "prompt": "Let a²+b²>0, r=√(a²+b²), and choose θ so that cosθ=a/r and sinθ=b/r. Prove by induction that y=eᵃˣcos(bx+φ) satisfies y⁽ⁿ⁾=rⁿeᵃˣcos(bx+φ+nθ).",
-      "answer": "The formula holds for every integer n≥0; the induction step uses a cosψ−b sinψ=r cos(ψ+θ).",
+      "prompt": "Let $a^{2}+b^{2}>0, r=\\sqrt{a^{2}+b^{2}}$, and choose $\\theta$ so that $\\cos\\theta =\\frac{a}{r}$ and $\\sin\\theta =\\frac{b}{r}$. Prove by induction that $y=e^{ax}\\cos(bx+\\varphi)$ satisfies $y^{(n)}=r^{n}e^{ax}\\cos(bx+\\varphi +n\\theta)$.",
+      "answer": "The formula holds for every integer $n\\ge 0$; the induction step uses $a \\cos\\psi -b \\sin\\psi =r \\cos(\\psi +\\theta)$.",
       "solution": {
-        "knowledge": ["Exponential-trigonometric products", "Auxiliary-angle identity", "Mathematical induction"],
-        "analysis": "One differentiation increases the phase by the fixed angle θ and multiplies the amplitude by the fixed factor r. Establishing this update proves the general formula inductively.",
-        "steps": [
-          "For n=0, the right side is eᵃˣcos(bx+φ)=y, so the base case holds.",
-          "From cosθ=a/r and sinθ=b/r, a cosψ−b sinψ=r cos(ψ+θ).",
-          "Assume y⁽ᵏ⁾=rᵏeᵃˣcos(bx+φ+kθ).",
-          "Set ψ=bx+φ+kθ and differentiate the induction hypothesis to get y⁽ᵏ⁺¹⁾=rᵏeᵃˣ[a cosψ−b sinψ].",
-          "The auxiliary-angle identity gives y⁽ᵏ⁺¹⁾=rᵏ⁺¹eᵃˣcos(bx+φ+(k+1)θ).",
-          "Thus the induction step holds, proving the formula for all n≥0."
+        "knowledge": [
+          "Exponential-trigonometric products",
+          "Auxiliary-angle identity",
+          "Mathematical induction"
         ],
-        "pitfalls": ["Choosing the wrong sign for sinθ", "Missing the factor r at each differentiation", "Failing to exclude a=b=0, for which θ is not defined as stated"],
-        "verification": "At n=1, the formula gives reᵃˣcos(bx+φ+θ)=eᵃˣ[a cos(bx+φ)−b sin(bx+φ)], exactly the direct derivative.",
+        "analysis": "One differentiation increases the phase by the fixed angle $\\theta$ and multiplies the amplitude by the fixed factor r. Establishing this update proves the general formula inductively.",
+        "steps": [
+          "For $n=0$, the right side is $e^{ax}\\cos(bx+\\varphi)=y$, so the base case holds.",
+          "From $\\cos\\theta =\\frac{a}{r}$ and $\\sin\\theta =\\frac{b}{r}, a \\cos\\psi -b \\sin\\psi =r \\cos(\\psi +\\theta)$.",
+          "Assume $y^{(k)}=r^{k}e^{ax}\\cos(bx+\\varphi +k\\theta)$.",
+          "Set $\\psi =bx+\\varphi +k\\theta$ and differentiate the induction hypothesis to get $y^{(k+1)}=r^{k}e^{ax}[a \\cos\\psi -b \\sin\\psi]$.",
+          "The auxiliary-angle identity gives $y^{(k+1)}=r^{k+1}e^{ax}\\cos(bx+\\varphi +(k+1)\\theta)$.",
+          "Thus the induction step holds, proving the formula for all $n\\ge 0$."
+        ],
+        "pitfalls": [
+          "Choosing the wrong sign for $\\sin\\theta$",
+          "Missing the factor r at each differentiation",
+          "Failing to exclude $a=b=0$, for which $\\theta$ is not defined as stated"
+        ],
+        "verification": "At $n=1$, the formula gives re$^{ax}\\cos(bx+\\varphi +\\theta)=e^{ax}[a \\cos(bx+\\varphi)-b \\sin(bx+\\varphi)]$, exactly the direct derivative.",
         "takeaway": "For some closed function families, successive differentiation produces a fixed amplitude scaling and phase shift.",
-        "extension": "Replacing cosine by sine gives y⁽ⁿ⁾=rⁿeᵃˣsin(bx+φ+nθ)."
+        "extension": "Replacing cosine by sine gives $y^{(n)}=r^{n}e^{ax}\\sin(bx+\\varphi +n\\theta)$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1448,53 +2341,86 @@
     "difficulty": "advanced",
     "type": "comprehensive",
     "tags": {
-      "zh": ["乘积高阶导数", "三角循环", "综合题"],
-      "en": ["higher derivative of a product", "trigonometric cycle", "comprehensive"]
+      "zh": [
+        "乘积高阶导数",
+        "三角循环",
+        "综合题"
+      ],
+      "en": [
+        "higher derivative of a product",
+        "trigonometric cycle",
+        "comprehensive"
+      ]
     },
     "minutes": 16,
     "space": "XL",
     "classic_method": true,
     "zh": {
-      "title": "x²sin x 的一般阶导数",
-      "prompt": "设 y=x²sin x。对 n≥2，求 y⁽ⁿ⁾ 的显式公式，并用 n=2 检验。",
-      "answer": "y⁽ⁿ⁾=x²sin(x+nπ/2)+2nxsin[x+(n−1)π/2]+n(n−1)sin[x+(n−2)π/2]。",
+      "title": "$x^{2}\\sin x$ 的一般阶导数",
+      "prompt": "设 $y=x^{2}\\sin x$。对 $n\\ge 2$，求 $y^{(n)}$ 的显式公式，并用 $n=2$ 检验。",
+      "answer": "$y^{(n)}=x^{2}\\sin\\!\\left(x+\\frac{n\\pi}{2}\\right)+2nx\\sin\\!\\left(x+\\frac{(n-1)\\pi}{2}\\right)+n(n-1)\\sin\\!\\left(x+\\frac{(n-2)\\pi}{2}\\right)$。",
       "solution": {
-        "knowledge": ["乘积的高阶导数", "多项式高阶导数截断", "正弦导数循环"],
-        "analysis": "将 n 次求导分配给 x² 与 sin x。因为 x² 的三阶及更高阶导数为 0，完整求和只剩三项。",
-        "steps": [
-          "乘积高阶导数公式给 y⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)(x²)⁽ᵏ⁾(sin x)⁽ⁿ⁻ᵏ⁾。",
-          "由于 (x²)⁽⁰⁾=x²、(x²)′=2x、(x²)″=2，而 k≥3 时导数为 0，只保留 k=0,1,2。",
-          "使用 (sin x)⁽ᵐ⁾=sin(x+mπ/2)。",
-          "三项分别为 x²sin(x+nπ/2)、2nxsin[x+(n−1)π/2]、C(n,2)·2sin[x+(n−2)π/2]。",
-          "因 2C(n,2)=n(n−1)，合并得到答案。",
-          "取 n=2，公式化为 −x²sin x+4xcos x+2sin x，与直接两次求导一致。"
+        "knowledge": [
+          "乘积的高阶导数",
+          "多项式高阶导数截断",
+          "正弦导数循环"
         ],
-        "pitfalls": ["求和中把 k 与 n−k 的角色调换后未同步改相位", "漏掉二项式系数", "把 2C(n,2) 错化简"],
-        "verification": "直接计算 y′=2xsin x+x²cos x，再求导得 y″=2sin x+4xcos x−x²sin x，与 n=2 检验完全相同。",
+        "analysis": "将 n 次求导分配给 $x^{2}$ 与 $\\sin x$。因为 $x^{2}$ 的三阶及更高阶导数为 0，完整求和只剩三项。",
+        "steps": [
+          "乘积高阶导数公式给 $y^{(n)}=\\sum_{k=0}^{n}C(n,k)(x^{2})^{(k)}(\\sin x)^{(n-k)}$。",
+          "由于 $(x^{2})^{(0)}=x^{2}$、$(x^{2})'=2x$、$(x^{2})''=2$，而 $k\\ge 3$ 时导数为 0，只保留 $k=0,1,2$。",
+          "使用 $(\\sin x)^{(m)}=\\sin(x+\\frac{m\\pi}{2})$。",
+          "三项分别为 $x^{2}\\sin\\!\\left(x+\\frac{n\\pi}{2}\\right)$、$2nx\\sin\\!\\left(x+\\frac{(n-1)\\pi}{2}\\right)$、$\\binom{n}{2}\\,2\\sin\\!\\left(x+\\frac{(n-2)\\pi}{2}\\right)$。",
+          "因 $2C(n,2)=n(n-1)$，合并得到答案。",
+          "取 $n=2$，公式化为 $-x^{2}\\sin x+4x\\cos x+2\\sin x$，与直接两次求导一致。"
+        ],
+        "pitfalls": [
+          "求和中把 k 与 $n-k$ 的角色调换后未同步改相位",
+          "漏掉二项式系数",
+          "把 $2C(n,2)$ 错化简"
+        ],
+        "verification": "直接计算 $y'=2x\\sin x+x^{2}\\cos x$，再求导得 $y''=2\\sin x+4x\\cos x-x^{2}\\sin x$，与 $n=2$ 检验完全相同。",
         "takeaway": "多项式乘其他函数的高阶导数会因多项式高阶导数归零而截断为有限项。",
-        "extension": "把 x² 换成 xᵐ，公式将保留 k=0,1,…,m 共 m+1 项。"
+        "extension": "把 $x^{2}$ 换成 $x^{m}$，公式将保留 $k=0,1,\\ldots,m$ 共 $m+1$ 项。"
       }
     },
     "en": {
-      "title": "The General Derivative of x²sin x",
-      "prompt": "Let y=x²sin x. For n≥2, find an explicit formula for y⁽ⁿ⁾ and check it at n=2.",
-      "answer": "y⁽ⁿ⁾=x²sin(x+nπ/2)+2nxsin[x+(n−1)π/2]+n(n−1)sin[x+(n−2)π/2].",
+      "title": "The General Derivative of $x^{2}\\sin x$",
+      "prompt": "Let $y=x^{2}\\sin x$. For $n\\ge 2$, find an explicit formula for $y^{(n)}$ and check it at $n=2$.",
+      "answer": "$y^{(n)}=x^{2}\\sin\\!\\left(x+\\frac{n\\pi}{2}\\right)+2nx\\sin\\!\\left(x+\\frac{(n-1)\\pi}{2}\\right)+n(n-1)\\sin\\!\\left(x+\\frac{(n-2)\\pi}{2}\\right)$.",
       "solution": {
-        "knowledge": ["Higher derivative of a product", "Termination of polynomial derivatives", "Sine derivative cycle"],
-        "analysis": "Distribute the n differentiations between x² and sin x. Because the third and higher derivatives of x² vanish, the full sum reduces to only three terms.",
-        "steps": [
-          "The higher product formula gives y⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)(x²)⁽ᵏ⁾(sin x)⁽ⁿ⁻ᵏ⁾.",
-          "Since (x²)⁽⁰⁾=x², (x²)′=2x, (x²)″=2, and derivatives for k≥3 vanish, retain only k=0,1,2.",
-          "Use (sin x)⁽ᵐ⁾=sin(x+mπ/2).",
-          "The three terms are x²sin(x+nπ/2), 2nxsin[x+(n−1)π/2], and C(n,2)·2sin[x+(n−2)π/2].",
-          "Because 2C(n,2)=n(n−1), these terms give the stated formula.",
-          "At n=2 it becomes −x²sin x+4xcos x+2sin x, matching direct differentiation."
+        "knowledge": [
+          "Higher derivative of a product",
+          "Termination of polynomial derivatives",
+          "Sine derivative cycle"
         ],
-        "pitfalls": ["Switching k and n−k without adjusting the phase", "Omitting the binomial coefficients", "Simplifying 2C(n,2) incorrectly"],
-        "verification": "Directly, y′=2xsin x+x²cos x and y″=2sin x+4xcos x−x²sin x, exactly the n=2 specialization.",
+        "analysis": "Distribute the n differentiations between $x^{2}$ and $\\sin x$. Because the third and higher derivatives of $x^{2}$ vanish, the full sum reduces to only three terms.",
+        "steps": [
+          "The higher product formula gives $y^{(n)}=\\sum_{k=0}^{n}C(n,k)(x^{2})^{(k)}(\\sin x)^{(n-k)}$.",
+          "Since $(x^{2})^{(0)}=x^{2}, (x^{2})'=2x, (x^{2})''=2$, and derivatives for $k\\ge 3$ vanish, retain only $k=0,1,2$.",
+          "Use $(\\sin x)^{(m)}=\\sin(x+\\frac{m\\pi}{2})$.",
+          "The three terms are $x^{2}\\sin\\!\\left(x+\\frac{n\\pi}{2}\\right)$, $2nx\\sin\\!\\left(x+\\frac{(n-1)\\pi}{2}\\right)$, and $\\binom{n}{2}\\,2\\sin\\!\\left(x+\\frac{(n-2)\\pi}{2}\\right)$.",
+          "Because $2C(n,2)=n(n-1)$, these terms give the stated formula.",
+          "At $n=2$ it becomes $-x^{2}\\sin x+4x\\cos x+2\\sin x$, matching direct differentiation."
+        ],
+        "pitfalls": [
+          "Switching k and $n-k$ without adjusting the phase",
+          "Omitting the binomial coefficients",
+          "Simplifying $2C(n,2)$ incorrectly"
+        ],
+        "verification": "Directly, $y'=2x\\sin x+x^{2}\\cos x$ and $y''=2\\sin x+4x\\cos x-x^{2}\\sin x$, exactly the $n=2$ specialization.",
         "takeaway": "For a polynomial times another function, the higher-product sum terminates because sufficiently high polynomial derivatives vanish.",
-        "extension": "Replacing x² by xᵐ leaves k=0,1,…,m, for a total of m+1 terms."
+        "extension": "Replacing $x^{2}$ by $x^{m}$ leaves $k=0,1,\\ldots,m$, for a total of $m+1$ terms."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1504,51 +2430,84 @@
     "difficulty": "advanced",
     "type": "calculation",
     "tags": {
-      "zh": ["有理函数高阶导数", "部分分式", "n阶导数"],
-      "en": ["higher rational derivatives", "partial fractions", "nth derivative"]
+      "zh": [
+        "有理函数高阶导数",
+        "部分分式",
+        "n阶导数"
+      ],
+      "en": [
+        "higher rational derivatives",
+        "partial fractions",
+        "nth derivative"
+      ]
     },
     "minutes": 13,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "先拆分再求有理函数高阶导数",
-      "prompt": "设 y=1/[(x−1)(x+2)]，x≠1,−2。求 y⁽ⁿ⁾（n≥0）。",
-      "answer": "y⁽ⁿ⁾=(−1)ⁿn!/3·[1/(x−1)ⁿ⁺¹−1/(x+2)ⁿ⁺¹]。",
+      "prompt": "设 $y=\\frac{1}{(x-1)(x+2)}$，$x\\ne 1,-2$。求 $y^{(n)}$（$n\\ge 0$）。",
+      "answer": "$y^{(n)}=\\frac{(-1)^{n}n!}{3}\\cdot [\\frac{1}{(x-1)^{n+1}}-\\frac{1}{(x+2)^{n+1}}]$。",
       "solution": {
-        "knowledge": ["部分分式分解", "一次因式倒数的高阶导数", "线性运算"],
+        "knowledge": [
+          "部分分式分解",
+          "一次因式倒数的高阶导数",
+          "线性运算"
+        ],
         "analysis": "直接反复使用商法则会迅速复杂化。先把有理函数拆成两个一次因式倒数，再逐项套用统一公式。",
         "steps": [
-          "作部分分式分解：1/[(x−1)(x+2)]=A/(x−1)+B/(x+2)。",
-          "令 x=1 得 A=1/3；令 x=−2 得 B=−1/3。",
-          "因此 y=(1/3)[1/(x−1)−1/(x+2)]。",
-          "使用 [1/(x−a)]⁽ⁿ⁾=(−1)ⁿn!/(x−a)ⁿ⁺¹。",
-          "逐项求导并保留系数，得 y⁽ⁿ⁾=(−1)ⁿn!/3·[1/(x−1)ⁿ⁺¹−1/(x+2)ⁿ⁺¹]。"
+          "作部分分式分解：$\\frac{1}{(x-1)(x+2)}=\\frac{A}{x-1}+\\frac{B}{x+2}$。",
+          "令 $x=1$ 得 $A=\\frac{1}{3}$；令 $x=-2$ 得 $B=-\\frac{1}{3}$。",
+          "因此 $y=(\\frac{1}{3})[\\frac{1}{x-1}-\\frac{1}{x+2}]$。",
+          "使用 $[\\frac{1}{x-a}]^{(n)}=\\frac{(-1)^{n}n!}{(x-a)^{n+1}}$。",
+          "逐项求导并保留系数，得 $y^{(n)}=\\frac{(-1)^{n}n!}{3}\\cdot [\\frac{1}{(x-1)^{n+1}}-\\frac{1}{(x+2)^{n+1}}]$。"
         ],
-        "pitfalls": ["部分分式系数符号写反", "把两个分母的平移量混淆", "n 阶公式的分母幂漏加 1"],
-        "verification": "取 n=0，公式立即恢复原部分分式；将两项通分又得到原函数。",
+        "pitfalls": [
+          "部分分式系数符号写反",
+          "把两个分母的平移量混淆",
+          "n 阶公式的分母幂漏加 1"
+        ],
+        "verification": "取 $n=0$，公式立即恢复原部分分式；将两项通分又得到原函数。",
         "takeaway": "线性因式可分解的有理函数，高阶求导的关键通常在求导前的代数拆分。",
-        "extension": "若分母含重复线性因式，还需加入 1/(x−a)² 等项，并分别使用负整数幂公式。"
+        "extension": "若分母含重复线性因式，还需加入 $\\frac{1}{(x-a)^{2}}$ 等项，并分别使用负整数幂公式。"
       }
     },
     "en": {
       "title": "Decompose Before Taking Higher Derivatives of a Rational Function",
-      "prompt": "Let y=1/[(x−1)(x+2)], x≠1,−2. Find y⁽ⁿ⁾ for n≥0.",
-      "answer": "y⁽ⁿ⁾=(−1)ⁿn!/3·[1/(x−1)ⁿ⁺¹−1/(x+2)ⁿ⁺¹].",
+      "prompt": "Let $y=\\frac{1}{(x-1)(x+2)}, x\\ne 1,-2$. Find $y^{(n)}$ for $n\\ge 0$.",
+      "answer": "$y^{(n)}=\\frac{(-1)^{n}n!}{3}\\cdot [\\frac{1}{(x-1)^{n+1}}-\\frac{1}{(x+2)^{n+1}}]$.",
       "solution": {
-        "knowledge": ["Partial-fraction decomposition", "Higher derivatives of reciprocal linear factors", "Linearity"],
+        "knowledge": [
+          "Partial-fraction decomposition",
+          "Higher derivatives of reciprocal linear factors",
+          "Linearity"
+        ],
         "analysis": "Repeated quotient rules would become complicated. First split the rational function into two reciprocal linear factors, then apply one standard formula termwise.",
         "steps": [
-          "Write 1/[(x−1)(x+2)]=A/(x−1)+B/(x+2).",
-          "Setting x=1 gives A=1/3, and setting x=−2 gives B=−1/3.",
-          "Thus y=(1/3)[1/(x−1)−1/(x+2)].",
-          "Use [1/(x−a)]⁽ⁿ⁾=(−1)ⁿn!/(x−a)ⁿ⁺¹.",
-          "Differentiate termwise to obtain y⁽ⁿ⁾=(−1)ⁿn!/3·[1/(x−1)ⁿ⁺¹−1/(x+2)ⁿ⁺¹]."
+          "Write $\\frac{1}{(x-1)(x+2)}=\\frac{A}{x-1}+\\frac{B}{x+2}$.",
+          "Setting $x=1$ gives $A=\\frac{1}{3}$, and setting $x=-2$ gives $B=-\\frac{1}{3}$.",
+          "Thus $y=(\\frac{1}{3})[\\frac{1}{x-1}-\\frac{1}{x+2}]$.",
+          "Use $[\\frac{1}{x-a}]^{(n)}=\\frac{(-1)^{n}n!}{(x-a)^{n+1}}$.",
+          "Differentiate termwise to obtain $y^{(n)}=\\frac{(-1)^{n}n!}{3}\\cdot [\\frac{1}{(x-1)^{n+1}}-\\frac{1}{(x+2)^{n+1}}]$."
         ],
-        "pitfalls": ["Reversing a partial-fraction sign", "Confusing the shifts in the two denominators", "Omitting the +1 in the denominator power"],
-        "verification": "At n=0, the formula returns the partial-fraction expression, which combines back to the original function.",
+        "pitfalls": [
+          "Reversing a partial-fraction sign",
+          "Confusing the shifts in the two denominators",
+          "Omitting the $+1$ in the denominator power"
+        ],
+        "verification": "At $n=0$, the formula returns the partial-fraction expression, which combines back to the original function.",
         "takeaway": "For a rational function with linear factors, algebraic decomposition before differentiation is often the key to an nth-order formula.",
-        "extension": "Repeated linear factors require terms such as 1/(x−a)², each handled by the negative-integer power rule."
+        "extension": "Repeated linear factors require terms such as $\\frac{1}{(x-a)^{2}}$, each handled by the negative-integer power rule."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1558,53 +2517,86 @@
     "difficulty": "hard",
     "type": "calculation",
     "tags": {
-      "zh": ["乘积高阶导数", "多项式指数乘积", "有限求和"],
-      "en": ["higher product derivative", "polynomial-exponential product", "finite sum"]
+      "zh": [
+        "乘积高阶导数",
+        "多项式指数乘积",
+        "有限求和"
+      ],
+      "en": [
+        "higher product derivative",
+        "polynomial-exponential product",
+        "finite sum"
+      ]
     },
     "minutes": 16,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "三次多项式与指数函数乘积的 n 阶导数",
-      "prompt": "设 y=x³e²ˣ。求 n≥3 时的 y⁽ⁿ⁾，答案中不保留求和号。",
-      "answer": "y⁽ⁿ⁾=e²ˣ[2ⁿx³+3n2ⁿ⁻¹x²+3n(n−1)2ⁿ⁻²x+n(n−1)(n−2)2ⁿ⁻³]。",
+      "prompt": "设 $y=x^{3}e^{2x}$。求 $n\\ge 3$ 时的 $y^{(n)}$，答案中不保留求和号。",
+      "answer": "$y^{(n)}=e^{2x}[2^{n}x^{3}+3n2^{n-1}x^{2}+3n(n-1)2^{n-2}x+n(n-1)(n-2)2^{n-3}]$。",
       "solution": {
-        "knowledge": ["乘积高阶导数", "多项式导数截断", "二项式系数"],
-        "analysis": "把 n 次求导分配给 x³ 与 e²ˣ。x³ 的四阶导数为零，因此只需写出分配给多项式 0、1、2、3 次的四项。",
-        "steps": [
-          "由乘积高阶导数公式，y⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)(x³)⁽ᵏ⁾(e²ˣ)⁽ⁿ⁻ᵏ⁾。",
-          "有 (x³)⁽⁰⁾=x³、(x³)′=3x²、(x³)″=6x、(x³)‴=6，且 k≥4 时为 0。",
-          "同时 (e²ˣ)⁽ᵐ⁾=2ᵐe²ˣ，所以只保留 k=0,1,2,3。",
-          "四项依次为 2ⁿx³e²ˣ、3n2ⁿ⁻¹x²e²ˣ、6C(n,2)2ⁿ⁻²xe²ˣ、6C(n,3)2ⁿ⁻³e²ˣ。",
-          "利用 6C(n,2)=3n(n−1)、6C(n,3)=n(n−1)(n−2)，提取 e²ˣ 即得答案。",
-          "条件 n≥3 保证四项中的阶数与二项式系数均按所写形式适用。"
+        "knowledge": [
+          "乘积高阶导数",
+          "多项式导数截断",
+          "二项式系数"
         ],
-        "pitfalls": ["把指数项写成 2ᵏ而不是 2ⁿ⁻ᵏ", "漏掉二项式系数", "x³ 的三阶导数误写成 3"],
-        "verification": "取 n=3，公式给 e²ˣ(8x³+36x²+36x+6)；从 y″=e²ˣ(4x³+12x²+6x) 再求一次导数也得到该式。",
+        "analysis": "把 n 次求导分配给 $x^{3}$ 与 $e^{2x}$。$x^{3}$ 的四阶导数为零，因此只需写出分配给多项式 0、1、2、3 次的四项。",
+        "steps": [
+          "由乘积高阶导数公式，$y^{(n)}=\\sum_{k=0}^{n}C(n,k)(x^{3})^{(k)}(e^{2x})^{(n-k)}$。",
+          "有 $(x^{3})^{(0)}=x^{3}$、$(x^{3})'=3x^{2}$、$(x^{3})''=6x$、$(x^{3})'''=6$，且 $k\\ge 4$ 时为 0。",
+          "同时 $(e^{2x})^{(m)}=2^{m}e^{2x}$，所以只保留 $k=0,1,2,3$。",
+          "四项依次为 $2^{n}x^{3}e^{2x}$、$3n2^{n-1}x^{2}e^{2x}$、$6C(n,2)2^{n-2}$xe$^{2x}$、$6C(n,3)2^{n-3}e^{2x}$。",
+          "利用 $6C(n,2)=3n(n-1)$、$6C(n,3)=n(n-1)(n-2)$，提取 $e^{2x}$ 即得答案。",
+          "条件 $n\\ge 3$ 保证四项中的阶数与二项式系数均按所写形式适用。"
+        ],
+        "pitfalls": [
+          "把指数项写成 $2^{k}$而不是 $2^{n-k}$",
+          "漏掉二项式系数",
+          "$x^{3}$ 的三阶导数误写成 3"
+        ],
+        "verification": "取 $n=3$，公式给 $e^{2x}(8x^{3}+36x^{2}+36x+6)$；从 $y''=e^{2x}(4x^{3}+12x^{2}+6x)$ 再求一次导数也得到该式。",
         "takeaway": "多项式乘指数函数的 n 阶导数是有限和，项数由多项式次数决定而不随 n 增长。",
-        "extension": "把 x³ 替换为任意三次多项式，可利用线性性对各幂次分别套用同一结构。"
+        "extension": "把 $x^{3}$ 替换为任意三次多项式，可利用线性性对各幂次分别套用同一结构。"
       }
     },
     "en": {
       "title": "The nth Derivative of a Cubic Times an Exponential",
-      "prompt": "Let y=x³e²ˣ. For n≥3, find y⁽ⁿ⁾ with no summation sign in the answer.",
-      "answer": "y⁽ⁿ⁾=e²ˣ[2ⁿx³+3n2ⁿ⁻¹x²+3n(n−1)2ⁿ⁻²x+n(n−1)(n−2)2ⁿ⁻³].",
+      "prompt": "Let $y=x^{3}e^{2x}$. For $n\\ge 3$, find $y^{(n)}$ with no summation sign in the answer.",
+      "answer": "$y^{(n)}=e^{2x}[2^{n}x^{3}+3n2^{n-1}x^{2}+3n(n-1)2^{n-2}x+n(n-1)(n-2)2^{n-3}]$.",
       "solution": {
-        "knowledge": ["Higher derivative of a product", "Termination of polynomial derivatives", "Binomial coefficients"],
-        "analysis": "Distribute the n differentiations between x³ and e²ˣ. The fourth derivative of x³ is zero, so only the cases of assigning 0, 1, 2, or 3 derivatives to the polynomial remain.",
-        "steps": [
-          "The higher product formula gives y⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)(x³)⁽ᵏ⁾(e²ˣ)⁽ⁿ⁻ᵏ⁾.",
-          "We have (x³)⁽⁰⁾=x³, (x³)′=3x², (x³)″=6x, (x³)‴=6, and all terms with k≥4 vanish.",
-          "Also, (e²ˣ)⁽ᵐ⁾=2ᵐe²ˣ, so retain only k=0,1,2,3.",
-          "The four terms are 2ⁿx³e²ˣ, 3n2ⁿ⁻¹x²e²ˣ, 6C(n,2)2ⁿ⁻²xe²ˣ, and 6C(n,3)2ⁿ⁻³e²ˣ.",
-          "Use 6C(n,2)=3n(n−1) and 6C(n,3)=n(n−1)(n−2), then factor out e²ˣ to obtain the answer.",
-          "The condition n≥3 makes all four displayed terms and coefficients directly applicable."
+        "knowledge": [
+          "Higher derivative of a product",
+          "Termination of polynomial derivatives",
+          "Binomial coefficients"
         ],
-        "pitfalls": ["Using 2ᵏ instead of 2ⁿ⁻ᵏ", "Omitting the binomial coefficients", "Writing the third derivative of x³ as 3"],
-        "verification": "At n=3, the formula gives e²ˣ(8x³+36x²+36x+6); differentiating y″=e²ˣ(4x³+12x²+6x) once more gives the same result.",
+        "analysis": "Distribute the n differentiations between $x^{3}$ and $e^{2x}$. The fourth derivative of $x^{3}$ is zero, so only the cases of assigning 0, 1, 2, or 3 derivatives to the polynomial remain.",
+        "steps": [
+          "The higher product formula gives $y^{(n)}=\\sum_{k=0}^{n}C(n,k)(x^{3})^{(k)}(e^{2x})^{(n-k)}$.",
+          "We have $(x^{3})^{(0)}=x^{3}, (x^{3})'=3x^{2}, (x^{3})''=6x, (x^{3})'''=6$, and all terms with $k\\ge 4$ vanish.",
+          "Also, $(e^{2x})^{(m)}=2^{m}e^{2x}$, so retain only $k=0,1,2,3$.",
+          "The four terms are $2^{n}x^{3}e^{2x}, 3n2^{n-1}x^{2}e^{2x}, 6C(n,2)2^{n-2}$xe$^{2x}$, and $6C(n,3)2^{n-3}e^{2x}$.",
+          "Use $6C(n,2)=3n(n-1)$ and $6C(n,3)=n(n-1)(n-2)$, then factor out $e^{2x}$ to obtain the answer.",
+          "The condition $n\\ge 3$ makes all four displayed terms and coefficients directly applicable."
+        ],
+        "pitfalls": [
+          "Using $2^{k}$ instead of $2^{n-k}$",
+          "Omitting the binomial coefficients",
+          "Writing the third derivative of $x^{3}$ as 3"
+        ],
+        "verification": "At $n=3$, the formula gives $e^{2x}(8x^{3}+36x^{2}+36x+6)$; differentiating $y''=e^{2x}(4x^{3}+12x^{2}+6x)$ once more gives the same result.",
         "takeaway": "The nth derivative of a polynomial times an exponential is a finite sum whose number of terms is controlled by the polynomial degree.",
-        "extension": "For any cubic polynomial in place of x³, apply the same structure termwise by linearity."
+        "extension": "For any cubic polynomial in place of $x^{3}$, apply the same structure termwise by linearity."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1614,55 +2606,88 @@
     "difficulty": "hard",
     "type": "proof",
     "tags": {
-      "zh": ["莱布尼茨公式", "数学归纳法", "二项式系数"],
-      "en": ["Leibniz formula", "mathematical induction", "binomial coefficients"]
+      "zh": [
+        "莱布尼茨公式",
+        "数学归纳法",
+        "二项式系数"
+      ],
+      "en": [
+        "Leibniz formula",
+        "mathematical induction",
+        "binomial coefficients"
+      ]
     },
     "minutes": 20,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "归纳证明乘积的高阶导数公式",
-      "prompt": "设 u、v 具有所需阶导数。用数学归纳法证明：对 n≥0，(uv)⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)u⁽ᵏ⁾v⁽ⁿ⁻ᵏ⁾。",
-      "answer": "公式成立；归纳步骤对求和逐项求导，并用 C(n,k)+C(n,k−1)=C(n+1,k) 合并同类项。",
+      "prompt": "设 u、v 具有所需阶导数。用数学归纳法证明：对 $n\\ge 0$，$(uv)^{(n)}=\\sum_{k=0}^{n}C(n,k)u^{(k)}v^{(n-k)}$。",
+      "answer": "公式成立；归纳步骤对求和逐项求导，并用 $C(n,k)+C(n,k-1)=C(n+1,k)$ 合并同类项。",
       "solution": {
-        "knowledge": ["乘积高阶导数公式", "数学归纳法", "二项式系数递推"],
-        "analysis": "对 n 阶公式求导时，每一项产生两项。把所有含 u⁽ᵏ⁾v⁽ⁿ⁺¹⁻ᵏ⁾ 的项对齐后，相邻二项式系数恰好相加为下一行系数。",
-        "steps": [
-          "当 n=0 时，右边只有 C(0,0)uv=uv，与左边相同，起点成立。",
-          "假设 n 阶公式成立，即 (uv)⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)u⁽ᵏ⁾v⁽ⁿ⁻ᵏ⁾。",
-          "两边求导，每项用乘积法则，得到 Σ_{k=0}ⁿC(n,k)[u⁽ᵏ⁺¹⁾v⁽ⁿ⁻ᵏ⁾+u⁽ᵏ⁾v⁽ⁿ⁺¹⁻ᵏ⁾]。",
-          "将第一组求和改指标 j=k+1，它覆盖 j=1,…,n+1；第二组覆盖 j=0,…,n。",
-          "端点 j=0、n+1 的系数均为 1；中间项系数为 C(n,j−1)+C(n,j)=C(n+1,j)。",
-          "因此 (uv)⁽ⁿ⁺¹⁾=Σ_{j=0}ⁿ⁺¹C(n+1,j)u⁽ʲ⁾v⁽ⁿ⁺¹⁻ʲ⁾，即 n+1 阶公式。",
-          "由数学归纳法，结论对所有 n≥0 成立。"
+        "knowledge": [
+          "乘积高阶导数公式",
+          "数学归纳法",
+          "二项式系数递推"
         ],
-        "pitfalls": ["改指标后求和上下限不随之改变", "忽略两个端点项", "把二项式系数递推的两个下标写反"],
-        "verification": "令 n=2，公式给 u″v+2u′v′+uv″，与对普通乘积法则再求一次导数完全一致。",
+        "analysis": "对 n 阶公式求导时，每一项产生两项。把所有含 $u^{(k)}v^{(n+1-k)}$ 的项对齐后，相邻二项式系数恰好相加为下一行系数。",
+        "steps": [
+          "当 $n=0$ 时，右边只有 $C(0,0)uv=uv$，与左边相同，起点成立。",
+          "假设 n 阶公式成立，即 $(uv)^{(n)}=\\sum_{k=0}^{n}C(n,k)u^{(k)}v^{(n-k)}$。",
+          "两边求导，每项用乘积法则，得到 $\\sum_{k=0}^{n}C(n,k)[u^{(k+1)}v^{(n-k)}+u^{(k)}v^{(n+1-k)}]$。",
+          "将第一组求和改指标 $j=k+1$，它覆盖 $j=1,\\ldots,n+1$；第二组覆盖 $j=0,\\ldots,n$。",
+          "端点 $j=0$、$n+1$ 的系数均为 1；中间项系数为 $C(n,j-1)+C(n,j)=C(n+1,j)$。",
+          "因此 $(uv)^{(n+1)}=\\sum_{j=0}^{n+1}C(n+1,j)u^{(j)}v^{(n+1-j)}$，即 $n+1$ 阶公式。",
+          "由数学归纳法，结论对所有 $n\\ge 0$ 成立。"
+        ],
+        "pitfalls": [
+          "改指标后求和上下限不随之改变",
+          "忽略两个端点项",
+          "把二项式系数递推的两个下标写反"
+        ],
+        "verification": "令 $n=2$，公式给 $u''v+2u'v'+uv''$，与对普通乘积法则再求一次导数完全一致。",
         "takeaway": "莱布尼茨公式中的二项式系数来自每次求导在两个因子间分配的组合数。",
-        "extension": "若 u 是 m 次多项式，则 u⁽ᵏ⁾在 k>m 时为 0，公式自动截断为至多 m+1 项。"
+        "extension": "若 u 是 m 次多项式，则 $u^{(k)}$在 $k>m$ 时为 0，公式自动截断为至多 $m+1$ 项。"
       }
     },
     "en": {
       "title": "Inductive Proof of the Higher Product Formula",
-      "prompt": "Suppose u and v have the required derivatives. Prove by induction that for n≥0, (uv)⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)u⁽ᵏ⁾v⁽ⁿ⁻ᵏ⁾.",
-      "answer": "The formula holds. Differentiate the sum termwise and combine coefficients using C(n,k)+C(n,k−1)=C(n+1,k).",
+      "prompt": "Suppose u and v have the required derivatives. Prove by induction that for $n\\ge 0, (uv)^{(n)}=\\sum_{k=0}^{n}C(n,k)u^{(k)}v^{(n-k)}$.",
+      "answer": "The formula holds. Differentiate the sum termwise and combine coefficients using $C(n,k)+C(n,k-1)=C(n+1,k)$.",
       "solution": {
-        "knowledge": ["Higher product formula", "Mathematical induction", "Binomial coefficient recurrence"],
-        "analysis": "Differentiating the nth-order formula splits every term into two. After aligning all terms of the form u⁽ᵏ⁾v⁽ⁿ⁺¹⁻ᵏ⁾, neighboring binomial coefficients combine into the next row.",
-        "steps": [
-          "For n=0, the right side is the single term C(0,0)uv=uv, so the base case holds.",
-          "Assume (uv)⁽ⁿ⁾=Σ_{k=0}ⁿC(n,k)u⁽ᵏ⁾v⁽ⁿ⁻ᵏ⁾.",
-          "Differentiate termwise and apply the product rule to obtain Σ_{k=0}ⁿC(n,k)[u⁽ᵏ⁺¹⁾v⁽ⁿ⁻ᵏ⁾+u⁽ᵏ⁾v⁽ⁿ⁺¹⁻ᵏ⁾].",
-          "Reindex the first sum with j=k+1, which covers j=1,…,n+1; the second covers j=0,…,n.",
-          "The endpoint coefficients at j=0 and j=n+1 are 1, while each interior coefficient is C(n,j−1)+C(n,j)=C(n+1,j).",
-          "Hence (uv)⁽ⁿ⁺¹⁾=Σ_{j=0}ⁿ⁺¹C(n+1,j)u⁽ʲ⁾v⁽ⁿ⁺¹⁻ʲ⁾, the desired formula at n+1.",
-          "Mathematical induction proves the result for all n≥0."
+        "knowledge": [
+          "Higher product formula",
+          "Mathematical induction",
+          "Binomial coefficient recurrence"
         ],
-        "pitfalls": ["Failing to change summation bounds after reindexing", "Omitting the two endpoint terms", "Reversing the subscripts in the binomial recurrence"],
-        "verification": "At n=2, the formula gives u″v+2u′v′+uv″, exactly what results from differentiating the ordinary product rule once more.",
+        "analysis": "Differentiating the nth-order formula splits every term into two. After aligning all terms of the form $u^{(k)}v^{(n+1-k)}$, neighboring binomial coefficients combine into the next row.",
+        "steps": [
+          "For $n=0$, the right side is the single term $C(0,0)uv=uv$, so the base case holds.",
+          "Assume $(uv)^{(n)}=\\sum_{k=0}^{n}C(n,k)u^{(k)}v^{(n-k)}$.",
+          "Differentiate termwise and apply the product rule to obtain $\\sum_{k=0}^{n}C(n,k)[u^{(k+1)}v^{(n-k)}+u^{(k)}v^{(n+1-k)}]$.",
+          "Reindex the first sum with $j=k+1$, which covers $j=1,\\ldots,n+1$; the second covers $j=0,\\ldots,n$.",
+          "The endpoint coefficients at $j=0$ and $j=n+1$ are 1, while each interior coefficient is $C(n,j-1)+C(n,j)=C(n+1,j)$.",
+          "Hence $(uv)^{(n+1)}=\\sum_{j=0}^{n+1}C(n+1,j)u^{(j)}v^{(n+1-j)}$, the desired formula at $n+1$.",
+          "Mathematical induction proves the result for all $n\\ge 0$."
+        ],
+        "pitfalls": [
+          "Failing to change summation bounds after reindexing",
+          "Omitting the two endpoint terms",
+          "Reversing the subscripts in the binomial recurrence"
+        ],
+        "verification": "At $n=2$, the formula gives $u''v+2u'v'+uv''$, exactly what results from differentiating the ordinary product rule once more.",
         "takeaway": "The binomial coefficients in the Leibniz formula count the ways to distribute differentiations between two factors.",
-        "extension": "If u is a degree-m polynomial, u⁽ᵏ⁾=0 for k>m, so the formula automatically truncates to at most m+1 terms."
+        "extension": "If u is a degree-m polynomial, $u^{(k)}=0$ for $k>m$, so the formula automatically truncates to at most $m+1$ terms."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1672,53 +2697,86 @@
     "difficulty": "hard",
     "type": "error_diagnosis",
     "tags": {
-      "zh": ["错解诊断", "对数高阶导数", "链式因子"],
-      "en": ["error diagnosis", "higher logarithmic derivatives", "chain factors"]
+      "zh": [
+        "错解诊断",
+        "对数高阶导数",
+        "链式因子"
+      ],
+      "en": [
+        "error diagnosis",
+        "higher logarithmic derivatives",
+        "chain factors"
+      ]
     },
     "minutes": 14,
     "space": "XL",
     "classic_method": false,
     "zh": {
       "title": "诊断被遗漏的重复链式因子",
-      "prompt": "学生对 y=ln(2x−1)（x>1/2）写道：y⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!/(2x−1)ⁿ。指出错误发生在哪里，给出正确公式，并至少检验 n=1、2。",
-      "answer": "错误是每一阶都漏乘内层导数 2；正确公式为 y⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!2ⁿ/(2x−1)ⁿ。",
+      "prompt": "学生对 $y=\\ln(2x-1)$（$x>\\frac{1}{2}$）写道：$y^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{(2x-1)^{n}}$。指出错误发生在哪里，给出正确公式，并至少检验 $n=1$、2。",
+      "answer": "错误是每一阶都漏乘内层导数 2；正确公式为 $y^{(n)}=\\frac{(-1)^{n-1}(n-1)!2^{n}}{(2x-1)^{n}}$。",
       "solution": {
-        "knowledge": ["高阶链式因子", "对数函数高阶导数", "错解定位"],
-        "analysis": "一次求导产生一个因子 2；之后每次对 (2x−1) 的负幂求导又产生一个因子 2，所以 n 阶应累计 2ⁿ，而不是只改分母幂次。",
-        "steps": [
-          "直接求一阶导数：y′=2/(2x−1)，学生公式在 n=1 时只给 1/(2x−1)，已暴露漏因子。",
-          "再求一次得 y″=−4/(2x−1)²；这里第二个因子 2 来自再次使用链式法则。",
-          "设 u=2x−1，则 y=ln u，而关于 u 的 n 阶导数为 (−1)ⁿ⁻¹(n−1)!/uⁿ。",
-          "因为 u 是线性函数，每一次关于 x 的求导都把关于 u 的导数再乘 du/dx=2，共累计 2ⁿ。",
-          "所以 y⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!2ⁿ/(2x−1)ⁿ。",
-          "代入 n=1、2 分别恢复 2/(2x−1) 与 −4/(2x−1)²，检验通过。"
+        "knowledge": [
+          "高阶链式因子",
+          "对数函数高阶导数",
+          "错解定位"
         ],
-        "pitfalls": ["认为内层导数只在第一阶出现一次", "把累计因子误写成 2n", "只看符号与分母幂而忽略系数"],
-        "verification": "取 x=1，正确公式给 y′(1)=2，而由定义对 ln(1+2h) 的差商也得到 2；错误公式只给 1。",
+        "analysis": "一次求导产生一个因子 2；之后每次对 $(2x-1)$ 的负幂求导又产生一个因子 2，所以 n 阶应累计 $2^{n}$，而不是只改分母幂次。",
+        "steps": [
+          "直接求一阶导数：$y'=\\frac{2}{2x-1}$，学生公式在 $n=1$ 时只给 $\\frac{1}{2x-1}$，已暴露漏因子。",
+          "再求一次得 $y''=-\\frac{4}{(2x-1)^{2}}$；这里第二个因子 2 来自再次使用链式法则。",
+          "设 $u=2x-1$，则 $y=\\ln u$，而关于 u 的 n 阶导数为 $\\frac{(-1)^{n-1}(n-1)!}{u^{n}}$。",
+          "因为 u 是线性函数，每一次关于 x 的求导都把关于 u 的导数再乘 $\\frac{du}{dx}=2$，共累计 $2^{n}$。",
+          "所以 $y^{(n)}=\\frac{(-1)^{n-1}(n-1)!2^{n}}{(2x-1)^{n}}$。",
+          "代入 $n=1$、2 分别恢复 $\\frac{2}{2x-1}$ 与 $-\\frac{4}{(2x-1)^{2}}$，检验通过。"
+        ],
+        "pitfalls": [
+          "认为内层导数只在第一阶出现一次",
+          "把累计因子误写成 2n",
+          "只看符号与分母幂而忽略系数"
+        ],
+        "verification": "取 $x=1$，正确公式给 $y'(1)=2$，而由定义对 $\\ln(1+2h)$ 的差商也得到 2；错误公式只给 1。",
         "takeaway": "线性复合函数的 n 阶导数会累计 n 个相同的内层斜率因子。",
-        "extension": "对 ln(ax+b)，正确公式为 (−1)ⁿ⁻¹(n−1)!aⁿ/(ax+b)ⁿ。"
+        "extension": "对 $\\ln(ax+b)$，正确公式为 $\\frac{(-1)^{n-1}(n-1)!a^{n}}{(ax+b)^{n}}$。"
       }
     },
     "en": {
       "title": "Diagnosing a Missing Repeated Chain Factor",
-      "prompt": "For y=ln(2x−1), x>1/2, a student writes y⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!/(2x−1)ⁿ. Identify the error, give the correct formula, and check at least n=1 and n=2.",
-      "answer": "The student misses a factor 2 at every order. The correct formula is y⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!2ⁿ/(2x−1)ⁿ.",
+      "prompt": "For $y=\\ln(2x-1), x>\\frac{1}{2}, a$ student writes $y^{(n)}=\\frac{(-1)^{n-1}(n-1)!}{(2x-1)^{n}}$. Identify the error, give the correct formula, and check at least $n=1$ and $n=2$.",
+      "answer": "The student misses a factor 2 at every order. The correct formula is $y^{(n)}=\\frac{(-1)^{n-1}(n-1)!2^{n}}{(2x-1)^{n}}$.",
       "solution": {
-        "knowledge": ["Repeated chain factors", "Higher logarithmic derivatives", "Error localization"],
-        "analysis": "The first derivative contributes one factor 2, and each later differentiation of a negative power of 2x−1 contributes another. Thus the nth derivative contains 2ⁿ.",
-        "steps": [
-          "Directly, y′=2/(2x−1); the student's n=1 formula gives only 1/(2x−1), revealing the missing factor.",
-          "Differentiating again gives y″=−4/(2x−1)², with another factor 2 from the chain rule.",
-          "Set u=2x−1. The nth derivative of ln u with respect to u is (−1)ⁿ⁻¹(n−1)!/uⁿ.",
-          "Because u is linear, each differentiation with respect to x multiplies the corresponding u-derivative by du/dx=2, giving 2ⁿ in total.",
-          "Therefore y⁽ⁿ⁾=(−1)ⁿ⁻¹(n−1)!2ⁿ/(2x−1)ⁿ.",
-          "For n=1 and n=2 this gives 2/(2x−1) and −4/(2x−1)², confirming the formula."
+        "knowledge": [
+          "Repeated chain factors",
+          "Higher logarithmic derivatives",
+          "Error localization"
         ],
-        "pitfalls": ["Including the inner derivative only at the first order", "Replacing the accumulated factor 2ⁿ by 2n", "Checking signs and powers but ignoring coefficients"],
-        "verification": "At x=1, the correct formula gives y′(1)=2; the defining difference quotient for ln(1+2h) also gives 2, while the student's formula gives 1.",
+        "analysis": "The first derivative contributes one factor 2, and each later differentiation of a negative power of $2x-1$ contributes another. Thus the nth derivative contains $2^{n}$.",
+        "steps": [
+          "Directly, $y'=\\frac{2}{2x-1}$; the student's $n=1$ formula gives only $\\frac{1}{2x-1}$, revealing the missing factor.",
+          "Differentiating again gives $y''=-\\frac{4}{(2x-1)^{2}}$, with another factor 2 from the chain rule.",
+          "Set $u=2x-1$. The nth derivative of $\\ln u$ with respect to u is $\\frac{(-1)^{n-1}(n-1)!}{u^{n}}$.",
+          "Because u is linear, each differentiation with respect to x multiplies the corresponding $u$-derivative by $\\frac{du}{dx}=2$, giving $2^{n}$ in total.",
+          "Therefore $y^{(n)}=\\frac{(-1)^{n-1}(n-1)!2^{n}}{(2x-1)^{n}}$.",
+          "For $n=1$ and $n=2$ this gives $\\frac{2}{2x-1}$ and $-\\frac{4}{(2x-1)^{2}}$, confirming the formula."
+        ],
+        "pitfalls": [
+          "Including the inner derivative only at the first order",
+          "Replacing the accumulated factor $2^{n}$ by 2n",
+          "Checking signs and powers but ignoring coefficients"
+        ],
+        "verification": "At $x=1$, the correct formula gives $y'(1)=2$; the defining difference quotient for $\\ln(1+2h)$ also gives 2, while the student's formula gives 1.",
         "takeaway": "For a linear composite, the same inner slope factor accumulates once per derivative order.",
-        "extension": "For ln(ax+b), the formula is (−1)ⁿ⁻¹(n−1)!aⁿ/(ax+b)ⁿ."
+        "extension": "For $\\ln(ax+b)$, the formula is $\\frac{(-1)^{n-1}(n-1)!a^{n}}{(ax+b)^{n}}$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "higher_derivatives",
+      "relation": "independently_synthesized_from_standard_methods",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1728,53 +2786,86 @@
     "difficulty": "hard",
     "type": "comprehensive",
     "tags": {
-      "zh": ["超高阶导数", "相位循环", "综合计算"],
-      "en": ["very high derivative", "phase cycle", "comprehensive calculation"]
+      "zh": [
+        "超高阶导数",
+        "相位循环",
+        "综合计算"
+      ],
+      "en": [
+        "very high derivative",
+        "phase cycle",
+        "comprehensive calculation"
+      ]
     },
     "minutes": 17,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "计算第 2026 阶导数在零点的值",
-      "prompt": "设 y=eˣ(cos x+sin x)。不逐阶展开，求 y⁽²⁰²⁶⁾(0)，并说明所用循环结构。",
-      "answer": "y⁽²⁰²⁶⁾(0)=2¹⁰¹³。",
+      "prompt": "设 $y=e^{x}(\\cos x+\\sin x)$。不逐阶展开，求 $y^{(2026)}(0)$，并说明所用循环结构。",
+      "answer": "$y^{(2026)}(0)=2^{1013}$。",
       "solution": {
-        "knowledge": ["指数三角高阶导数", "辅助角", "模 8 相位循环"],
-        "analysis": "先把 cos x+sin x 合并为单个带相位的余弦，再使用每次求导振幅乘 √2、相位加 π/4 的规律。",
-        "steps": [
-          "利用 cos x+sin x=√2cos(x−π/4)，得 y=√2eˣcos(x−π/4)。",
-          "对 eˣcos(x+φ)，每求一次导数，振幅乘 √2、相位增加 π/4。",
-          "因此 y⁽ⁿ⁾=√2(√2)ⁿeˣcos(x−π/4+nπ/4)。",
-          "令 n=2026、x=0，得到 y⁽²⁰²⁶⁾(0)=2^(2027/2)cos(2025π/4)。",
-          "因为 2025≡1 (mod 8)，cos(2025π/4)=cos(π/4)=√2/2。",
-          "所以 y⁽²⁰²⁶⁾(0)=2^(2027/2)·2^(−1/2)=2¹⁰¹³。"
+        "knowledge": [
+          "指数三角高阶导数",
+          "辅助角",
+          "模 8 相位循环"
         ],
-        "pitfalls": ["合并三角函数时相位正负写反", "只看到四阶循环而忽略振幅变化", "指数 2027/2 与余弦值合并错误"],
-        "verification": "低阶检查：公式在 n=1 时给 2eˣcos x，恰与 y′=eˣ(cos x+sin x−sin x+cos x) 相同。",
+        "analysis": "先把 $\\cos x+\\sin x$ 合并为单个带相位的余弦，再使用每次求导振幅乘 $\\sqrt{2}$、相位加 $\\frac{\\pi}{4}$ 的规律。",
+        "steps": [
+          "利用 $\\cos x+\\sin x=\\sqrt{2}\\cos(x-\\frac{\\pi}{4})$，得 $y=\\sqrt{2}e^{x}\\cos(x-\\frac{\\pi}{4})$。",
+          "对 $e^{x}\\cos(x+\\varphi)$，每求一次导数，振幅乘 $\\sqrt{2}$、相位增加 $\\frac{\\pi}{4}$。",
+          "因此 $y^{(n)}=\\sqrt{2}(\\sqrt{2})^{n}e^{x}\\cos(x-\\frac{\\pi}{4}+\\frac{n\\pi}{4})$。",
+          "令 $n=2026$、$x=0$，得到 $y^{(2026)}(0)=2^{\\frac{2027}{2}}\\cos(\\frac{2025\\pi}{4})$。",
+          "因为 $2025\\equiv 1\\pmod{8}$，$\\cos\\!\\left(\\frac{2025\\pi}{4}\\right)=\\cos\\!\\left(\\frac{\\pi}{4}\\right)=\\frac{\\sqrt{2}}{2}$。",
+          "所以 $y^{(2026)}(0)=2^{\\frac{2027}{2}}\\cdot 2^{-\\frac{1}{2}}=2^{1013}$。"
+        ],
+        "pitfalls": [
+          "合并三角函数时相位正负写反",
+          "只看到四阶循环而忽略振幅变化",
+          "指数 $\\frac{2027}{2}$ 与余弦值合并错误"
+        ],
+        "verification": "低阶检查：公式在 $n=1$ 时给 $2e^{x}\\cos x$，恰与 $y'=e^{x}(\\cos x+\\sin x-\\sin x+\\cos x)$ 相同。",
         "takeaway": "指数三角乘积的超高阶问题可化为固定振幅倍率与有限相位循环。",
-        "extension": "用同一公式计算 y⁽²⁰²⁷⁾(0)，并比较相邻两阶结果的比值。"
+        "extension": "用同一公式计算 $y^{(2027)}(0)$，并比较相邻两阶结果的比值。"
       }
     },
     "en": {
       "title": "Evaluating the 2026th Derivative at Zero",
-      "prompt": "Let y=eˣ(cos x+sin x). Without expanding derivative by derivative, find y⁽²⁰²⁶⁾(0) and explain the cyclic structure used.",
-      "answer": "y⁽²⁰²⁶⁾(0)=2¹⁰¹³.",
+      "prompt": "Let $y=e^{x}(\\cos x+\\sin x)$. Without expanding derivative by derivative, find $y^{(2026)}(0)$ and explain the cyclic structure used.",
+      "answer": "$y^{(2026)}(0)=2^{1013}$.",
       "solution": {
-        "knowledge": ["Higher exponential-trigonometric derivatives", "Auxiliary angle", "Phase cycle modulo 8"],
-        "analysis": "First combine cos x+sin x into one phase-shifted cosine. Each differentiation then multiplies the amplitude by √2 and advances the phase by π/4.",
-        "steps": [
-          "Use cos x+sin x=√2cos(x−π/4), so y=√2eˣcos(x−π/4).",
-          "For eˣcos(x+φ), every differentiation multiplies the amplitude by √2 and adds π/4 to the phase.",
-          "Hence y⁽ⁿ⁾=√2(√2)ⁿeˣcos(x−π/4+nπ/4).",
-          "Set n=2026 and x=0 to get y⁽²⁰²⁶⁾(0)=2^(2027/2)cos(2025π/4).",
-          "Since 2025≡1 (mod 8), cos(2025π/4)=cos(π/4)=√2/2.",
-          "Therefore y⁽²⁰²⁶⁾(0)=2^(2027/2)·2^(−1/2)=2¹⁰¹³."
+        "knowledge": [
+          "Higher exponential-trigonometric derivatives",
+          "Auxiliary angle",
+          "Phase cycle modulo 8"
         ],
-        "pitfalls": ["Using the wrong sign for the phase shift", "Noticing a phase cycle but ignoring amplitude growth", "Combining the exponent 2027/2 with the cosine value incorrectly"],
-        "verification": "At n=1, the formula gives 2eˣcos x, exactly matching y′=eˣ(cos x+sin x−sin x+cos x).",
+        "analysis": "First combine $\\cos x+\\sin x$ into one phase-shifted cosine. Each differentiation then multiplies the amplitude by $\\sqrt{2}$ and advances the phase by $\\frac{\\pi}{4}$.",
+        "steps": [
+          "Use $\\cos x+\\sin x=\\sqrt{2}\\cos(x-\\frac{\\pi}{4})$, so $y=\\sqrt{2}e^{x}\\cos(x-\\frac{\\pi}{4})$.",
+          "For $e^{x}\\cos(x+\\varphi)$, every differentiation multiplies the amplitude by $\\sqrt{2}$ and adds $\\frac{\\pi}{4}$ to the phase.",
+          "Hence $y^{(n)}=\\sqrt{2}(\\sqrt{2})^{n}e^{x}\\cos(x-\\frac{\\pi}{4}+\\frac{n\\pi}{4})$.",
+          "Set $n=2026$ and $x=0$ to get $y^{(2026)}(0)=2^{\\frac{2027}{2}}\\cos(\\frac{2025\\pi}{4})$.",
+          "Since $2025\\equiv 1\\pmod{8}$, $\\cos\\!\\left(\\frac{2025\\pi}{4}\\right)=\\cos\\!\\left(\\frac{\\pi}{4}\\right)=\\frac{\\sqrt{2}}{2}$.",
+          "Therefore $y^{(2026)}(0)=2^{\\frac{2027}{2}}\\cdot 2^{-\\frac{1}{2}}=2^{1013}$."
+        ],
+        "pitfalls": [
+          "Using the wrong sign for the phase shift",
+          "Noticing a phase cycle but ignoring amplitude growth",
+          "Combining the exponent $\\frac{2027}{2}$ with the cosine value incorrectly"
+        ],
+        "verification": "At $n=1$, the formula gives $2e^{x}\\cos x$, exactly matching $y'=e^{x}(\\cos x+\\sin x-\\sin x+\\cos x)$.",
         "takeaway": "Very high derivatives of exponential-trigonometric products reduce to a fixed amplitude multiplier and a finite phase cycle.",
-        "extension": "Use the same formula to compute y⁽²⁰²⁷⁾(0) and compare two consecutive values."
+        "extension": "Use the same formula to compute $y^{(2027)}(0)$ and compare two consecutive values."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1784,53 +2875,86 @@
     "difficulty": "hard",
     "type": "calculation",
     "tags": {
-      "zh": ["重复线性因式", "部分分式", "有理函数高阶导数"],
-      "en": ["repeated linear factor", "partial fractions", "higher rational derivatives"]
+      "zh": [
+        "重复线性因式",
+        "部分分式",
+        "有理函数高阶导数"
+      ],
+      "en": [
+        "repeated linear factor",
+        "partial fractions",
+        "higher rational derivatives"
+      ]
     },
     "minutes": 17,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "含重复极点的有理函数 n 阶导数",
-      "prompt": "设 y=1/[x²(x−1)]，x≠0,1。求 y⁽ⁿ⁾（n≥0）。",
-      "answer": "y⁽ⁿ⁾=(−1)ⁿn![1/(x−1)ⁿ⁺¹−1/xⁿ⁺¹−(n+1)/xⁿ⁺²]。",
+      "prompt": "设 $y=\\frac{1}{x^{2}(x-1)}$，$x\\ne 0,1$。求 $y^{(n)}$（$n\\ge 0$）。",
+      "answer": "$y^{(n)}=(-1)^{n}n![\\frac{1}{(x-1)^{n+1}}-\\frac{1}{x^{n+1}}-\\frac{n+1}{x^{n+2}}]$。",
       "solution": {
-        "knowledge": ["重复因式的部分分式", "负整数幂高阶导数", "线性组合"],
-        "analysis": "分母含 x²，部分分式必须同时包含 1/x 与 1/x²。分解后分别使用一次倒数和平方倒数的 n 阶公式。",
-        "steps": [
-          "设 1/[x²(x−1)]=A/x+B/x²+C/(x−1)。",
-          "两边乘 x²(x−1) 得 1=Ax(x−1)+B(x−1)+Cx²；比较系数得到 A=−1、B=−1、C=1。",
-          "故 y=−1/x−1/x²+1/(x−1)。",
-          "使用 (x−a)⁻¹ 的 n 阶导数为 (−1)ⁿn!(x−a)⁻ⁿ⁻¹。",
-          "同时 (x⁻²)⁽ⁿ⁾=(−1)ⁿ(n+1)!x⁻ⁿ⁻²。",
-          "逐项合并并提取 (−1)ⁿn!，得到答案中的三个分式项。"
+        "knowledge": [
+          "重复因式的部分分式",
+          "负整数幂高阶导数",
+          "线性组合"
         ],
-        "pitfalls": ["重复因式只写一个 A/x 项", "遗漏 −1/x² 前的负号", "把 (n+1)! 提取 n! 后漏掉 n+1"],
-        "verification": "令 n=0，公式给 1/(x−1)−1/x−1/x²；通分后分子为 x²−x(x−1)−(x−1)=1，恢复原函数。",
+        "analysis": "分母含 $x^{2}$，部分分式必须同时包含 $\\frac{1}{x}$ 与 $\\frac{1}{x^{2}}$。分解后分别使用一次倒数和平方倒数的 n 阶公式。",
+        "steps": [
+          "设 $\\frac{1}{x^{2}(x-1)}=\\frac{A}{x}+\\frac{B}{x^{2}}+\\frac{C}{x-1}$。",
+          "两边乘 $x^{2}(x-1)$ 得 $1=Ax(x-1)+B(x-1)+Cx^{2}$；比较系数得到 $A=-1$、$B=-1$、$C=1$。",
+          "故 $y=-\\frac{1}{x}-\\frac{1}{x^{2}}+\\frac{1}{x-1}$。",
+          "使用 $(x-a)^{-1}$ 的 n 阶导数为 $(-1)^{n}n!(x-a)^{-n-1}$。",
+          "同时 $(x^{-2})^{(n)}=(-1)^{n}(n+1)!x^{-n-2}$。",
+          "逐项合并并提取 $(-1)^{n}n!$，得到答案中的三个分式项。"
+        ],
+        "pitfalls": [
+          "重复因式只写一个 $\\frac{A}{x}$ 项",
+          "遗漏 $-\\frac{1}{x^{2}}$ 前的负号",
+          "把 $(n+1)!$ 提取 $n!$ 后漏掉 $n+1$"
+        ],
+        "verification": "令 $n=0$，公式给 $\\frac{1}{x-1}-\\frac{1}{x}-\\frac{1}{x^{2}}$；通分后分子为 $x^{2}-x(x-1)-(x-1)=1$，恢复原函数。",
         "takeaway": "重复线性因式决定部分分式中必须出现一整列负幂项。",
-        "extension": "若分母含 (x−a)ᵐ，则部分分式需包含从 1/(x−a) 到 1/(x−a)ᵐ 的所有幂次。"
+        "extension": "若分母含 $(x-a)^{m}$，则部分分式需包含从 $\\frac{1}{x-a}$ 到 $\\frac{1}{(x-a)^{m}}$ 的所有幂次。"
       }
     },
     "en": {
       "title": "The nth Derivative of a Rational Function with a Repeated Pole",
-      "prompt": "Let y=1/[x²(x−1)], x≠0,1. Find y⁽ⁿ⁾ for n≥0.",
-      "answer": "y⁽ⁿ⁾=(−1)ⁿn![1/(x−1)ⁿ⁺¹−1/xⁿ⁺¹−(n+1)/xⁿ⁺²].",
+      "prompt": "Let $y=\\frac{1}{x^{2}(x-1)}, x\\ne 0,1$. Find $y^{(n)}$ for $n\\ge 0$.",
+      "answer": "$y^{(n)}=(-1)^{n}n![\\frac{1}{(x-1)^{n+1}}-\\frac{1}{x^{n+1}}-\\frac{n+1}{x^{n+2}}]$.",
       "solution": {
-        "knowledge": ["Partial fractions with repeated factors", "Higher derivatives of negative integer powers", "Linear combinations"],
-        "analysis": "Because the denominator contains x², the partial fractions must include both 1/x and 1/x². After decomposition, use the nth-derivative formulas for reciprocal and reciprocal-square terms.",
-        "steps": [
-          "Set 1/[x²(x−1)]=A/x+B/x²+C/(x−1).",
-          "Multiplying by x²(x−1) gives 1=Ax(x−1)+B(x−1)+Cx²; coefficient comparison yields A=−1, B=−1, C=1.",
-          "Thus y=−1/x−1/x²+1/(x−1).",
-          "Use [(x−a)⁻¹]⁽ⁿ⁾=(−1)ⁿn!(x−a)⁻ⁿ⁻¹.",
-          "Also, (x⁻²)⁽ⁿ⁾=(−1)ⁿ(n+1)!x⁻ⁿ⁻².",
-          "Combine the three derivatives and factor (−1)ⁿn! to obtain the stated answer."
+        "knowledge": [
+          "Partial fractions with repeated factors",
+          "Higher derivatives of negative integer powers",
+          "Linear combinations"
         ],
-        "pitfalls": ["Using only one term A/x for a repeated factor", "Dropping the minus sign before 1/x²", "Forgetting the factor n+1 after factoring (n+1)!"],
-        "verification": "At n=0, the formula is 1/(x−1)−1/x−1/x²; combining the terms gives numerator x²−x(x−1)−(x−1)=1, recovering the original function.",
+        "analysis": "Because the denominator contains $x^{2}$, the partial fractions must include both $\\frac{1}{x}$ and $\\frac{1}{x^{2}}$. After decomposition, use the nth-derivative formulas for reciprocal and reciprocal-square terms.",
+        "steps": [
+          "Set $\\frac{1}{x^{2}(x-1)}=\\frac{A}{x}+\\frac{B}{x^{2}}+\\frac{C}{x-1}$.",
+          "Multiplying by $x^{2}(x-1)$ gives $1=Ax(x-1)+B(x-1)+Cx^{2}$; coefficient comparison yields $A=-1, B=-1, C=1$.",
+          "Thus $y=-\\frac{1}{x}-\\frac{1}{x^{2}}+\\frac{1}{x-1}$.",
+          "Use $[(x-a)^{-1}]^{(n)}=(-1)^{n}n!(x-a)^{-n-1}$.",
+          "Also, $(x^{-2})^{(n)}=(-1)^{n}(n+1)!x^{-n-2}$.",
+          "Combine the three derivatives and factor $(-1)^{n}n!$ to obtain the stated answer."
+        ],
+        "pitfalls": [
+          "Using only one term $\\frac{A}{x}$ for a repeated factor",
+          "Dropping the minus sign before $\\frac{1}{x^{2}}$",
+          "Forgetting the factor $n+1$ after factoring $(n+1)!$"
+        ],
+        "verification": "At $n=0$, the formula is $\\frac{1}{x-1}-\\frac{1}{x}-\\frac{1}{x^{2}}$; combining the terms gives numerator $x^{2}-x(x-1)-(x-1)=1$, recovering the original function.",
         "takeaway": "A repeated linear factor requires a complete ladder of reciprocal powers in the partial-fraction decomposition.",
-        "extension": "A factor (x−a)ᵐ requires every term from 1/(x−a) through 1/(x−a)ᵐ."
+        "extension": "A factor $(x-a)^{m}$ requires every term from $\\frac{1}{x-a}$ through $\\frac{1}{(x-a)^{m}}$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "higher_derivatives",
+      "relation": "independently_rewritten_classic_method_variant",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   },
   {
@@ -1840,55 +2964,88 @@
     "difficulty": "challenge",
     "type": "proof",
     "tags": {
-      "zh": ["对数平方", "调和数", "归纳证明"],
-      "en": ["squared logarithm", "harmonic numbers", "inductive proof"]
+      "zh": [
+        "对数平方",
+        "调和数",
+        "归纳证明"
+      ],
+      "en": [
+        "squared logarithm",
+        "harmonic numbers",
+        "inductive proof"
+      ]
     },
     "minutes": 24,
     "space": "XL",
     "classic_method": false,
     "zh": {
       "title": "对数平方的 n 阶导数与调和数",
-      "prompt": "定义 H₀=0，Hₘ=1+1/2+⋯+1/m（m≥1）。对 x>0，用数学归纳法证明：当 n≥1 时，[(ln x)²]⁽ⁿ⁾=2(−1)ⁿ⁻¹(n−1)!x⁻ⁿ[ln x−Hₙ₋₁]。",
-      "answer": "公式对所有 n≥1 成立；归纳步骤利用 Hₙ=Hₙ₋₁+1/n。",
+      "prompt": "定义 $H_{0}=0$，$H_{m}=1+\\frac{1}{2}+\\cdots +\\frac{1}{m}$（$m\\ge 1$）。对 $x>0$，用数学归纳法证明：当 $n\\ge 1$ 时，$[(\\ln x)^{2}]^{(n)}=2(-1)^{n-1}(n-1)!x^{-n}[\\ln x-H_{n-1}]$。",
+      "answer": "公式对所有 $n\\ge 1$ 成立；归纳步骤利用 $H_{n}=H_{n-1}+\\frac{1}{n}$。",
       "solution": {
-        "knowledge": ["高阶导数归纳", "调和数递推", "乘积与幂函数求导"],
-        "analysis": "公式同时包含阶乘、负幂和随 n 改变的常数。归纳求导后，把新出现的 1/n 与 Hₙ₋₁ 合并为 Hₙ，是证明的关键。",
-        "steps": [
-          "当 n=1 时，右边为 2(ln x−H₀)/x=2ln x/x，正是 [(ln x)²]′，起点成立。",
-          "假设 n 阶公式成立，并暂记 C=2(−1)ⁿ⁻¹(n−1)!。",
-          "对 Cx⁻ⁿ(ln x−Hₙ₋₁) 求导，得到 Cx⁻ⁿ⁻¹[1−n(ln x−Hₙ₋₁)]。",
-          "将括号整理为 −n[ln x−Hₙ₋₁−1/n]=−n[ln x−Hₙ]，其中用了 Hₙ=Hₙ₋₁+1/n。",
-          "系数 C(−n)=2(−1)ⁿn!，故得到 2(−1)ⁿn!x⁻ⁿ⁻¹[ln x−Hₙ]。",
-          "这正是把 n 替换为 n+1 后的目标公式，归纳步骤成立。",
-          "因此所给公式对所有整数 n≥1 成立。"
+        "knowledge": [
+          "高阶导数归纳",
+          "调和数递推",
+          "乘积与幂函数求导"
         ],
-        "pitfalls": ["忘记 H₀=0 导致起点不成立", "乘积求导时漏掉 ln x 的导数 1/x", "将 Hₙ₋₁+1/n 错写成 Hₙ₊₁"],
-        "verification": "取 n=2，公式给 −2x⁻²(ln x−1)=2(1−ln x)/x²；直接对 2ln x/x 求导也得到同式。",
+        "analysis": "公式同时包含阶乘、负幂和随 n 改变的常数。归纳求导后，把新出现的 $\\frac{1}{n}$ 与 $H_{n-1}$ 合并为 $H_{n}$，是证明的关键。",
+        "steps": [
+          "当 $n=1$ 时，右边为 $\\frac{2(\\ln x-H_{0})}{x}=\\frac{2\\ln x}{x}$，正是 $[(\\ln x)^{2}]'$，起点成立。",
+          "假设 n 阶公式成立，并暂记 $C=2(-1)^{n-1}(n-1)!$。",
+          "对 Cx$^{-n}(\\ln x-H_{n-1})$ 求导，得到 Cx$^{-n-1}[1-n(\\ln x-H_{n-1})]$。",
+          "将括号整理为 $-n[\\ln x-H_{n-1}-\\frac{1}{n}]=-n[\\ln x-H_{n}]$，其中用了 $H_{n}=H_{n-1}+\\frac{1}{n}$。",
+          "系数 $C(-n)=2(-1)^{n}n!$，故得到 $2(-1)^{n}n!x^{-n-1}[\\ln x-H_{n}]$。",
+          "这正是把 n 替换为 $n+1$ 后的目标公式，归纳步骤成立。",
+          "因此所给公式对所有整数 $n\\ge 1$ 成立。"
+        ],
+        "pitfalls": [
+          "忘记 $H_{0}=0$ 导致起点不成立",
+          "乘积求导时漏掉 $\\ln x$ 的导数 $\\frac{1}{x}$",
+          "将 $H_{n-1}+\\frac{1}{n}$ 错写成 $H_{n+1}$"
+        ],
+        "verification": "取 $n=2$，公式给 $-2x^{-2}(\\ln x-1)=\\frac{2(1-\\ln x)}{x^{2}}$；直接对 $\\frac{2\\ln x}{x}$ 求导也得到同式。",
         "takeaway": "复杂 n 阶公式常通过一个恰当的递推量吸收每次求导新产生的常数。",
-        "extension": "直接计算 n=3，并核对公式中的 H₂=3/2 如何出现在结果中。"
+        "extension": "直接计算 $n=3$，并核对公式中的 $H_{2}=\\frac{3}{2}$ 如何出现在结果中。"
       }
     },
     "en": {
       "title": "The nth Derivative of a Squared Logarithm and Harmonic Numbers",
-      "prompt": "Define H₀=0 and Hₘ=1+1/2+⋯+1/m for m≥1. For x>0, prove by induction that for n≥1, [(ln x)²]⁽ⁿ⁾=2(−1)ⁿ⁻¹(n−1)!x⁻ⁿ[ln x−Hₙ₋₁].",
-      "answer": "The formula holds for every n≥1; the induction step uses Hₙ=Hₙ₋₁+1/n.",
+      "prompt": "Define $H_{0}=0$ and $H_{m}=1+\\frac{1}{2}+\\cdots +\\frac{1}{m}$ for $m\\ge 1$. For $x>0$, prove by induction that for $n\\ge 1, [(\\ln x)^{2}]^{(n)}=2(-1)^{n-1}(n-1)!x^{-n}[\\ln x-H_{n-1}]$.",
+      "answer": "The formula holds for every $n\\ge 1$; the induction step uses $H_{n}=H_{n-1}+\\frac{1}{n}$.",
       "solution": {
-        "knowledge": ["Induction for higher derivatives", "Harmonic-number recurrence", "Product and power differentiation"],
-        "analysis": "The formula contains a factorial, a negative power, and an n-dependent constant. After differentiating in the induction step, the new 1/n combines with Hₙ₋₁ to form Hₙ.",
-        "steps": [
-          "For n=1, the right side is 2(ln x−H₀)/x=2ln x/x, exactly [(ln x)²]′, so the base case holds.",
-          "Assume the formula for n and abbreviate C=2(−1)ⁿ⁻¹(n−1)!.",
-          "Differentiate Cx⁻ⁿ(ln x−Hₙ₋₁) to obtain Cx⁻ⁿ⁻¹[1−n(ln x−Hₙ₋₁)].",
-          "Rewrite the bracket as −n[ln x−Hₙ₋₁−1/n]=−n[ln x−Hₙ], using Hₙ=Hₙ₋₁+1/n.",
-          "Since C(−n)=2(−1)ⁿn!, the result is 2(−1)ⁿn!x⁻ⁿ⁻¹[ln x−Hₙ].",
-          "This is precisely the claimed formula with n replaced by n+1, so the induction step holds.",
-          "Therefore the formula is valid for every integer n≥1."
+        "knowledge": [
+          "Induction for higher derivatives",
+          "Harmonic-number recurrence",
+          "Product and power differentiation"
         ],
-        "pitfalls": ["Forgetting H₀=0 in the base case", "Omitting the derivative 1/x of ln x in the product rule", "Replacing Hₙ₋₁+1/n by Hₙ₊₁"],
-        "verification": "At n=2, the formula gives −2x⁻²(ln x−1)=2(1−ln x)/x²; direct differentiation of 2ln x/x gives the same expression.",
+        "analysis": "The formula contains a factorial, a negative power, and an $n$-dependent constant. After differentiating in the induction step, the new $\\frac{1}{n}$ combines with $H_{n-1}$ to form $H_{n}$.",
+        "steps": [
+          "For $n=1$, the right side is $\\frac{2(\\ln x-H_{0})}{x}=\\frac{2\\ln x}{x}$, exactly $[(\\ln x)^{2}]'$, so the base case holds.",
+          "Assume the formula for n and abbreviate $C=2(-1)^{n-1}(n-1)!$.",
+          "Differentiate Cx$^{-n}(\\ln x-H_{n-1})$ to obtain Cx$^{-n-1}[1-n(\\ln x-H_{n-1})]$.",
+          "Rewrite the bracket as $-n[\\ln x-H_{n-1}-\\frac{1}{n}]=-n[\\ln x-H_{n}]$, using $H_{n}=H_{n-1}+\\frac{1}{n}$.",
+          "Since $C(-n)=2(-1)^{n}n!$, the result is $2(-1)^{n}n!x^{-n-1}[\\ln x-H_{n}]$.",
+          "This is precisely the claimed formula with n replaced by $n+1$, so the induction step holds.",
+          "Therefore the formula is valid for every integer $n\\ge 1$."
+        ],
+        "pitfalls": [
+          "Forgetting $H_{0}=0$ in the base case",
+          "Omitting the derivative $\\frac{1}{x}$ of $\\ln x$ in the product rule",
+          "Replacing $H_{n-1}+\\frac{1}{n}$ by $H_{n+1}$"
+        ],
+        "verification": "At $n=2$, the formula gives $-2x^{-2}(\\ln x-1)=\\frac{2(1-\\ln x)}{x^{2}}$; direct differentiation of $\\frac{2\\ln x}{x}$ gives the same expression.",
         "takeaway": "A carefully chosen recurrence can absorb the new constant produced at every differentiation step in a complicated nth-order formula.",
-        "extension": "Compute n=3 directly and check how H₂=3/2 appears in the result."
+        "extension": "Compute $n=3$ directly and check how $H_{2}=\\frac{3}{2}$ appears in the result."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "higher_derivatives",
+      "relation": "independently_synthesized_from_standard_methods",
+      "references": [
+        "mit-18.01sc-differentiation",
+        "openstax-calculus-v1-3.2"
+      ]
     }
   }
 ]

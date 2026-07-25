@@ -12,6 +12,7 @@
     "minutes",
     "space",
     "classic_method",
+    "source_lineage",
     "zh",
     "en"
   ],
@@ -47,10 +48,71 @@
     "minutes": {"type": "integer", "minimum": 2, "maximum": 45},
     "space": {"enum": ["S", "M", "L", "XL"]},
     "classic_method": {"type": "boolean"},
+    "source_lineage": {"$ref": "#/$defs/source_lineage"},
     "zh": {"$ref": "#/$defs/localized"},
     "en": {"$ref": "#/$defs/localized"}
   },
   "$defs": {
+    "source_lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "method_family", "relation", "references"],
+      "properties": {
+        "category": {
+          "enum": [
+            "open_text_adaptation",
+            "classic_method_variant",
+            "original_synthesis"
+          ]
+        },
+        "method_family": {
+          "enum": [
+            "derivative_definition",
+            "differentiability_and_one_sided_derivatives",
+            "derivative_interpretations",
+            "elementary_differentiation_rules",
+            "chain_rule_and_composites",
+            "inverse_exponential_logarithmic_derivatives",
+            "higher_derivatives",
+            "implicit_differentiation",
+            "parametric_differentiation",
+            "related_rates",
+            "differentials_and_linear_approximation"
+          ]
+        },
+        "relation": {
+          "enum": [
+            "adapted_from_open_text_topic_and_method",
+            "independently_rewritten_classic_method_variant",
+            "independently_synthesized_from_standard_methods"
+          ]
+        },
+        "references": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "openstax-calculus-v1-3.1",
+              "openstax-calculus-v1-3.2",
+              "openstax-calculus-v1-3.3",
+              "openstax-calculus-v1-3.4",
+              "openstax-calculus-v1-3.5",
+              "openstax-calculus-v1-3.6",
+              "openstax-calculus-v1-3.7",
+              "openstax-calculus-v1-3.8",
+              "openstax-calculus-v1-3.9",
+              "openstax-calculus-v1-4.1",
+              "openstax-calculus-v1-4.2",
+              "openstax-calculus-v2-7.2",
+              "mit-18.01sc-differentiation",
+              "mit-18.01sc-session-3-rate",
+              "mit-18.01sc-applications"
+            ]
+          }
+        }
+      }
+    },
     "localized": {
       "type": "object",
       "required": ["title", "prompt", "answer", "solution"],

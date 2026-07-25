@@ -5,6 +5,13 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from src.source_lineage import (
+    CATEGORY_RELATIONS,
+    METHOD_FAMILY_REFERENCES,
+    SOURCE_LINEAGE_CATEGORIES,
+    SOURCE_REFERENCES,
+)
+
 
 SECTION_QUOTAS = {1: 24, 2: 28, 3: 16, 4: 20, 5: 12}
 TYPE_QUOTAS = {
@@ -36,6 +43,12 @@ REQUIRED_SOLUTION = {
     "takeaway",
     "extension",
 }
+REQUIRED_SOURCE_LINEAGE = {
+    "category",
+    "method_family",
+    "relation",
+    "references",
+}
 
 
 def load_questions(path: Path) -> list[dict[str, Any]]:
@@ -54,6 +67,58 @@ def _quota_errors(label: str, actual: Counter, expected: dict) -> list[str]:
     extra = set(actual) - set(expected)
     if extra:
         errors.append(f"{label} has unsupported values: {sorted(extra)!r}")
+    return errors
+
+
+def _source_lineage_errors(item_id: str, item: dict[str, Any]) -> list[str]:
+    prefix = f"{item_id}: source_lineage "
+    lineage = item.get("source_lineage")
+    if not isinstance(lineage, dict):
+        return [prefix + "must be an object"]
+
+    errors: list[str] = []
+    missing = sorted(REQUIRED_SOURCE_LINEAGE - set(lineage))
+    if missing:
+        errors.append(prefix + f"missing fields {missing}")
+        return errors
+    extra = sorted(set(lineage) - REQUIRED_SOURCE_LINEAGE)
+    if extra:
+        errors.append(prefix + f"has unsupported fields {extra}")
+
+    category = lineage["category"]
+    if category not in SOURCE_LINEAGE_CATEGORIES:
+        errors.append(prefix + f"has unsupported category {category!r}")
+    else:
+        expected_relation = CATEGORY_RELATIONS[category]
+        if lineage["relation"] != expected_relation:
+            errors.append(prefix + f"relation must be {expected_relation!r} for category {category!r}")
+
+    method_family = lineage["method_family"]
+    if method_family not in METHOD_FAMILY_REFERENCES:
+        errors.append(prefix + f"has unsupported method_family {method_family!r}")
+
+    references = lineage["references"]
+    if not isinstance(references, list) or not references:
+        errors.append(prefix + "references must be a non-empty array")
+    else:
+        if len(references) != len(set(references)):
+            errors.append(prefix + "references must not contain duplicates")
+        unknown = sorted(set(references) - set(SOURCE_REFERENCES))
+        if unknown:
+            errors.append(prefix + f"contains unknown source reference(s) {unknown}")
+        if method_family in METHOD_FAMILY_REFERENCES:
+            unrelated = sorted(set(references) - METHOD_FAMILY_REFERENCES[method_family])
+            if unrelated:
+                errors.append(
+                    prefix
+                    + f"contains reference(s) not registered for {method_family!r}: {unrelated}"
+                )
+
+    if not item.get("classic_method") and category != "original_synthesis":
+        errors.append(
+            prefix
+            + "category must be 'original_synthesis' when classic_method is false"
+        )
     return errors
 
 
@@ -85,6 +150,7 @@ def validate_questions(items: list[dict[str, Any]], enforce_quotas: bool = True)
             "minutes",
             "space",
             "classic_method",
+            "source_lineage",
             "zh",
             "en",
         }
@@ -100,6 +166,7 @@ def validate_questions(items: list[dict[str, Any]], enforce_quotas: bool = True)
             errors.append(prefix + "minutes must be an integer from 2 through 45")
         if not isinstance(item["classic_method"], bool):
             errors.append(prefix + "classic_method must be boolean")
+        errors.extend(_source_lineage_errors(str(item_id), item))
 
         tags = item["tags"]
         if not isinstance(tags, dict) or not tags.get("zh") or not tags.get("en"):
